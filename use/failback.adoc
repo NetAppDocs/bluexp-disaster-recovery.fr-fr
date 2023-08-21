@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/failback.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Rétablir les applications à la source d'origine
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Une fois l'incident résolu, rebasculez le système du site de reprise sur incident vers le site source pour rétablir les opérations normales. Vous pouvez sélectionner la copie Snapshot à partir de laquelle effectuer la restauration.
+
+Dans ce workflow, BlueXP Disaster Recovery réplique (resyncs) toutes les modifications apportées à la machine virtuelle source d'origine avant d'inverser le sens de la réplication. Ce processus commence à partir d'une relation qui a terminé le basculement vers une cible et implique les étapes suivantes :
+
+* Sur le site cible, les machines virtuelles sont hors tension et non enregistrées, et les volumes sont démontés.
+* La relation SnapMirror sur la source d'origine est rompue pour la lecture/l'écriture.
+* La relation SnapMirror est resynchronisée pour inverser la réplication.
+* Les machines virtuelles source sont sous tension et enregistrées, et les volumes sont montés sur la source.
+
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de reprise d'activité.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  Et sélectionnez *Retour arrière*.
+. Entrez le nom du plan de reprise d'activité pour confirmer et démarrer le retour arrière.
+. Choisissez le snapshot du datastore à partir duquel effectuer la restauration.  La valeur par défaut est la dernière.
+. Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.
+

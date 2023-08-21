@@ -1,0 +1,46 @@
+---
+indexpage:
+  lead: La reprise d'activité dans le cloud est un moyen résilient et économique de
+    protéger les workloads contre les pannes sur site et les corruptions de données
+    (par exemple, les ransomwares). Grâce à la reprise d'activité BlueXP pour VMware
+    bêta, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage
+    ONTAP vers un data Center Software-defined VMware dans un cloud public en tant
+    que site de reprise d'activité à l'aide du stockage cloud NetApp.
+  tiles:
+  - title: Commencez
+    links:
+    - title: Découvrez la reprise d'activité BlueXP
+      url: "/get-started/dr-intro.html"
+    - title: Nouveautés de la reprise d'activité BlueXP
+      url: "/release-notes/dr-whats-new.html"
+    - title: Démarrage rapide
+      url: "/get-started/dr-quick-start.html"
+    - title: Prérequis
+      url: "/get-started/dr-prerequisites.html"
+    - title: Accédez à la reprise d'activité BlueXP
+      url: "/get-started/dr-login.html"
+    - title: FAQ
+      url: "/get-started/dr-faq.html"
+  - title: Utilisez la reprise d'activité BlueXP
+    links:
+    - title: Ajoutez des sites vCenter
+      url: "/use/sites-add.html"
+    - title: Création d'un plan de reprise d'activité
+      url: "/use/drplan-create.html"
+    - title: Répliquer des applications sur un autre site
+      url: "/use/replicate.html"
+    - title: Basculez les applications vers un site distant
+      url: "/use/failover.html"
+    - title: Rétablir les applications sur le site source d'origine
+      url: "/use/failback.html"
+    - title: Gérez des sites, des plans, des datastores et des informations sur les
+        machines virtuelles
+      url: "/use/manage.html"
+    - title: Surveiller les tâches de reprise après incident
+      url: "/use/monitor-jobs.html"
+  - title: Blogs et communauté
+    links:
+    - title: Communauté NetApp
+      url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+    - title: Webinaires sur le cloud
+      url: https://bluexp.netapp.com/events

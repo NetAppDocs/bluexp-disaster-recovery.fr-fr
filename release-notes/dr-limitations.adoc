@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: release-notes/dr-limitations.html 
+keywords: disaster recovery, bluexp 
+summary: Les limitations connues identifient les plates-formes, les périphériques ou les fonctions qui ne sont pas pris en charge par cette version du service ou qui ne fonctionnent pas correctement avec celui-ci. 
+---
+= Limites
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Les limitations connues identifient les plates-formes, les périphériques ou les fonctions qui ne sont pas pris en charge par cette version du service ou qui ne fonctionnent pas correctement avec celui-ci.
+
+
+
+== BlueXP ne découvre peut-être pas Amazon FSX pour NetApp ONTAP
+
+Il peut arriver que BlueXP ne détecte pas les clusters Amazon FSX pour NetApp ONTAP. Cela peut être dû au fait que les informations d'identification FSX n'étaient pas correctes.
+
+*Solution de contournement* : ajoutez le cluster Amazon FSX pour NetApp ONTAP dans BlueXP et actualisez régulièrement le cluster pour afficher les modifications éventuelles.
+
+Si vous devez supprimer le cluster ONTAP FSX du service de reprise d'activité BlueXP, effectuez les opérations suivantes :
+
+. Dans le connecteur BlueXP, utilisez les options de connectivité de votre fournisseur cloud, connectez-vous à la VM Linux sur laquelle le connecteur s'exécute, redémarrez le service « occm » à l'aide du `docker restart occm` commande.
++
+Reportez-vous à la section https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Gérer les connecteurs existants"^].
+
+. Dans le canevas BlueXP, ajoutez de nouveau l'environnement Amazon FSX pour ONTAP et fournissez les informations d'identification FSX.
++
+Reportez-vous à la section https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Créez un système de fichiers Amazon FSX pour NetApp ONTAP"^].
+
+. Depuis la reprise d'activité BlueXP, sélectionnez *sites*, sur la ligne vCenter, sélectionnez l'option *actions* image:../use/icon-vertical-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"], Et dans le menu actions, sélectionnez *Refresh* pour actualiser la découverte FSX dans la reprise d'activité BlueXP.
++
+Le datastore, ses machines virtuelles et sa relation de destination sont alors redécouverts.
+
+

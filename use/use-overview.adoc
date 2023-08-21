@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: use/use-overview.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Utilisez la présentation de la reprise d'activité BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+La reprise d'activité BlueXP vous permet d'atteindre les objectifs suivants :
+
+* link:../use/sites-add.html["Ajoutez des sites vCenter"].
+* link:../use/drplan-create.html["Création d'un plan de reprise d'activité"].
+* link:../use/replicate.html["Répliquez des applications VMware"] Sur votre site principal vers un site distant de reprise d'activité dans le cloud, grâce à la réplication SnapMirror
+* link:../use/failover.html["Tester le basculement"] sans interrompre les machines virtuelles d'origine.
+* En cas d'incident, link:../use/failover.html["basculez votre site principal"] À VMware Cloud on AWS avec FSX for NetApp ONTAP.
+* Une fois le sinistre résolu, link:../use/failback.html["retour arrière"] du site de reprise sur incident au site principal.
+* link:../use/monitor.html["Contrôler les opérations de reprise après incident"] Sur la page surveillance des travaux.
+

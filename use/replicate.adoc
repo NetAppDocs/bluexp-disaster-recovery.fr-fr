@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: use/replicate.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Réplication d'applications vers un autre site
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Répliquez les applications VMware sur votre site source vers un site distant de reprise d'activité dans le cloud à l'aide de la réplication SnapMirror.
+
+
+TIP: Une fois le plan de reprise d'activité créé, identifiez la récurrence dans l'assistant et lancez une réplication vers un site de reprise d'activité, la reprise d'activité BlueXP vérifie toutes les 30 minutes que la réplication se produit réellement conformément au plan. Vous pouvez contrôler la vérification dans la page moniteur des travaux.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de reprise d'activité.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *répliquer*.
+

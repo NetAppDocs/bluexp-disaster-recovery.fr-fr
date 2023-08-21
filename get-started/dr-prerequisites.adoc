@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-prerequisites.html 
+keywords: what are bluexp disaster recovery requirements, disaster recovery prerequisites 
+summary: 'Commencez à utiliser la reprise d"activité de BlueXP en vérifiant la prise en charge de votre environnement, de l"accès au réseau, de la connexion et du navigateur Web.' 
+---
+= Conditions préalables à la reprise d'activité BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Commencez par vérifier que votre environnement opérationnel, votre connexion, votre accès au réseau et votre navigateur Web sont opérationnels.
+
+Pour utiliser la reprise d'activité BlueXP, vous devez vous assurer que votre environnement répond à toutes les exigences.
+
+* Environnement de travail VMware sur site avec stockage NetApp
+* Sur AWS :
++
+** Un système de fichiers Amazon FSX pour NetApp ONTAP. Consultez la documentation d'Amazon FSX pour ONTAP sur https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["guide d'utilisation"^].
+** Un compte VMware associé à un data Center Software-defined (SDDC) sur AWS, également appelé Virtual machines Cloud (VMS). Dans VMware Cloud Console, utilisez les rôles de service d'administrateur et d'administrateur cloud NSX, les deux rôles sur VMware Cloud sur AWS. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la section https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Documentation de Virtual machines Cloud"^].
+** Associez le SDDC à Amazon FSX pour NetApp ONTAP. Reportez-vous à la section https://vmc.techzone.vmware.com/fsx-guide#overview["Intégration de VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP"^].
+
+
+* Dans BlueXP :
++
+** Le connecteur BlueXP doit être configuré dans NetApp BlueXP. Utilisez le connecteur BlueXP AWS Connector qui permet d'accéder à vCenter sur site et au cloud. Le connecteur BlueXP requiert des informations d'identification pour les serveurs vCenter source et cible. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html["Démarrage rapide de BlueXP"^] et https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html["Informations de mise en réseau BlueXP"^].
+** Identifiants Amazon FSX pour ONTAP et AWS ajoutés à l'environnement de travail BlueXP
+
+
+

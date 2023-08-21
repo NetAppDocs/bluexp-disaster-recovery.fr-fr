@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: use/drplan-create.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan 
+summary: 'NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Une fois que vous avez ajouté des sites vCenter, vous êtes prêt à créer un plan de réplication ou de reprise d"activité.' 
+---
+= Créer un plan de réplication
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Une fois que vous avez ajouté des sites vCenter, vous êtes prêt à créer un plan de réplication ou de reprise d'activité. Sélectionnez les vCenters source et cible, choisissez les groupes de ressources et groupez la manière dont les applications doivent être restaurées et sous tension. Par exemple, vous pouvez regrouper des machines virtuelles associées à une application ou des applications possédant des niveaux similaires.
+
+Ces plans sont parfois appelés _plans_.
+
+Un assistant vous guide tout au long de la procédure suivante :
+
+* Sélectionnez serveurs vCenter
+* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes
+* Mappez la façon dont les ressources de l'environnement source sont mappées sur la cible.
+* Identifier la récurrence
+* Revoir le plan
+
+
+
+
+== Sélectionnez serveurs vCenter
+
+Sélectionnez d'abord le vCenter source, puis le vCenter cible.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*. Ou, si vous commencez juste à utiliser le service, sélectionnez *Ajouter un plan de réplication* dans le tableau de bord.
++
+image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan de réplication > Ajouter un plan"]
+
+. Créez un nom pour le plan de réplication.
+. Sélectionnez les vCenters source et cible dans les listes vCenter source et cible.
+. Sélectionnez *Suivant*.
+
+
+
+
+== Sélectionnez les applications à répliquer et attribuez des groupes de ressources
+
+L'étape suivante consiste à regrouper les machines virtuelles requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir un ordre de démarrage qui peut être exécuté lors de la restauration.
+
+
+TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
+
+.Étapes
+. Sur le côté gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez répliquer et affecter au groupe sélectionné.
++
+La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.
+
++
+image:dr-plan-create-apps-vms.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
+
+. Si vous le souhaitez, effectuez l'une des opérations suivantes :
++
+** Pour changer de groupe, cliquez sur l'icône Groupe *Modifier*.
+** Pour supprimer une machine virtuelle d'un groupe, sélectionnez *X*.
+** Pour déplacer une machine virtuelle vers un autre groupe, faites-la glisser dans le nouveau groupe.
+
+
+. Lorsque vous avez plusieurs groupes de ressources, assurez-vous que la séquence des groupes correspond à la séquence opérationnelle qui doit se produire.
++
+Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici. Deux groupes sont démarrés en parallèle.
+
+. Vous pouvez également renommer le groupe en cliquant sur l'icône *Modifier*.
+. Sélectionnez *Suivant*.
+
+
+
+
+== Mappez les ressources source à la cible
+
+Dans l'étape mappage des ressources, spécifiez la façon dont les ressources de l'environnement source doivent être mappées sur la cible.
+
+* Sélectionnez le mappage réseau vers le segment approprié.
++
+Les segments doivent déjà être provisionnés au sein de VMC. Sélectionnez donc le segment approprié pour mapper la machine virtuelle.
+
+* En fonction de la sélection de machines virtuelles, les mappages de datastores sont sélectionnés automatiquement.
++
+
+NOTE: SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
+
+
+
+.Étapes
+. Dans la page mappage des ressources, cochez la case pour utiliser les mêmes mappages pour les opérations de basculement et de test.
+. Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chaque ressource :
++
+** Ressources de calcul
+** Réseaux virtuels
+** Ordinateurs virtuels
+** Datastore
+
+
+. Sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
++
+image:dr-plan-create-mapping-vms.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
+
++
+Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle. Vous pouvez également modifier l'ordre de démarrage de toutes les machines virtuelles sélectionnées dans les groupes de ressources.
+
++
+Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade.
+
+. Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*. Passez en revue chaque onglet comme précédemment, mais cette fois pour l'environnement de test.
++
+
+TIP: Vous pouvez tester ultérieurement l'intégralité du plan. Vous configurez actuellement les mappages pour l'environnement de test.
+
+
+
+
+
+== Identifier la récurrence
+
+Indiquez si vous souhaitez migrer des données (un déplacement unique) vers une autre cible ou les répliquer à la fréquence SnapMirror. Si vous souhaitez la répliquer, identifiez la fréquence à laquelle les données doivent être mises en miroir.
+
+
+NOTE: Dans cette version bêta, configurez la fréquence en dehors du service de reprise d'activité BlueXP.
+
+.Étapes
+. Dans la page récurrence, sélectionnez *migrer* ou *répliquer*.
++
+** *Migrer* : sélectionnez cette option pour déplacer l'application vers l'emplacement cible.
+** *Replicate* : maintenez la copie cible à jour avec les modifications de la copie source dans une réplication récurrente.
+
+
++
+image:dr-plan-create-recurrence.png["Capture d'écran montrant Ajouter un plan de réplication > récurrence"]
+
+. Sélectionnez *Suivant*.
+
+
+
+
+== Confirmez le plan de réplication
+
+Enfin, prenez quelques instants pour confirmer le plan de réplication.
+
+
+TIP: Vous pouvez par la suite désactiver ou supprimer le plan de réplication.
+
+.Étapes
+. Consultez les informations de chaque onglet : Détails du plan, mappage de basculement, machines virtuelles.
+. Sélectionnez *Ajouter un plan*.
++
+Le plan est ajouté à la liste des plans.
+
+

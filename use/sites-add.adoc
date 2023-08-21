@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: use/sites-add.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Ajoutez des sites vCenter
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Avant de créer un plan de reprise d'activité, vous devez ajouter un site vCenter principal et un site de reprise d'activité vCenter cible dans BlueXP.
+
+Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, de l'espace de stockage, en savoir plus sur les machines virtuelles, les répliques SnapMirror et les réseaux de machines virtuelles.
+
+.Étapes
+. Connectez-vous à BlueXP et sélectionnez *protection* > *Disaster Recovery* dans la navigation de gauche.
++
+Accédez à la page du tableau de bord de reprise d'activité BlueXP. Lorsque vous commencez par utiliser le service, vous devez ajouter des informations vCenter. Plus tard, le tableau de bord affiche les données relatives à vos sites et à vos plans de réplication.
+
+. Sélectionnez *découvrir les serveurs vCenter* pour entrer des informations sur le site vCenter source.
++
+
+TIP: Si certains sites vCenter existent déjà et que vous souhaitez en ajouter d'autres, sélectionnez *sites* dans le menu supérieur, puis *Ajouter*.
+
++
+image:vcenter-add.png["Capture d'écran Ajouter un serveur vCenter "]
+
+. Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.
+. Pour accepter les certificats auto-signés pour le vCenter source, cochez la case.
++
+
+NOTE: Les certificats auto-signés ne sont pas aussi sécurisés que les autres certificats. Si votre serveur vCenter est configuré avec des certificats d'autorité de certification (CA) *NON*, cochez cette case ; sinon, la connexion au serveur vCenter ne fonctionnera pas.
+
+. Sélectionnez *Ajouter*.
++
+Vous allez ensuite ajouter un vCenter cible.
+
+. Choisissez le site cible et l'emplacement. Si la cible est Cloud, sélectionnez *AWS*.
+. Sélectionnez *Ajouter*.
++
+Les vCenters source et cible apparaissent dans la liste des sites.
+
+. Pour voir la progression de l'opération, dans le menu supérieur, sélectionnez *surveillance des tâches*.
+

@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: use/failover.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replicate, fail over, vmware, vcenter 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Basculement des applications vers un site distant
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+En cas d'incident, basculez votre site primaire sur site vers VMware Cloud sur un site AWS avec FSX pour NetApp ONTAP.
+
+Lors du basculement, la copie Snapshot SnapMirror la plus récente est utilisée. Vous pouvez également sélectionner une copie Snapshot spécifique à partir d'une copie Snapshot instantanée (conformément à la règle de conservation de SnapMirror). L'option instantanée peut être utile si vous êtes confronté à une corruption, telle qu'une attaque par ransomware, où les répliques les plus récentes sont déjà compromises ou chiffrées. La reprise d'activité BlueXP affiche tous les points disponibles dans le temps.
+
+Cette procédure rompt la relation de réplication, met les VM sources de vCenter hors ligne et active la lecture/écriture sur le site cible.
+
+Avant de commencer le basculement, vous pouvez tester le processus, afin de garantir son succès au moment où vous en avez besoin. Le test ne place pas les machines virtuelles hors ligne.
+
+
+
+== Tester le processus de basculement
+
+Avant de démarrer un basculement réel, testez le processus de basculement.
+
+Lors d'un test de basculement, les machines virtuelles sont créées temporairement. La reprise d'activité BlueXP ne mappe pas le volume cible. Elle crée un nouveau volume FlexClone à partir de l'instantané sélectionné et un datastore temporaire sur lequel le volume FlexClone est pris en compte est mappé sur les hôtes ESXi.
+
+Ce processus ne consomme pas de capacité physique supplémentaire pour Amazon FSX for NetApp ONTAP. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.
+
+Lorsque vous avez terminé le test, vous devez réinitialiser les machines virtuelles avec l'option *Clean up test*. Bien que cela soit recommandé, il n'est pas nécessaire.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de reprise d'activité.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *Test failover*.
+. Sur la page Test failover, entrez “Test failover” et sélectionnez *Test fail over*.
+. Une fois le test terminé, nettoyez l'environnement de test.
+
+
+
+
+== Nettoyez l'environnement de test après un test de basculement
+
+Une fois le test de basculement terminé, nettoyez l'environnement de test. Ce processus supprime les VM temporaires de l'emplacement de test, les FlexClones et les datastores temporaires.
+
+.Étapes
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de reprise d'activité.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  Et sélectionnez *Clean up failover test*.
+. Dans la page Test failover, entrez “Clean up failover” et sélectionnez *Clean up failover test*.
+
+
+
+
+== Basculez le site source vers un site de reprise après incident
+
+En cas d'incident, basculez votre site source à la demande vers VMware Cloud sur un site AWS avec FSX pour NetApp ONTAP.
+
+Le processus de basculement implique les opérations suivantes :
+
+* Si vous avez sélectionné le dernier snapshot, la mise à jour SnapMirror est effectuée pour répliquer les dernières modifications.
+* Les machines virtuelles source sont hors tension.
+* La relation SnapMirror est rompue et le volume cible est réalisé en lecture/écriture.
+* En fonction de la sélection de l'instantané, le système de fichiers actif est restauré vers l'instantané spécifié (dernier ou sélectionné)
+* Les datastores sont créés et montés sur le cluster ou l'hôte VMC en fonction des informations capturées dans le plan de reprise d'activité.
+* Les machines virtuelles cibles sont enregistrées et sous tension en fonction de l'ordre saisi dans la page groupes de ressources.
+* La relation SnapMirror est inversée entre la machine virtuelle cible et la machine virtuelle source.
+
+
+
+TIP: Une fois le basculement lancé, les éléments récupérés sont visibles dans le vCenter VMC (machines virtuelles, réseaux et datastores). Par défaut, les machines virtuelles sont restaurées dans le dossier charge de travail.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de reprise d'activité.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *basculement*.
+. Sur la page Test du basculement, entrez le nom du plan de reprise d'activité à confirmer et sélectionnez *basculement*.
+. Choisissez le snapshot du datastore à partir duquel effectuer la restauration.  La valeur par défaut est la dernière.
+. Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.
+

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-setup.html 
+keywords: bluexp, disaster recovery, 
+summary: 'Pour configurer la reprise d"activité BlueXP, effectuez quelques étapes.' 
+---
+= Configurez la reprise d'activité BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Pour configurer la reprise d'activité BlueXP, effectuez quelques étapes.
+
+* Révision link:../get-started/dr-prerequisites.html["prérequis"] pour vous assurer que votre environnement est prêt.
+* Dans AWS :
++
+** Déploiement et configuration de VMware Cloud sur AWS
+** Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP.
+** Utiliser un compte VMware et provisionner le SDDC (Software-Defined Data Center) Assurez-vous que le SDDC est connecté à FSX for ONTAP.
+
+
+* Dans BlueXP :
++
+** Déploiement et configuration de SnapMirror vers FSX pour ONTAP
+** Ajoutez l'environnement de travail du stockage ONTAP sur site à BlueXP. Il s'agit du cluster ONTAP source.
+** Ajoutez un compte BlueXP, FSxN à l'environnement de travail et ajoutez des identifiants AWS pour FSX pour ONTAP.
+
+
+
+
+
+
+== Configuration dans AWS
+
+Dans AWS, vous devez effectuer les étapes suivantes :
+
+* Déploiement de VMware Cloud
+* Configuration d'Amazon FSX pour ONTAP
+
+
+
+
+=== Déploiement de VMware Cloud
+
+https://www.vmware.com/products/vmc-on-aws.html["VMware Cloud sur AWS"^] Offre une expérience cloud native pour les charges de travail VMware dans l'écosystème AWS. Chaque data Center Software-defined VMware (SDDC) s'exécute dans un cloud privé virtuel Amazon et fournit une pile VMware complète (y compris vCenter Server), une mise en réseau Software-defined NSX-T, un stockage Software-defined VSAN et un ou plusieurs hôtes ESXi qui fournissent des ressources de calcul et de stockage aux charges de travail.
+
+Pour configurer un environnement VMC sur AWS, procédez comme suit https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-setup.html["lien"^]. Un bloc de voyants peut également être utilisé à des fins de reprise après incident.
+
+
+
+=== Configuration d'Amazon FSX pour NetApp ONTAP
+
+Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un stockage de fichiers extrêmement fiable, évolutif, haute performance et riche en fonctionnalités basé sur le système de fichiers populaire NetApp ONTAP. Suivez les étapes à cet effet https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["lien"^] Pour provisionner et configurer FSX pour NetApp ONTAP.
+
+
+
+== Configuration dans BlueXP
+
+L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
+
+
+
+=== Créez un connecteur dans BlueXP
+
+Vous devez vous inscrire à la version bêta ou contacter votre ingénieur commercial NetApp pour essayer ce service. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
+
+Pour créer un connecteur dans BlueXP avant d'utiliser le service, reportez-vous à la documentation BlueXP qui décrit https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["comment créer un connecteur"^].
+
+
+
+=== Configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP
+
+L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
+
+. Dans BlueXP, ajoutez un compte. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Documentation BlueXP sur l'ajout d'un compte"^].
+. Ajoutez Amazon FSX pour NetApp ONTAP à l'environnement de travail. S'assurer que la relation SnapMirror avec le cluster ONTAP est en place et qu'elle a une destination de FSX pour NetApp ONTAP. Reportez-vous à la section https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Comment configurer un environnement de travail FSX pour ONTAP"^].
+. Dans BlueXP, déployez SnapMirror dans FSX pour NetApp ONTAP.
+. Dans BlueXP, découvrez la solution FSX pour NetApp ONTAP provisionnée sur une instance AWS et répliquez les volumes de datastore spécifiés à partir d'un environnement sur site vers FSX pour NetApp ONTAP avec la fréquence adéquate et la conservation des copies Snapshot NetApp.
+

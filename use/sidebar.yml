@@ -1,0 +1,21 @@
+---
+section: use
+title: Utilisez la reprise d'activité BlueXP
+entries:
+- title: Utilisez la présentation de la reprise d'activité BlueXP
+  url: "/use/use-overview.html"
+- title: Ajoutez des sites vCenter
+  url: "/use/sites-add.html"
+- title: Création d'un plan de reprise d'activité
+  url: "/use/drplan-create.html"
+- title: Répliquer sur un autre site
+  url: "/use/replicate.html"
+- title: Basculez vers un site distant
+  url: "/use/failover.html"
+- title: Rétablir les applications sur le site source d'origine
+  url: "/use/failback.html"
+- title: Gérez des sites, des plans, des datastores et des informations sur les machines
+    virtuelles
+  url: "/use/manage.html"
+- title: Surveiller les tâches de reprise après incident
+  url: "/use/monitor-jobs.html"

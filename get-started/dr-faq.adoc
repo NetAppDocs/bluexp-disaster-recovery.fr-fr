@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-faq.html 
+keywords: disaster recovery faq, disaster recovery frequently asked questions 
+summary: Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question. 
+---
+= Forum aux questions sur la reprise d'activité BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question.
+
+*Quelle est l'URL de reprise d'activité BlueXP ?*
+Pour l'URL, dans un navigateur, entrez : https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/"^] Pour accéder à la console BlueXP.
+
+*Avez-vous besoin d'une licence pour utiliser la reprise d'activité BlueXP ?*
+Aucun fichier de licence NetApp n'est requis.
+
+*Comment accédez-vous à la reprise d'activité BlueXP ?*
+La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.
