@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: use/migrate.html 
+keywords: disaster recovery, bluexp disaster recovery, migrate, vmware, vcenter 
+summary: 'En utilisant la reprise d"activité BlueXP, vous pouvez migrer les applications VMware de votre site source vers un autre site.' 
+---
+= Migration des applications vers un autre site
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+En utilisant la reprise d'activité BlueXP, vous pouvez migrer les applications VMware de votre site source vers un autre site.
+
+
+TIP: Après avoir créé le plan de réplication, identifiez la récurrence dans l'assistant et lancez la migration, la reprise d'activité BlueXP vérifie toutes les 30 minutes que la migration a effectivement lieu conformément au plan. Vous pouvez surveiller la progression dans la page moniteur des tâches.
+
+.Avant de commencer
+Avant de lancer la migration, vous devez avoir créé un plan de réplication et choisi de migrer les applications. L'option *migrer* apparaît alors dans le menu actions.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de réplication.
+. Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *migrer*.
+

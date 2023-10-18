@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: use/dashboard-view.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
+summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+---
+= Consultez l'état de vos plans de reprise sur incident dans le tableau de bord
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Le tableau de bord de reprise d'activité BlueXP vous permet de déterminer l'état de vos sites de reprise d'activité et de vos plans de réplication. Vous pouvez rapidement déterminer quels sites et plans sont sains, déconnectés ou dégradés.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *Tableau de bord*.
+. Consultez les informations suivantes sur le tableau de bord :
++
+** *Sites* : consultez l'état de santé de vos sites. Un site peut avoir l'un des États suivants :
++
+*** *Healthy* : le vCenter est connecté et en cours d'exécution.
+*** *Déconnecté* : le vCenter est inaccessible ou présente des problèmes de connectivité.
+*** *Degraded* : le vCenter n'est pas accessible ou présente des problèmes de connectivité.
++
+Pour afficher les détails du site, sélectionnez *Afficher tout* pour un état ou *Afficher les sites* pour les voir tous.
+
+
+
+** *Plans de réplication* : permet d'afficher l'état de santé de vos plans. Un plan peut avoir l'un des États suivants :
++
+*** *Prêt*
+*** *Échec*
++
+Pour consulter les détails du plan de réplication, sélectionnez *Afficher tout* pour un état ou *Afficher les plans de réplication* pour les voir tous.
+
+
+
+** *Groupes de ressources* : permet d'afficher l'état de santé de vos groupes de ressources. Un groupe de ressources peut avoir l'un des États suivants :
++
+*** *MV protégées* : les VM font partie d'un groupe de ressources.
+*** *Machines virtuelles non protégées* : les machines virtuelles ne font pas partie d'un groupe de ressources.
++
+Pour consulter les détails du groupe de ressources, sélectionnez *Afficher tout* pour un état ou *Afficher les groupes de ressources* pour les voir tous.
+
+
+
+** Le nombre de basculements, de basculements de test et de migrations. Par exemple, si vous avez créé deux plans et migré vers les destinations, le nombre de migrations apparaît comme « 2 ».
+
+
+. Vérifiez toutes les opérations dans le volet activité. Pour afficher toutes les opérations sur le moniteur des tâches, sélectionnez *Afficher tous les travaux*.
+

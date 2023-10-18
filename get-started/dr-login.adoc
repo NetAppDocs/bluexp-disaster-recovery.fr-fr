@@ -33,10 +33,10 @@ image:draas-landing.png["Copie d'écran de la page d'accueil pour la reprise d'a
 Sinon, le tableau de bord de reprise d'activité BlueXP s'affiche.
 
 +
-** Si vous ne possédez pas de connecteur BlueXP ou si ce n'est pas le cas de cette version bêta, vous devrez peut-être contacter le support NetApp ou suivre les messages pour vous inscrire à cette version bêta.
-** Si vous utilisez BlueXP depuis peu et que vous n'avez utilisé aucun connecteur, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire. Envoyez le formulaire. NetApp vous contactera au sujet de votre demande de version bêta.
+** Si vous ne disposez pas d'un connecteur BlueXP ou que ce n'est pas le cas pour cette présentation, vous devrez peut-être contacter le support NetApp ou suivre les messages pour vous inscrire à cette présentation.
+** Si vous utilisez BlueXP depuis peu et que vous n'avez utilisé aucun connecteur, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire. Envoyez le formulaire. NetApp vous contactera au sujet de votre demande de préversion.
 ** Si vous utilisez BlueXP avec un connecteur existant, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire.
-** Si vous participez déjà à la version bêta, lorsque vous sélectionnez « Disaster Recovery », vous pouvez continuer avec le service.
+** Si vous participez déjà à l'aperçu, lorsque vous sélectionnez « récupération après sinistre », vous pouvez continuer le service.
 
 
 

@@ -12,24 +12,10 @@ summary: 'Pour configurer la reprise d"activité BlueXP, effectuez quelques éta
 
 
 [role="lead"]
-Pour configurer la reprise d'activité BlueXP, effectuez quelques étapes.
-
-* Révision link:../get-started/dr-prerequisites.html["prérequis"] pour vous assurer que votre environnement est prêt.
-* Dans AWS :
-+
-** Déploiement et configuration de VMware Cloud sur AWS
-** Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP.
-** Utiliser un compte VMware et provisionner le SDDC (Software-Defined Data Center) Assurez-vous que le SDDC est connecté à FSX for ONTAP.
+Pour utiliser la reprise d'activité BlueXP, effectuez quelques étapes de configuration dans AWS et dans BlueXP.
 
 
-* Dans BlueXP :
-+
-** Déploiement et configuration de SnapMirror vers FSX pour ONTAP
-** Ajoutez l'environnement de travail du stockage ONTAP sur site à BlueXP. Il s'agit du cluster ONTAP source.
-** Ajoutez un compte BlueXP, FSxN à l'environnement de travail et ajoutez des identifiants AWS pour FSX pour ONTAP.
-
-
-
+TIP: Révision link:../get-started/dr-prerequisites.html["prérequis"] pour vous assurer que votre environnement est prêt.
 
 
 
@@ -37,8 +23,9 @@ Pour configurer la reprise d'activité BlueXP, effectuez quelques étapes.
 
 Dans AWS, vous devez effectuer les étapes suivantes :
 
-* Déploiement de VMware Cloud
-* Configuration d'Amazon FSX pour ONTAP
+* Déploiement et configuration de VMware Cloud sur AWS
+* Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP.
+* Utiliser un compte VMware et provisionner le SDDC (Software-Defined Data Center) Assurez-vous que le SDDC est connecté à FSX for ONTAP.
 
 
 
@@ -61,13 +48,21 @@ Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un sto
 
 L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 
+* Créez un connecteur dans BlueXP.
+* Déploiement et configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP
+* Ajoutez l'environnement de travail du stockage ONTAP sur site à BlueXP. Il s'agit du cluster ONTAP source.
+* Ajoutez un compte BlueXP, FSxN à l'environnement de travail et ajoutez des identifiants AWS pour FSX pour ONTAP.
+
+
 
 
 === Créez un connecteur dans BlueXP
 
-Vous devez vous inscrire à la version bêta ou contacter votre ingénieur commercial NetApp pour essayer ce service. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
+Vous devez vous inscrire au programme de présentation ou contacter votre ingénieur commercial NetApp pour essayer ce service. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
 
 Pour créer un connecteur dans BlueXP avant d'utiliser le service, reportez-vous à la documentation BlueXP qui décrit https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["comment créer un connecteur"^].
+
+Utilisez le connecteur sur site BlueXP ou le connecteur BlueXP AWS Connector, qui peut accéder au vCenter sur site source et au vCenter sur site de destination.
 
 
 

@@ -21,7 +21,7 @@ Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte appro
 +
 Accédez à la page du tableau de bord de reprise d'activité BlueXP. Lorsque vous commencez par utiliser le service, vous devez ajouter des informations vCenter. Plus tard, le tableau de bord affiche les données relatives à vos sites et à vos plans de réplication.
 
-. Sélectionnez *découvrir les serveurs vCenter* pour entrer des informations sur le site vCenter source.
+. *Source* : sélectionnez *découvrir les serveurs vCenter* pour entrer des informations sur le site vCenter source.
 +
 
 TIP: Si certains sites vCenter existent déjà et que vous souhaitez en ajouter d'autres, sélectionnez *sites* dans le menu supérieur, puis *Ajouter*.
@@ -29,20 +29,30 @@ TIP: Si certains sites vCenter existent déjà et que vous souhaitez en ajouter 
 +
 image:vcenter-add.png["Capture d'écran Ajouter un serveur vCenter "]
 
-. Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.
-. Pour accepter les certificats auto-signés pour le vCenter source, cochez la case.
++
+.. Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.
+.. Pour accepter les certificats auto-signés pour le vCenter source, cochez la case.
 +
 
 NOTE: Les certificats auto-signés ne sont pas aussi sécurisés que les autres certificats. Si votre serveur vCenter est configuré avec des certificats d'autorité de certification (CA) *NON*, cochez cette case ; sinon, la connexion au serveur vCenter ne fonctionnera pas.
 
-. Sélectionnez *Ajouter*.
+.. Sélectionnez *Ajouter*.
 +
 Vous allez ensuite ajouter un vCenter cible.
 
-. Choisissez le site cible et l'emplacement. Si la cible est Cloud, sélectionnez *AWS*.
-. Sélectionnez *Ajouter*.
+
+
+. *Cible* :
++
+.. Choisissez le site cible et l'emplacement. Si la cible est Cloud, sélectionnez *AWS*.
+.. Sélectionnez *Ajouter*.
 +
 Les vCenters source et cible apparaissent dans la liste des sites.
+
+
+
++
+image:sites-list.png["Capture d'écran de la page sites"]
 
 . Pour voir la progression de l'opération, dans le menu supérieur, sélectionnez *surveillance des tâches*.
 

@@ -4,12 +4,17 @@ title: Utilisez la reprise d'activité BlueXP
 entries:
 - title: Utilisez la présentation de la reprise d'activité BlueXP
   url: "/use/use-overview.html"
+- title: Consultez l'état de vos plans de reprise sur incident dans le tableau de
+    bord
+  url: "/use/dashboard-view.html"
 - title: Ajoutez des sites vCenter
   url: "/use/sites-add.html"
-- title: Création d'un plan de reprise d'activité
+- title: Créer un plan de réplication
   url: "/use/drplan-create.html"
 - title: Répliquer sur un autre site
   url: "/use/replicate.html"
+- title: Migrer vers un autre site
+  url: "/use/migrate.html"
 - title: Basculez vers un site distant
   url: "/use/failover.html"
 - title: Rétablir les applications sur le site source d'origine

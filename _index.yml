@@ -2,10 +2,10 @@
 indexpage:
   lead: La reprise d'activité dans le cloud est un moyen résilient et économique de
     protéger les workloads contre les pannes sur site et les corruptions de données
-    (par exemple, les ransomwares). Grâce à la reprise d'activité BlueXP pour VMware
-    bêta, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage
-    ONTAP vers un data Center Software-defined VMware dans un cloud public en tant
-    que site de reprise d'activité à l'aide du stockage cloud NetApp.
+    (par exemple, les ransomwares). Grâce à la reprise d'activité BlueXP pour la préversion
+    de VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage
+    ONTAP vers un data Center Software-defined VMware dans un cloud public ou vers
+    un autre site sur site en tant que site de reprise d'activité.
   tiles:
   - title: Commencez
     links:
@@ -29,6 +29,8 @@ indexpage:
       url: "/use/drplan-create.html"
     - title: Répliquer des applications sur un autre site
       url: "/use/replicate.html"
+    - title: Migrer des applications vers un autre site
+      url: "/use/migrate.html"
     - title: Basculez les applications vers un site distant
       url: "/use/failover.html"
     - title: Rétablir les applications sur le site source d'origine
@@ -44,3 +46,5 @@ indexpage:
       url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
     - title: Webinaires sur le cloud
       url: https://bluexp.netapp.com/events
+    - title: Blog sur la reprise d'activité BlueXP
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066

@@ -8,9 +8,9 @@ entries:
   url: "/get-started/dr-prerequisites.html"
 - title: Démarrage rapide
   url: "/get-started/dr-quick-start.html"
-- title: Configurez la reprise d'activité BlueXP
-  url: "/get-started/dr-setup.html"
 - title: Accédez à la reprise d'activité BlueXP
   url: "/get-started/dr-login.html"
+- title: Configurez la reprise d'activité BlueXP
+  url: "/get-started/dr-setup.html"
 - title: FAQ
   url: "/get-started/dr-faq.html"

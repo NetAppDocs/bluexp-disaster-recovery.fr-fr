@@ -25,9 +25,9 @@ Dans ce workflow, BlueXP Disaster Recovery réplique (resyncs) toutes les modifi
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
 . Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
-. Sélectionnez le plan de reprise d'activité.
+. Sélectionnez le plan de réplication.
 . Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  Et sélectionnez *Retour arrière*.
-. Entrez le nom du plan de reprise d'activité pour confirmer et démarrer le retour arrière.
+. Entrez le nom du plan de réplication pour confirmer et démarrer le retour arrière.
 . Choisissez le snapshot du datastore à partir duquel effectuer la restauration.  La valeur par défaut est la dernière.
 . Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.
 

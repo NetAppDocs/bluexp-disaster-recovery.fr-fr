@@ -12,7 +12,7 @@ summary: 'NetApp BlueXP est un service de reprise après incident basé dans le 
 
 
 [role="lead"]
-Une fois que vous avez ajouté des sites vCenter, vous êtes prêt à créer un plan de réplication ou de reprise d'activité. Sélectionnez les vCenters source et cible, choisissez les groupes de ressources et groupez la manière dont les applications doivent être restaurées et sous tension. Par exemple, vous pouvez regrouper des machines virtuelles associées à une application ou des applications possédant des niveaux similaires.
+Une fois que vous avez ajouté des sites vCenter, vous pouvez créer un plan de reprise après incident ou de réplication. Sélectionnez les vCenters source et de destination, choisissez les groupes de ressources et définissez le mode de restauration et de mise sous tension des applications. Par exemple, vous pouvez regrouper des machines virtuelles associées à une application ou des applications possédant des niveaux similaires.
 
 Ces plans sont parfois appelés _plans_.
 
@@ -20,16 +20,24 @@ Un assistant vous guide tout au long de la procédure suivante :
 
 * Sélectionnez serveurs vCenter
 * Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes
-* Mappez la façon dont les ressources de l'environnement source sont mappées sur la cible.
+* Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
 * Identifier la récurrence
 * Revoir le plan
+
+
+Lors de la création du plan de réplication, vous pouvez définir la relation SnapMirror entre les volumes source et cible dans l'une des configurations suivantes :
+
+* 1 à 1
+* 1 à plusieurs dans une architecture en éventail
+* Plusieurs à 1 dans un groupe de cohérence
+* De plusieurs à plusieurs
 
 
 
 
 == Sélectionnez serveurs vCenter
 
-Sélectionnez d'abord le vCenter source, puis le vCenter cible.
+Sélectionnez d'abord le vCenter source, puis le vCenter de destination.
 
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
@@ -80,36 +88,31 @@ Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici. D
 
 Dans l'étape mappage des ressources, spécifiez la façon dont les ressources de l'environnement source doivent être mappées sur la cible.
 
-* Sélectionnez le mappage réseau vers le segment approprié.
-+
-Les segments doivent déjà être provisionnés au sein de VMC. Sélectionnez donc le segment approprié pour mapper la machine virtuelle.
-
-* En fonction de la sélection de machines virtuelles, les mappages de datastores sont sélectionnés automatiquement.
-+
-
-NOTE: SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
-
-
-
 .Étapes
 . Dans la page mappage des ressources, cochez la case pour utiliser les mêmes mappages pour les opérations de basculement et de test.
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chaque ressource :
 +
-** Ressources de calcul
-** Réseaux virtuels
-** Ordinateurs virtuels
-** Datastore
-
-
-. Sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
+** *Ressources de calcul*
+** *Réseaux virtuels*
+** *Machines virtuelles* : sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.
 +
-image:dr-plan-create-mapping-vms.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
+
+NOTE: SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
+
++
+Sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle. Vous pouvez également sélectionner adresse IP, masque de sous-réseau, DNS et passerelle si vous souhaitez configurer les informations réseau relatives à une machine virtuelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
 
 +
 Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle. Vous pouvez également modifier l'ordre de démarrage de toutes les machines virtuelles sélectionnées dans les groupes de ressources.
 
 +
 Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade.
+
+** *Datastores* : en fonction de la sélection de machines virtuelles, les mappages de datastores sont automatiquement sélectionnés.
++
+Entrez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 2 heures, la restauration doit avoir des données qui n'ont pas plus de 2 heures à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 2 heures de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
+
+
 
 . Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*. Passez en revue chaque onglet comme précédemment, mais cette fois pour l'environnement de test.
 +
@@ -122,10 +125,12 @@ TIP: Vous pouvez tester ultérieurement l'intégralité du plan. Vous configurez
 
 == Identifier la récurrence
 
-Indiquez si vous souhaitez migrer des données (un déplacement unique) vers une autre cible ou les répliquer à la fréquence SnapMirror. Si vous souhaitez la répliquer, identifiez la fréquence à laquelle les données doivent être mises en miroir.
+Indiquez si vous souhaitez migrer des données (un déplacement unique) vers une autre cible ou les répliquer à la fréquence SnapMirror.
+
+Si vous souhaitez la répliquer, identifiez la fréquence à laquelle les données doivent être mises en miroir.
 
 
-NOTE: Dans cette version bêta, configurez la fréquence en dehors du service de reprise d'activité BlueXP.
+NOTE: Dans cette présentation, configurez la fréquence en dehors du service de reprise d'activité BlueXP.
 
 .Étapes
 . Dans la page récurrence, sélectionnez *migrer* ou *répliquer*.

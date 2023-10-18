@@ -14,24 +14,11 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 [role="lead"]
 Vous pouvez obtenir un aperçu rapide de toutes vos ressources de reprise après incident ou les examiner en détail :
 
-* Tableau de bord
 * Sites
 * Plans de réplication
+* Datastore
+* Ordinateurs virtuels
 * Groupes de ressources
-
-
-
-
-== Consultez le tableau de bord de reprise d'activité BlueXP
-
-Utilisez le tableau de bord pour obtenir une vue d'ensemble de toutes les ressources et activités de reprise d'activité BlueXP. Le volet activité affiche l'activité d'opération de travail à jour.
-
-.Étapes
-. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
-. Dans le menu supérieur, sélectionnez *Tableau de bord*.
-. Explorez tous les plans de reprise après incident, la conformité, les vCenters, les machines virtuelles et les groupes de ressources dans le tableau de bord.
-. Pour afficher la ressource, sélectionnez la flèche vers la droite.
-. Pour afficher tous les groupes de ressources, sélectionnez *Afficher les groupes de ressources*.
 
 
 
@@ -66,7 +53,8 @@ Vous pouvez désactiver, activer et supprimer des plans de réplication.
 ** Pour ajouter ou modifier les machines virtuelles, sélectionnez l'onglet *machine virtuelle* et sélectionnez l'icône *Modifier*.
 
 
-. Pour effectuer des actions avec le plan, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  En haut et sélectionnez l'une des options, telles que *Test failover*, *Fail over*, *Fail back*, *Disable*, *Enable*, ou *Supprimer*.
+. Revenez à la liste des plans en sélectionnant "plans de réplication" dans le fil d'Ariane en haut à gauche.
+. Pour effectuer des actions avec le plan, sélectionnez l'option *actions* dans la liste des plans de réplication image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite du plan et sélectionnez l'une des options, telles que *Modifier les horaires*, *basculement test*, *basculement sur échec*, *Retour arrière*, *Désactiver*, *Activer* ou *Supprimer*.
 
 
 
