@@ -27,16 +27,22 @@ La page de connexion NetApp BlueXP s'affiche.
 S'il s'agit de votre première connexion à ce service, la page d'accueil s'affiche.
 
 +
-image:draas-landing.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
+image:draas-landing2.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
 
 +
 Sinon, le tableau de bord de reprise d'activité BlueXP s'affiche.
 
 +
-** Si vous ne disposez pas d'un connecteur BlueXP ou que ce n'est pas le cas pour cette présentation, vous devrez peut-être contacter le support NetApp ou suivre les messages pour vous inscrire à cette présentation.
-** Si vous utilisez BlueXP depuis peu et que vous n'avez utilisé aucun connecteur, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire. Envoyez le formulaire. NetApp vous contactera au sujet de votre demande de préversion.
-** Si vous utilisez BlueXP avec un connecteur existant, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire.
-** Si vous participez déjà à l'aperçu, lorsque vous sélectionnez « récupération après sinistre », vous pouvez continuer le service.
+** Si vous ne disposez pas d'un connecteur BlueXP ou que ce n'est pas le cas pour ce service, vous devrez peut-être contacter le support NetApp ou suivre les messages pour vous inscrire à ce service.
++
+Pour ajouter un connecteur, voir https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les connecteurs"^].
 
+** Si vous avez recours à BlueXP et n'avez utilisé aucun connecteur, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire. Envoyez le formulaire. NetApp vous contactera au sujet de votre demande.
+** Si vous utilisez BlueXP avec un connecteur existant, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire.
+** Si vous utilisez déjà le service, vous pouvez continuer lorsque vous sélectionnez « récupération après sinistre ».
+
+
++
+image:dr-dashboard-preview.png["Tableau de bord de reprise d'activité BlueXP"]
 
 

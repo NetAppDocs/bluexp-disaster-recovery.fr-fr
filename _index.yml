@@ -1,5 +1,11 @@
 ---
 indexpage:
+  title: Documentation sur la reprise d'activité BlueXP
+  summary: Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos
+    workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined
+    VMware dans un cloud public en tant que site de reprise d'activité à l'aide du
+    stockage cloud NetApp.
+  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
   lead: La reprise d'activité dans le cloud est un moyen résilient et économique de
     protéger les workloads contre les pannes sur site et les corruptions de données
     (par exemple, les ransomwares). Grâce à la reprise d'activité BlueXP pour la préversion

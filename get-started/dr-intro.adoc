@@ -14,7 +14,7 @@ summary: 'La reprise d"activité dans le cloud est un moyen résilient et écono
 [role="lead"]
 La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Grâce à la reprise d'activité BlueXP pour la préversion de VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
 
-La préversion de la reprise d'activité BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. La préversion de la reprise d'activité BlueXP vous permet tout d'abord de protéger vos workloads VMware sur site basés sur NFS exécutant un stockage NetApp sur l'un des éléments suivants :
+La préversion de la reprise d'activité BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads VMware sur site basés sur NFS exécutant un stockage NetApp sur l'un des éléments suivants :
 
 * VMware Cloud (VMC) sur AWS avec Amazon FSX pour NetApp ONTAP ou
 * Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP
@@ -26,9 +26,9 @@ image:draas-onprem-to-cloud-onprem.png["Diagramme illustrant les composants de l
 
 
 
-== Avantages de l'utilisation de la reprise d'activité BlueXP pour la préversion VMware
+== Avantages de l'utilisation de la reprise d'activité BlueXP pour VMware
 
-La préversion de la reprise d'activité BlueXP offre les avantages suivants :
+La reprise d'activité BlueXP offre les avantages suivants :
 
 * Expérience utilisateur simplifiée pour la découverte et la restauration vCenter des applications avec plusieurs opérations de restauration à un point dans le temps 
 * Réduisez le coût total de possession tout en réduisant le coût des opérations et en créant et en adaptant des plans de reprise après incident avec des ressources minimales
@@ -55,17 +55,21 @@ NOTE: La configuration du serveur vSphere s'effectue en dehors de la reprise d'a
 
 == Le coût
 
-NetApp ne vous facture pas pour l'utilisation de la version préliminaire de la reprise d'activité BlueXP.
-
-Le service de reprise d'activité BlueXP, disponible en général, doit proposer un paiement à l'utilisation ou un plan d'abonnement annuel.
+NetApp ne vous facture pas pour l'utilisation de la version d'évaluation de la reprise d'activité de BlueXP.
 
 
 
-== Fonctionnement de la préversion de la reprise d'activité BlueXP
+== essai gratuit de 90 jours
 
-La préversion de la reprise d'activité BlueXP permet de restaurer des workloads répliqués depuis un site sur site vers Amazon FSX pour ONTAP ou vers un autre site sur site. Ce service automatise la restauration à partir du niveau SnapMirror, via l'enregistrement des machines virtuelles vers Virtual machine Cloud (VMC) et les mappages du réseau directement sur la plateforme de sécurité et de virtualisation du réseau VMware, NSX-T. Cette fonctionnalité est incluse dans tous les environnements Virtual machine Cloud.
+Essayez la reprise d'activité BlueXP avec un essai gratuit de 90 jours.
 
-La préversion de la reprise d'activité BlueXP s'appuie sur la technologie ONTAP SnapMirror qui offre une réplication ultra-efficace et préserve l'efficacité des copies Snapshot incrémentielles à l'infini de ONTAP. La réplication SnapMirror veille à ce que les copies Snapshot cohérentes au niveau des applications soient toujours synchronisées et que les données soient utilisables immédiatement après un basculement.
+
+
+== Fonctionnement de la reprise d'activité BlueXP
+
+La reprise d'activité BlueXP permet de restaurer des workloads répliqués depuis un site sur site vers Amazon FSX pour ONTAP ou un autre site sur site. Ce service automatise la restauration à partir du niveau SnapMirror, via l'enregistrement des machines virtuelles vers Virtual machine Cloud (VMC) et les mappages du réseau directement sur la plateforme de sécurité et de virtualisation du réseau VMware, NSX-T. Cette fonctionnalité est incluse dans tous les environnements Virtual machine Cloud.
+
+La reprise d'activité BlueXP s'appuie sur la technologie ONTAP SnapMirror qui offre une réplication ultra-efficace et préserve l'efficacité des copies Snapshot incrémentielles à l'infini de ONTAP. La réplication SnapMirror veille à ce que les copies Snapshot cohérentes au niveau des applications soient toujours synchronisées et que les données soient utilisables immédiatement après un basculement.
 
 image:dr-architecture-diagram-70.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
 

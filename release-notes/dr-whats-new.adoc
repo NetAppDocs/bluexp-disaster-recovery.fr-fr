@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
-keywords: disaster recovery faq, bluexp, disaster recovery frequently asked questions, vmware, vcenter 
-summary: BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter 
+summary: 'BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Avec la reprise d"activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans des clouds publics comme site de reprise d"activité à l"aide du stockage cloud NetApp.' 
 ---
 = Quoi de neuf
 :hardbreaks:
@@ -13,6 +13,54 @@ summary: BlueXP est un service de reprise après incident basé dans le cloud qu
 
 [role="lead"]
 Découvrez les nouveautés de la prévisualisation de la reprise d'activité BlueXP.
+
+
+
+== 1er février 2024
+
+Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :
+
+* *Amélioration du réseau* : avec cette version, vous pouvez désormais redimensionner les valeurs CPU et RAM de la machine virtuelle. Vous pouvez également sélectionner une adresse IP statique ou DHCP réseau pour la machine virtuelle.
++
+** DHCP : si vous choisissez cette option, vous fournissez les informations d'identification de la machine virtuelle.
+** IP statique : vous pouvez sélectionner les mêmes informations ou des informations différentes à partir de la machine virtuelle source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP, le masque de sous-réseau, le DNS et la passerelle.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+
+
+* *Les scripts personnalisés* peuvent maintenant être inclus comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Basculez vers un site distant"].
+
+* *Relation SnapMirror* : vous pouvez maintenant créer une relation SnapMirror tout en développant le plan de réplication. Auparavant, vous deviez créer la relation en dehors de la reprise d'activité BlueXP.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+* *Groupes de cohérence* : lorsque vous créez un plan de réplication, vous pouvez inclure des machines virtuelles provenant de différents volumes et de différents SVM. La reprise d'activité BlueXP crée une copie Snapshot de groupe de cohérence en incluant tous les volumes et en mettant à jour tous les sites secondaires.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+* *Option de délai de mise sous tension de la machine virtuelle* : lorsque vous créez un plan de réplication, vous pouvez ajouter des machines virtuelles à un groupe de ressources. Avec Resource Groups, vous pouvez définir un délai sur chaque machine virtuelle afin qu'elle se met sous tension en séquence différée.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+* *Copies Snapshot cohérentes au niveau des applications* : vous pouvez spécifier de créer des copies Snapshot cohérentes au niveau des applications. Le service arrête l'application, puis prend un Snapshot pour obtenir un état cohérent de l'application.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+
+
+
+
+== 11 janvier 2024
+
+Cette version de BlueXP Disaster Recovery comprend les mises à jour suivantes :
+
+* Cette version vous permet d'accéder plus rapidement aux informations d'autres pages du tableau de bord.
+
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Découvrez la reprise d'activité BlueXP"].
 
 
 

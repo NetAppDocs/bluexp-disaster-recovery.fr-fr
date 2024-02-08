@@ -75,3 +75,9 @@ L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 . Dans BlueXP, déployez SnapMirror dans FSX pour NetApp ONTAP.
 . Dans BlueXP, découvrez la solution FSX pour NetApp ONTAP provisionnée sur une instance AWS et répliquez les volumes de datastore spécifiés à partir d'un environnement sur site vers FSX pour NetApp ONTAP avec la fréquence adéquate et la conservation des copies Snapshot NetApp.
 
+
+
+
+=== Configuration des licences
+
+Avec la reprise d'activité BlueXP, vous pouvez vous inscrire pour un essai gratuit de 90 jours.

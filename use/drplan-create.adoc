@@ -54,7 +54,7 @@ image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan
 
 == Sélectionnez les applications à répliquer et attribuez des groupes de ressources
 
-L'étape suivante consiste à regrouper les machines virtuelles requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir un ordre de démarrage qui peut être exécuté lors de la restauration.
+L'étape suivante consiste à regrouper les machines virtuelles requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
 
 
 TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
@@ -94,23 +94,46 @@ Dans l'étape mappage des ressources, spécifiez la façon dont les ressources d
 +
 ** *Ressources de calcul*
 ** *Réseaux virtuels*
+
+
+. Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource :
++
 ** *Machines virtuelles* : sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.
 +
-
-NOTE: SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
-
-+
-Sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle. Vous pouvez également sélectionner adresse IP, masque de sous-réseau, DNS et passerelle si vous souhaitez configurer les informations réseau relatives à une machine virtuelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
+SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
 
 +
-Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle. Vous pouvez également modifier l'ordre de démarrage de toutes les machines virtuelles sélectionnées dans les groupes de ressources.
+*** *CPU et RAM de la machine virtuelle* : sous les détails des machines virtuelles, vous pouvez redimensionner les paramètres CPU et RAM de la machine virtuelle.
+*** *Délai d'ordre de démarrage* : vous pouvez également modifier l'ordre de démarrage de toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade.
+*** *DHCP ou IP statique* : lorsque vous mappez la mise en réseau entre les emplacements source et cible dans la section machines virtuelles du plan de réplication, BlueXP Disaster Recovery propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le sous-réseau, la passerelle et les serveurs DNS. En outre, entrez les informations d'identification des machines virtuelles.
++
+**** *DHCP* : si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
+**** *Static IP* : vous pouvez sélectionner les mêmes informations ou des informations différentes à partir de la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
++
+image:dr-plan-create-mapping-vms.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
 
 +
-Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade.
+Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
 
+
+
+
+
+** *Répliques cohérentes avec les applications* : Indiquez si vous souhaitez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis prend un Snapshot pour obtenir un état cohérent de l'application.
 ** *Datastores* : en fonction de la sélection de machines virtuelles, les mappages de datastores sont automatiquement sélectionnés.
 +
-Entrez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 2 heures, la restauration doit avoir des données qui n'ont pas plus de 2 heures à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 2 heures de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
+*** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 2 heures, la restauration doit avoir des données qui n'ont pas plus de 2 heures à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 2 heures de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
+*** *Relations SnapMirror* : si une relation SnapMirror est déjà établie sur un volume, vous pouvez sélectionner les datastores source et cible correspondants. Si vous sélectionnez un volume qui ne dispose pas de relation SnapMirror, vous pouvez en créer un dès maintenant en sélectionnant l'environnement de travail et son homologue SVM.
+
+
+** *Groupes de cohérence* : lorsque vous créez un plan de réplication, vous pouvez inclure des machines virtuelles provenant de différents volumes et de différents SVM. La reprise d'activité BlueXP crée un Snapshot de groupe de cohérence.
++
+*** Si vous spécifiez l'objectif de point de restauration (RPO), le service planifie une sauvegarde principale en fonction du RPO et met à jour les destinations secondaires.
+*** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute une Snapshot ONTAP standard et met à jour les destinations secondaires.
+*** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée une Snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
+*** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et une phase de validation Snapshot en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
+*** Pendant le basculement, vous pouvez sélectionner n'importe quel snapshot. Si vous sélectionnez le dernier snapshot, le service crée une sauvegarde à la demande, met à jour la destination et l'utilise pour le basculement.
+
 
 
 
