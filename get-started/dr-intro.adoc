@@ -4,7 +4,7 @@ permalink: get-started/dr-intro.html
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
 summary: 'La reprise d"activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d"activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans des clouds publics comme site de reprise d"activité à l"aide du stockage cloud NetApp.' 
 ---
-= Découvrez la reprise d'activité BlueXP pour une préversion de VMware
+= Découvrez la reprise d'activité BlueXP pour VMware
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,15 +12,15 @@ summary: 'La reprise d"activité dans le cloud est un moyen résilient et écono
 
 
 [role="lead"]
-La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Grâce à la reprise d'activité BlueXP pour la préversion de VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
+La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
 
-La préversion de la reprise d'activité BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads VMware sur site basés sur NFS exécutant un stockage NetApp sur l'un des éléments suivants :
+BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads VMware sur site basés sur NFS exécutant un stockage NetApp sur l'un des éléments suivants :
 
 * VMware Cloud (VMC) sur AWS avec Amazon FSX pour NetApp ONTAP ou
 * Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP
 
 
-La préversion de la reprise d'activité BlueXP utilise la technologie ONTAP SnapMirror pour le transport de réplication vers le site de reprise d'activité. Cela permet d'optimiser l'efficacité du stockage (compression et déduplication) sur les sites primaires et secondaires.
+La reprise d'activité BlueXP utilise la technologie ONTAP SnapMirror pour le transport de réplication vers le site de reprise d'activité. Cela permet d'optimiser l'efficacité du stockage (compression et déduplication) sur les sites primaires et secondaires.
 
 image:draas-onprem-to-cloud-onprem.png["Diagramme illustrant les composants de la reprise d'activité BlueXP pour VMware"]
 
@@ -38,9 +38,9 @@ La reprise d'activité BlueXP offre les avantages suivants :
 
 
 
-== Avantages de la reprise d'activité BlueXP pour la préversion de VMware
+== Les possibilités de la reprise d'activité BlueXP pour VMware
 
-La préversion de la reprise d'activité BlueXP vous permet d'exploiter pleinement plusieurs technologies NetApp pour atteindre les objectifs suivants :
+Grâce à la reprise d'activité BlueXP, vous exploitez pleinement plusieurs technologies NetApp pour atteindre ces objectifs :
 
 * Répliquez les applications VMware de votre site de production sur un site distant de reprise d'activité dans le cloud ou sur site à l'aide de la réplication SnapMirror.
 * Migrez les workloads VMware de votre site d'origine vers un autre site.
@@ -57,11 +57,34 @@ NOTE: La configuration du serveur vSphere s'effectue en dehors de la reprise d'a
 
 NetApp ne vous facture pas pour l'utilisation de la version d'évaluation de la reprise d'activité de BlueXP.
 
+La version complète du service de reprise d'activité BlueXP peut être utilisée avec une licence NetApp.
+
+
+
+== Licences
+
+Vous pouvez utiliser les types de licence suivants :
+
+* Inscrivez-vous pour bénéficier d'un essai gratuit de 90 jours.
+* BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
+
+
+Les licences de tous les services BlueXP sont gérées par le service de portefeuille digital BlueXP. Une fois que vous avez configuré votre modèle BYOL, une licence active s'affiche pour le service dans le portefeuille digital BlueXP.
+
+
+NOTE: Les frais de reprise d'activité BlueXP sont basés sur la capacité provisionnée des datastores sur le site source lorsque au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.
+
+Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].
+
 
 
 == essai gratuit de 90 jours
 
 Essayez la reprise d'activité BlueXP avec un essai gratuit de 90 jours.
+
+Pour continuer après l'essai de 90 jours, vous devez acheter une licence BYOL auprès de NetApp.
+
+Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à la fin de la période d'essai de 90 jours.
 
 
 

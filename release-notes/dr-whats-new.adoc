@@ -12,13 +12,34 @@ summary: 'BlueXP est un service de reprise après incident basé dans le cloud q
 
 
 [role="lead"]
-Découvrez les nouveautés de la prévisualisation de la reprise d'activité BlueXP.
+Découvrez les nouveautés de la reprise d'activité BlueXP.
+
+
+
+== 5 mars 2024
+
+Il s'agit de la version General Availability de BlueXP Disaster Recovery, qui comprend les mises à jour suivantes.
+
+* *Mises à jour des licences* : avec BlueXP Disaster Recovery, vous pouvez vous inscrire à un essai gratuit de 90 jours ou demander votre propre licence (BYOL), qui est un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP. Les frais de reprise d'activité BlueXP sont calculés en fonction de la capacité provisionnée des datastores.
++
+Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configuration des licences"].
+
++
+Pour plus d'informations sur la gestion des licences pour *tous* services BlueXP, reportez-vous à la section https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Gérez les licences de tous les services BlueXP"^].
+
+
+
+* *Modifier les plannings*: Avec cette version, vous pouvez maintenant configurer des calendriers pour tester les tests de conformité et de basculement afin de vous assurer qu'ils fonctionneront correctement si vous en avez besoin.
++
+Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créez le plan de réplication"].
+
+
 
 
 
 == 1er février 2024
 
-Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :
+Cette version de préversion de la reprise d'activité de BlueXP inclut les mises à jour suivantes :
 
 * *Amélioration du réseau* : avec cette version, vous pouvez désormais redimensionner les valeurs CPU et RAM de la machine virtuelle. Vous pouvez également sélectionner une adresse IP statique ou DHCP réseau pour la machine virtuelle.
 +
@@ -55,7 +76,7 @@ Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-dis
 
 == 11 janvier 2024
 
-Cette version de BlueXP Disaster Recovery comprend les mises à jour suivantes :
+Cette version préliminaire de la reprise d'activité de BlueXP inclut les mises à jour suivantes :
 
 * Cette version vous permet d'accéder plus rapidement aux informations d'autres pages du tableau de bord.
 

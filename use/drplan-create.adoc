@@ -16,6 +16,12 @@ Une fois que vous avez ajouté des sites vCenter, vous pouvez créer un plan de 
 
 Ces plans sont parfois appelés _plans_.
 
+Vous pouvez créer un plan de réplication et modifier des plannings pour la conformité et les tests.
+
+
+
+== Créez le plan
+
 Un assistant vous guide tout au long de la procédure suivante :
 
 * Sélectionnez serveurs vCenter
@@ -33,9 +39,12 @@ Lors de la création du plan de réplication, vous pouvez définir la relation S
 * De plusieurs à plusieurs
 
 
+.Avant de commencer
+Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
 
 
-== Sélectionnez serveurs vCenter
+
+=== Sélectionnez serveurs vCenter
 
 Sélectionnez d'abord le vCenter source, puis le vCenter de destination.
 
@@ -52,7 +61,7 @@ image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan
 
 
 
-== Sélectionnez les applications à répliquer et attribuez des groupes de ressources
+=== Sélectionnez les applications à répliquer et attribuez des groupes de ressources
 
 L'étape suivante consiste à regrouper les machines virtuelles requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
 
@@ -84,9 +93,12 @@ Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici. D
 
 
 
-== Mappez les ressources source à la cible
+=== Mappez les ressources source à la cible
 
 Dans l'étape mappage des ressources, spécifiez la façon dont les ressources de l'environnement source doivent être mappées sur la cible.
+
+.Avant de commencer
+Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
 
 .Étapes
 . Dans la page mappage des ressources, cochez la case pour utiliser les mêmes mappages pour les opérations de basculement et de test.
@@ -122,8 +134,12 @@ Cela peut s'avérer très utile lors de la restauration d'environnements volumin
 ** *Répliques cohérentes avec les applications* : Indiquez si vous souhaitez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis prend un Snapshot pour obtenir un état cohérent de l'application.
 ** *Datastores* : en fonction de la sélection de machines virtuelles, les mappages de datastores sont automatiquement sélectionnés.
 +
-*** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 2 heures, la restauration doit avoir des données qui n'ont pas plus de 2 heures à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 2 heures de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
+*** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 60 minutes, la restauration doit avoir des données qui n'ont pas plus de 60 minutes à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 60 minutes de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
 *** *Relations SnapMirror* : si une relation SnapMirror est déjà établie sur un volume, vous pouvez sélectionner les datastores source et cible correspondants. Si vous sélectionnez un volume qui ne dispose pas de relation SnapMirror, vous pouvez en créer un dès maintenant en sélectionnant l'environnement de travail et son homologue SVM.
++
+
+NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
+
 
 
 ** *Groupes de cohérence* : lorsque vous créez un plan de réplication, vous pouvez inclure des machines virtuelles provenant de différents volumes et de différents SVM. La reprise d'activité BlueXP crée un Snapshot de groupe de cohérence.
@@ -146,14 +162,11 @@ TIP: Vous pouvez tester ultérieurement l'intégralité du plan. Vous configurez
 
 
 
-== Identifier la récurrence
+=== Identifier la récurrence
 
 Indiquez si vous souhaitez migrer des données (un déplacement unique) vers une autre cible ou les répliquer à la fréquence SnapMirror.
 
 Si vous souhaitez la répliquer, identifiez la fréquence à laquelle les données doivent être mises en miroir.
-
-
-NOTE: Dans cette présentation, configurez la fréquence en dehors du service de reprise d'activité BlueXP.
 
 .Étapes
 . Dans la page récurrence, sélectionnez *migrer* ou *répliquer*.
@@ -170,7 +183,7 @@ image:dr-plan-create-recurrence.png["Capture d'écran montrant Ajouter un plan d
 
 
 
-== Confirmez le plan de réplication
+=== Confirmez le plan de réplication
 
 Enfin, prenez quelques instants pour confirmer le plan de réplication.
 
@@ -183,4 +196,43 @@ TIP: Vous pouvez par la suite désactiver ou supprimer le plan de réplication.
 +
 Le plan est ajouté à la liste des plans.
 
+
+
+
+
+== Modifiez les plannings pour tester la conformité et vous assurer que les tests de basculement fonctionnent
+
+Il peut être utile de définir des plannings pour tester les tests de conformité et de basculement afin de vous assurer qu'ils fonctionneront correctement si vous en avez besoin.
+
+* *Impact sur le temps de conformité* : lorsqu'un plan de réplication est créé, le service crée un programme de conformité par défaut. Le temps de conformité par défaut est de 30 minutes. Pour modifier cette heure, vous pouvez utiliser l'option modifier la planification dans le plan de réplication.
+* *Impact du basculement de test* : vous pouvez tester un processus de basculement à la demande ou selon un planning. Cela vous permet de tester le basculement des machines virtuelles vers une destination spécifiée dans un plan de réplication.
++
+Un basculement de test crée un volume FlexClone, monte le datastore et déplace la charge de travail sur ce datastore. Un basculement de test n'a _pas d'impact sur les charges de travail de production, la relation SnapMirror utilisée sur le site de test et les charges de travail protégées qui doivent continuer à fonctionner normalement.
+
+
+
+En fonction de la planification, le test de basculement s'exécute et s'assure que les charges de travail sont déplacées vers la destination spécifiée par le plan de réplication.
+
+.Étapes
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
++
+image:dr-plan-list.png["Capture d'écran affichant la liste des plans de réplication"]
+
+. Sélectionnez *actions* image:icon-horizontal-dots.png["Menu actions des points horizontaux"] Et sélectionnez *Modifier les horaires*.
+. Indiquez la fréquence en minutes à laquelle vous souhaitez que la reprise d'activité BlueXP vérifie la conformité des tests.
+. Pour vérifier que vos tests de basculement sont en bon état, cochez *Exécuter les basculements selon un planning mensuel*.
++
+.. Sélectionnez le jour du mois et l'heure d'exécution de ces tests.
+.. Saisissez la date au format aaaa-mm-jj lorsque vous souhaitez que le test commence.
++
+image:dr-plan-schedule-edit.png["Capture d'écran montrant où vous pouvez modifier les horaires"]
+
+
+
+. Pour nettoyer l'environnement de test une fois le test de basculement terminé, cochez *nettoyage automatique après basculement du test*.
++
+
+NOTE: Ce processus annule l'enregistrement des machines virtuelles temporaires à partir de l'emplacement de test, supprime le volume FlexClone créé et démonte les datastores temporaires.
+
+. Sélectionnez *Enregistrer*.
 

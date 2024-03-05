@@ -17,5 +17,10 @@ Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une ques
 *Quelle est l'URL de reprise d'activité BlueXP ?*
 Pour l'URL, dans un navigateur, entrez : https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/"^] Pour accéder à la console BlueXP.
 
+*Avez-vous besoin d'une licence pour utiliser la reprise d'activité BlueXP ?*
+Une licence de reprise d'activité BlueXP est requise pour un accès complet. Cependant, vous pouvez essayer gratuitement.
+
+Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].
+
 *Comment accédez-vous à la reprise d'activité BlueXP ?*
 La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.

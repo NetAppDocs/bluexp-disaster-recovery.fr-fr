@@ -12,5 +12,7 @@ entries:
   url: "/get-started/dr-login.html"
 - title: Configurez la reprise d'activité BlueXP
   url: "/get-started/dr-setup.html"
+- title: Configuration des licences
+  url: "/get-started/dr-licensing.html"
 - title: FAQ
   url: "/get-started/dr-faq.html"

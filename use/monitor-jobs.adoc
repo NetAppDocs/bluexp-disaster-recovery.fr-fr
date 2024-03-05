@@ -21,3 +21,33 @@ Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer
 . Pour afficher les détails d'un travail particulier, sélectionnez cette ligne.
 . Pour actualiser les informations, sélectionnez *Actualiser*.
 
+
+
+
+== Annuler un travail
+
+Si un travail est en cours et que vous ne souhaitez pas qu'il continue, vous pouvez l'annuler. Vous pouvez annuler un travail s'il est bloqué dans le même état et que vous souhaitez libérer l'opération suivante dans la file d'attente. Vous pouvez annuler un travail avant qu'il ne soit trop tard.
+
+Pour annuler un travail, utilisez swagger.
+
+.Avant de commencer
+Pour annuler une tâche, vous devez disposer de l'ID de compte.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur, sélectionnez *surveillance des travaux*.
+. Sur la page moniteur de travaux, notez l'ID du travail que vous souhaitez annuler.
+. Accédez à l'URL du gestionnaire de reprise d'activité BlueXP : https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_["Andaineur"^].
++
+"https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_"[]
+
++
+image:dr-swagger-job-cancel.png["Page swagger montrant comment annuler un travail"]
+
++
+Pour plus d'informations sur le swagger, voir https://swagger.io/docs/["Documents Swagger"^].
+
+. Auprès de swagger, obtenez le jeton de sécurité, également appelé _bearer token_, à partir de l'option Authorise.
+. Entrez l'ID de compte et l'ID de tâche.
+. Sélectionnez *essayez-le*.
+

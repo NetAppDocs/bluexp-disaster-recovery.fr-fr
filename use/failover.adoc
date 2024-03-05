@@ -18,6 +18,8 @@ Lors du basculement, la copie Snapshot SnapMirror la plus récente est utilisée
 
 Cette procédure rompt la relation de réplication, met les VM sources de vCenter hors ligne et active la lecture/écriture sur le site cible.
 
+Vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
+
 Avant de commencer le basculement, vous pouvez tester le processus, afin de garantir son succès au moment où vous en avez besoin. Le test ne place pas les machines virtuelles hors ligne.
 
 
@@ -31,6 +33,8 @@ Lors d'un test de basculement, les machines virtuelles sont créées temporairem
 Ce processus ne consomme pas de capacité physique supplémentaire dans le stockage ONTAP sur site ou FSX pour le stockage NetApp ONTAP dans AWS. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.
 
 Lorsque vous avez terminé le test, vous devez réinitialiser les machines virtuelles avec l'option *Clean up test*. Bien que cela soit recommandé, il n'est pas nécessaire.
+
+Un basculement de test n'a _pas d'impact sur les charges de travail de production, la relation SnapMirror utilisée sur le site de test et les charges de travail protégées qui doivent continuer à fonctionner normalement.
 
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.

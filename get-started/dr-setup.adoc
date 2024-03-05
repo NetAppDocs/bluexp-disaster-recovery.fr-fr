@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-setup.html 
-keywords: bluexp, disaster recovery, 
+keywords: bluexp, disaster recovery, aws, amazon web services 
 summary: 'Pour configurer la reprise d"activité BlueXP, effectuez quelques étapes.' 
 ---
 = Configurez la reprise d'activité BlueXP
@@ -12,14 +12,14 @@ summary: 'Pour configurer la reprise d"activité BlueXP, effectuez quelques éta
 
 
 [role="lead"]
-Pour utiliser la reprise d'activité BlueXP, effectuez quelques étapes de configuration dans AWS et dans BlueXP.
+Pour utiliser la reprise d'activité BlueXP, effectuez quelques étapes de configuration dans Amazon Web Services (AWS) et BlueXP.
 
 
 TIP: Révision link:../get-started/dr-prerequisites.html["prérequis"] pour vous assurer que votre environnement est prêt.
 
 
 
-== Configuration dans AWS
+== Configuration d'AWS
 
 Dans AWS, vous devez effectuer les étapes suivantes :
 
@@ -44,7 +44,7 @@ Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un sto
 
 
 
-== Configuration dans BlueXP
+== Configurez la reprise d'activité BlueXP
 
 L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 
@@ -58,7 +58,7 @@ L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 
 === Créez un connecteur dans BlueXP
 
-Vous devez vous inscrire au programme de présentation ou contacter votre ingénieur commercial NetApp pour essayer ce service. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
+Pour tester ce service, contactez votre ingénieur commercial NetApp. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
 
 Pour créer un connecteur dans BlueXP avant d'utiliser le service, reportez-vous à la documentation BlueXP qui décrit https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["comment créer un connecteur"^].
 
@@ -81,3 +81,7 @@ L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 === Configuration des licences
 
 Avec la reprise d'activité BlueXP, vous pouvez vous inscrire pour un essai gratuit de 90 jours.
+
+Vous pouvez apporter votre propre licence (BYOL), qui est un fichier de licence NetApp (NLF).
+
+Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].

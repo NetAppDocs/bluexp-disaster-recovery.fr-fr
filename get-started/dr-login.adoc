@@ -43,6 +43,6 @@ Pour ajouter un connecteur, voir https://docs.netapp.com/us-en/bluexp-setup-admi
 
 
 +
-image:dr-dashboard-preview.png["Tableau de bord de reprise d'activité BlueXP"]
+image:dr-dashboard.png["Tableau de bord de reprise d'activité BlueXP"]
 
 

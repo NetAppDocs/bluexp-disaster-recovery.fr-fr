@@ -29,7 +29,7 @@ Vous pouvez modifier le nom du site vCenter et le type de site (sur site ou AWS)
 
 .Étapes
 . Dans le menu supérieur, sélectionnez *sites*.
-. Sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite du nom du vCenter et sélectionnez *Modifier*.
+. Sélectionnez l'option *actions* image:../use/icon-vertical-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite du nom du vCenter et sélectionnez *Modifier*.
 . Modifiez le nom et l'emplacement du site vCenter.
 
 
@@ -45,6 +45,9 @@ Vous pouvez désactiver, activer et supprimer des plans de réplication.
 
 .Étapes
 . Dans le menu supérieur, sélectionnez *plans de réplication*.
++
+image:../use/dr-plan-list2.png["Liste des plans de réplication"]
+
 . Pour afficher les détails du plan, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *Afficher les détails du plan*.
 . Effectuez l'une des opérations suivantes :
 +

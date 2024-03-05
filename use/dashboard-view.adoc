@@ -17,13 +17,16 @@ Le tableau de bord de reprise d'activité BlueXP vous permet de déterminer l'é
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
 . Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *Tableau de bord*.
++
+image:dr-dashboard.png["Tableau de bord de reprise d'activité BlueXP"]
+
 . Consultez les informations suivantes sur le tableau de bord :
 +
 ** *Sites* : consultez l'état de santé de vos sites. Un site peut avoir l'un des États suivants :
 +
-*** *Healthy* : le vCenter est connecté et en cours d'exécution.
-*** *Déconnecté* : le vCenter est inaccessible ou présente des problèmes de connectivité.
-*** *Degraded* : le vCenter n'est pas accessible ou présente des problèmes de connectivité.
+*** *En cours d'exécution* : le vCenter est connecté, sain et en cours d'exécution.
+*** *Down* : le vCenter n'est pas accessible ou présente des problèmes de connectivité.
+*** *Problème* : le vCenter est inaccessible ou présente des problèmes de connectivité.
 +
 Pour afficher les détails du site, sélectionnez *Afficher tout* pour un état ou *Afficher les sites* pour les voir tous.
 

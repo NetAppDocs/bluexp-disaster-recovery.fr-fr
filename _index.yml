@@ -8,10 +8,10 @@ indexpage:
   keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
   lead: La reprise d'activité dans le cloud est un moyen résilient et économique de
     protéger les workloads contre les pannes sur site et les corruptions de données
-    (par exemple, les ransomwares). Grâce à la reprise d'activité BlueXP pour la préversion
-    de VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage
-    ONTAP vers un data Center Software-defined VMware dans un cloud public ou vers
-    un autre site sur site en tant que site de reprise d'activité.
+    (par exemple, les ransomwares). Avec la reprise d'activité BlueXP pour VMware,
+    vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP
+    vers un data Center Software-defined VMware dans un cloud public ou vers un autre
+    site sur site en tant que site de reprise d'activité.
   tiles:
   - title: Commencez
     links:
