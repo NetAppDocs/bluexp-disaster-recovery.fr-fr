@@ -98,7 +98,7 @@ image:dr-architecture-diagram-70.png["Schéma illustrant l'architecture de l'inf
 
 Le schéma suivant présente l'architecture des plans de reprise d'activité sur site à sur site.
 
-image:dr-architecture-diagram-onprem-to-onprem.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
+image:dr-architecture-diagram-onprem-to-onprem2.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
 
 En cas d'incident, ce service vous aide à restaurer des machines virtuelles dans l'autre environnement VMware ou VMC sur site en rompant les relations SnapMirror et en rendant le site de destination actif.
 

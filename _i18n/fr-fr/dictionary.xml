@@ -562,7 +562,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="dcc9d99320099ed731ca2f05b3e501a7" category="list-text">Migrez les workloads VMware de votre site d'origine vers un autre site.</block>
   <block id="2aefc74ac286c583100431f62049590d" category="list-text">En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.</block>
   <block id="a6a42e8e3070730d19bfd86d6a1d66fe" category="paragraph">Le schéma suivant présente l'architecture des plans de reprise d'activité sur site à sur site.</block>
-  <block id="11ee533cc4ce7135332d0b64a9e82e51" category="paragraph"><block ref="11ee533cc4ce7135332d0b64a9e82e51" category="inline-image-macro-rx" type="image"></block></block>
   <block id="20099229ad21726312a6ff50740b0b57" category="paragraph">En cas d'incident, ce service vous aide à restaurer des machines virtuelles dans l'autre environnement VMware ou VMC sur site en rompant les relations SnapMirror et en rendant le site de destination actif.</block>
   <block id="a675a2edc95f7fca650a735944e38f96" category="paragraph">Pour utiliser la reprise d'activité BlueXP, vous devez vous assurer que votre environnement répond aux exigences suivantes :</block>
   <block id="96ed64c294e585324853f8f980f9d78e" category="sidebar">Migrer des applications vers un autre site</block>
@@ -797,4 +796,5 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="9fc7e8cb24850b1f0912cebc8da32620" category="list-text">Accédez au portefeuille digital BlueXP.</block>
   <block id="7b6dca09bf0ef612bac047a313d66cbf" category="list-text">Sélectionnez l'onglet *licences de services de données*, sélectionnez l'icône *actions ...* pour le numéro de série de service que vous mettez à jour, puis sélectionnez *mettre à jour la licence*.</block>
   <block id="be976ba4e18c887ae57e14f6ebfbbab3" category="sidebar">La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données (par exemple, les ransomwares). Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public ou vers un autre site sur site en tant que site de reprise d'activité.</block>
+  <block id="67d87f62e2f6294a12829113edfa11b8" category="paragraph"><block ref="67d87f62e2f6294a12829113edfa11b8" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
