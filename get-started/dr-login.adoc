@@ -24,22 +24,18 @@ La page de connexion NetApp BlueXP s'affiche.
 . Connectez-vous à BlueXP.
 . Dans le menu de navigation de gauche de BlueXP, sélectionnez *protection* > *Disaster Recovery*.
 +
-S'il s'agit de votre première connexion à ce service, la page d'accueil s'affiche.
+Si vous vous connectez pour la première fois à ce service, la page d'accueil s'affiche et vous pouvez vous inscrire pour un essai gratuit.
 
 +
-image:draas-landing2.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
+image:draas-landing3-free-trial.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
 
 +
 Sinon, le tableau de bord de reprise d'activité BlueXP s'affiche.
 
 +
-** Si vous ne disposez pas d'un connecteur BlueXP ou que ce n'est pas le cas pour ce service, vous devrez peut-être contacter le support NetApp ou suivre les messages pour vous inscrire à ce service.
-+
-Pour ajouter un connecteur, voir https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les connecteurs"^].
-
-** Si vous avez recours à BlueXP et n'avez utilisé aucun connecteur, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire. Envoyez le formulaire. NetApp vous contactera au sujet de votre demande.
+** Si vous n'avez pas encore ajouté de connecteur BlueXP, vous devez ajouter un connecteur. Pour ajouter un connecteur, voir https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les connecteurs"^].
 ** Si vous utilisez BlueXP avec un connecteur existant, lorsque vous sélectionnez « reprise après incident », un message s'affiche pour vous inscrire.
-** Si vous utilisez déjà le service, vous pouvez continuer lorsque vous sélectionnez « récupération après sinistre ».
+** Si vous utilisez déjà le service, le tableau de bord s'affiche lorsque vous sélectionnez « récupération après sinistre ».
 
 
 +

@@ -12,18 +12,19 @@ summary: 'Avec la reprise d"activité BlueXP, vous pouvez utiliser différents p
 
 
 [role="lead"]
-Avec BlueXP Disaster Recovery, vous pouvez utiliser le service dans un essai gratuit ou utiliser votre propre licence.
+Avec la reprise d'activité BlueXP, vous pouvez utiliser différents plans de licence, notamment un essai gratuit, un abonnement avec paiement à l'utilisation ou l'utilisation de votre propre licence.
 
 Vous pouvez utiliser les types de licence suivants :
 
 * Inscrivez-vous pour bénéficier d'un essai gratuit de 90 jours.
+* Achetez un abonnement de paiement basé sur l'utilisation (PAYGO) pour Amazon Web Services (AWS) Marketplace.
 * BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
 
 
 
 NOTE: Les frais de reprise d'activité BlueXP sont basés sur la capacité provisionnée des datastores sur le site source lorsque au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.
 
-Une fois que vous avez configuré votre BYOL, vous pouvez voir la licence dans l'onglet *Data Service Licenses* du portefeuille digital BlueXP.
+Une fois que vous avez configuré votre BYOL, vous pouvez voir la licence dans l'onglet portefeuille digital BlueXP *licences du service de données*.
 
 Après la fin de la période d'essai gratuite ou l'expiration de la licence, vous pouvez toujours effectuer les opérations suivantes dans le service :
 
@@ -60,24 +61,68 @@ image:draas-landing2.png["Copie d'écran de la page d'accueil pour la reprise d'
 Pour ajouter un connecteur, voir https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les connecteurs"^].
 
 . Une fois que vous avez configuré un connecteur, sur la page d'accueil de la reprise d'activité BlueXP, le bouton pour ajouter des modifications de connecteur à un bouton et lancer un essai gratuit. Sélectionnez *Démarrer essai gratuit*.
-. Consultez les informations sur l'essai gratuit et sélectionnez *allons-y*.
+. Commencez par ajouter des vCenters.
++
+Pour plus de détails, voir link:../use/sites-add.html["Ajoutez des sites vCenter"].
 
 
 
 
-=== Une fois la version d'évaluation terminée, achetez une licence BYOL par l'intermédiaire de NetApp
+
+== Une fois la version d'évaluation terminée, Abonnez-vous à AWS Marketplace
+
+Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence auprès de NetApp ou vous abonner via AWS Marketplace. Dans cette procédure, vous découvrirez comment vous abonner directement à AWS Marketplace.
+
+.Étapes
+. Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.
++
+image:draas-license-subscribe2.png["Page modes de paiement de reprise d'activité BlueXP"]
+
+. Sélectionnez *s'abonner à AWS Marketplace*.
+. Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*.
+. Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.
+. Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.
++
+Pour afficher les détails de l'abonnement dans le portefeuille digital BlueXP, sélectionnez *Afficher les détails de l'abonnement* et affichez l'abonnement actif sur la page *abonnements*.
+
++
+image:digital-wallet-subscriptions2.png["Onglet abonnements au portefeuille digital BlueXP"]
+
+
+
+
+
+== Une fois la version d'évaluation terminée, achetez une licence BYOL par l'intermédiaire de NetApp
 
 Une fois la version d'évaluation terminée, vous pouvez acheter une licence auprès de votre représentant commercial NetApp
 
-.Étapes
-. Contactez votre représentant commercial NetApp pour acheter une licence.
+Si vous apportez votre propre licence (BYOL), la configuration inclut l'achat de la licence, l'obtention du fichier de licence NetApp (NLF) et l'ajout de la licence au portefeuille digital BlueXP.
+
+*Activer la licence*
+Après avoir acheté votre licence BlueXP de reprise après incident auprès de votre ingénieur commercial NetApp, vous activez la licence en saisissant le numéro de série de BlueXP Disaster Recovery et les informations de compte du site de support NetApp (NSS).
+
+Vous devez disposer des informations suivantes avant de commencer :
+
+* Numéro de série de la reprise d'activité BlueXP
++
+Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.
+
+* ID de compte BlueXP
++
+Vous pouvez trouver votre ID de compte BlueXP en sélectionnant la liste déroulante *compte* en haut de BlueXP, puis en sélectionnant *gérer le compte* en regard de votre compte. Votre ID de compte se trouve dans l'onglet vue d'ensemble.
+
+
+
+*Ajouter la licence au portefeuille digital BlueXP*
+Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte BlueXP, vous devez ajouter la licence au portefeuille digital BlueXP.
+
 . Une fois la licence obtenue, revenez à la reprise d'activité BlueXP. Sélectionnez l'option *Afficher les modes de paiement* dans le coin supérieur droit. Ou, dans le message indiquant que l'essai gratuit expire, sélectionnez *s'abonner ou acheter une licence*.
 +
-image:draas-license-subscribe-NetApp-option2.png["Page d'abonnement ou d'achat de licence de reprise d'activité BlueXP"]
+image:draas-license-subscribe2.png["Page des nœuds de paiement de reprise d'activité BlueXP"]
 
 . Sélectionnez *Ajouter une licence à BlueXP*. Vous serez dirigé vers le portefeuille digital BlueXP.
 +
-image:digital-wallet-data-services-licenses-tab2.png["Portefeuille digital BlueXP onglet licences des services de données"]
+image:digital-wallet-data-services-licenses-tab3.png["Portefeuille digital BlueXP onglet licences des services de données"]
 
 . Dans le portefeuille digital BlueXP, dans l'onglet *licences des services de données*, sélectionnez *Ajouter une licence*.
 . Sur la page Ajouter une licence, entrez le numéro de série et les informations de compte sur le site de support NetApp.
@@ -87,9 +132,37 @@ image:byol-digital-wallet-license-add2.png["Page Ajouter une licence du portefeu
 . Sélectionnez *Ajouter licence*.
 
 
+.Résultat
+Le portefeuille digital BlueXP affiche désormais la reprise d'activité avec une licence.
+
+image:byol-digital-wallet-licenses-added.png["Portefeuille digital NetApp BlueXP"]
 
 
-=== Terminez l'essai gratuit
+
+== Mettez à jour votre licence BlueXP lorsqu'elle expire
+
+Si votre période de licence approche la date d'expiration ou si votre capacité sous licence atteint la limite, vous serez informé dans l'interface utilisateur de reprise d'activité BlueXP. Vous pouvez mettre à jour votre licence de reprise d'activité BlueXP avant son expiration afin que vous puissiez accéder à vos données numérisées sans interruption.
+
+
+TIP: Ce message apparaît également dans le portefeuille digital BlueXP et dans https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notifications"].
+
+.Étapes
+. Sélectionnez l'icône de chat dans le coin inférieur droit de BlueXP pour demander une extension de votre période ou de la capacité supplémentaire de votre licence pour le numéro de série spécifique. Vous pouvez également envoyer un e-mail pour demander une mise à jour de votre licence.
++
+Une fois que vous avez payé la licence et qu'elle est enregistrée sur le site de support NetApp, BlueXP met automatiquement à jour la licence dans le portefeuille digital BlueXP. La page des licences des services de données reflète le changement en 5 à 10 minutes.
+
+. Si BlueXP ne peut pas mettre à jour automatiquement la licence (par exemple, lorsqu'elle est installée sur un site sombre), vous devrez charger manuellement le fichier de licence.
++
+.. Vous pouvez obtenir le fichier de licence sur le site de support NetApp.
+.. Accédez au portefeuille digital BlueXP.
+.. Sélectionnez l'onglet *Data dervices licenses*, sélectionnez l'icône *actions ...* pour le numéro de série de service que vous mettez à jour, puis sélectionnez *mettre à jour la licence*.
+
+
+
+
+
+
+== Terminez l'essai gratuit
 
 Vous pouvez interrompre l'essai gratuit à tout moment ou attendre son expiration.
 
@@ -109,97 +182,4 @@ NOTE: Si vous mettez fin à l'essai gratuit sans qu'il soit demandé de supprime
 
 . Saisissez « fin de l'essai » dans la zone de texte.
 . Sélectionnez *fin*.
-
-
-
-
-== Modèle BYOL (Bring Your Own License)
-
-Si vous apportez votre propre licence (BYOL), la configuration inclut l'achat de la licence, l'obtention du fichier de licence NetApp (NLF) et l'ajout de la licence au portefeuille digital BlueXP.
-
-
-
-=== Achetez une licence de reprise d'activité BlueXP
-
-Si vous ne disposez pas d'une licence BlueXP pour la reprise d'activité, contactez-nous pour en acheter une.
-
-. Effectuez l'une des opérations suivantes :
-+
-** Contactez le service commercial de NetApp pour acheter une licence.
-** Cliquez sur l'icône de chat dans le coin inférieur droit de BlueXP pour demander une licence.
-
-
-
-
-
-
-=== Obtenez votre fichier de licence de reprise d'activité BlueXP
-
-Après avoir acheté votre licence BlueXP de reprise après incident auprès de votre ingénieur commercial NetApp, vous activez la licence en saisissant le numéro de série de BlueXP Disaster Recovery et les informations de compte du site de support NetApp (NSS).
-
-.Avant de commencer
-Vous devez disposer des informations suivantes avant de commencer :
-
-* Numéro de série de la reprise d'activité BlueXP
-+
-Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.
-
-* ID de compte BlueXP
-+
-Vous pouvez trouver votre ID de compte BlueXP en sélectionnant la liste déroulante *compte* en haut de BlueXP, puis en sélectionnant *gérer le compte* en regard de votre compte. Votre ID de compte se trouve dans l'onglet vue d'ensemble. Pour un site en mode privé sans accès à Internet, utilisez *account-DARKSITE1*.
-
-
-
-
-
-=== Ajoutez la licence de reprise d'activité BlueXP au portefeuille digital BlueXP
-
-Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte BlueXP, vous devez ajouter la licence au portefeuille digital BlueXP.
-
-.Étapes
-. Dans le menu BlueXP, sélectionnez *gouvernance* > *portefeuille numérique* > *licences de services de données*.
-+
-image:digital-wallet-data-services-licenses-tab2.png["Portefeuille digital BlueXP onglet licences des services de données"]
-
-. Sélectionnez *Ajouter licence*.
-+
-image:byol-digital-wallet-license-add2.png["Portefeuille digital NetApp BlueXP : page Ajouter une licence"]
-
-. Sur la page Ajouter une licence, entrez les informations relatives à la licence et sélectionnez *Ajouter une licence* :
-+
-** Si vous disposez du numéro de série de licence BlueXP et que vous connaissez votre compte NSS, sélectionnez l'option *saisir le numéro de série* et entrez ces informations.
-+
-Si votre compte sur le site de support NetApp n'est pas disponible dans la liste déroulante, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Ajoutez le compte NSS à BlueXP"^].
-
-** Si vous disposez du fichier de licence BlueXP (requis lorsqu'il est installé sur un site invisible), sélectionnez l'option *Upload License File* et suivez les invites pour joindre le fichier.
-
-
-
-
-.Résultat
-Le portefeuille digital BlueXP affiche désormais la reprise d'activité avec une licence.
-
-image:byol-digital-wallet-licenses-added.png["Portefeuille digital NetApp BlueXP"]
-
-
-
-=== Mettez à jour votre licence BlueXP lorsqu'elle expire
-
-Si votre période de licence approche la date d'expiration ou si votre capacité sous licence atteint la limite, vous serez informé dans l'interface utilisateur de reprise d'activité BlueXP. Vous pouvez mettre à jour votre licence de reprise d'activité BlueXP avant son expiration afin que vous puissiez accéder à vos données numérisées sans interruption.
-
-
-TIP: Ce message apparaît également dans le portefeuille digital BlueXP et dans https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notifications"].
-
-.Étapes
-. Sélectionnez l'icône de chat dans le coin inférieur droit de BlueXP pour demander une extension de votre période ou de la capacité supplémentaire de votre licence pour le numéro de série spécifique. Vous pouvez également envoyer un e-mail pour demander une mise à jour de votre licence.
-+
-Une fois que vous avez payé la licence et qu'elle est enregistrée sur le site de support NetApp, BlueXP met automatiquement à jour la licence dans le portefeuille digital BlueXP. La page des licences des services de données reflète le changement en 5 à 10 minutes.
-
-. Si BlueXP ne peut pas mettre à jour automatiquement la licence (par exemple, lorsqu'elle est installée sur un site sombre), vous devrez charger manuellement le fichier de licence.
-+
-.. Vous pouvez obtenir le fichier de licence sur le site de support NetApp.
-.. Accédez au portefeuille digital BlueXP.
-.. Sélectionnez l'onglet *licences de services de données*, sélectionnez l'icône *actions ...* pour le numéro de série de service que vous mettez à jour, puis sélectionnez *mettre à jour la licence*.
-
-
 

@@ -82,6 +82,6 @@ L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
 
 Avec la reprise d'activité BlueXP, vous pouvez vous inscrire pour un essai gratuit de 90 jours.
 
-Vous pouvez apporter votre propre licence (BYOL), qui est un fichier de licence NetApp (NLF).
+Vous pouvez acheter un abonnement de paiement basé sur l'utilisation (PAYGO) avec AWS Marketplace ou opter pour une licence BYOL (Bring Your Own License), un fichier de licence NetApp (NLF).
 
 Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].

@@ -57,7 +57,7 @@ NOTE: La configuration du serveur vSphere s'effectue en dehors de la reprise d'a
 
 NetApp ne vous facture pas pour l'utilisation de la version d'évaluation de la reprise d'activité de BlueXP.
 
-La version complète du service de reprise d'activité BlueXP peut être utilisée avec une licence NetApp.
+Le service de reprise d'activité BlueXP peut être utilisé avec une licence NetApp ou avec un plan d'abonnement annuel via Amazon Web Services Marketplace.
 
 
 
@@ -66,6 +66,7 @@ La version complète du service de reprise d'activité BlueXP peut être utilis�
 Vous pouvez utiliser les types de licence suivants :
 
 * Inscrivez-vous pour bénéficier d'un essai gratuit de 90 jours.
+* Achetez un abonnement de paiement basé sur l'utilisation (PAYGO) pour Amazon Web Services (AWS) Marketplace.
 * BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
 
 
@@ -82,7 +83,7 @@ Pour plus d'informations sur la configuration des licences pour la reprise d'act
 
 Essayez la reprise d'activité BlueXP avec un essai gratuit de 90 jours.
 
-Pour continuer après l'essai de 90 jours, vous devez acheter une licence BYOL auprès de NetApp.
+Pour continuer après l'essai de 90 jours, vous devez souscrire un abonnement PAYGO (paiement basé sur l'utilisation) auprès de votre fournisseur de cloud ou acheter une licence BYOL auprès de NetApp.
 
 Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à la fin de la période d'essai de 90 jours.
 
@@ -94,11 +95,11 @@ La reprise d'activité BlueXP permet de restaurer des workloads répliqués depu
 
 La reprise d'activité BlueXP s'appuie sur la technologie ONTAP SnapMirror qui offre une réplication ultra-efficace et préserve l'efficacité des copies Snapshot incrémentielles à l'infini de ONTAP. La réplication SnapMirror veille à ce que les copies Snapshot cohérentes au niveau des applications soient toujours synchronisées et que les données soient utilisables immédiatement après un basculement.
 
-image:dr-architecture-diagram-70.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
+image:dr-architecture-diagram-70-2.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
 
 Le schéma suivant présente l'architecture des plans de reprise d'activité sur site à sur site.
 
-image:dr-architecture-diagram-onprem-to-onprem2.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
+image:dr-architecture-diagram-onprem-to-onprem3.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
 
 En cas d'incident, ce service vous aide à restaurer des machines virtuelles dans l'autre environnement VMware ou VMC sur site en rompant les relations SnapMirror et en rendant le site de destination actif.
 

@@ -16,6 +16,21 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 
 
+== 15 mai 2024
+
+Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :
+
+* *La réplication des charges de travail VMware du stockage sur site vers le stockage sur site* est maintenant proposée en tant que fonction de disponibilité générale. Auparavant, il s'agissait d'un aperçu technologique avec des fonctionnalités limitées.
+* *Mises à jour des licences* : avec BlueXP Disaster Recovery, vous pouvez vous inscrire à un essai gratuit de 90 jours, acheter un abonnement PAYGO avec Amazon Marketplace ou BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous pouvez obtenir auprès de votre ingénieur commercial NetApp ou auprès du site de support NetApp (NSS).
++
+Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configuration des licences"].
+
+
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["En savoir plus sur la reprise d'activité BlueXP"].
+
+
+
 == 5 mars 2024
 
 Il s'agit de la version General Availability de BlueXP Disaster Recovery, qui comprend les mises à jour suivantes.
