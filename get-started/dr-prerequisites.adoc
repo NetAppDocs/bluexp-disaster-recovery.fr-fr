@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
-keywords: what are bluexp disaster recovery requirements, disaster recovery prerequisites 
-summary: 'Commencez à utiliser la reprise d"activité de BlueXP en vérifiant la prise en charge de votre environnement, de l"accès au réseau, de la connexion et du navigateur Web.' 
+keywords: what are bluexp disaster recovery requirements, disaster recovery prerequisites, bluexp disaster recovery 
+summary: 'Avant d"utiliser la reprise d"activité BlueXP, vérifiez que votre environnement répond aux exigences de stockage ONTAP, de cluster VMware vCenter et de BlueXP.' 
 ---
 = Conditions préalables à la reprise d'activité BlueXP
 :hardbreaks:
@@ -12,32 +12,101 @@ summary: 'Commencez à utiliser la reprise d"activité de BlueXP en vérifiant l
 
 
 [role="lead"]
-Commencez par vérifier que votre environnement opérationnel, votre connexion, votre accès au réseau et votre navigateur Web sont opérationnels.
+Avant d'utiliser la reprise d'activité BlueXP, vérifiez que votre environnement répond aux exigences de stockage ONTAP, de cluster VMware vCenter et de BlueXP.
 
-Pour utiliser la reprise d'activité BlueXP, vous devez vous assurer que votre environnement répond aux exigences suivantes :
 
-* Environnement de travail VMware sur site avec stockage NetApp
-* Sur AWS :
+
+== Conditions préalables au stockage ONTAP
+
+Ces prérequis s'appliquent aux instances ONTAP ou Amazon FSX pour NetApp ONTAP.
+
+* Les clusters source et cible doivent avoir une relation de pairs.
+* Le SVM qui hébergera les volumes de reprise d'activité doit exister sur le cluster destination.
+* Le SVM source et le SVM destination doivent avoir une relation entre pairs.
 +
-** Un système de fichiers Amazon FSX pour NetApp ONTAP. Consultez la documentation d'Amazon FSX pour ONTAP sur https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["guide d'utilisation"^].
-** Un compte VMware associé à un data Center Software-defined (SDDC) sur AWS, également appelé Virtual machines Cloud. Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la section https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Documentation de Virtual machines Cloud"^].
-** Associez le SDDC à Amazon FSX pour NetApp ONTAP. Reportez-vous à la section https://vmc.techzone.vmware.com/fsx-guide#overview["Intégration de VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP"^].
 
+NOTE: La création des volumes de reprise d'activité dans le SVM ou SVM de destination n'est pas anticipée. La reprise d'activité BlueXP crée les volumes de destination selon les besoins du plan de réplication.
 
-* Dans BlueXP :
+* En cas de déploiement avec Amazon FSX pour NetApp ONTAP, la condition préalable suivante s'applique :
 +
-** Identifiants Amazon FSX pour ONTAP et AWS ajoutés à l'environnement de travail BlueXP.
-** Le connecteur BlueXP doit être configuré dans BlueXP. Le connecteur sur site et cloud doit être connecté à vCenter sur site et à VMware Cloud (VMC) avec ESXis. Cela permet aux fonctionnalités de sauvegarde, de basculement, de restauration et de migration de fonctionner correctement avec les fonctionnalités de mise en réseau et de script nécessaires.
+** Une instance Amazon FSX pour NetApp ONTAP pour héberger les datastores VMware DR doit exister dans votre VPC. Reportez-vous à la documentation d'Amazon FSX pour ONTAP sur https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["guide d'utilisation"^].
+
+
+
+
+
+
+== Prérequis pour les clusters VMware vCenter
+
+Ces conditions préalables s'appliquent à la fois aux clusters vCenter sur site et au Software-Defined Data Center (SDDC) de VMware Cloud for AWS.
+
+* Tous les clusters VMware que vous souhaitez gérer avec BlueXP Disaster Recovery doivent être hébergés sur des volumes ONTAP.
+* Tous les datastores VMware à gérer par la reprise d'activité BlueXP doivent utiliser l'un des protocoles suivants :
 +
-Le connecteur BlueXP requiert des informations d'identification pour les serveurs vCenter source et cible. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html["Démarrage rapide de BlueXP"^] et https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html["Informations de mise en réseau BlueXP"^].
+** NFS
+** VMFS utilisant le protocole iSCSI (actuellement dans un aperçu technologique)
 
-** Pour garantir la réussite des processus de cohérence des applications, assurez-vous que les conditions préalables suivantes sont remplies :
+
+* Si vous utilisez un SDDC de VMware Cloud, les conditions préalables suivantes s'appliquent.
 +
-*** Assurez-vous que les outils VMware (ou les outils Open VM) sont en cours d'exécution sur les machines virtuelles qui seront protégées.
-*** Pour les machines virtuelles Windows exécutant SQL ou Oracle, ou les deux, les enregistreurs VSS des bases de données doivent être activés et les bases de données doivent être dans un état stable.
-*** L'authentification utilisateur du système d'exploitation doit être activée pour le rôle SYSDBA de la base de données Oracle pour les bases de données Oracle qui s'exécutent sur un système d'exploitation Linux.
+** Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Utilisation de la documentation VMware Cloud Foundations avec AWS FSX for NetApp ONTAP"^].
+** Associez le SDDC dans le cloud VMware à l'instance Amazon FSX pour NetApp ONTAP. Reportez-vous à la https://vmc.techzone.vmware.com/fsx-guide#overview["Intégration de VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP"^].
 
 
 
 
+
+
+== Prérequis de BlueXP
+
+
+
+=== Collectez les informations d'identification pour ONTAP et VMware
+
+* Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.
+* La reprise d'activité BlueXP nécessite des informations d'identification vCenter. Vous entrez les informations d'identification vCenter lorsque vous ajoutez un site dans le cadre de la reprise d'activité BlueXP.
++
+Pour obtenir la liste des privilèges vCenter nécessaires, reportez-vous link:../reference/vcenter-privileges.html["Privilèges vCenter requis pour la reprise d'activité BlueXP"]à la section . Pour obtenir des instructions sur l'ajout d'un site, reportez-vous à la section link:../use/sites-add.html["Ajouter un site"].
+
+
+
+
+
+=== Ajoutez un compte BlueXP
+
+Dans BlueXP, si vous ne possédez pas encore de compte, vous devez ajouter un compte. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Documentation BlueXP sur l'ajout d'un compte"^].
+
+
+
+=== Créer un connecteur BlueXP
+
+Un connecteur BlueXP doit être configuré dans BlueXP. Lorsque vous utilisez le connecteur BlueXP, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
+
+* La reprise d'activité BlueXP fonctionne uniquement avec le déploiement de connecteur de mode standard. Voir https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Mise en route de BlueXP en mode standard"^].
+* Type de connecteur BlueXP requis :
++
+** *Reprise d'activité sur site et sur site* : installez le connecteur sur site BlueXP sur le site de reprise d'activité. Reportez-vous à la https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installez et configurez un connecteur sur site"^].
+** *Sur site vers AWS* : installez le connecteur BlueXP pour AWS dans votre VPC AWS. Reportez-vous à la https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["Options d'installation des connecteurs dans AWS"^].
++
+
+TIP: Du site aux environnements sur site, utilisez le connecteur sur site BlueXP. Pour les environnements sur site ou AWS, utilisez le connecteur BlueXP AWS Connector, qui permet d'accéder au vCenter sur site source et au vCenter sur site de destination.
+
+** Le connecteur BlueXP installé doit pouvoir accéder à tout cluster VMware que la reprise d'activité BlueXP va gérer.
+
+
+* Toutes les baies ONTAP à gérer par la reprise d'activité BlueXP doivent être ajoutées à n'importe quel environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.
++
+Voir https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP sur site"^].
+
+
+
+
+
+== Prérequis des charges de travail
+
+Pour garantir la cohérence des processus au niveau des applications, appliquez les conditions préalables suivantes :
+
+* Assurez-vous que les outils VMware (ou les outils Open VM) sont en cours d'exécution sur les machines virtuelles qui seront protégées.
+* Pour les machines virtuelles Windows exécutant Microsoft SQL Server ou Oracle Database ou les deux, leurs enregistreurs VSS doivent être activés pour les bases de données.
+* L'authentification utilisateur du système d'exploitation doit être activée pour le rôle SYSDBA de la base de données Oracle pour les bases de données Oracle qui s'exécutent sur un système d'exploitation Linux.
 

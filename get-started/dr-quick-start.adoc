@@ -18,23 +18,23 @@ Voici un aperçu des étapes à suivre pour démarrer avec la reprise d'activit�
 [role="quick-margin-para"]
 link:../get-started/dr-prerequisites.html["Assurez-vous que votre environnement répond à ces exigences"].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurez le service de reprise sur incident
-[role="quick-margin-para"]
-link:../get-started/dr-setup.html["Suivez les étapes de configuration du service"].
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurez le service de reprise d'activité BlueXP
+[role="quick-margin-list"]
+* link:../get-started/dr-setup.html["Configurer l'infrastructure du service"].
+* link:../get-started/dr-licensing.html["Configuration des licences"].
 
-[role="quick-margin-para"]
-link:../get-started/dr-licensing.html["Suivez les étapes de configuration des licences"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Et la suite ?
 [role="quick-margin-para"]
 Après avoir configuré le service, voici ce que vous pourriez faire ensuite.
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["Ajoutez des sites vCenter"].
-* link:../use/drplan-create.html["Création d'un plan de reprise d'activité"].
+* link:../use/sites-add.html["Ajoutez vos sites vCenter à la reprise d'activité BlueXP"].
+* link:../use/manage.html#manage-resource-groups["Créez votre premier groupe de ressources"].
+* link:../use/drplan-create.html["Créez votre premier plan de réplication"].
 * link:../use/replicate.html["Réplication d'applications vers un autre site"].
 * link:../use/failover.html["Basculement des applications vers un site distant"].
 * link:../use/failback.html["Rétablir les applications sur le site source d'origine"].
-* link:../use/manage.html["Gérez des sites, des plans, des datastores et des informations sur les machines virtuelles"].
+* link:../use/manage.html["Gérer les sites, les groupes de ressources et les plans de réplication"].
 * link:../use/monitor-jobs.html["Contrôler les opérations de reprise après incident"].
 

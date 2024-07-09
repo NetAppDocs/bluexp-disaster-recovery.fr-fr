@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/manage.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
+summary: 'Vous pouvez obtenir un aperçu rapide de toutes vos ressources de reprise d"activité BlueXP et gérer les sites vCenter, les groupes de ressources et les plans de réplication.' 
 ---
-= Gérez les sites, les plans, les datastores et les informations sur les machines virtuelles
+= Gérez les sites, les groupes de ressources, les plans de réplication, les datastores et les informations sur les machines virtuelles
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -15,10 +15,10 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 Vous pouvez obtenir un aperçu rapide de toutes vos ressources de reprise après incident ou les examiner en détail :
 
 * Sites
+* Groupes de ressources
 * Plans de réplication
 * Datastore
 * Ordinateurs virtuels
-* Groupes de ressources
 
 
 
@@ -35,9 +35,23 @@ Vous pouvez modifier le nom du site vCenter et le type de site (sur site ou AWS)
 
 
 
+== Gérer les groupes de ressources
+
+Bien que vous puissiez ajouter un groupe de ressources dans le cadre de la création d'un plan de réplication, il peut être plus pratique d'ajouter les groupes séparément et d'utiliser ces groupes ultérieurement dans le plan.
+
+Vous pouvez également modifier et supprimer des groupes de ressources.
+
+.Étapes
+. Dans le menu supérieur, sélectionnez *groupes de ressources*.
+. Pour ajouter un groupe de ressources, sélectionnez *Ajouter un groupe*.
+. Pour effectuer des actions avec le groupe de ressources, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite et sélectionnez l'une des options, telles que *Modifier le groupe de ressources* ou *Supprimer le groupe de ressources*.
+
+
+
+
 == Gérer les plans de réplication
 
-Vous pouvez désactiver, activer et supprimer des plans de réplication.
+Vous pouvez désactiver, activer et supprimer des plans de réplication. Vous pouvez modifier les horaires.
 
 * Si vous souhaitez interrompre temporairement un plan de réplication, vous pouvez le désactiver et l'activer ultérieurement.
 * Si vous n'avez plus besoin du plan, vous pouvez le supprimer.
@@ -53,11 +67,19 @@ image:../use/dr-plan-list2.png["Liste des plans de réplication"]
 +
 ** Pour modifier les détails du plan (modifier la récurrence), sélectionnez l'onglet *Détails du plan* et sélectionnez l'icône *Modifier* à droite.
 ** Pour modifier les mappages de ressources, sélectionnez l'onglet *mappage de basculement* et sélectionnez l'icône *Modifier*.
-** Pour ajouter ou modifier les machines virtuelles, sélectionnez l'onglet *machine virtuelle* et sélectionnez l'icône *Modifier*.
+** Pour ajouter ou modifier les machines virtuelles, sélectionnez l'onglet *machines virtuelles* et sélectionnez l'option *Ajouter des machines virtuelles* ou l'icône *Modifier*.
 
 
 . Revenez à la liste des plans en sélectionnant "plans de réplication" dans le fil d'Ariane en haut à gauche.
 . Pour effectuer des actions avec le plan, sélectionnez l'option *actions* dans la liste des plans de réplication image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite du plan et sélectionnez l'une des options, telles que *Modifier les horaires*, *basculement test*, *basculement sur échec*, *Retour arrière*, *Désactiver*, *Activer* ou *Supprimer*.
+. Pour définir ou modifier un planning de basculement de test ou définir la vérification de la fréquence de conformité, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] à droite du plan et sélectionnez *Modifier les planifications*.
++
+.. Dans la page Modifier les planifications, entrez la fréquence en minutes à laquelle vous souhaitez que la vérification de conformité du basculement se produise.
+.. Vérifier *Exécuter les basculements de test sur un planning*.
+.. Dans l'option répéter, sélectionnez l'horaire quotidien, hebdomadaire ou mensuel.
+.. Sélectionnez *Enregistrer*.
+
+
 
 
 
@@ -82,18 +104,4 @@ Vous pouvez afficher des informations sur le nombre de machines virtuelles prés
 . Sélectionnez le vCenter dans la ligne site.
 . Sélectionnez *machines virtuelles*.
 . Afficher les informations sur les machines virtuelles.
-
-
-
-
-== Gérer les groupes de ressources
-
-Bien que vous puissiez ajouter un groupe de ressources dans le cadre de la création d'un plan de réplication, il peut être plus pratique d'ajouter les groupes séparément et d'utiliser ces groupes ultérieurement dans le plan.
-
-Vous pouvez également modifier et supprimer des groupes de ressources.
-
-.Étapes
-. Dans le menu supérieur, sélectionnez *groupes de ressources*.
-. Pour ajouter un groupe de ressources, sélectionnez *Ajouter un groupe*.
-. Pour effectuer des actions avec le groupe de ressources, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite et sélectionnez l'une des options, telles que *Modifier le groupe de ressources* ou *Supprimer le groupe de ressources*.
 

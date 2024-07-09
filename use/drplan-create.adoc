@@ -69,12 +69,13 @@ L'étape suivante consiste à regrouper les machines virtuelles requises en grou
 TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
 
 .Étapes
+. Dans la partie gauche de la page applications, vous pouvez éventuellement rechercher des datastores.
 . Sur le côté gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez répliquer et affecter au groupe sélectionné.
 +
 La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.
 
 +
-image:dr-plan-create-apps-vms.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
+image:dr-plan-create-apps-vms3.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
 
 . Si vous le souhaitez, effectuez l'une des opérations suivantes :
 +
@@ -102,15 +103,28 @@ Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et 
 
 .Étapes
 . Dans la page mappage des ressources, cochez la case pour utiliser les mêmes mappages pour les opérations de basculement et de test.
++
+image:dr-plan-resource-mapping.png["Plan de réplication, onglet mappage de ressources"]
+
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chaque ressource :
 +
 ** *Ressources de calcul*
++
+*** *Centres de données sources et cibles*
+*** *Hôte cible* (facultatif)
+*** *Cluster cible* (facultatif)
+*** *Dossier VM cible* (facultatif) : permet de créer un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.
+
+
 ** *Réseaux virtuels*
 
 
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource :
 +
 ** *Machines virtuelles* : sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.
++
+Cette section peut être activée ou désactivée en fonction de votre sélection.
+
 +
 SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
 
@@ -134,6 +148,9 @@ Cela peut s'avérer très utile lors de la restauration d'environnements volumin
 ** *Répliques cohérentes avec les applications* : Indiquez si vous souhaitez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis prend un Snapshot pour obtenir un état cohérent de l'application.
 ** *Datastores* : en fonction de la sélection de machines virtuelles, les mappages de datastores sont automatiquement sélectionnés.
 +
+Cette section peut être activée ou désactivée en fonction de votre sélection.
+
++
 *** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 60 minutes, la restauration doit avoir des données qui n'ont pas plus de 60 minutes à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 60 minutes de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
 *** *Relations SnapMirror* : si une relation SnapMirror est déjà établie sur un volume, vous pouvez sélectionner les datastores source et cible correspondants. Si vous sélectionnez un volume qui ne dispose pas de relation SnapMirror, vous pouvez en créer un dès maintenant en sélectionnant l'environnement de travail et son homologue SVM.
 +
@@ -154,6 +171,9 @@ NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le clust
 
 
 . Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*. Passez en revue chaque onglet comme précédemment, mais cette fois pour l'environnement de test.
++
+Dans l'onglet Tester les mappages, les mappages des ordinateurs virtuels et des datastores sont désactivés.
+
 +
 
 TIP: Vous pouvez tester ultérieurement l'intégralité du plan. Vous configurez actuellement les mappages pour l'environnement de test.
@@ -191,7 +211,7 @@ Enfin, prenez quelques instants pour confirmer le plan de réplication.
 TIP: Vous pouvez par la suite désactiver ou supprimer le plan de réplication.
 
 .Étapes
-. Consultez les informations de chaque onglet : Détails du plan, mappage de basculement, machines virtuelles.
+. Consultez les informations de chaque onglet : Détails du plan, mappage du basculement, machines virtuelles.
 . Sélectionnez *Ajouter un plan*.
 +
 Le plan est ajouté à la liste des plans.

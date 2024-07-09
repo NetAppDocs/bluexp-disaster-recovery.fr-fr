@@ -16,12 +16,6 @@ Les limitations connues identifient les plates-formes, les périphériques ou le
 
 
 
-== Le rétablissement utilise la dernière copie Snapshot
-
-Dans la version actuelle, le processus de restauration utilise toujours la dernière copie Snapshot. Cela se produit même si vous choisissez une copie Snapshot spécifique à utiliser.
-
-
-
 == BlueXP ne découvre peut-être pas Amazon FSX pour NetApp ONTAP
 
 Il peut arriver que BlueXP ne détecte pas les clusters Amazon FSX pour NetApp ONTAP. Cela peut être dû au fait que les informations d'identification FSX n'étaient pas correctes.

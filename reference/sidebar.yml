@@ -1,0 +1,6 @@
+---
+section: reference
+title: Référence
+entries:
+- title: Privilèges vCenter requis pour la reprise d'activité BlueXP
+  url: "/reference/vcenter-privileges.html"

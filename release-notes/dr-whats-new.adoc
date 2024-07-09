@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
-keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter 
+keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas 
 summary: 'BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Avec la reprise d"activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans des clouds publics comme site de reprise d"activité à l"aide du stockage cloud NetApp.' 
 ---
 = Quoi de neuf
@@ -13,6 +13,46 @@ summary: 'BlueXP est un service de reprise après incident basé dans le cloud q
 
 [role="lead"]
 Découvrez les nouveautés de la reprise d'activité BlueXP.
+
+
+
+== 5 juillet 2024
+
+Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :
+
+* *Prise en charge de AFF série A* : cette version prend en charge les plates-formes matérielles NetApp AFF série A.
+
+
+* *Prise en charge des datastores VMware VMFS sur site à sur site* : cette version inclut un _aperçu technologique_ de la prise en charge des machines virtuelles montées sur des datastores VMFS (Virtual machine File System) VMware vSphere protégés sur le stockage sur site. Avec cette version, la reprise après incident est prise en charge dans un aperçu technologique pour les workloads VMware sur site vers un environnement VMware sur site avec des datastores VMFS.
++
+
+NOTE: NetApp ne vous facture pas pour la capacité de workloads prévisualisée.
+
+* *Mises à jour du plan de réplication* : vous pouvez ajouter un plan de réplication plus facilement en filtrant les machines virtuelles par datastore sur la page applications et en sélectionnant plus de détails sur les cibles sur la page mappage des ressources.
++
+Reportez-vous à la section https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+
+* *Modifier les plans de réplication* : avec cette version, la page mappages de basculement a été améliorée pour plus de clarté.
++
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gérer les plans"].
+
+* *Edit VM* : avec cette version, le processus de modification des machines virtuelles dans le plan comprenait quelques améliorations mineures de l'interface utilisateur.
++
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestion des VM"].
+
+* *Basculement des mises à jour* : avant de lancer un basculement, vous pouvez maintenant déterminer l'état des machines virtuelles et s'ils sont sous ou hors tension. Le processus de basculement vous permet maintenant de prendre un instantané ou de choisir les snapshots.
++
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Basculement des applications vers un site distant"].
+
+* *Plannings de test de basculement* : vous pouvez maintenant modifier les tests de basculement et définir des plannings quotidiens, hebdomadaires et mensuels pour le test de basculement.
++
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gérer les plans"].
+
+* *Mises à jour des informations prérequis* : les informations sur les conditions préalables à la reprise d'activité BlueXP ont été mises à jour.
++
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["Conditions préalables à la reprise d'activité BlueXP"].
+
+
 
 
 

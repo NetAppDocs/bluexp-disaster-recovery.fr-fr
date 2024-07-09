@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-setup.html 
-keywords: bluexp, disaster recovery, aws, amazon web services 
+keywords: bluexp, disaster recovery, aws, amazon web services, amazon fsx for netapp ontap 
 summary: 'Pour configurer la reprise d"activité BlueXP, effectuez quelques étapes.' 
 ---
-= Configurez la reprise d'activité BlueXP
+= Configurez votre infrastructure pour la reprise d'activité BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -19,13 +19,37 @@ TIP: Révision link:../get-started/dr-prerequisites.html["prérequis"] pour vous
 
 
 
-== Configuration d'AWS
+== Préparez-vous pour la reprise d'activité BlueXP
 
-Dans AWS, vous devez effectuer les étapes suivantes :
+* Vérifiez votre environnement de production.
++
+** Assurez-vous que les machines virtuelles que vous souhaitez protéger sont hébergées sur des datastores NFS (avec des volumes NFS ONTAP) ou des datastores VMFS (avec des LUN iSCSI NetApp).
+** Assurez-vous que vous disposez des identifiants et des clés d'accès pour vos baies ONTAP sur site, vos vCenter et vos instances cloud VMware hébergées par AWS.
 
-* Déploiement et configuration de VMware Cloud sur AWS
-* Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP.
-* Utiliser un compte VMware et provisionner le SDDC (Software-Defined Data Center) Assurez-vous que le SDDC est connecté à FSX for ONTAP.
+
+* Créez ou vérifiez votre site de reprise sur incident.
++
+** Créez ou vérifiez que votre système de fichiers Amazon FSX est prêt.
+** Vérifiez que vos VM source et de destination sont bien peering.
+
+
+
+
+
+
+== Configurez le SDDC VMware Cloud pour AWS
+
+Configuration du data Center Software-defined (SDDC) VMware Cloud for AWS
+
+* Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP. Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un stockage de fichiers extrêmement fiable, évolutif, haute performance et riche en fonctionnalités basé sur le système de fichiers populaire NetApp ONTAP.
+* Suivez les étapes ci https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["lien"^] -dessous et ici https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Démarrage rapide d'Amazon FSX pour NetApp ONTAP"] pour provisionner et configurer FSX pour NetApp ONTAP.
+* Ajoutez Amazon FSX pour NetApp ONTAP à l'environnement de travail et les identifiants AWS pour FSX pour ONTAP.
+* Dans AWS, vous devez effectuer les étapes suivantes :
++
+** Déploiement et configuration de VMware Cloud sur AWS
+** Utiliser un compte VMware et provisionner le SDDC. Assurez-vous que le SDDC est connecté à FSX for ONTAP.
+
+
 
 
 
@@ -38,50 +62,14 @@ Pour configurer un environnement VMC sur AWS, procédez comme suit https://docs.
 
 
 
-=== Configuration d'Amazon FSX pour NetApp ONTAP
-
-Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un stockage de fichiers extrêmement fiable, évolutif, haute performance et riche en fonctionnalités basé sur le système de fichiers populaire NetApp ONTAP. Suivez les étapes à cet effet https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["lien"^] Pour provisionner et configurer FSX pour NetApp ONTAP.
-
-
-
-== Configurez la reprise d'activité BlueXP
-
-L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
-
-* Créez un connecteur dans BlueXP.
-* Déploiement et configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP
-* Ajoutez l'environnement de travail du stockage ONTAP sur site à BlueXP. Il s'agit du cluster ONTAP source.
-* Ajoutez un compte BlueXP, FSxN à l'environnement de travail et ajoutez des identifiants AWS pour FSX pour ONTAP.
-
-
-
-
-=== Créez un connecteur dans BlueXP
-
-Pour tester ce service, contactez votre ingénieur commercial NetApp. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
-
-Pour créer un connecteur dans BlueXP avant d'utiliser le service, reportez-vous à la documentation BlueXP qui décrit https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["comment créer un connecteur"^].
-
-Utilisez le connecteur sur site BlueXP ou le connecteur BlueXP AWS Connector, qui peut accéder au vCenter sur site source et au vCenter sur site de destination.
-
-
-
-=== Configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP
-
-L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.
-
-. Dans BlueXP, ajoutez un compte. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Documentation BlueXP sur l'ajout d'un compte"^].
-. Ajoutez Amazon FSX pour NetApp ONTAP à l'environnement de travail. S'assurer que la relation SnapMirror avec le cluster ONTAP est en place et qu'elle a une destination de FSX pour NetApp ONTAP. Reportez-vous à la section https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Comment configurer un environnement de travail FSX pour ONTAP"^].
-. Dans BlueXP, déployez SnapMirror dans FSX pour NetApp ONTAP.
-. Dans BlueXP, découvrez la solution FSX pour NetApp ONTAP provisionnée sur une instance AWS et répliquez les volumes de datastore spécifiés à partir d'un environnement sur site vers FSX pour NetApp ONTAP avec la fréquence adéquate et la conservation des copies Snapshot NetApp.
-
-
-
-
-=== Configuration des licences
+== Configuration des licences
 
 Avec la reprise d'activité BlueXP, vous pouvez vous inscrire pour un essai gratuit de 90 jours.
 
-Vous pouvez acheter un abonnement de paiement basé sur l'utilisation (PAYGO) avec AWS Marketplace ou opter pour une licence BYOL (Bring Your Own License), un fichier de licence NetApp (NLF).
+Vous pouvez acheter l'une des options suivantes :
 
-Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].
+* Un abonnement PAYGO (paiement basé sur l'utilisation) avec AWS Marketplace
+* BYOL (Bring Your Own License), qui est un fichier de licence NetApp (NLF).
+
+
+Reportez-vous à la link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].

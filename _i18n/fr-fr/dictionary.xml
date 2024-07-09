@@ -178,7 +178,6 @@
   <block id="405e835e0544bb4cc8bbd26a2c840b54" category="section-title">18 mai 2023</block>
   <block id="acff175f1bababdb2baa1348412d501d" category="paragraph">Il s'agit de la version initiale de la reprise d'activité de BlueXP.</block>
   <block id="49bd2ef4087967b81353d56e27be132a" category="summary">Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public en tant que site de reprise d'activité à l'aide du stockage cloud NetApp.</block>
-  <block id="02fce9b41a6b2efe9c45de00491f5b15" category="summary">La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans des clouds publics comme site de reprise d'activité à l'aide du stockage cloud NetApp.</block>
   <block id="a3c972b2a97e85a689b9fc36b1658dcf" category="inline-image-macro">Diagramme illustrant les composants de la reprise d'activité BlueXP pour VMware</block>
   <block id="3f3839e5200c4d2924e47db9048f7236" category="list-text">Expérience utilisateur simplifiée pour la découverte et la restauration vCenter des applications avec plusieurs opérations de restauration à un point dans le temps </block>
   <block id="2b62fc3f49aa92691e24ff085ed87ebe" category="list-text">Réduisez le coût total de possession tout en réduisant le coût des opérations et en créant et en adaptant des plans de reprise après incident avec des ressources minimales</block>
@@ -203,30 +202,13 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">prérequis</block>
   <block id="12e2dc5fcef627451410583ca25001f8" category="list-text">Révision <block ref="92ab8b24e9e19913fbd62d38b5e3558b" category="inline-link-macro-rx"></block> pour vous assurer que votre environnement est prêt.</block>
   <block id="5ca24c4b6c87e148e5e8719ec8dd13ee" category="list-text">Déploiement et configuration de VMware Cloud sur AWS</block>
-  <block id="87eb524d6c04a253599327cc1c7a60ee" category="list-text">Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP.</block>
-  <block id="4c3419728723e5cec0fdd6c5e0a79fbb" category="list-text">Utiliser un compte VMware et provisionner le SDDC (Software-Defined Data Center) Assurez-vous que le SDDC est connecté à FSX for ONTAP.</block>
-  <block id="7fc964519860ed011389afb142e2370e" category="list-text">Dans BlueXP :</block>
-  <block id="322e46cbec275f2740ec8387b6dd48fd" category="list-text">Ajoutez l'environnement de travail du stockage ONTAP sur site à BlueXP. Il s'agit du cluster ONTAP source.</block>
-  <block id="24b72cf7b78b1dabbeedc0e25ff165f8" category="list-text">Ajoutez un compte BlueXP, FSxN à l'environnement de travail et ajoutez des identifiants AWS pour FSX pour ONTAP.</block>
   <block id="832d5bf67a66aafc3f8182b31c2c8086" category="paragraph">Dans AWS, vous devez effectuer les étapes suivantes :</block>
   <block id="824ad2eb4e12f7e91aa345fe67fa3e20" category="list-text">Déploiement de VMware Cloud</block>
   <block id="4dab2f9796b0af6304d00e21e2b9dfb4" category="inline-link">VMware Cloud sur AWS</block>
   <block id="1b38656c5ec12ea70e00624b8b3d9551" category="paragraph"><block ref="aa736dbc3fc450bce1fb1f5726a687eb" category="inline-link-rx"></block> Offre une expérience cloud native pour les charges de travail VMware dans l'écosystème AWS. Chaque data Center Software-defined VMware (SDDC) s'exécute dans un cloud privé virtuel Amazon et fournit une pile VMware complète (y compris vCenter Server), une mise en réseau Software-defined NSX-T, un stockage Software-defined VSAN et un ou plusieurs hôtes ESXi qui fournissent des ressources de calcul et de stockage aux charges de travail.</block>
   <block id="2a304a1348456ccd2234cd71a81bd338" category="inline-link">lien</block>
   <block id="fd14ed73e21c2af5ff119a635c30df95" category="paragraph">Pour configurer un environnement VMC sur AWS, procédez comme suit<block ref="2482e32457e6109d0aff0016bbcce7d1" category="inline-link-rx"></block>. Un bloc de voyants peut également être utilisé à des fins de reprise après incident.</block>
-  <block id="813470cfb6b19cf55033bfb89dad5bc3" category="section-title">Configuration d'Amazon FSX pour NetApp ONTAP</block>
-  <block id="eb394b51d4a778c72332db5d64a1960b" category="paragraph">Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un stockage de fichiers extrêmement fiable, évolutif, haute performance et riche en fonctionnalités basé sur le système de fichiers populaire NetApp ONTAP. Suivez les étapes à cet effet<block ref="551566e1b64bc66251dbfe6d546a4bef" category="inline-link-rx"></block> Pour provisionner et configurer FSX pour NetApp ONTAP.</block>
-  <block id="496692430255798782df4a20f93d0e46" category="paragraph">L'étape suivante consiste à configurer la reprise d'activité dans BlueXP.</block>
-  <block id="ccaaa0b1fdb9afd84865d38039f74d41" category="section-title">Créez un connecteur dans BlueXP</block>
-  <block id="d29bda09bea50f3d6b0e9d9d61015179" category="inline-link">comment créer un connecteur</block>
-  <block id="32ed92d70b140ee92a015de26f8ca076" category="paragraph">Pour créer un connecteur dans BlueXP avant d'utiliser le service, reportez-vous à la documentation BlueXP qui décrit<block ref="3be6fdd970ee3d2f07a043a29363ec05" category="inline-link-rx"></block>.</block>
-  <block id="42a965f76897c36cbf37b815d06aff80" category="section-title">Configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP</block>
   <block id="8578ea7cebd82d3ffa5a16500e105552" category="inline-link">Documentation BlueXP sur l'ajout d'un compte</block>
-  <block id="c1396f684f657bba5e27617a98a6991b" category="list-text">Dans BlueXP, ajoutez un compte. Reportez-vous à la<block ref="774d23f949c92eac0cff5269d4337483" category="inline-link-rx"></block>.</block>
-  <block id="7d7445247cf277d14bdf223b814aef8a" category="inline-link">Comment configurer un environnement de travail FSX pour ONTAP</block>
-  <block id="0a4d5f87126861e7aba9f8041c6ece27" category="list-text">Ajoutez Amazon FSX pour NetApp ONTAP à l'environnement de travail. S'assurer que la relation SnapMirror avec le cluster ONTAP est en place et qu'elle a une destination de FSX pour NetApp ONTAP. Reportez-vous à la section<block ref="196f9f190bce8cf361111930a46ad787" category="inline-link-rx"></block>.</block>
-  <block id="c08a2521245530f9a6691450378e81e8" category="list-text">Dans BlueXP, déployez SnapMirror dans FSX pour NetApp ONTAP.</block>
-  <block id="8d6b654ad4c184e8b1a0e93a42951353" category="list-text">Dans BlueXP, découvrez la solution FSX pour NetApp ONTAP provisionnée sur une instance AWS et répliquez les volumes de datastore spécifiés à partir d'un environnement sur site vers FSX pour NetApp ONTAP avec la fréquence adéquate et la conservation des copies Snapshot NetApp.</block>
   <block id="ee21d19e70e4611d4c782f9439377ba0" category="summary">Commencez à utiliser le service de reprise d'activité NetApp BlueXP en quelques étapes.</block>
   <block id="6923c085091f4d4b0d464355d7771240" category="doc">Démarrage rapide de la reprise d'activité BlueXP</block>
   <block id="917c67acabedb60df299e96c679e04f8" category="paragraph">Voici un aperçu des étapes à suivre pour démarrer avec la reprise d'activité BlueXP. Les liens de chaque étape vous mènent à une page qui fournit plus de détails.</block>
@@ -235,9 +217,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="d73fd850784e1d8dbda69ab3ca51e7cf" category="inline-link-macro">Assurez-vous que votre environnement répond à ces exigences</block>
   <block id="5b73a71df82c1c509b1e335875c6c2a0" category="paragraph"><block ref="ef4e7a1c239c49290925a35bbbb1cc25" category="inline-link-macro-rx"></block>.</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Deux</block>
-  <block id="218c645ebeb94f20d179bea9a6e08957" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Configurez le service de reprise sur incident</block>
-  <block id="cc6726e02ea7bc25f1ed413652107bdb" category="inline-link-macro">Suivez les étapes de configuration du service</block>
-  <block id="d55182b1f34fe59147eb3414ea0b2408" category="paragraph"><block ref="3bb756b4dc36bf4ce11b422d7c4281f9" category="inline-link-macro-rx"></block>.</block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Trois</block>
   <block id="fb35cdd7029fec15aadbdddd879fa161" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Et la suite ?</block>
   <block id="0d5e44db30a371573d3409dc5db80551" category="paragraph">Après avoir configuré le service, voici ce que vous pourriez faire ensuite.</block>
@@ -251,7 +230,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="4f1f3c6d1472c505e740ebe57c2881ce" category="inline-link-macro">Rétablir les applications sur le site source d'origine</block>
   <block id="5faa19197effc4c0fdc74b32045263ef" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block>.</block>
   <block id="b7cd69eed80f723036ef0a99b8bb375e" category="inline-link-macro">Gérez des sites, des plans, des datastores et des informations sur les machines virtuelles</block>
-  <block id="958608aea56e4e43ac86c03981cb1773" category="list-text"><block ref="9b74f5806b489674a9e6e3007bd00474" category="inline-link-macro-rx"></block>.</block>
   <block id="01a7e7f1580e9ccf4f0275e9f79a32dd" category="inline-link-macro">Contrôler les opérations de reprise après incident</block>
   <block id="899a3601f4e45edcb69bd9d82c68fbef" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block>.</block>
   <block id="976795b09ce57d46e36268967ec95a95" category="summary">Commencez à utiliser la reprise d'activité BlueXP en accédant au service de BlueXP.</block>
@@ -267,17 +245,8 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="04f45bf7defd11ead0b4c56cf8c3f371" category="paragraph">S'il s'agit de votre première connexion à ce service, la page d'accueil s'affiche.</block>
   <block id="c6c7eb2270b5edb5f8ecf37392db8b4b" category="inline-image-macro">Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP</block>
   <block id="674a6bb0fdee8ed1d2d68faddc33d5e6" category="paragraph">Sinon, le tableau de bord de reprise d'activité BlueXP s'affiche.</block>
-  <block id="e1d24b3118270d4224a54337f1f63f2c" category="summary">Commencez à utiliser la reprise d'activité de BlueXP en vérifiant la prise en charge de votre environnement, de l'accès au réseau, de la connexion et du navigateur Web.</block>
   <block id="ccf3c2f4a4ab48adb4cc5352e480655c" category="doc">Conditions préalables à la reprise d'activité BlueXP</block>
-  <block id="84804abf3404a430e85ae3299587a6b0" category="paragraph">Commencez par vérifier que votre environnement opérationnel, votre connexion, votre accès au réseau et votre navigateur Web sont opérationnels.</block>
-  <block id="e3bc55f0abc82785380fd56b902bf803" category="list-text">Sur AWS :</block>
   <block id="9ff73081ad3af348b09105664054c18f" category="inline-link">guide d'utilisation</block>
-  <block id="308d77673e39dd171579985cc8579f92" category="list-text">Un système de fichiers Amazon FSX pour NetApp ONTAP. Consultez la documentation d'Amazon FSX pour ONTAP sur<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block>.</block>
-  <block id="6f80b0ccdeb06755d08fcd10b6efd13c" category="inline-link">Documentation de Virtual machines Cloud</block>
-  <block id="f2dcae9fff997e552832417884acefaa" category="inline-link">Intégration de VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP</block>
-  <block id="045482367f3cc5727ae8f097479439ee" category="list-text">Associez le SDDC à Amazon FSX pour NetApp ONTAP. Reportez-vous à la section<block ref="02b70b195fcb534ea97ab3bf74203889" category="inline-link-rx"></block>.</block>
-  <block id="69b085a23d3ed85c84455b9288792bf2" category="inline-link">Démarrage rapide de BlueXP</block>
-  <block id="45e7f38a8238b36c23e85bbe6436ba0b" category="inline-link">Informations de mise en réseau BlueXP</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Droits d'auteur</block>
@@ -322,7 +291,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="d0d1a7100fd604152ac7b93eb1abc016" category="list-text">Sur la droite, sélectionnez l'option *actions* <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block> Et sélectionnez *basculement*.</block>
   <block id="c8876c4e46fed1dae800753bc202e67d" category="list-text">Choisissez le snapshot du datastore à partir duquel effectuer la restauration.  La valeur par défaut est la dernière.</block>
   <block id="0362f1f30abcc40f31c3c6618b1a15c3" category="list-text">Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.</block>
-  <block id="5e2bff09ac9b58d2dd6c2458c5ccea11" category="doc">Gérez les sites, les plans, les datastores et les informations sur les machines virtuelles</block>
   <block id="ceeed92bd86d67dc2a2a6016ed40a571" category="paragraph">Vous pouvez obtenir un aperçu rapide de toutes vos ressources de reprise après incident ou les examiner en détail :</block>
   <block id="3faa64303d5f5bcd043bb88f6768e603" category="list-text">Sites</block>
   <block id="a8fc43ecd23ee9eb5e9efa5c60cb20b9" category="list-text">Plans de réplication</block>
@@ -333,7 +301,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="c59beae96d46d2c9b38ce64663e3d9d0" category="list-text">Dans le menu supérieur, sélectionnez *sites*.</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">Modifiez le nom et l'emplacement du site vCenter.</block>
   <block id="07851e0287e57a794c18de627c09e0e7" category="section-title">Gérer les plans de réplication</block>
-  <block id="5fc6ce3a162e9142e8d530e890bcf33c" category="paragraph">Vous pouvez désactiver, activer et supprimer des plans de réplication.</block>
   <block id="3058d1612836b55d5c4e71a540ba0c44" category="list-text">Si vous souhaitez interrompre temporairement un plan de réplication, vous pouvez le désactiver et l'activer ultérieurement.</block>
   <block id="98a6ed9560bddac4a68acf12bb7ce31c" category="list-text">Si vous n'avez plus besoin du plan, vous pouvez le supprimer.</block>
   <block id="eff6d6d4d66ab65f33be5de8b62e16d3" category="list-text">Dans le menu supérieur, sélectionnez *plans de réplication*.</block>
@@ -341,7 +308,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="690ae5d914fd57de729046d81d5d2ffa" category="list-text">Effectuez l'une des opérations suivantes :</block>
   <block id="5b10db4f07efa25e382abdf259d01eb2" category="list-text">Pour modifier les détails du plan (modifier la récurrence), sélectionnez l'onglet *Détails du plan* et sélectionnez l'icône *Modifier* à droite.</block>
   <block id="843b9bb43d8bfd905c71d66766381bb3" category="list-text">Pour modifier les mappages de ressources, sélectionnez l'onglet *mappage de basculement* et sélectionnez l'icône *Modifier*.</block>
-  <block id="8a0bade43f38138c2baa54ba51a11c49" category="list-text">Pour ajouter ou modifier les machines virtuelles, sélectionnez l'onglet *machine virtuelle* et sélectionnez l'icône *Modifier*.</block>
   <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">Afficher les informations sur les datastores</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">Vous pouvez afficher des informations sur le nombre de datastores présents sur la source et sur la cible.</block>
   <block id="5e141a758f792ce4ad7e1b2107b1f7a4" category="list-text">Sélectionnez le vCenter dans la ligne site.</block>
@@ -383,7 +349,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="c34daecc192d502d04e27e0d11bc8acd" category="list-text">Sur le côté gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez répliquer et affecter au groupe sélectionné.</block>
   <block id="deea58ba2c2a385f7b93c144b2d694e1" category="paragraph">La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.</block>
   <block id="4039eb9aa82f9a49f8096e652825e9c9" category="inline-image-macro">Capture d'écran montrant la page Ajouter un plan de réplication &amp;gt; applications à répliquer</block>
-  <block id="021b658b4aef5f65124081043c92d29b" category="paragraph"><block ref="9ef4e2dba2a1d5ecef743359d937a39f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f60de6a7e37982bbcf6e675308bbbeb8" category="list-text">Si vous le souhaitez, effectuez l'une des opérations suivantes :</block>
   <block id="8702576026497ff97614ecf3a246c6e5" category="list-text">Pour changer de groupe, cliquez sur l'icône Groupe *Modifier*.</block>
   <block id="20b76027356378e48612a50cf35cca8a" category="list-text">Pour supprimer une machine virtuelle d'un groupe, sélectionnez *X*.</block>
@@ -409,7 +374,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="e0623856c2a2db53c0560ff5b20115df" category="section-title">Confirmez le plan de réplication</block>
   <block id="a879d1d71a73bdb6127bcb571303177d" category="paragraph">Enfin, prenez quelques instants pour confirmer le plan de réplication.</block>
   <block id="26ff2655fb5643a3e76370d9248a31df" category="admonition">Vous pouvez par la suite désactiver ou supprimer le plan de réplication.</block>
-  <block id="3ef49e9516f56dc6f2792feb59c1b116" category="list-text">Consultez les informations de chaque onglet : Détails du plan, mappage de basculement, machines virtuelles.</block>
   <block id="47324a4e5509aeccc192aa7b07cbcac7" category="list-text">Sélectionnez *Ajouter un plan*.</block>
   <block id="a9980df200522b9bbaa257521bc396fe" category="paragraph">Le plan est ajouté à la liste des plans.</block>
   <block id="a9233ff25d3c8ffa3e005e6e453381fc" category="paragraph">Avant de créer un plan de reprise d'activité, vous devez ajouter un site vCenter principal et un site de reprise d'activité vCenter cible dans BlueXP.</block>
@@ -506,7 +470,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="798f01bc27c71f62fd4a64e0bb155f2f" category="paragraph">Ce processus ne consomme pas de capacité physique supplémentaire dans le stockage ONTAP sur site ou FSX pour le stockage NetApp ONTAP dans AWS. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.</block>
   <block id="fc3e06260a2d82cbcdc61d0edfe814f2" category="paragraph">En cas d'incident, basculez votre site VMware primaire sur site à la demande vers un autre site VMware sur site ou VMware Cloud sur AWS avec FSX pour NetApp ONTAP.</block>
   <block id="0e4406e2f319d2b24ab99a69613fbf47" category="list-text">Les datastores sont créés et montés sur le cluster ou l'hôte VMware ou VMC en fonction des informations capturées dans le plan de réplication.</block>
-  <block id="f806e093eb7de418336ba62747d0d9ab" category="list-text">Dans la page Test failover, entrez le nom du plan de réplication à confirmer et sélectionnez *Fail over*.</block>
   <block id="48b7a229446624a8bba6bae8e801d0ab" category="list-text">Revenez à la liste des plans en sélectionnant "plans de réplication" dans le fil d'Ariane en haut à gauche.</block>
   <block id="2ebea8fe68e78bc0ff591a0dfab2033d" category="list-text">Pour effectuer des actions avec le plan, sélectionnez l'option *actions* dans la liste des plans de réplication <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block>  À droite du plan et sélectionnez l'une des options, telles que *Modifier les horaires*, *basculement test*, *basculement sur échec*, *Retour arrière*, *Désactiver*, *Activer* ou *Supprimer*.</block>
   <block id="8fcc9f88ea38569445e7602709323556" category="summary">NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident.</block>
@@ -551,9 +514,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="bc7f3cb185f48d451eb5ef976e8ad82d" category="list-text">*Cible* :</block>
   <block id="d23a9d83c87c6eacef309f00a2beb5d3" category="inline-image-macro">Capture d'écran de la page sites</block>
   <block id="28f8c0c78028f2e899f7af50ce138e1b" category="paragraph"><block ref="28f8c0c78028f2e899f7af50ce138e1b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1835d0517fe4ffa8b6a639fa95e369ad" category="list-text">Créez un connecteur dans BlueXP.</block>
-  <block id="25cb0baf366c7202daaabd5e60c16293" category="list-text">Déploiement et configuration de SnapMirror pour Amazon FSX pour NetApp ONTAP</block>
-  <block id="2a1f2380d9e50746902517055340629f" category="paragraph">Utilisez le connecteur sur site BlueXP ou le connecteur BlueXP AWS Connector, qui peut accéder au vCenter sur site source et au vCenter sur site de destination.</block>
   <block id="6f5e3fdfa73285ac2283ba492cf2d47b" category="list-text">VMware Cloud (VMC) sur AWS avec Amazon FSX pour NetApp ONTAP ou</block>
   <block id="b374472b15e644f23d1e6b059b5216b9" category="list-text">Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP</block>
   <block id="53c1c0c22e2a647591a0b52427852850" category="paragraph"><block ref="53c1c0c22e2a647591a0b52427852850" category="inline-image-macro-rx" type="image"></block></block>
@@ -562,7 +522,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="2aefc74ac286c583100431f62049590d" category="list-text">En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.</block>
   <block id="a6a42e8e3070730d19bfd86d6a1d66fe" category="paragraph">Le schéma suivant présente l'architecture des plans de reprise d'activité sur site à sur site.</block>
   <block id="20099229ad21726312a6ff50740b0b57" category="paragraph">En cas d'incident, ce service vous aide à restaurer des machines virtuelles dans l'autre environnement VMware ou VMC sur site en rompant les relations SnapMirror et en rendant le site de destination actif.</block>
-  <block id="a675a2edc95f7fca650a735944e38f96" category="paragraph">Pour utiliser la reprise d'activité BlueXP, vous devez vous assurer que votre environnement répond aux exigences suivantes :</block>
   <block id="96ed64c294e585324853f8f980f9d78e" category="sidebar">Migrer des applications vers un autre site</block>
   <block id="36a7330c410600f4393af365b3d66e29" category="sidebar">Blog sur la reprise d'activité BlueXP</block>
   <block id="ad80d6168dc288f4361413eeca80dc5f" category="sidebar">Migrer vers un autre site</block>
@@ -664,21 +623,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="c68217420a685b93e20f298ae3ea72c8" category="paragraph">Vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.</block>
   <block id="8b4399d7029673ba83df4f916514230b" category="paragraph">Un basculement de test n'a _pas d'impact sur les charges de travail de production, la relation SnapMirror utilisée sur le site de test et les charges de travail protégées qui doivent continuer à fonctionner normalement.</block>
   <block id="22d1d4bc51673707e71b38cb5d9f8053" category="admonition">Une fois le basculement lancé, les VM restaurées sont visibles dans le vCenter du site de reprise d'activité (machines virtuelles, réseaux et datastores). Par défaut, les machines virtuelles sont restaurées dans le dossier charge de travail.</block>
-  <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Annuler un travail</block>
-  <block id="0f6fb16278c8db9e7104435d2ca9b98f" category="paragraph">Si un travail est en cours et que vous ne souhaitez pas qu'il continue, vous pouvez l'annuler. Vous pouvez annuler un travail s'il est bloqué dans le même état et que vous souhaitez libérer l'opération suivante dans la file d'attente. Vous pouvez annuler un travail avant qu'il ne soit trop tard.</block>
-  <block id="22b7400444d76583bfa01ad371bebbc5" category="paragraph">Pour annuler un travail, utilisez swagger.</block>
-  <block id="90fcc3b3a806bdba15ead6130adbd9a9" category="paragraph">Pour annuler une tâche, vous devez disposer de l'ID de compte.</block>
-  <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">Sur la page moniteur de travaux, notez l'ID du travail que vous souhaitez annuler.</block>
-  <block id="336ff1e9aa6177ea7a71984fa8c241b9" category="inline-link">Andaineur</block>
-  <block id="5273316399077a35494eb5acbbcf7801" category="list-text">Accédez à l'URL du gestionnaire de reprise d'activité BlueXP :<block ref="9e4854fddaa37e1b0c806d7c99538b64" category="inline-link-rx"></block>.</block>
-  <block id="cfe384e99d913d27036c11c367a847da" category="paragraph"><block ref="cfe384e99d913d27036c11c367a847da" category="inline-link-rx"></block></block>
-  <block id="7a01c0f2bb049f0040198121da3c115e" category="inline-image-macro">Page swagger montrant comment annuler un travail</block>
-  <block id="3c54383fbe7b935cfc38e6a4118698cb" category="paragraph"><block ref="3c54383fbe7b935cfc38e6a4118698cb" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5f8add33c48ab0f59f2908faa8d36196" category="inline-link">Documents Swagger</block>
-  <block id="e124a230be11158b2df2a4490b5bc010" category="paragraph">Pour plus d'informations sur le swagger, voir<block ref="851cca880157b178ca93e5f9f752f929" category="inline-link-rx"></block>.</block>
-  <block id="ae46b3f9f499c97dfc5b7c1e327aeea1" category="list-text">Auprès de swagger, obtenez le jeton de sécurité, également appelé _bearer token_, à partir de l'option Authorise.</block>
-  <block id="d46acb5ac038cd8e0a5d3f7165605907" category="list-text">Entrez l'ID de compte et l'ID de tâche.</block>
-  <block id="b1f85b610b71ac9db3be3c5efe00f9a4" category="list-text">Sélectionnez *essayez-le*.</block>
   <block id="7133b9cf238828da0a287b89ce855ec3" category="paragraph"><block ref="7133b9cf238828da0a287b89ce855ec3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0e17ce70dd39a8a056cb5ca0081d4526" category="list-text">*En cours d'exécution* : le vCenter est connecté, sain et en cours d'exécution.</block>
   <block id="ed4bdaafb191f860f256d0b1e88eb50e" category="list-text">*Down* : le vCenter n'est pas accessible ou présente des problèmes de connectivité.</block>
@@ -706,8 +650,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="0a003809d85acf4d6a198955e5780ac3" category="list-text">Pour nettoyer l'environnement de test une fois le test de basculement terminé, cochez *nettoyage automatique après basculement du test*.</block>
   <block id="20ace5d6661ce95df08950b97c500ddc" category="admonition">Ce processus annule l'enregistrement des machines virtuelles temporaires à partir de l'emplacement de test, supprime le volume FlexClone créé et démonte les datastores temporaires.</block>
   <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">Sélectionnez *Enregistrer*.</block>
-  <block id="8f6793a82f1110a347dbefe3c3758178" category="section-title">Le rétablissement utilise la dernière copie Snapshot</block>
-  <block id="9ee4d1cdb3c09e86e561a895a7ab9345" category="paragraph">Dans la version actuelle, le processus de restauration utilise toujours la dernière copie Snapshot. Cela se produit même si vous choisissez une copie Snapshot spécifique à utiliser.</block>
   <block id="4d519f9cb24d082270f8f88ccccd42e3" category="paragraph">Découvrez les nouveautés de la reprise d'activité BlueXP.</block>
   <block id="592997dde366d5775e7e052816854f74" category="section-title">5 mars 2024</block>
   <block id="23f1adcf87ca650c2ac077f4be520c97" category="paragraph">Il s'agit de la version General Availability de BlueXP Disaster Recovery, qui comprend les mises à jour suivantes.</block>
@@ -719,18 +661,13 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="4b2bfa262e877a668b7102f58d207f63" category="inline-link">Créez le plan de réplication</block>
   <block id="976dcedce9d4c9dc14db60abc49c5867" category="paragraph">Pour plus de détails, reportez-vous à<block ref="8026234d3eaba16fdffb266108c2804b" category="inline-link-rx"></block>.</block>
   <block id="0468e5ced7eddf7112cb542d124a006f" category="paragraph">Cette version de préversion de la reprise d'activité de BlueXP inclut les mises à jour suivantes :</block>
-  <block id="c35429358a46b999fafa3eb39893122c" category="inline-link-macro">Suivez les étapes de configuration des licences</block>
-  <block id="c46b74d8fea462e40a3a35bd54771989" category="paragraph"><block ref="3d00f62ff93b742ed767a11952d4b89c" category="inline-link-macro-rx"></block>.</block>
   <block id="5f6035a41d2be8c5780281ca63dc230a" category="paragraph">*Avez-vous besoin d'une licence pour utiliser la reprise d'activité BlueXP ?*
 Une licence de reprise d'activité BlueXP est requise pour un accès complet. Cependant, vous pouvez essayer gratuitement.</block>
   <block id="65b8710d9a2596e72f3f9c24620b97a3" category="inline-link-macro">Configurez la licence de reprise d'activité BlueXP</block>
   <block id="a4812a60b42128cc371c18f06197d9ab" category="paragraph">Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section <block ref="0ba47d7cccc1dc28f47670d48274167c" category="inline-link-macro-rx"></block>.</block>
   <block id="78a065b9fb649a31c2037ac8b6adf208" category="paragraph">Pour utiliser la reprise d'activité BlueXP, effectuez quelques étapes de configuration dans Amazon Web Services (AWS) et BlueXP.</block>
-  <block id="456948be6cc17bd9f797492f175ff847" category="section-title">Configuration d'AWS</block>
-  <block id="724c7536b89d0d851109ea9f7868da08" category="paragraph">Pour tester ce service, contactez votre ingénieur commercial NetApp. Ensuite, lorsque vous utilisez BlueXP Connector, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.</block>
   <block id="878214f294066da0bab8a3693a1f802a" category="doc">Découvrez la reprise d'activité BlueXP pour VMware</block>
   <block id="e04cb1e00b4f2d764efe09d0b22a6b43" category="paragraph">La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.</block>
-  <block id="81cd6d5889a00f3187d6e30af0f9838e" category="paragraph">BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads VMware sur site basés sur NFS exécutant un stockage NetApp sur l'un des éléments suivants :</block>
   <block id="fbec25bffbcdefa11c9ca28adb0b824c" category="paragraph">La reprise d'activité BlueXP utilise la technologie ONTAP SnapMirror pour le transport de réplication vers le site de reprise d'activité. Cela permet d'optimiser l'efficacité du stockage (compression et déduplication) sur les sites primaires et secondaires.</block>
   <block id="3c524eb32d863a57c821ef5ffecb96ee" category="section-title">Les possibilités de la reprise d'activité BlueXP pour VMware</block>
   <block id="0ad83d5f52e2b8f6dfc6ec26ef91aa38" category="paragraph">Grâce à la reprise d'activité BlueXP, vous exploitez pleinement plusieurs technologies NetApp pour atteindre ces objectifs :</block>
@@ -740,14 +677,7 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="c809a23426c6fb72cef75816c461ade9" category="paragraph">Les licences de tous les services BlueXP sont gérées par le service de portefeuille digital BlueXP. Une fois que vous avez configuré votre modèle BYOL, une licence active s'affiche pour le service dans le portefeuille digital BlueXP.</block>
   <block id="8eb586b1b79ddd3ae7c3123b39d4420e" category="admonition">Les frais de reprise d'activité BlueXP sont basés sur la capacité provisionnée des datastores sur le site source lorsque au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.</block>
   <block id="27be91c80d5e97799bb6e73e37370e5d" category="paragraph">Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à la fin de la période d'essai de 90 jours.</block>
-  <block id="da329ee75f8833283c259789372600f6" category="list-text">Environnement de travail VMware sur site avec stockage NetApp</block>
-  <block id="0f5757c2302ddb1a6b48cf01d0fe295d" category="list-text">Un compte VMware associé à un data Center Software-defined (SDDC) sur AWS, également appelé Virtual machines Cloud. Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la section<block ref="e0529c1c92608a25886bf41835abea27" category="inline-link-rx"></block>.</block>
-  <block id="10158aa869cd2a07a9e35313b86f48f8" category="list-text">Identifiants Amazon FSX pour ONTAP et AWS ajoutés à l'environnement de travail BlueXP.</block>
-  <block id="fce90829059c8b31e3882fa3db9f644c" category="list-text">Le connecteur BlueXP doit être configuré dans BlueXP. Le connecteur sur site et cloud doit être connecté à vCenter sur site et à VMware Cloud (VMC) avec ESXis. Cela permet aux fonctionnalités de sauvegarde, de basculement, de restauration et de migration de fonctionner correctement avec les fonctionnalités de mise en réseau et de script nécessaires.</block>
-  <block id="54acd3bad890d9cacb0dd0970cbf3cd4" category="paragraph">Le connecteur BlueXP requiert des informations d'identification pour les serveurs vCenter source et cible. Reportez-vous à la<block ref="4b1866f17dc6bd66f88d9d6839084df6" category="inline-link-rx"></block> et<block ref="8b2e3c99c244ff11d22f3c561bd167b2" category="inline-link-rx"></block>.</block>
-  <block id="4b23440b522693ef465ede54b1e9df88" category="list-text">Pour garantir la réussite des processus de cohérence des applications, assurez-vous que les conditions préalables suivantes sont remplies :</block>
   <block id="7033a5d3e074f0c7401499ee4e48f38a" category="list-text">Assurez-vous que les outils VMware (ou les outils Open VM) sont en cours d'exécution sur les machines virtuelles qui seront protégées.</block>
-  <block id="7c480d19e9a60d89cc5b027f95938aa8" category="list-text">Pour les machines virtuelles Windows exécutant SQL ou Oracle, ou les deux, les enregistreurs VSS des bases de données doivent être activés et les bases de données doivent être dans un état stable.</block>
   <block id="af77ac64a97a80925dee7dc916344004" category="list-text">L'authentification utilisateur du système d'exploitation doit être activée pour le rôle SYSDBA de la base de données Oracle pour les bases de données Oracle qui s'exécutent sur un système d'exploitation Linux.</block>
   <block id="e23539b066371b4dcfdd50b7d80417d8" category="paragraph">Après la fin de la période d'essai gratuite ou l'expiration de la licence, vous pouvez toujours effectuer les opérations suivantes dans le service :</block>
   <block id="1594f78ebbb281f7b5359eb6d2b89912" category="list-text">Exécutez toutes les opérations planifiées qui ont été créées pendant la période d'essai ou sous la licence.</block>
@@ -777,11 +707,7 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="ad7911fdd21ff5752d10300d0446de95" category="section-title">Une fois la version d'évaluation terminée, Abonnez-vous à AWS Marketplace</block>
   <block id="e1186eb5e41d3a9e96827c9ab4aef684" category="paragraph">Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence auprès de NetApp ou vous abonner via AWS Marketplace. Dans cette procédure, vous découvrirez comment vous abonner directement à AWS Marketplace.</block>
   <block id="acce4a6c25bc51b4930085d68e3cb0cd" category="list-text">Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.</block>
-  <block id="89642db6eeb3c89414135d980b0f379c" category="inline-image-macro">Page modes de paiement de reprise d'activité BlueXP</block>
-  <block id="cd54cee81e627d252868fbc3cfc5731c" category="paragraph"><block ref="cd54cee81e627d252868fbc3cfc5731c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="584a50ae29d097d233ebd86ad952d305" category="list-text">Sélectionnez *s'abonner à AWS Marketplace*.</block>
-  <block id="a06442e94af0d31f4eee679c83de7779" category="list-text">Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*.</block>
-  <block id="266c58f74740e96b35f10409d3036f8f" category="list-text">Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.</block>
   <block id="717132172ed170ccb94cc8674c35dfbd" category="list-text">Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.</block>
   <block id="6678054c83157276d9287735dd3e1d92" category="paragraph">Pour afficher les détails de l'abonnement dans le portefeuille digital BlueXP, sélectionnez *Afficher les détails de l'abonnement* et affichez l'abonnement actif sur la page *abonnements*.</block>
   <block id="0a504e78221db1ccaf51b7ad21bc16ce" category="inline-image-macro">Onglet abonnements au portefeuille digital BlueXP</block>
@@ -796,10 +722,186 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="595da0c0edf936a84fa3d6a69bbbb4e5" category="paragraph"><block ref="595da0c0edf936a84fa3d6a69bbbb4e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5d50de45dd75ac0ea74e9c427687d113" category="list-text">Dans le portefeuille digital BlueXP, dans l'onglet *licences des services de données*, sélectionnez *Ajouter une licence*.</block>
   <block id="7744384d0e7b78819bc53ca36ef36369" category="list-text">Sélectionnez l'onglet *Data dervices licenses*, sélectionnez l'icône *actions ...* pour le numéro de série de service que vous mettez à jour, puis sélectionnez *mettre à jour la licence*.</block>
-  <block id="fe16d01759ec350f7a6eaad418e37316" category="paragraph">Le service de reprise d'activité BlueXP peut être utilisé avec une licence NetApp ou avec un plan d'abonnement annuel via Amazon Web Services Marketplace.</block>
   <block id="577219605d1e6146de9dc5b1e218ce65" category="paragraph">Pour continuer après l'essai de 90 jours, vous devez souscrire un abonnement PAYGO (paiement basé sur l'utilisation) auprès de votre fournisseur de cloud ou acheter une licence BYOL auprès de NetApp.</block>
   <block id="d66d706cd022ab39ed6479a713135515" category="paragraph"><block ref="d66d706cd022ab39ed6479a713135515" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991e816286764c3a5ea9b023c35e1d77" category="paragraph"><block ref="991e816286764c3a5ea9b023c35e1d77" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f356176c4e01ac702abad1ad2e11449a" category="paragraph">Vous pouvez acheter un abonnement de paiement basé sur l'utilisation (PAYGO) avec AWS Marketplace ou opter pour une licence BYOL (Bring Your Own License), un fichier de licence NetApp (NLF).</block>
   <block id="b45dfe874eaba6a97e58e0436eba2402" category="sidebar">Mise en route de la reprise d'activité BlueXP en tant que laboratoire de services à la demande</block>
+  <block id="439704735653d5132727cb9c21bc97c8" category="paragraph">BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads sur site basés sur NFS et, dans un aperçu technologique, les datastores VMware vSphere Virtual machine File System (VMFS) exécutant le stockage NetApp vers l'un des éléments suivants :</block>
+  <block id="d5368fed025a9875e8a424b419508bef" category="admonition">Avec cette version, la reprise après incident est prise en charge dans un aperçu technologique pour les workloads VMware sur site vers des environnements VMware sur site avec des datastores VMware vSphere Virtual machine File System (VMFS). NetApp ne vous facture pas pour la capacité de workloads prévisualisée.</block>
+  <block id="0dc4a26bb39078be4974284a72d54f64" category="paragraph">Le service de reprise d'activité BlueXP peut être utilisé avec une licence NetApp ou avec un plan d'abonnement annuel via Amazon Web Services.</block>
+  <block id="66a7384fcc7d6c71e8da6dc152b82593" category="admonition">Certaines versions incluent un aperçu de la technologie. NetApp ne vous facture pas pour la capacité de workloads prévisualisée. Voir <block ref="431ce6b88c6d5399033553c1891688aa" category="inline-link-macro-rx"></block> pour plus d'informations sur les dernières innovations technologiques.</block>
+  <block id="cb29907626b2fabe5961e9265140cc76" category="list-text">Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*. Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.</block>
+  <block id="82dea2c8434a1770d46c03eb8b4c2389" category="summary">Avant d'utiliser la reprise d'activité BlueXP, vérifiez que votre environnement répond aux exigences de stockage ONTAP, de cluster VMware vCenter et de BlueXP.</block>
+  <block id="d28c14a0fc5b1bfa37eb72dd0ac54a13" category="section-title">Conditions préalables au stockage ONTAP</block>
+  <block id="911d68300fa1a1a181b338683eb2e1b9" category="paragraph">Ces prérequis s'appliquent aux instances ONTAP ou Amazon FSX pour NetApp ONTAP.</block>
+  <block id="07a02bd33ebc759fa2827fd098fe4d5b" category="list-text">Les clusters source et cible doivent avoir une relation de pairs.</block>
+  <block id="4a240de94d3b8b2cf85c70ef705ec1ad" category="list-text">Le SVM qui hébergera les volumes de reprise d'activité doit exister sur le cluster destination.</block>
+  <block id="49a62cf19d5f5549f15f53e7cc0931a4" category="list-text">Le SVM source et le SVM destination doivent avoir une relation entre pairs.</block>
+  <block id="03d4e4f8142b74599e73a9baef34f455" category="admonition">La création des volumes de reprise d'activité dans le SVM ou SVM de destination n'est pas anticipée. La reprise d'activité BlueXP crée les volumes de destination selon les besoins du plan de réplication.</block>
+  <block id="3c6fc169e2cb30ab2f19198ee948214f" category="list-text">En cas de déploiement avec Amazon FSX pour NetApp ONTAP, la condition préalable suivante s'applique :</block>
+  <block id="416e7e2f04e50d9ce77de6997e876b89" category="list-text">Une instance Amazon FSX pour NetApp ONTAP pour héberger les datastores VMware DR doit exister dans votre VPC. Reportez-vous à la documentation d'Amazon FSX pour ONTAP sur<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block>.</block>
+  <block id="78ac16e6d697b73a4da8c7145ce2ebf3" category="section-title">Prérequis pour les clusters VMware vCenter</block>
+  <block id="e43184d3dcdfbef8d9c719533929f538" category="paragraph">Ces conditions préalables s'appliquent à la fois aux clusters vCenter sur site et au Software-Defined Data Center (SDDC) de VMware Cloud for AWS.</block>
+  <block id="f5091f12fda6dcb8b160780e3352bbd5" category="list-text">Tous les clusters VMware que vous souhaitez gérer avec BlueXP Disaster Recovery doivent être hébergés sur des volumes ONTAP.</block>
+  <block id="a103c229873d833279c49def9ebe9fc3" category="list-text">Tous les datastores VMware à gérer par la reprise d'activité BlueXP doivent utiliser l'un des protocoles suivants :</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS</block>
+  <block id="47e0fa80d3fa1add35dfaada74c496e9" category="list-text">VMFS utilisant le protocole iSCSI (actuellement dans un aperçu technologique)</block>
+  <block id="b48bd09b37dbbe2233bba9ccc258e634" category="list-text">Si vous utilisez un SDDC de VMware Cloud, les conditions préalables suivantes s'appliquent.</block>
+  <block id="7fc6ed2196514db323edb5f8ee464448" category="inline-link">Utilisation de la documentation VMware Cloud Foundations avec AWS FSX for NetApp ONTAP</block>
+  <block id="f2fc5fa158eeee58eae505a362a866b3" category="list-text">Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la<block ref="87df9e87408172a2291d5738f3ae5f4f" category="inline-link-rx"></block>.</block>
+  <block id="4e1ddb83fcf4e704fe454a7d694377b4" category="inline-link">Intégration de VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP</block>
+  <block id="7122f5fb62a64795817462bf41ff7862" category="list-text">Associez le SDDC dans le cloud VMware à l'instance Amazon FSX pour NetApp ONTAP. Reportez-vous à la<block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>.</block>
+  <block id="96888c442fac1de0bbc3ba9d00f296a4" category="section-title">Prérequis de BlueXP</block>
+  <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">Collectez les informations d'identification pour ONTAP et VMware</block>
+  <block id="40d6832bb97021f07389b0bb1371ebc8" category="list-text">Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.</block>
+  <block id="a3322827dcb371ce03fcea3e6f6dac4b" category="list-text">La reprise d'activité BlueXP nécessite des informations d'identification vCenter. Vous entrez les informations d'identification vCenter lorsque vous ajoutez un site dans le cadre de la reprise d'activité BlueXP.</block>
+  <block id="af48f45a45fa68c1e7482428d13d3ae2" category="inline-link-macro">Privilèges vCenter requis pour la reprise d'activité BlueXP</block>
+  <block id="663ac415354a0662169e04ba51a80ee1" category="inline-link-macro">Ajouter un site</block>
+  <block id="04d842fd50a052e8aa0d29fecc18a42b" category="paragraph">Pour obtenir la liste des privilèges vCenter nécessaires, reportez-vous <block ref="2c677a2a2de566e8f203663d6f65fae2" category="inline-link-macro-rx"></block>à la section . Pour obtenir des instructions sur l'ajout d'un site, reportez-vous à la section <block ref="4e15c40290645aa1bfcc516405624ad3" category="inline-link-macro-rx"></block>.</block>
+  <block id="d5e44723931260e9fb1d91641ec67565" category="section-title">Ajoutez un compte BlueXP</block>
+  <block id="55d6d6a5af12f879c7cc9cc76ddabdec" category="paragraph">Dans BlueXP, si vous ne possédez pas encore de compte, vous devez ajouter un compte. Reportez-vous à la<block ref="774d23f949c92eac0cff5269d4337483" category="inline-link-rx"></block>.</block>
+  <block id="a5085066220b6bc77291e8a3ba481c5a" category="section-title">Créer un connecteur BlueXP</block>
+  <block id="6bdd2270b2444eb60c9eb649a9ca2c48" category="paragraph">Un connecteur BlueXP doit être configuré dans BlueXP. Lorsque vous utilisez le connecteur BlueXP, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.</block>
+  <block id="d45c08fd27c89f889429a0d0279aa820" category="inline-link">Mise en route de BlueXP en mode standard</block>
+  <block id="9617f94c4d0db3b59bc87478ad69a2e3" category="list-text">La reprise d'activité BlueXP fonctionne uniquement avec le déploiement de connecteur de mode standard. Voir<block ref="8d7d3151883721ed32dc6ccb054ca1c1" category="inline-link-rx"></block>.</block>
+  <block id="7355396a11c2997a2e012d54ec400c23" category="list-text">Type de connecteur BlueXP requis :</block>
+  <block id="1fb392a56edc456b1bc3eddb57b0906b" category="inline-link">Installez et configurez un connecteur sur site</block>
+  <block id="4606ca846bc1047c423bf2f388cae62e" category="list-text">*Reprise d'activité sur site et sur site* : installez le connecteur sur site BlueXP sur le site de reprise d'activité. Reportez-vous à la<block ref="1757fdffe316429694b3d2e3fbccb91f" category="inline-link-rx"></block>.</block>
+  <block id="eca3237a9ea860ef946ba4cdd489bc59" category="inline-link">Options d'installation des connecteurs dans AWS</block>
+  <block id="5429b4727bb6860d719abc5d18c2c7ee" category="list-text">*Sur site vers AWS* : installez le connecteur BlueXP pour AWS dans votre VPC AWS. Reportez-vous à la<block ref="5b7871abcfa07c659c7f1c6cfa3aafba" category="inline-link-rx"></block>.</block>
+  <block id="12162c662baf903fc463cab971a2c144" category="admonition">Du site aux environnements sur site, utilisez le connecteur sur site BlueXP. Pour les environnements sur site ou AWS, utilisez le connecteur BlueXP AWS Connector, qui permet d'accéder au vCenter sur site source et au vCenter sur site de destination.</block>
+  <block id="b44186c8f26107b5ae7810b1a74e8093" category="list-text">Le connecteur BlueXP installé doit pouvoir accéder à tout cluster VMware que la reprise d'activité BlueXP va gérer.</block>
+  <block id="a342d0b5394cc9bc5595d491d2a70101" category="list-text">Toutes les baies ONTAP à gérer par la reprise d'activité BlueXP doivent être ajoutées à n'importe quel environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.</block>
+  <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">Découvrez les clusters ONTAP sur site</block>
+  <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">Voir<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block>.</block>
+  <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">Prérequis des charges de travail</block>
+  <block id="6a84d76f499de61c5fe29550fe09a932" category="paragraph">Pour garantir la cohérence des processus au niveau des applications, appliquez les conditions préalables suivantes :</block>
+  <block id="53967495fd407c118c305a84866ca152" category="list-text">Pour les machines virtuelles Windows exécutant Microsoft SQL Server ou Oracle Database ou les deux, leurs enregistreurs VSS doivent être activés pour les bases de données.</block>
+  <block id="a906261e8914cac100bb85be774d5451" category="list-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Configurez le service de reprise d'activité BlueXP</block>
+  <block id="bba2d28657478d7f1f8cfa1202334b6c" category="inline-link-macro">Configurer l'infrastructure du service</block>
+  <block id="922a3f684ad3f3d8beda0f750bdbb18f" category="list-text"><block ref="d5f560af5db6cf4511b8e34e3209d0d9" category="inline-link-macro-rx"></block>.</block>
+  <block id="143a2ad68b93a4241fb25dee71d34878" category="list-text"><block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block>.</block>
+  <block id="0b513f7730ddab41ea5b37d6963c756d" category="inline-link-macro">Ajoutez vos sites vCenter à la reprise d'activité BlueXP</block>
+  <block id="1e92a19963b0c5825cc688d14c3c7952" category="list-text"><block ref="2502be63ed2d6f89316c7fbe34a648d3" category="inline-link-macro-rx"></block>.</block>
+  <block id="b65e0d1bdfae52b7003edeca0851a1cd" category="inline-link-macro">Créez votre premier groupe de ressources</block>
+  <block id="2694ce9387b386ed8def037e0ef2a01c" category="list-text"><block ref="92830d5aa0eb820db09685f71801553b" category="inline-link-macro-rx"></block>.</block>
+  <block id="81b20ae68e2b688ed9a18df38cce62c6" category="inline-link-macro">Créez votre premier plan de réplication</block>
+  <block id="1bef08da93920d58af9116d6cc82018e" category="list-text"><block ref="3447feddfbfb06a3f88061bcb344494c" category="inline-link-macro-rx"></block>.</block>
+  <block id="e111b7436e71ef6b7b99d4ab60693716" category="inline-link-macro">Gérer les sites, les groupes de ressources et les plans de réplication</block>
+  <block id="9c0c127bbcf25422e200cf3bf5c94728" category="list-text"><block ref="b808936e11943a7ce505d2bf605d808d" category="inline-link-macro-rx"></block>.</block>
+  <block id="7297a33a5c9a50db535ceb180e4e6c29" category="doc">Configurez votre infrastructure pour la reprise d'activité BlueXP</block>
+  <block id="fc75fa7bbac9e87518d6f17a91cfce8b" category="section-title">Préparez-vous pour la reprise d'activité BlueXP</block>
+  <block id="1c1d912a4b5c8c14cabacde67a6ba702" category="list-text">Vérifiez votre environnement de production.</block>
+  <block id="23c17aafeb6f23d40515eff8b860e5f4" category="list-text">Assurez-vous que les machines virtuelles que vous souhaitez protéger sont hébergées sur des datastores NFS (avec des volumes NFS ONTAP) ou des datastores VMFS (avec des LUN iSCSI NetApp).</block>
+  <block id="179525e812f4f22c9d701388e129164d" category="list-text">Assurez-vous que vous disposez des identifiants et des clés d'accès pour vos baies ONTAP sur site, vos vCenter et vos instances cloud VMware hébergées par AWS.</block>
+  <block id="013c9bec06c7786c33c0cfb5f4a32bcf" category="list-text">Créez ou vérifiez votre site de reprise sur incident.</block>
+  <block id="6d269e8a65127766658cd3b13af2c081" category="list-text">Créez ou vérifiez que votre système de fichiers Amazon FSX est prêt.</block>
+  <block id="d7398479ae0f9ae38ae2ed32d89ad5a7" category="list-text">Vérifiez que vos VM source et de destination sont bien peering.</block>
+  <block id="c279ea5c4d51358b229e0e39c4308144" category="section-title">Configurez le SDDC VMware Cloud pour AWS</block>
+  <block id="fd087c8a3a1df61c75b0ddc129a87874" category="paragraph">Configuration du data Center Software-defined (SDDC) VMware Cloud for AWS</block>
+  <block id="b667fcb6ff2b158ecaa3e62d1e56452e" category="list-text">Créez un système de fichiers Amazon FSX pour ONTAP. Provisionnez et configurez FSX pour ONTAP. Amazon FSX pour NetApp ONTAP est un service entièrement géré qui offre un stockage de fichiers extrêmement fiable, évolutif, haute performance et riche en fonctionnalités basé sur le système de fichiers populaire NetApp ONTAP.</block>
+  <block id="c2ca61cdaafcad548af5836df039fcb3" category="inline-link">Démarrage rapide d'Amazon FSX pour NetApp ONTAP</block>
+  <block id="ef30511465fed8e5a5b5c3a9aae4795a" category="list-text">Suivez les étapes ci<block ref="551566e1b64bc66251dbfe6d546a4bef" category="inline-link-rx"></block> -dessous et ici<block ref="594efabf60d7236eeecf072ead1cf02b" category="inline-link-rx"></block> pour provisionner et configurer FSX pour NetApp ONTAP.</block>
+  <block id="e65c19fddc907d69ae5172a0084b710b" category="list-text">Ajoutez Amazon FSX pour NetApp ONTAP à l'environnement de travail et les identifiants AWS pour FSX pour ONTAP.</block>
+  <block id="95e1164f78d2b6799a19e13081137cbd" category="list-text">Utiliser un compte VMware et provisionner le SDDC. Assurez-vous que le SDDC est connecté à FSX for ONTAP.</block>
+  <block id="23b186d0b29dfdb5e0e175ad6de4147e" category="paragraph">Vous pouvez acheter l'une des options suivantes :</block>
+  <block id="e5cadf619f38981c2b6059a9e6577ec3" category="list-text">Un abonnement PAYGO (paiement basé sur l'utilisation) avec AWS Marketplace</block>
+  <block id="90d5e71753c6b7ee358df340daa5fe4c" category="list-text">BYOL (Bring Your Own License), qui est un fichier de licence NetApp (NLF).</block>
+  <block id="8e794011cc1f1c5c04b70473672767c4" category="paragraph">Reportez-vous à la <block ref="0ba47d7cccc1dc28f47670d48274167c" category="inline-link-macro-rx"></block>.</block>
+  <block id="b63b041aeb212763ffab8f16313f009d" category="inline-link-macro">Notez la reprise d'activité BlueXP</block>
+  <block id="54ad6e999d021c5f10d0b688267e8d17" category="paragraph"><block ref="54ad6e999d021c5f10d0b688267e8d17" category="inline-link-macro-rx"></block></block>
+  <block id="30bc3f8ec3b5e171c9e8c063eec0ebce" category="summary">Le compte vCenter doit disposer d'un ensemble minimal de privilèges vCenter pour permettre à BlueXP Disaster Recovery d'exécuter ses services, tels que l'enregistrement et le désenregistrement des datastores, le démarrage et l'arrêt des machines virtuelles et la reconfiguration des machines virtuelles (VM). Le tableau suivant répertorie tous les privilèges requis pour l'interface de la reprise après incident BlueXP avec un cluster vCenter.</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Type</block>
+  <block id="f31fadcb7ced5ed0e7fbc3d65d0ab660" category="cell">Nom de privilège</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Description</block>
+  <block id="2051881d2c94079273dde07614b52317" category="cell">*Datastore*</block>
+  <block id="39e17557e52f8908bd58f0aa8f90e589" category="paragraph">Datastore. Configurer le datastore</block>
+  <block id="b0156af1fabe28340f5f515de85b8ba2" category="paragraph">Permet de configurer un datastore.</block>
+  <block id="16ca70be6373a69d7a7a4054b8740d5f" category="paragraph">Datastore. Supprimer le datastore</block>
+  <block id="5d7a7f943775e5b9f23c14409254d31f" category="paragraph">Utilisez pour supprimer un datastore.</block>
+  <block id="0d710447bc4b3d240dbec4ffdff78d7f" category="cell">*Machine virtuelle*</block>
+  <block id="0d027ba13a066afab0e72091146c32c3" category="paragraph">Machine virtuelle.Configuration.Modifier les paramètres</block>
+  <block id="ac5fed24b3778885bc91821ce7badce7" category="paragraph">Permet de modifier les paramètres généraux de la machine virtuelle.</block>
+  <block id="877b1c9b324b92cc7eb4c734fa176de9" category="paragraph">Machine virtuelle.Configuration.Modifier les paramètres du périphérique</block>
+  <block id="a470a1e5aa63361f7bba6f9b3753f58d" category="paragraph">Permet de modifier les propriétés d'un périphérique existant.</block>
+  <block id="1c48d7d8b2a2dfea7d4778be6f8adce8" category="paragraph">Machine virtuelle.Configuration.recharger à partir du chemin</block>
+  <block id="a21bfc06d31dc57593c8038b2c5c0e18" category="paragraph">Permet de modifier un correctif de configuration de machine virtuelle tout en préservant l'identité de la machine virtuelle. Des solutions telles que VMware vCenter site Recovery Manager permettent de gérer l'identification des machines virtuelles lors du basculement et du retour arrière.</block>
+  <block id="936b25ae8b1305df4de41cc7edd3fb3c" category="paragraph">Machine virtuelle.Configuration.Renommer</block>
+  <block id="eb6647b772f29fe6d76a2ff596d8da2e" category="paragraph">Permet de renommer une machine virtuelle ou de modifier les nœuds associés d'une machine virtuelle.</block>
+  <block id="4553fbef402a1d8731c1816f91ce505e" category="paragraph">Machine virtuelle.Configuration.Réinitialiser les informations sur l'invité</block>
+  <block id="c0acbac48fd78801142c21bfcc2d7f80" category="paragraph">Permet de modifier les informations du système d'exploitation invité d'une machine virtuelle.</block>
+  <block id="b7f2f93f9ded16ef0cf42386d0a084de" category="paragraph">Machine virtuelle.Configuration.Modifier la mémoire</block>
+  <block id="7e417510f4c5b448e5e913a6e30e26c2" category="paragraph">Permet de modifier la quantité de mémoire allouée à la machine virtuelle.</block>
+  <block id="0a90330abb3eb200a7ba0bf8a956104c" category="paragraph">Machine virtuelle.Configuration.Modifier le nombre de CPU</block>
+  <block id="7099548d8fb2bdd522f5dd68ea188fa2" category="paragraph">Permet de modifier le nombre de processeurs virtuels.</block>
+  <block id="9dea3c37393731c874e9363f748cf20b" category="cell">*Invité de machine virtuelle*</block>
+  <block id="5254bee77444f0715c2e30f4220be885" category="paragraph">Machine virtuelle. Opérations clients. Modifications apportées à l'opération client</block>
+  <block id="864141f9bd9cc6a2551f6a1a984099e3" category="paragraph">Permet les opérations des invités de machine virtuelle qui impliquent des modifications du système d'exploitation invité d'une machine virtuelle, telles que le transfert d'un fichier vers cette dernière.</block>
+  <block id="21cb03054cbe3a67055ca3df7a2ab77b" category="cell">*Interaction de la machine virtuelle*</block>
+  <block id="075d18862c516c291ccc18b4ef715fe5" category="paragraph">Machine virtuelle.interaction.mise hors tension</block>
+  <block id="198a48c49bf020db667c8efb024e757e" category="paragraph">Permet de mettre hors tension une machine virtuelle sous tension. Cette opération met le système d'exploitation invité hors tension.</block>
+  <block id="10bd34b60a2bda547e4bc8e9973f3e31" category="paragraph">Machine virtuelle.interaction.mise sous tension</block>
+  <block id="3fc8744b9995cd14b4bb7379533c3ba6" category="paragraph">Permet de mettre sous tension une machine virtuelle hors tension et de reprendre une machine virtuelle suspendue.</block>
+  <block id="5192d6f694edc454343369b22dbfc5c6" category="paragraph">Machine virtuelle.interaction.installation de VMware Tools</block>
+  <block id="30519066cd3534ef7d314b2c9aacd55d" category="paragraph">Utilisez pour monter et démonter le CD d'installation de VMware Tools en tant que CD-ROM du système d'exploitation invité.</block>
+  <block id="66fdc82624c87dcd5ceb484e44a95fdd" category="cell">*Inventaire des machines virtuelles*</block>
+  <block id="bb9a532fb645f8d94cb7c827a61302ea" category="paragraph">Machine virtuelle.Inventaire.Créer nouveau</block>
+  <block id="00b57b9dfd38ba20e57b6ef930030e86" category="paragraph">Permet de créer une machine virtuelle et d'allouer des ressources pour son exécution.</block>
+  <block id="c28cfecb65a13c8091d476d8c65457e1" category="paragraph">Machine virtuelle.Inventory.Register</block>
+  <block id="8e8abc11ed45aba5690c57962484db6d" category="paragraph">Permet d'ajouter une machine virtuelle existante à un serveur vCenter ou à un inventaire d'hôtes.</block>
+  <block id="db6d9006d2f72f5cf22c40fa1220b43a" category="paragraph">Machine virtuelle.Inventaire.désenregistrer</block>
+  <block id="fa8ff1e1f1b39d6eb3b65050b2b1d275" category="paragraph">Utilisez pour annuler l'enregistrement d'une machine virtuelle à partir d'un serveur vCenter ou d'un inventaire d'hôtes.</block>
+  <block id="3d021ff57844dddc6d9f4674f6934243" category="cell">*Etat de la machine virtuelle*</block>
+  <block id="a9b3b608e7046721eb5ab1e0dbaf0c7d" category="paragraph">Machine virtuelle. Gestion des snapshots. Créer un Snapshot</block>
+  <block id="0386636d5860b389e6185a8e3d1fc157" category="paragraph">Permet de créer un snapshot à partir de l'état actuel de la machine virtuelle.</block>
+  <block id="18f05db9c4723f1a48e0cddc8e00ec23" category="paragraph">Machine virtuelle. Gestion des snapshots. Supprimer l'instantané</block>
+  <block id="653c42e482faf281af92e05d3ba79031" category="paragraph">Permet de supprimer un instantané de l'historique des instantanés.</block>
+  <block id="d3aa03526082ef556ffca1a6a35a1775" category="paragraph">Machine virtuelle. Gestion des snapshots. Revenir au snapshot</block>
+  <block id="3817fbf7d76df44f4565ed3cde76a690" category="paragraph">Utiliser pour définir la machine virtuelle à l'état dans lequel elle se trouvait au niveau d'un snapshot donné.</block>
+  <block id="d8e45589bc9d86b39aed3bcde52935ac" category="section-title">5 juillet 2024</block>
+  <block id="7ee40b46e664d0d7baaad4da422c7457" category="list-text">*Prise en charge de AFF série A* : cette version prend en charge les plates-formes matérielles NetApp AFF série A.</block>
+  <block id="a1961f9eb07acee12f93a3f0b929745e" category="list-text">*Prise en charge des datastores VMware VMFS sur site à sur site* : cette version inclut un _aperçu technologique_ de la prise en charge des machines virtuelles montées sur des datastores VMFS (Virtual machine File System) VMware vSphere protégés sur le stockage sur site. Avec cette version, la reprise après incident est prise en charge dans un aperçu technologique pour les workloads VMware sur site vers un environnement VMware sur site avec des datastores VMFS.</block>
+  <block id="710abd7c1d5a2a3be1aa4c7dbff890cf" category="admonition">NetApp ne vous facture pas pour la capacité de workloads prévisualisée.</block>
+  <block id="282dc334473cc4944da587c83b4a1761" category="list-text">*Mises à jour du plan de réplication* : vous pouvez ajouter un plan de réplication plus facilement en filtrant les machines virtuelles par datastore sur la page applications et en sélectionnant plus de détails sur les cibles sur la page mappage des ressources.</block>
+  <block id="a1975f713c38b2cbf1c095ed7dbadabe" category="list-text">*Modifier les plans de réplication* : avec cette version, la page mappages de basculement a été améliorée pour plus de clarté.</block>
+  <block id="e9558a079e21d43034f54a99b19f2ad7" category="inline-link">Gérer les plans</block>
+  <block id="583edef1d12ac8fcf925b864da2d76c6" category="paragraph">Reportez-vous à la<block ref="a8a4a23c947d3e2e3dc169027b7cac12" category="inline-link-rx"></block>.</block>
+  <block id="2343906acc207119786e118da0bbadf7" category="list-text">*Edit VM* : avec cette version, le processus de modification des machines virtuelles dans le plan comprenait quelques améliorations mineures de l'interface utilisateur.</block>
+  <block id="5f1df9fa6d6ce95c36680ae870250af7" category="inline-link">Gestion des VM</block>
+  <block id="f7e4cafc0e54e03cc0ff738b39e333cb" category="paragraph">Reportez-vous à la<block ref="1d44a072309f2a4f38fd6e17ed7eb631" category="inline-link-rx"></block>.</block>
+  <block id="51c73608632a284eecfb3fce29106b26" category="list-text">*Basculement des mises à jour* : avant de lancer un basculement, vous pouvez maintenant déterminer l'état des machines virtuelles et s'ils sont sous ou hors tension. Le processus de basculement vous permet maintenant de prendre un instantané ou de choisir les snapshots.</block>
+  <block id="ab132121a366abdd7667443cc98f3a69" category="paragraph">Reportez-vous à la<block ref="1cbf59ee3e77dd0082612a21b0900f81" category="inline-link-rx"></block>.</block>
+  <block id="66dacd6d538323484187ed3f8c9ef650" category="list-text">*Plannings de test de basculement* : vous pouvez maintenant modifier les tests de basculement et définir des plannings quotidiens, hebdomadaires et mensuels pour le test de basculement.</block>
+  <block id="42b40c3ce2e25adae8327795c655116d" category="list-text">*Mises à jour des informations prérequis* : les informations sur les conditions préalables à la reprise d'activité BlueXP ont été mises à jour.</block>
+  <block id="8a62eb7f743049ce2523fe7eb67fb48f" category="paragraph">Reportez-vous à la<block ref="dfd63f4ad4adb15a66b44e212e2488b7" category="inline-link-rx"></block>.</block>
+  <block id="2e57ab34890abd985ae5cff7c16db6f6" category="list-text">Dans la partie gauche de la page applications, vous pouvez éventuellement rechercher des datastores.</block>
+  <block id="9d84acdf93849adb3b0acbaaf1af7071" category="paragraph"><block ref="0a9d2462a8c27f9a697547bddae93987" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8020af4fa709c3156161baa6bf00e88a" category="inline-image-macro">Plan de réplication, onglet mappage de ressources</block>
+  <block id="0d5dff4bbd2c70484d25c822afa80986" category="paragraph"><block ref="0d5dff4bbd2c70484d25c822afa80986" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="da06c5c1d28e308403236438dda209dc" category="list-text">*Centres de données sources et cibles*</block>
+  <block id="bf0db130eb2746cb5707eb7ebd4e997b" category="list-text">*Hôte cible* (facultatif)</block>
+  <block id="228db5aff5c10fb4007bcfc106b96eac" category="list-text">*Cluster cible* (facultatif)</block>
+  <block id="396f79fd09d35663fad706f8d93d48ba" category="list-text">*Dossier VM cible* (facultatif) : permet de créer un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.</block>
+  <block id="210dfd955522333f74e13d0843ab02ff" category="paragraph">Cette section peut être activée ou désactivée en fonction de votre sélection.</block>
+  <block id="30cb4638cdd1e514eba27473e745afb4" category="paragraph">Dans l'onglet Tester les mappages, les mappages des ordinateurs virtuels et des datastores sont désactivés.</block>
+  <block id="ebcc6bc6ad0c177b30c661fc23c0f951" category="list-text">Consultez les informations de chaque onglet : Détails du plan, mappage du basculement, machines virtuelles.</block>
+  <block id="711c35de4b0430b043159f5d91f6752f" category="inline-image-macro">Basculement de la page</block>
+  <block id="c29c6e0ccfc363d2f29bc8ad4397f5bb" category="paragraph"><block ref="c29c6e0ccfc363d2f29bc8ad4397f5bb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="418818fc05931805b481fbdf48b3a075" category="list-text">Sur la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.</block>
+  <block id="51d5fa513676d68f3e574487650b021d" category="paragraph">Un instantané de la source actuelle est pris et répliqué vers la destination actuelle avant le basculement.</block>
+  <block id="7d0da89e5c4df500c537ba4145ed8fae" category="list-text">Vous pouvez également sélectionner *forcer le basculement* si vous souhaitez que le basculement se produise même si une erreur est détectée, ce qui empêcherait normalement le basculement.</block>
+  <block id="544bb990c26b075198ab3593eb235cab" category="list-text">Saisissez « basculement » dans la zone.</block>
+  <block id="d3c41fabd7d85897eb0f306101f87e33" category="list-text">Sélectionnez *basculement*.</block>
+  <block id="9aaabae265e2785e58b6618d73b8e267" category="summary">Vous pouvez obtenir un aperçu rapide de toutes vos ressources de reprise d'activité BlueXP et gérer les sites vCenter, les groupes de ressources et les plans de réplication.</block>
+  <block id="592189bb19e09b41686c42842ae7f60a" category="doc">Gérez les sites, les groupes de ressources, les plans de réplication, les datastores et les informations sur les machines virtuelles</block>
+  <block id="88947748ef8b3b00cf2cf0c3999a702e" category="paragraph">Vous pouvez désactiver, activer et supprimer des plans de réplication. Vous pouvez modifier les horaires.</block>
+  <block id="fa62d17ad222d305b611f8c161aab288" category="list-text">Pour ajouter ou modifier les machines virtuelles, sélectionnez l'onglet *machines virtuelles* et sélectionnez l'option *Ajouter des machines virtuelles* ou l'icône *Modifier*.</block>
+  <block id="714c8620cd504e0c90291fad7b5c119f" category="list-text">Pour définir ou modifier un planning de basculement de test ou définir la vérification de la fréquence de conformité, sélectionnez l'option *actions* <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block> à droite du plan et sélectionnez *Modifier les planifications*.</block>
+  <block id="6774836d1489d59b22c26b6c62f0749c" category="list-text">Dans la page Modifier les planifications, entrez la fréquence en minutes à laquelle vous souhaitez que la vérification de conformité du basculement se produise.</block>
+  <block id="919f04c7393ca337da4d5ecf62b924fc" category="list-text">Vérifier *Exécuter les basculements de test sur un planning*.</block>
+  <block id="87446024d70eefcd64c28443544975b4" category="list-text">Dans l'option répéter, sélectionnez l'horaire quotidien, hebdomadaire ou mensuel.</block>
+  <block id="a1d594c41e91785ad3637cf3bff4ade5" category="summary">NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer leur progression.</block>
+  <block id="554cfab3938e21d9270bd6b75931f96f" category="sidebar">Vidéos</block>
+  <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Référence</block>
+  <block id="b80f9ccd1ed052ae2d1a95c50bd37d8b" category="sidebar">Privilèges vCenter requis pour la reprise d'activité BlueXP</block>
 </blocks>

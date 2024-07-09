@@ -75,12 +75,8 @@ Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence
 
 .Étapes
 . Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.
-+
-image:draas-license-subscribe2.png["Page modes de paiement de reprise d'activité BlueXP"]
-
 . Sélectionnez *s'abonner à AWS Marketplace*.
-. Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*.
-. Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.
+. Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*. Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.
 . Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.
 +
 Pour afficher les détails de l'abonnement dans le portefeuille digital BlueXP, sélectionnez *Afficher les détails de l'abonnement* et affichez l'abonnement actif sur la page *abonnements*.
