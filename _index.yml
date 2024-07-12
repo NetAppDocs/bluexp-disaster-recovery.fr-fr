@@ -41,11 +41,6 @@ indexpage:
       url: "/use/failover.html"
     - title: Rétablir les applications sur le site source d'origine
       url: "/use/failback.html"
-    - title: Gérez des sites, des plans, des datastores et des informations sur les
-        machines virtuelles
-      url: "/use/manage.html"
-    - title: Surveiller les tâches de reprise après incident
-      url: "/use/monitor-jobs.html"
   - title: Blogs et communauté
     links:
     - title: Communauté NetApp
