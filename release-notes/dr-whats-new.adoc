@@ -16,6 +16,43 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 
 
+== 17 juillet 2024
+
+Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :
+
+* *Plannings de test de basculement* : cette version inclut des mises à jour de la structure de planification de test de basculement, qui était nécessaire pour prendre en charge les plannings quotidiens et hebdomadaires. Cette mise à jour nécessite que vous désactiviez et réactiviez tous les plans de réplication existants afin de pouvoir utiliser les nouveaux programmes de tests de basculement quotidiens et hebdomadaires. Il s'agit d'une exigence ponctuelle.
++
+Voici comment :
+
++
+.. Dans le menu supérieur, sélectionnez *plans de réplication*.
+.. Sélectionnez un plan et sélectionnez l'icône actions pour afficher le menu déroulant.
+.. Sélectionnez *Désactiver*.
+.. Après quelques minutes, sélectionnez *Activer*.
+
+
+* *Mises à jour du plan de réplication* : cette version inclut des mises à jour des données du plan de réplication, ce qui résout un problème de "snapshot introuvable". Pour ce faire, vous devez définir le nombre de rétention dans tous les plans de réplication sur 1 et lancer un instantané à la demande. Ce processus crée une nouvelle sauvegarde et supprime toutes les anciennes sauvegardes.
++
+Voici comment :
+
++
+.. Dans le menu supérieur, sélectionnez *plans de réplication*.
+.. Sélectionnez le plan de réplication, cliquez sur l'onglet *mappage de basculement*, puis cliquez sur l'icône crayon *Modifier*.
+.. Cliquez sur la flèche *datastores* pour la développer.
++
+image:use/dr-plan-failover-edit.png["Modifier les mappages de basculement"]
+
+.. Notez la valeur du nombre de rétention dans le plan de réplication. Vous devrez rétablir cette valeur d'origine lorsque vous aurez terminé ces étapes.
+.. Réduisez le compte à 1.
+.. Lancez un snapshot à la demande. Pour ce faire, sur la page Plan de réplication, sélectionnez le plan, cliquez sur l'icône actions et sélectionnez *prendre instantané maintenant*.
+.. Une fois la procédure de snapshot terminée, augmentez le nombre dans le plan de réplication à sa valeur d'origine, que vous avez notée à la première étape.
+.. Répétez ces étapes pour tous les plans de réplication existants.
+
+
+
+
+
+
 == 5 juillet 2024
 
 Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :

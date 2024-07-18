@@ -84,6 +84,21 @@ image:../use/dr-plan-list2.png["Liste des plans de réplication"]
 
 
 
+=== Modifier le nombre de rétention pour les planifications de basculement
+
+Vous pouvez modifier le nombre de datastores conservés.
+
+. Dans le menu supérieur, sélectionnez *plans de réplication*.
+. Sélectionnez le plan de réplication, cliquez sur l'onglet *mappage de basculement*, puis cliquez sur l'icône crayon *Modifier*.
+. Cliquez sur la flèche *datastores* pour la développer.
++
+image:../use/dr-plan-failover-edit.png["Modifier les mappages de basculement"]
+
+. Modifiez la valeur du nombre de rétention dans le plan de réplication.
+
+
+
+
 == Afficher les informations sur les datastores
 
 Vous pouvez afficher des informations sur le nombre de datastores présents sur la source et sur la cible.
