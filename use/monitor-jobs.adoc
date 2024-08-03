@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/monitor-jobs.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
 summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer leur progression. 
 ---
 = Surveiller les tâches de reprise après incident
@@ -20,4 +20,20 @@ Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer
 . Explorez tous les travaux liés aux opérations et vérifiez leurs horodatages et leur état.
 . Pour afficher les détails d'un travail particulier, sélectionnez cette ligne.
 . Pour actualiser les informations, sélectionnez *Actualiser*.
+
+
+
+
+== Annuler un travail
+
+Si un travail est en cours ou en file d'attente et que vous ne souhaitez pas qu'il continue, vous pouvez l'annuler. Vous pouvez annuler un travail s'il est bloqué dans le même état et que vous souhaitez libérer l'opération suivante dans la file d'attente. Vous pouvez annuler un travail avant qu'il ne soit trop tard.
+
+.Étapes
+. Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
+. Dans le menu supérieur, sélectionnez *surveillance des travaux*.
+. Sur la page moniteur de travaux, notez l'ID du travail que vous souhaitez annuler.
++
+Le travail doit être à l'état « en cours » ou « en file d'attente ».
+
+. Dans la colonne actions, sélectionnez *Annuler*.
 
