@@ -35,5 +35,5 @@ Si un travail est en cours ou en file d'attente et que vous ne souhaitez pas qu'
 +
 Le travail doit être à l'état « en cours » ou « en file d'attente ».
 
-. Dans la colonne actions, sélectionnez *Annuler*.
+. Dans la colonne actions, sélectionnez *Annuler le travail*.
 
