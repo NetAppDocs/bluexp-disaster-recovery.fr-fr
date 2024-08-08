@@ -42,13 +42,10 @@ Pour consulter les détails du plan de réplication, sélectionnez *Afficher tou
 
 
 ** *Groupes de ressources* : permet d'afficher l'état de santé de vos groupes de ressources. Un groupe de ressources peut avoir l'un des États suivants :
+** *MV protégées* : les VM font partie d'un groupe de ressources.
+** *Machines virtuelles non protégées* : les machines virtuelles ne font pas partie d'un groupe de ressources.
 +
-*** *MV protégées* : les VM font partie d'un groupe de ressources.
-*** *Machines virtuelles non protégées* : les machines virtuelles ne font pas partie d'un groupe de ressources.
-+
-Pour consulter les détails du groupe de ressources, sélectionnez *Afficher tout* pour un état ou *Afficher les groupes de ressources* pour les voir tous.
-
-
+Pour consulter les détails, cliquez sur le lien *Afficher* situé en dessous de chaque.
 
 ** Le nombre de basculements, de basculements de test et de migrations. Par exemple, si vous avez créé deux plans et migré vers les destinations, le nombre de migrations apparaît comme « 2 ».
 

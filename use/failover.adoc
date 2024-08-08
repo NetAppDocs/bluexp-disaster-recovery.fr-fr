@@ -84,7 +84,7 @@ TIP: Une fois le basculement lancé, les VM restaurées sont visibles dans le vC
 . Sélectionnez le plan de réplication.
 . Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *basculement*.
 +
-image:dr-plan-failover.png["Basculement de la page"]
+image:dr-plan-failover2.png["Basculement de la page"]
 
 . Sur la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.
 +
