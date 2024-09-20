@@ -47,6 +47,7 @@ Grâce à la reprise d'activité BlueXP, vous exploitez pleinement plusieurs tec
 
 * Répliquez les applications VMware de votre site de production sur un site distant de reprise d'activité dans le cloud ou sur site à l'aide de la réplication SnapMirror.
 * Migrez les workloads VMware de votre site d'origine vers un autre site.
+* Effectuez un test de basculement ; les machines virtuelles sont créées temporairement. La reprise d'activité BlueXP  crée un nouveau volume FlexClone à partir de l'instantané sélectionné, et un datastore temporaire sur lequel le volume FlexClone est installé est mappé aux hôtes ESXi. Ce processus ne consomme pas de capacité physique supplémentaire dans le stockage ONTAP sur site ou FSX pour le stockage NetApp ONTAP dans AWS. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.
 * En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.
 * Une fois le sinistre résolu, basculez à la demande du site de reprise sur incident vers le site principal.
 
@@ -112,4 +113,15 @@ En cas d'incident, ce service vous aide à restaurer des machines virtuelles dan
 * Le service vous permet également de rétablir les machines virtuelles à l'emplacement source d'origine.
 * Vous pouvez tester le processus de basculement de reprise après incident sans interrompre les machines virtuelles d'origine. Le test restaure les machines virtuelles sur un réseau isolé en créant un FlexClone du volume.
 * Pour le processus de basculement ou de test de basculement, vous pouvez choisir le dernier (par défaut) ou l'instantané sélectionné à partir duquel restaurer votre machine virtuelle.
+
+
+
+
+== Des conditions qui peuvent vous aider dans la reprise d'activité BlueXP 
+
+Il est parfois utile de comprendre la terminologie relative à la reprise sur incident.
+
+* *Site* : conteneur logique généralement associé à un centre de données physique ou à un fournisseur de cloud.
+* *Resource group* : conteneur logique qui vous permet de gérer plusieurs machines virtuelles en tant qu'unité unique.
+* *Plan de réplication* : ensemble de règles sur la fréquence des sauvegardes et sur la manière de gérer les événements de basculement. Les plans sont affectés à un ou plusieurs groupes de ressources.
 

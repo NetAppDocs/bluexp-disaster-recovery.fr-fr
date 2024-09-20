@@ -336,9 +336,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="b2f702d4d241c0d53726eedc499ac784" category="paragraph">Ces plans sont parfois appelés _plans_.</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">Un assistant vous guide tout au long de la procédure suivante :</block>
   <block id="8705d6076cb452e919a6e22862427440" category="list-text">Sélectionnez serveurs vCenter</block>
-  <block id="8b89ed4b8e4a4b16d551a86114a0c361" category="list-text">Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes</block>
-  <block id="0ee5515fd7a8d972a5df4c4eb08b18f2" category="list-text">Identifier la récurrence</block>
-  <block id="febc3cdab40dc222679ce1e42cce7011" category="list-text">Revoir le plan</block>
   <block id="d72f4a94d857178ae5cb1420995137e4" category="inline-image-macro">Capture d'écran montrant la page Ajouter un plan de réplication &amp;gt; Ajouter un plan</block>
   <block id="6961a5b80d0429840ea8a9232c79ec6f" category="paragraph"><block ref="b3b324f474892662518dcbec32158ea5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="466ea193e548e9ef8d853f2da4829a3e" category="list-text">Créez un nom pour le plan de réplication.</block>
@@ -920,8 +917,6 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="7906e2e007c3bad108fcd7ed7311a131" category="paragraph"><block ref="7906e2e007c3bad108fcd7ed7311a131" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6dbc81f47f4a822cd11ce7c8403756ed" category="list-text">Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chacune.</block>
   <block id="022ab008c31f5588f9d15da4dc3439fb" category="list-text">*Calculer les ressources* : sélectionnez la flèche vers le bas en regard de *calculer les ressources*.</block>
-  <block id="023cde6974e67dee3aff7c64e3290e80" category="list-text">Cluster source</block>
-  <block id="221533a77747ed01c409141d8985b5fe" category="list-text">Cluster cible (facultatif)</block>
   <block id="5bfe17be68350c18dc777bcfabdd7a8f" category="list-text">*Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Entrez ou sélectionnez le LAN virtuel source et le segment cible.</block>
   <block id="a358a5c755a9f869690207e2a0726737" category="list-text">*Machines virtuelles* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.</block>
   <block id="909f84e264f0200a692127b28fbdbaaf" category="paragraph">Sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.</block>
@@ -934,4 +929,47 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="10936c8535aaede0ed75f5d8d4fa6aaf" category="list-text">*Retention count* : entrez le nombre d'instantanés que vous souhaitez conserver.</block>
   <block id="b23c862689b973964a4b79af3d87b2de" category="list-text">*Datastores source et cible* : si une relation SnapMirror est déjà établie sur un volume, vous pouvez sélectionner les datastores source et cible correspondants. Si vous sélectionnez un volume qui ne dispose pas de relation SnapMirror, vous pouvez en créer un dès maintenant en sélectionnant l'environnement de travail et son homologue SVM.</block>
   <block id="8772d236d3c62b688c3b57224d982ee1" category="paragraph"><block ref="8772d236d3c62b688c3b57224d982ee1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1267d6fc2aff2a3372b02b4d25a9f397" category="list-text">Effectuez un test de basculement ; les machines virtuelles sont créées temporairement. La reprise d'activité BlueXP  crée un nouveau volume FlexClone à partir de l'instantané sélectionné, et un datastore temporaire sur lequel le volume FlexClone est installé est mappé aux hôtes ESXi. Ce processus ne consomme pas de capacité physique supplémentaire dans le stockage ONTAP sur site ou FSX pour le stockage NetApp ONTAP dans AWS. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.</block>
+  <block id="76e4d72594030fca0b96279d0f8392dc" category="section-title">Des conditions qui peuvent vous aider dans la reprise d'activité BlueXP </block>
+  <block id="b7b26d16c3d1d84d3872afa1f04c92d6" category="paragraph">Il est parfois utile de comprendre la terminologie relative à la reprise sur incident.</block>
+  <block id="7f800e59a5bd3f98ce900fa6e543f67d" category="list-text">*Site* : conteneur logique généralement associé à un centre de données physique ou à un fournisseur de cloud.</block>
+  <block id="1060a69dfe06a51ad97fdd63bb36b6c6" category="list-text">*Resource group* : conteneur logique qui vous permet de gérer plusieurs machines virtuelles en tant qu'unité unique.</block>
+  <block id="01f306e8e2e64b0a1d39d18d7594ecf5" category="list-text">*Plan de réplication* : ensemble de règles sur la fréquence des sauvegardes et sur la manière de gérer les événements de basculement. Les plans sont affectés à un ou plusieurs groupes de ressources.</block>
+  <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">Attendez la fin du retour arrière avant d'exécuter la détection</block>
+  <block id="a59aaedc864081e6c1a7bd46bcdf9813" category="paragraph">Une fois le basculement terminé, ne lancez pas manuellement la découverte sur le vCenter source. Attendez que le retour arrière soit terminé, puis lancez la découverte sur le vCenter source.</block>
+  <block id="eaecda6db64f5346d5c63bfe0094e040" category="section-title">20 septembre 2024</block>
+  <block id="ee811bd919a27bd2eb705f65ed45e4f6" category="paragraph">Cette version de reprise sur incident BlueXP  inclut la mise à jour suivante.</block>
+  <block id="b077aa4f9a421cc2e2782608fb5caf4f" category="list-text">*Prise en charge des datastores VMware VMFS sur site à sur site* : cette version inclut la prise en charge des machines virtuelles montées sur des datastores VMware vSphere Virtual machine File System (VMFS) pour iSCSI et FC protégées sur le stockage sur site. Auparavant, le service fournissait un _aperçu de la technologie_ prenant en charge les datastores VMFS pour iSCSI et FC.</block>
+  <block id="0eb65976c0b0c5ffa90b07d4a062e509" category="paragraph">Voici quelques considérations supplémentaires concernant à la fois les protocoles iSCSI et FC :</block>
+  <block id="d671bd2f503deef1e03581ce8d516507" category="list-text">La prise en charge de FC concerne les protocoles client frontaux, pas la réplication.</block>
+  <block id="cf1967c6d778937fae37b9e43582b1b6" category="list-text">La reprise d'activité BlueXP  ne prend en charge qu'une seule LUN par volume ONTAP. Le volume ne doit pas avoir plusieurs LUN.</block>
+  <block id="f3a37c3560d0027bc0f49abfab4ab0e3" category="list-text">Pour tout plan de réplication, le volume ONTAP de destination doit utiliser les mêmes protocoles que le volume ONTAP source hébergeant les VM protégées. Par exemple, si la source utilise un protocole FC, la destination doit également utiliser FC.</block>
+  <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">Sélectionnez serveurs vCenter.</block>
+  <block id="cfb3b856fe141dd537038393a8052d33" category="list-text">Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes.</block>
+  <block id="8e635b1aadad234871ba0e012309361f" category="list-text">Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.</block>
+  <block id="1c10305a999dce53cb52dd4f6b8d89ff" category="list-text">Revoir le plan.</block>
+  <block id="054b753af44fc4eeee43c9ba6037caaa" category="doc">Créez des rapports de reprise d'activité</block>
+  <block id="282dfbc5927b79619ad76e7f3cbfe3c6" category="paragraph">La révision de rapports de reprise sur incident peut vous aider à analyser votre niveau de préparation à la reprise sur incident. Les rapports préconçus incluent un récapitulatif des basculements et des basculements, des détails de réplication sur tous les sites et des détails des tâches pour l'année écoulée. Vous pouvez également créer des rapports personnalisés.</block>
+  <block id="08efd64e87408e4769275d6a11482ddf" category="paragraph">Vous pouvez télécharger des rapports au format PDF.</block>
+  <block id="b775ae7fb34855ffeede56666da9a15c" category="list-text">Dans le menu supérieur, sélectionnez *Rapports*.</block>
+  <block id="44f0d43cd92781ec793d9ba50c2d422e" category="inline-image-macro">Page de rapports</block>
+  <block id="a73757daae33bff01ded292e39f3ddaf" category="paragraph"><block ref="a73757daae33bff01ded292e39f3ddaf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ccbbafbdd477e2f028bfd34e03f436b" category="list-text">Avant de créer ou de télécharger un rapport, actualisez les données en cliquant sur l'option *Actualiser*.</block>
+  <block id="c83e2a522238e98593e337bd5a7311b5" category="list-text">Sélectionnez un rapport dans l'onglet *prêt* ou créez votre propre rapport dans l'onglet *personnalisé*.</block>
+  <block id="70db9063910acf1265d5a518168c69cd" category="list-text">Téléchargez un rapport en cliquant sur *Télécharger*.</block>
+  <block id="0656a1b7f286656b2fc85b91fe54f0dd" category="section-title">Créez votre propre rapport sur la reprise d'activité</block>
+  <block id="8eaafa07b3ff6e9aa5dbe62e7cc8c77c" category="paragraph">Vous pouvez créer un rapport personnalisé dans lequel vous pouvez spécifier les sites, les plans de réplication et les données. Vous pouvez indiquer si vous souhaitez inclure les résumés des basculements et des retours arrière pour l'année écoulée, les détails des ordinateurs virtuels pour chaque plan de réplication, ainsi que les détails des tâches pour chaque plan de réplication pour l'année écoulée.</block>
+  <block id="036f7e4b10d318ae312cdfbb79a225fe" category="list-text">Avant de créer un rapport, actualisez les données en cliquant sur l'option *Actualiser*.</block>
+  <block id="27c38bec0a8c0321e9a3236a8a9d4e76" category="list-text">Sélectionnez l'onglet *personnalisé*.</block>
+  <block id="c3c616a8c2970d4d1156559952705700" category="list-text">Sélectionnez *Ajouter* pour ajouter un nouveau rapport.</block>
+  <block id="402199b58c216d8c9be526288150639b" category="inline-image-macro">Boîte de dialogue Ajouter un rapport personnalisé</block>
+  <block id="8224443416aacfdb9c8d006355a8489a" category="paragraph"><block ref="8224443416aacfdb9c8d006355a8489a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d6c444c23609646be63340436709d5f" category="list-text">Sélectionnez les options pour personnaliser votre rapport :</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">Les données</block>
+  <block id="478109b22c544f0e3bed80d9622cc572" category="list-text">Récapitulatif des basculements et des basculements au cours de l'année écoulée</block>
+  <block id="d9848020098abdd6a6adf5b664e0a02c" category="list-text">Détails des ordinateurs virtuels pour chaque plan de réplication</block>
+  <block id="2eac16c021d7f4e2d342be672e454649" category="list-text">Détails de la tâche pour chaque plan de réplication de l'année écoulée</block>
+  <block id="65db0a5300ccaa6099d24aaf16150200" category="paragraph">Votre rapport personnalisé apparaît dans la liste des rapports personnalisés.</block>
+  <block id="b7a41431aa1eee1607db390ac47d2a65" category="admonition">Pour afficher tous les sites ou plans inclus dans le rapport, cliquez sur le numéro à droite du nom du rapport ou du nom du plan.</block>
+  <block id="a99780537c030fe162f59c129be8e471" category="list-text">Téléchargez votre rapport personnalisé en cliquant sur *Télécharger*.</block>
 </blocks>

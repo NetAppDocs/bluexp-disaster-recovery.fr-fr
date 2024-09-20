@@ -16,6 +16,24 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 
 
+== 20 septembre 2024
+
+Cette version de reprise sur incident BlueXP  inclut la mise à jour suivante.
+
+* *Prise en charge des datastores VMware VMFS sur site à sur site* : cette version inclut la prise en charge des machines virtuelles montées sur des datastores VMware vSphere Virtual machine File System (VMFS) pour iSCSI et FC protégées sur le stockage sur site. Auparavant, le service fournissait un _aperçu de la technologie_ prenant en charge les datastores VMFS pour iSCSI et FC.
++
+Voici quelques considérations supplémentaires concernant à la fois les protocoles iSCSI et FC :
+
++
+** La prise en charge de FC concerne les protocoles client frontaux, pas la réplication.
+** La reprise d'activité BlueXP  ne prend en charge qu'une seule LUN par volume ONTAP. Le volume ne doit pas avoir plusieurs LUN.
+** Pour tout plan de réplication, le volume ONTAP de destination doit utiliser les mêmes protocoles que le volume ONTAP source hébergeant les VM protégées. Par exemple, si la source utilise un protocole FC, la destination doit également utiliser FC.
+
+
+
+
+
+
 == 2 août 2024
 
 Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :

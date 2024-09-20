@@ -24,11 +24,11 @@ Vous pouvez créer un plan de réplication et modifier des plannings pour la con
 
 Un assistant vous guide tout au long de la procédure suivante :
 
-* Sélectionnez serveurs vCenter
-* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes
+* Sélectionnez serveurs vCenter.
+* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes.
 * Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
-* Identifier la récurrence
-* Revoir le plan
+* Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.
+* Revoir le plan.
 
 
 Lors de la création du plan de réplication, vous pouvez définir la relation SnapMirror entre les volumes source et cible dans l'une des configurations suivantes :
@@ -108,11 +108,6 @@ image:dr-plan-resource-mapping2.png["Plan de réplication, onglet mappage de res
 
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chacune.
 . *Calculer les ressources* : sélectionnez la flèche vers le bas en regard de *calculer les ressources*.
-+
-** Cluster source
-** Cluster cible (facultatif)
-
-
 . *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Entrez ou sélectionnez le LAN virtuel source et le segment cible.
 . *Machines virtuelles* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.
 +
@@ -130,10 +125,10 @@ SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont r
 *** *DHCP* : si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
 *** *Static IP* : vous pouvez sélectionner les mêmes informations ou des informations différentes à partir de la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
 +
-image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
+Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
 
 +
-Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
+image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
 
 
 

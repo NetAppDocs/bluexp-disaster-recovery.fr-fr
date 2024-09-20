@@ -16,6 +16,12 @@ Les limitations connues identifient les plates-formes, les périphériques ou le
 
 
 
+== Attendez la fin du retour arrière avant d'exécuter la détection
+
+Une fois le basculement terminé, ne lancez pas manuellement la découverte sur le vCenter source. Attendez que le retour arrière soit terminé, puis lancez la découverte sur le vCenter source.
+
+
+
 == BlueXP ne découvre peut-être pas Amazon FSX pour NetApp ONTAP
 
 Il peut arriver que BlueXP ne détecte pas les clusters Amazon FSX pour NetApp ONTAP. Cela peut être dû au fait que les informations d'identification FSX n'étaient pas correctes.
