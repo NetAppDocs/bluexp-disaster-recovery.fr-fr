@@ -61,20 +61,20 @@ Ces conditions préalables s'appliquent à la fois aux clusters vCenter sur site
 
 
 
+=== Lancez-vous avec BlueXP
+
+Si vous ne l'avez pas déjà fait, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["Inscrivez-vous à BlueXP  et créez une entreprise"^]
+
+
+
 === Collectez les informations d'identification pour ONTAP et VMware
 
-* Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.
+* Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans le projet BlueXP  qui sera utilisé pour gérer la reprise d'activité BlueXP .
 * La reprise d'activité BlueXP nécessite des informations d'identification vCenter. Vous entrez les informations d'identification vCenter lorsque vous ajoutez un site dans le cadre de la reprise d'activité BlueXP.
 +
 Pour obtenir la liste des privilèges vCenter nécessaires, reportez-vous link:../reference/vcenter-privileges.html["Privilèges vCenter requis pour la reprise d'activité BlueXP"]à la section . Pour obtenir des instructions sur l'ajout d'un site, reportez-vous à la section link:../use/sites-add.html["Ajouter un site"].
 
 
-
-
-
-=== Ajoutez un compte BlueXP
-
-Dans BlueXP, si vous ne possédez pas encore de compte, vous devez ajouter un compte. Reportez-vous à la https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Documentation BlueXP sur l'ajout d'un compte"^].
 
 
 
@@ -94,7 +94,7 @@ TIP: Du site aux environnements sur site, utilisez le connecteur sur site BlueXP
 ** Le connecteur BlueXP installé doit pouvoir accéder à tout cluster VMware que la reprise d'activité BlueXP va gérer.
 
 
-* Toutes les baies ONTAP à gérer par la reprise d'activité BlueXP doivent être ajoutées à n'importe quel environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.
+* Toutes les baies ONTAP devant être gérées par BlueXP  Disaster Recovery doivent être ajoutées à tout environnement de travail du projet BlueXP  qui sera utilisé pour gérer BlueXP  Disaster Recovery.
 +
 Voir https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP sur site"^].
 

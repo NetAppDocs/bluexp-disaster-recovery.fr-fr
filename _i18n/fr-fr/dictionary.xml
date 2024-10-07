@@ -26,7 +26,6 @@
   <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">Sélectionnez *Créer un cas* pour ouvrir un ticket avec un spécialiste du support NetApp :</block>
   <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*Service* : sélectionnez le service auquel le problème est associé. Par exemple, BlueXP lorsqu'il est spécifique à un problème de support technique avec des flux de travail ou des fonctionnalités au sein du service.</block>
   <block id="2e50c5f85523f0aba9ff2db10f18279c" category="list-text">*Environnement de travail* : si applicable au stockage, sélectionnez *Cloud Volumes ONTAP* ou *sur site*, puis l'environnement de travail associé.</block>
-  <block id="aa996e20900197b0ea41485ada083d8c" category="paragraph">La liste des environnements de travail est comprise dans le cadre du compte, de l'espace de travail et du connecteur BlueXP que vous avez sélectionnés dans la bannière supérieure du service.</block>
   <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*Priorité du cas* : choisissez la priorité du cas, qui peut être faible, Moyen, élevé ou critique.</block>
   <block id="835eb4008e97c2a7f69bbb2725285e34" category="paragraph">Pour en savoir plus sur ces priorités, passez votre souris sur l'icône d'information située à côté du nom du champ.</block>
   <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*Description du problème* : fournir une description détaillée de votre problème, y compris les messages d'erreur ou les étapes de dépannage applicables que vous avez effectués.</block>
@@ -80,7 +79,6 @@
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">S'inscrire pour obtenir de l'aide</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">Présentation de l'inscription au support</block>
   <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">Il existe deux types d'inscription pour activer les droits d'assistance :</block>
-  <block id="2322ca552c2b0ebe090c8485519246a8" category="list-text">Enregistrement de votre abonnement au support pour les identifiants de compte BlueXP (votre numéro de série à 20 chiffres 960xxxxxxxxx se trouve sur la page des ressources de support de BlueXP).</block>
   <block id="23fdcbefa6d9cd877be7ceb7a18bb936" category="paragraph">Il sert d'ID d'abonnement unique pour tous les services de BlueXP. Chaque abonnement au support BlueXP au niveau du compte doit être enregistré.</block>
   <block id="55ff64467cd508971910145ab5d6b3b8" category="list-text">Enregistrement des numéros de série Cloud Volumes ONTAP associés à un abonnement sur le marché de votre fournisseur cloud (numéros de série à 20 chiffres 909201xxxxxxxx).</block>
   <block id="67dbdeb11e22ea7def810bade59ce818" category="paragraph">Ces numéros de série sont généralement appelés _PAYGO - numéros de série_ et sont générés par BlueXP au moment du déploiement de Cloud Volumes ONTAP.</block>
@@ -91,18 +89,14 @@
   <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service pour Google Cloud</block>
   <block id="cf14bff66a8b72d3675db8ffe0f02ee3" category="list-text"><block ref="cf14bff66a8b72d3675db8ffe0f02ee3" category="inline-link-macro-rx"></block></block>
-  <block id="5a19febf1dcb23c10e8dcfde64ba764c" category="section-title">Enregistrez votre compte BlueXP pour bénéficier de la prise en charge NetApp</block>
-  <block id="6bbc2ba432f59ab65ee3d8ac5a58336e" category="paragraph">Pour vous inscrire au support et activer les droits de support, un utilisateur de votre compte BlueXP doit associer un compte sur le site de support NetApp à sa connexion BlueXP. Le fait de vous inscrire au support NetApp dépend de la présence ou non d'un compte sur le site de support NetApp (NSS).</block>
   <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">Client existant avec un compte NSS</block>
   <block id="7e177185e7eddff33dd8f3aeb7551132" category="paragraph">Si vous êtes client NetApp avec un compte NSS, il vous suffit de vous inscrire pour obtenir du support dans BlueXP.</block>
   <block id="0307a12e5749f8dd930472ee78f69d2c" category="list-text">Dans le coin supérieur droit de la console BlueXP, sélectionnez l'icône Paramètres, puis sélectionnez *informations d'identification*.</block>
   <block id="f19ab635e6d5f884a22ee4ce067fdbfd" category="list-text">Sélectionnez *informations d'identification utilisateur*.</block>
   <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">Sélectionnez *Ajouter des informations d'identification NSS* et suivez l'invite authentification du site de support NetApp (NSS).</block>
   <block id="cfc5506589d5a4d055e721267d5f0732" category="list-text">Pour confirmer que le processus d'enregistrement a réussi, sélectionnez l'icône aide et sélectionnez *support*.</block>
-  <block id="8add4eb0d3f6ce61d374f3df3ee4eadf" category="paragraph">La page *Ressources* doit indiquer que votre compte est enregistré pour le support.</block>
   <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">Capture d'écran affichant un numéro de série de compte, une case à cocher verte et le texte enregistré pour le support.</block>
   <block id="3d183819a15163ef2e2e7d9d764254a9" category="paragraph"><block ref="3d183819a15163ef2e2e7d9d764254a9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d9a01bdcfab6f0a10fc126999b4d5988" category="paragraph">Notez que les autres utilisateurs BlueXP ne verront pas ce même statut d'enregistrement de support s'ils n'ont pas associé de compte sur le site de support NetApp à leur identifiant BlueXP. Toutefois, cela ne signifie pas que votre compte BlueXP n'est pas enregistré pour le support. Tant qu'un utilisateur du compte a suivi ces étapes, votre compte a été enregistré.</block>
   <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">Client existant mais aucun compte NSS</block>
   <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">Si vous possédez déjà des licences et des numéros de série NetApp, mais que vous possédez un compte NSS, vous devez créer un compte NSS et l'associer à votre connexion BlueXP.</block>
   <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">Formulaire d'inscription de l'utilisateur du site de support NetApp</block>
@@ -125,18 +119,14 @@
   <block id="3a24c87c9971d2011b4df223718f84b4" category="paragraph">Un e-mail est immédiatement envoyé à la boîte aux lettres fournie pour finaliser cette transaction sécurisée. Assurez-vous de vérifier vos dossiers de courrier indésirable si l'e-mail de validation n'arrive pas dans quelques minutes.</block>
   <block id="03413baeca1ff7222737d8ce299bd4e8" category="list-text">Confirmez l'action à partir de l'e-mail.</block>
   <block id="201080500e946070a2e4873042507c77" category="paragraph">La confirmation de la soumission de votre demande à NetApp et vous recommande de créer un compte sur le site de support NetApp.</block>
-  <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Veillez à copier le numéro de série du compte (960xxxx) utilisé ci-dessus pour le champ Numéro de série. Le traitement du compte sera ainsi accéléré.</block>
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp devrait vous contacter au cours de ce processus. Il s'agit d'un exercice d'intégration unique pour les nouveaux utilisateurs.</block>
   <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">Une fois que vous possédez votre compte sur le site de support NetApp, associez-le à votre connexion BlueXP en suivant les étapes décrites sous <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>.</block>
   <block id="3e616bae81890a6c8fae17c9b45af152" category="section-title">Associer les informations d'identification NSS pour le support Cloud Volumes ONTAP</block>
-  <block id="d8f0da67cbab6e43f6d266bdab68cdc8" category="paragraph">Pour activer les workflows clés suivants pour Cloud Volumes ONTAP, vous devez associer les informations d'identification du site de support NetApp à votre compte BlueXP :</block>
   <block id="a0518a10626dc11fd00e2d20265ad240" category="list-text">Enregistrement des systèmes Cloud Volumes ONTAP avec paiement à l'utilisation pour bénéficier d'une assistance</block>
   <block id="321aadf78ef73521712291b7aba6411f" category="paragraph">Vous devez fournir votre compte NSS afin d'activer le support pour votre système et d'accéder aux ressources du support technique NetApp.</block>
   <block id="d51b2b497db445a16b1c9583c1abbb59" category="list-text">Déploiement d'Cloud Volumes ONTAP avec modèle BYOL (Bring Your Own License)</block>
   <block id="2ebfeabed40c2270d9fa8325080a4b3e" category="paragraph">Il est nécessaire de fournir votre compte NSS afin que BlueXP puisse télécharger votre clé de licence et activer l'abonnement pour la durée que vous avez achetée. Cela inclut des mises à jour automatiques pour les renouvellements de contrats.</block>
   <block id="f5135b68b75a8404803a1eb438e40c5e" category="list-text">Mise à niveau du logiciel Cloud Volumes ONTAP vers la dernière version</block>
-  <block id="39f382b97080640c75604b5890f3a5d3" category="paragraph">L'association des informations d'identification NSS à votre compte BlueXP est différente du compte NSS associé à une connexion utilisateur BlueXP.</block>
-  <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">Ces informations d'identification NSS sont associées à votre ID de compte BlueXP spécifique. Les utilisateurs qui appartiennent au compte BlueXP peuvent accéder à ces informations d'identification depuis *support &gt; gestion NSS*.</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">Si vous avez un compte au niveau du client, vous pouvez ajouter un ou plusieurs comptes NSS.</block>
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">Si vous avez un compte partenaire ou revendeur, vous pouvez ajouter un ou plusieurs comptes NSS, mais ils ne peuvent pas être ajoutés en même temps que les comptes au niveau du client.</block>
   <block id="c0e0b7ff0de9558404e9b77ece42948a" category="list-text">Sélectionnez *gestion NSS &gt; Ajouter un compte NSS*.</block>
@@ -208,7 +198,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="1b38656c5ec12ea70e00624b8b3d9551" category="paragraph"><block ref="aa736dbc3fc450bce1fb1f5726a687eb" category="inline-link-rx"></block> Offre une expérience cloud native pour les charges de travail VMware dans l'écosystème AWS. Chaque data Center Software-defined VMware (SDDC) s'exécute dans un cloud privé virtuel Amazon et fournit une pile VMware complète (y compris vCenter Server), une mise en réseau Software-defined NSX-T, un stockage Software-defined VSAN et un ou plusieurs hôtes ESXi qui fournissent des ressources de calcul et de stockage aux charges de travail.</block>
   <block id="2a304a1348456ccd2234cd71a81bd338" category="inline-link">lien</block>
   <block id="fd14ed73e21c2af5ff119a635c30df95" category="paragraph">Pour configurer un environnement VMC sur AWS, procédez comme suit<block ref="2482e32457e6109d0aff0016bbcce7d1" category="inline-link-rx"></block>. Un bloc de voyants peut également être utilisé à des fins de reprise après incident.</block>
-  <block id="8578ea7cebd82d3ffa5a16500e105552" category="inline-link">Documentation BlueXP sur l'ajout d'un compte</block>
   <block id="ee21d19e70e4611d4c782f9439377ba0" category="summary">Commencez à utiliser le service de reprise d'activité NetApp BlueXP en quelques étapes.</block>
   <block id="6923c085091f4d4b0d464355d7771240" category="doc">Démarrage rapide de la reprise d'activité BlueXP</block>
   <block id="917c67acabedb60df299e96c679e04f8" category="paragraph">Voici un aperçu des étapes à suivre pour démarrer avec la reprise d'activité BlueXP. Les liens de chaque étape vous mènent à une page qui fournit plus de détails.</block>
@@ -568,10 +557,6 @@ La reprise d'activité BlueXP ne nécessite aucune activation. L'option de repri
   <block id="c3964fe08c9dd95815cc67d8aaee9323" category="list-text">Saisissez « fin de l'essai » dans la zone de texte.</block>
   <block id="44a320573c319d1f30b840c2d11a4e26" category="list-text">Sélectionnez *fin*.</block>
   <block id="3906249fde1cef9339402436007bb4f7" category="paragraph">Si vous apportez votre propre licence (BYOL), la configuration inclut l'achat de la licence, l'obtention du fichier de licence NetApp (NLF) et l'ajout de la licence au portefeuille digital BlueXP.</block>
-  <block id="e3286b69a705d4ed944e904722ab7c8f" category="paragraph">Vous devez disposer des informations suivantes avant de commencer :</block>
-  <block id="43ae1d792e09f6126441ea0d91d847c7" category="list-text">Numéro de série de la reprise d'activité BlueXP</block>
-  <block id="079aeecf06b109e4316b0a68ea943f2b" category="paragraph">Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.</block>
-  <block id="bcbbd9a155e07caa8b31001adc835c79" category="list-text">ID de compte BlueXP</block>
   <block id="c8508c0ce4da6dc634b7c66b1df15681" category="list-text">Sélectionnez *Ajouter licence*.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
   <block id="7c8c5dfa7e1cbe0ce55b88149d634d69" category="paragraph">Le portefeuille digital BlueXP affiche désormais la reprise d'activité avec une licence.</block>
@@ -696,9 +681,6 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="f3688cd67baeb83949d8b3d8688cda8b" category="paragraph"><block ref="f3688cd67baeb83949d8b3d8688cda8b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4052ab6997dacca028b4d726754818d5" category="paragraph">*Activer la licence*
 Après avoir acheté votre licence BlueXP de reprise après incident auprès de votre ingénieur commercial NetApp, vous activez la licence en saisissant le numéro de série de BlueXP Disaster Recovery et les informations de compte du site de support NetApp (NSS).</block>
-  <block id="19a9d224e357593876fd44c3faede4ab" category="paragraph">Vous pouvez trouver votre ID de compte BlueXP en sélectionnant la liste déroulante *compte* en haut de BlueXP, puis en sélectionnant *gérer le compte* en regard de votre compte. Votre ID de compte se trouve dans l'onglet vue d'ensemble.</block>
-  <block id="3a00897c7ffb183a2673af94c243c5fd" category="paragraph">*Ajouter la licence au portefeuille digital BlueXP*
-Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte BlueXP, vous devez ajouter la licence au portefeuille digital BlueXP.</block>
   <block id="e4822c1e77f0d7746ffdde4c031a2109" category="inline-image-macro">Page des nœuds de paiement de reprise d'activité BlueXP</block>
   <block id="5646d601e859bd392516de29f6a97047" category="paragraph"><block ref="5646d601e859bd392516de29f6a97047" category="inline-image-macro-rx" type="image"></block></block>
   <block id="595da0c0edf936a84fa3d6a69bbbb4e5" category="paragraph"><block ref="595da0c0edf936a84fa3d6a69bbbb4e5" category="inline-image-macro-rx" type="image"></block></block>
@@ -735,13 +717,10 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="7122f5fb62a64795817462bf41ff7862" category="list-text">Associez le SDDC dans le cloud VMware à l'instance Amazon FSX pour NetApp ONTAP. Reportez-vous à la<block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>.</block>
   <block id="96888c442fac1de0bbc3ba9d00f296a4" category="section-title">Prérequis de BlueXP</block>
   <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">Collectez les informations d'identification pour ONTAP et VMware</block>
-  <block id="40d6832bb97021f07389b0bb1371ebc8" category="list-text">Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.</block>
   <block id="a3322827dcb371ce03fcea3e6f6dac4b" category="list-text">La reprise d'activité BlueXP nécessite des informations d'identification vCenter. Vous entrez les informations d'identification vCenter lorsque vous ajoutez un site dans le cadre de la reprise d'activité BlueXP.</block>
   <block id="af48f45a45fa68c1e7482428d13d3ae2" category="inline-link-macro">Privilèges vCenter requis pour la reprise d'activité BlueXP</block>
   <block id="663ac415354a0662169e04ba51a80ee1" category="inline-link-macro">Ajouter un site</block>
   <block id="04d842fd50a052e8aa0d29fecc18a42b" category="paragraph">Pour obtenir la liste des privilèges vCenter nécessaires, reportez-vous <block ref="2c677a2a2de566e8f203663d6f65fae2" category="inline-link-macro-rx"></block>à la section . Pour obtenir des instructions sur l'ajout d'un site, reportez-vous à la section <block ref="4e15c40290645aa1bfcc516405624ad3" category="inline-link-macro-rx"></block>.</block>
-  <block id="d5e44723931260e9fb1d91641ec67565" category="section-title">Ajoutez un compte BlueXP</block>
-  <block id="55d6d6a5af12f879c7cc9cc76ddabdec" category="paragraph">Dans BlueXP, si vous ne possédez pas encore de compte, vous devez ajouter un compte. Reportez-vous à la<block ref="774d23f949c92eac0cff5269d4337483" category="inline-link-rx"></block>.</block>
   <block id="a5085066220b6bc77291e8a3ba481c5a" category="section-title">Créer un connecteur BlueXP</block>
   <block id="6bdd2270b2444eb60c9eb649a9ca2c48" category="paragraph">Un connecteur BlueXP doit être configuré dans BlueXP. Lorsque vous utilisez le connecteur BlueXP, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.</block>
   <block id="d45c08fd27c89f889429a0d0279aa820" category="inline-link">Mise en route de BlueXP en mode standard</block>
@@ -753,7 +732,6 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="5429b4727bb6860d719abc5d18c2c7ee" category="list-text">*Sur site vers AWS* : installez le connecteur BlueXP pour AWS dans votre VPC AWS. Reportez-vous à la<block ref="5b7871abcfa07c659c7f1c6cfa3aafba" category="inline-link-rx"></block>.</block>
   <block id="12162c662baf903fc463cab971a2c144" category="admonition">Du site aux environnements sur site, utilisez le connecteur sur site BlueXP. Pour les environnements sur site ou AWS, utilisez le connecteur BlueXP AWS Connector, qui permet d'accéder au vCenter sur site source et au vCenter sur site de destination.</block>
   <block id="b44186c8f26107b5ae7810b1a74e8093" category="list-text">Le connecteur BlueXP installé doit pouvoir accéder à tout cluster VMware que la reprise d'activité BlueXP va gérer.</block>
-  <block id="a342d0b5394cc9bc5595d491d2a70101" category="list-text">Toutes les baies ONTAP à gérer par la reprise d'activité BlueXP doivent être ajoutées à n'importe quel environnement de travail dans l'espace de travail BlueXP qui sera utilisé pour gérer la reprise d'activité BlueXP.</block>
   <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">Découvrez les clusters ONTAP sur site</block>
   <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">Voir<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block>.</block>
   <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">Prérequis des charges de travail</block>
@@ -972,4 +950,21 @@ Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte
   <block id="65db0a5300ccaa6099d24aaf16150200" category="paragraph">Votre rapport personnalisé apparaît dans la liste des rapports personnalisés.</block>
   <block id="b7a41431aa1eee1607db390ac47d2a65" category="admonition">Pour afficher tous les sites ou plans inclus dans le rapport, cliquez sur le numéro à droite du nom du rapport ou du nom du plan.</block>
   <block id="a99780537c030fe162f59c129be8e471" category="list-text">Téléchargez votre rapport personnalisé en cliquant sur *Télécharger*.</block>
+  <block id="fca90381d84b0e9a022fdeac2012d4ab" category="paragraph">Vous aurez besoin du numéro de série BlueXP  pour la reprise sur incident. Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.</block>
+  <block id="20efb062527877ed8fd82ba191b8951b" category="paragraph">*Ajouter la licence au portefeuille numérique BlueXP * après avoir acheté une licence de récupération après sinistre BlueXP , vous devez ajouter la licence au portefeuille numérique BlueXP .</block>
+  <block id="61b173efd5c260fd3e3f446d9d4b37e7" category="section-title">Lancez-vous avec BlueXP</block>
+  <block id="eb596a544acd0e757253fec1e32880e2" category="inline-link">Inscrivez-vous à BlueXP  et créez une entreprise</block>
+  <block id="5c162fb1edd17998f73f4b49374c4871" category="paragraph">Si vous ne l'avez pas déjà fait,<block ref="6286584d7da60f5fb185c973c7a25fca" category="inline-link-rx"></block></block>
+  <block id="4a14dfd2121c83ce14ebfbbcb15fcdb1" category="list-text">Les identifiants Amazon FSX pour ONTAP et AWS doivent être ajoutés à l'environnement de travail dans le projet BlueXP  qui sera utilisé pour gérer la reprise d'activité BlueXP .</block>
+  <block id="7ac3ff2f395874b9e6146a5d359e67d0" category="list-text">Toutes les baies ONTAP devant être gérées par BlueXP  Disaster Recovery doivent être ajoutées à tout environnement de travail du projet BlueXP  qui sera utilisé pour gérer BlueXP  Disaster Recovery.</block>
+  <block id="98d90e398fc56688ddc647e5f49075ec" category="paragraph">La liste des environnements de travail s'applique à l'organisation (ou au compte), au projet (ou à l'espace de travail) et au connecteur BlueXP  que vous avez sélectionnés dans la bannière supérieure du service.</block>
+  <block id="29360bfcdbc91d3f1514c372b4585965" category="list-text">Enregistrement du numéro de série de votre compte BlueXP  (votre numéro de série 960xxxxxxxxx à 20 chiffres, disponible sur la page des ressources de support de BlueXP ).</block>
+  <block id="444b74bc81e823cc1c4c704219ad8ed3" category="section-title">Enregistrez BlueXP  pour bénéficier du support NetApp</block>
+  <block id="b3bf31f8a918c712f26cdf493a908825" category="paragraph">Pour vous inscrire au support et activer votre droit de support, un utilisateur de votre entreprise (ou compte) BlueXP  doit associer un compte du site de support NetApp à ses identifiants BlueXP . Le fait de vous inscrire au support NetApp dépend de la présence ou non d'un compte sur le site de support NetApp (NSS).</block>
+  <block id="2ba7f9eae7a02f9c3ac0fc07517d1c48" category="paragraph">La page *Ressources* doit indiquer que votre organisation BlueXP  est enregistrée pour le support.</block>
+  <block id="c05e530d1466e986d570cfe3f92656c3" category="paragraph">Notez que les autres utilisateurs BlueXP ne verront pas ce même statut d'enregistrement de support s'ils n'ont pas associé de compte sur le site de support NetApp à leur identifiant BlueXP. Cependant, cela ne signifie pas que votre entreprise BlueXP  n'est pas enregistrée pour le support. Tant qu'un utilisateur de l'organisation a suivi ces étapes, votre organisation a été enregistrée.</block>
+  <block id="a2454703f88e5bf5b433ae850a87151b" category="list-text">Veillez à copier le numéro de série du compte (960xxxx) utilisé ci-dessus pour le champ Numéro de série. Cela accélère le traitement.</block>
+  <block id="0ca08a23718c0a91743dd6c0146ca353" category="paragraph">L'association des informations d'identification du site de support NetApp à votre organisation BlueXP  est nécessaire pour activer les flux de travail clés suivants pour Cloud Volumes ONTAP :</block>
+  <block id="c81c8e01f5d906ae1ab0c5c606f06b05" category="paragraph">L'association des informations d'identification NSS à votre organisation BlueXP  est différente du compte NSS associé à une connexion utilisateur BlueXP .</block>
+  <block id="8166996cb4a59c147200d89a061bb49c" category="paragraph">Ces informations d'identification NSS sont associées à votre identifiant d'organisation BlueXP  spécifique. Les utilisateurs qui appartiennent à l'organisation BlueXP  peuvent accéder à ces informations d'identification à partir de *support &gt; gestion NSS*.</block>
 </blocks>

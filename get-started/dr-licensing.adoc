@@ -97,20 +97,9 @@ Si vous apportez votre propre licence (BYOL), la configuration inclut l'achat de
 *Activer la licence*
 Après avoir acheté votre licence BlueXP de reprise après incident auprès de votre ingénieur commercial NetApp, vous activez la licence en saisissant le numéro de série de BlueXP Disaster Recovery et les informations de compte du site de support NetApp (NSS).
 
-Vous devez disposer des informations suivantes avant de commencer :
+Vous aurez besoin du numéro de série BlueXP  pour la reprise sur incident. Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.
 
-* Numéro de série de la reprise d'activité BlueXP
-+
-Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.
-
-* ID de compte BlueXP
-+
-Vous pouvez trouver votre ID de compte BlueXP en sélectionnant la liste déroulante *compte* en haut de BlueXP, puis en sélectionnant *gérer le compte* en regard de votre compte. Votre ID de compte se trouve dans l'onglet vue d'ensemble.
-
-
-
-*Ajouter la licence au portefeuille digital BlueXP*
-Après avoir acheté une licence de reprise d'activité BlueXP pour votre compte BlueXP, vous devez ajouter la licence au portefeuille digital BlueXP.
+*Ajouter la licence au portefeuille numérique BlueXP * après avoir acheté une licence de récupération après sinistre BlueXP , vous devez ajouter la licence au portefeuille numérique BlueXP .
 
 . Une fois la licence obtenue, revenez à la reprise d'activité BlueXP. Sélectionnez l'option *Afficher les modes de paiement* dans le coin supérieur droit. Ou, dans le message indiquant que l'essai gratuit expire, sélectionnez *s'abonner ou acheter une licence*.
 +
