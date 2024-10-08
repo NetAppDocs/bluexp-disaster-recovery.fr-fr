@@ -14,7 +14,7 @@ summary: 'La reprise d"activité dans le cloud est un moyen résilient et écono
 [role="lead"]
 La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
 
-BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads sur site basés sur NFS et, dans un aperçu technologique, les datastores VMware vSphere Virtual machine File System (VMFS) exécutant le stockage NetApp vers l'un des éléments suivants :
+BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Le service de reprise après incident BlueXP  protège vos workloads sur site basés sur NFS et vos datastores VMFS (Virtual machine File System) VMware vSphere pour iSCSI et FC exécutant un stockage NetApp vers l'un des éléments suivants :
 
 * VMware Cloud (VMC) sur AWS avec Amazon FSX pour NetApp ONTAP ou
 * Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP

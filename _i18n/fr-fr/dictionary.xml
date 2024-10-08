@@ -185,8 +185,6 @@
   <block id="942a771213d3b59ba27960f61d97b1ac" category="inline-link"><block ref="942a771213d3b59ba27960f61d97b1ac" category="inline-link-rx"></block></block>
   <block id="6a203fd0003e1b252502653eca1a6c02" category="paragraph">*Quelle est l'URL de reprise d'activité BlueXP ?*
 Pour l'URL, dans un navigateur, entrez :<block ref="6db7b50bf17b27cbede9f07c4fbc973e" category="inline-link-rx"></block> Pour accéder à la console BlueXP.</block>
-  <block id="1510b9c9694467bb88815a127c906757" category="paragraph">*Comment accédez-vous à la reprise d'activité BlueXP ?*
-La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.</block>
   <block id="89f19c30a67510e64ff4f90eede35bff" category="summary">Pour configurer la reprise d'activité BlueXP, effectuez quelques étapes.</block>
   <block id="7b6761de8fbe584a66fa50ad6fa3dd19" category="doc">Configurez la reprise d'activité BlueXP</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">prérequis</block>
@@ -690,7 +688,6 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="d66d706cd022ab39ed6479a713135515" category="paragraph"><block ref="d66d706cd022ab39ed6479a713135515" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991e816286764c3a5ea9b023c35e1d77" category="paragraph"><block ref="991e816286764c3a5ea9b023c35e1d77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b45dfe874eaba6a97e58e0436eba2402" category="sidebar">Mise en route de la reprise d'activité BlueXP en tant que laboratoire de services à la demande</block>
-  <block id="439704735653d5132727cb9c21bc97c8" category="paragraph">BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. À l'origine, le service de reprise d'activité BlueXP vous permet de protéger vos workloads sur site basés sur NFS et, dans un aperçu technologique, les datastores VMware vSphere Virtual machine File System (VMFS) exécutant le stockage NetApp vers l'un des éléments suivants :</block>
   <block id="d5368fed025a9875e8a424b419508bef" category="admonition">Avec cette version, la reprise après incident est prise en charge dans un aperçu technologique pour les workloads VMware sur site vers des environnements VMware sur site avec des datastores VMware vSphere Virtual machine File System (VMFS). NetApp ne vous facture pas pour la capacité de workloads prévisualisée.</block>
   <block id="0dc4a26bb39078be4974284a72d54f64" category="paragraph">Le service de reprise d'activité BlueXP peut être utilisé avec une licence NetApp ou avec un plan d'abonnement annuel via Amazon Web Services.</block>
   <block id="66a7384fcc7d6c71e8da6dc152b82593" category="admonition">Certaines versions incluent un aperçu de la technologie. NetApp ne vous facture pas pour la capacité de workloads prévisualisée. Voir <block ref="431ce6b88c6d5399033553c1891688aa" category="inline-link-macro-rx"></block> pour plus d'informations sur les dernières innovations technologiques.</block>
@@ -709,7 +706,6 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="f5091f12fda6dcb8b160780e3352bbd5" category="list-text">Tous les clusters VMware que vous souhaitez gérer avec BlueXP Disaster Recovery doivent être hébergés sur des volumes ONTAP.</block>
   <block id="a103c229873d833279c49def9ebe9fc3" category="list-text">Tous les datastores VMware à gérer par la reprise d'activité BlueXP doivent utiliser l'un des protocoles suivants :</block>
   <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS</block>
-  <block id="47e0fa80d3fa1add35dfaada74c496e9" category="list-text">VMFS utilisant le protocole iSCSI (actuellement dans un aperçu technologique)</block>
   <block id="b48bd09b37dbbe2233bba9ccc258e634" category="list-text">Si vous utilisez un SDDC de VMware Cloud, les conditions préalables suivantes s'appliquent.</block>
   <block id="7fc6ed2196514db323edb5f8ee464448" category="inline-link">Utilisation de la documentation VMware Cloud Foundations avec AWS FSX for NetApp ONTAP</block>
   <block id="f2fc5fa158eeee58eae505a362a866b3" category="list-text">Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la<block ref="87df9e87408172a2291d5738f3ae5f4f" category="inline-link-rx"></block>.</block>
@@ -967,4 +963,7 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="0ca08a23718c0a91743dd6c0146ca353" category="paragraph">L'association des informations d'identification du site de support NetApp à votre organisation BlueXP  est nécessaire pour activer les flux de travail clés suivants pour Cloud Volumes ONTAP :</block>
   <block id="c81c8e01f5d906ae1ab0c5c606f06b05" category="paragraph">L'association des informations d'identification NSS à votre organisation BlueXP  est différente du compte NSS associé à une connexion utilisateur BlueXP .</block>
   <block id="8166996cb4a59c147200d89a061bb49c" category="paragraph">Ces informations d'identification NSS sont associées à votre identifiant d'organisation BlueXP  spécifique. Les utilisateurs qui appartiennent à l'organisation BlueXP  peuvent accéder à ces informations d'identification à partir de *support &gt; gestion NSS*.</block>
+  <block id="d4f0533448e4984685ae016d36dba83a" category="paragraph">*Comment accédez-vous à la récupération après sinistre de BlueXP ?* La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.</block>
+  <block id="bc483ba843f73e5d609495aa94d035b9" category="paragraph">BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Le service de reprise après incident BlueXP  protège vos workloads sur site basés sur NFS et vos datastores VMFS (Virtual machine File System) VMware vSphere pour iSCSI et FC exécutant un stockage NetApp vers l'un des éléments suivants :</block>
+  <block id="412e382a6d6d3bd8a3bfd94b856f9f4e" category="list-text">VMFS avec protocole iSCSI ou FC</block>
 </blocks>

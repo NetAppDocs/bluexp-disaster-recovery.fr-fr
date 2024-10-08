@@ -22,5 +22,4 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
 
 Pour plus d'informations sur la configuration des licences pour la reprise d'activité BlueXP, reportez-vous à la section link:../get-started/dr-licensing.html["Configurez la licence de reprise d'activité BlueXP"].
 
-*Comment accédez-vous à la reprise d'activité BlueXP ?*
-La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.
+*Comment accédez-vous à la récupération après sinistre de BlueXP ?* La reprise d'activité BlueXP ne nécessite aucune activation. L'option de reprise d'activité s'affiche automatiquement dans le menu de navigation de gauche de BlueXP.

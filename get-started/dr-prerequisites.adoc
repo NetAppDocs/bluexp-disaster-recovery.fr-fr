@@ -44,7 +44,7 @@ Ces conditions préalables s'appliquent à la fois aux clusters vCenter sur site
 * Tous les datastores VMware à gérer par la reprise d'activité BlueXP doivent utiliser l'un des protocoles suivants :
 +
 ** NFS
-** VMFS utilisant le protocole iSCSI (actuellement dans un aperçu technologique)
+** VMFS avec protocole iSCSI ou FC
 
 
 * Si vous utilisez un SDDC de VMware Cloud, les conditions préalables suivantes s'appliquent.
