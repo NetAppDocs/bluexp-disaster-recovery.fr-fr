@@ -26,8 +26,7 @@ Le lien Télécharger est valide pendant six heures.
 . En haut de la page, sélectionnez *Créer un rapport*.
 . Sélectionnez le type de format de fichier et la période comprise dans les 7 derniers jours.
 . Sélectionnez *Créer*.
-
-
++
 
 NOTE: L'affichage du rapport peut prendre quelques minutes.
 
