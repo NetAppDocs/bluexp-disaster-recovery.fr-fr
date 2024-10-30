@@ -24,3 +24,5 @@ entries:
   url: "/use/manage.html"
 - title: Surveiller les tâches de reprise après incident
   url: "/use/monitor-jobs.html"
+- title: Créez des rapports de reprise d'activité
+  url: "/use/reports.html"

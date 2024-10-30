@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/drplan-create.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
 summary: 'NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Une fois que vous avez ajouté des sites vCenter, vous êtes prêt à créer un plan de réplication ou de reprise d"activité.' 
 ---
 = Créer un plan de réplication
@@ -25,7 +25,7 @@ Vous pouvez créer un plan de réplication et modifier des plannings pour la con
 Un assistant vous guide tout au long de la procédure suivante :
 
 * Sélectionnez serveurs vCenter.
-* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes.
+* Sélectionnez les machines virtuelles (VM) à répliquer et attribuez des groupes.
 * Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
 * Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.
 * Revoir le plan.
@@ -34,7 +34,7 @@ Un assistant vous guide tout au long de la procédure suivante :
 Lors de la création du plan de réplication, vous pouvez définir la relation SnapMirror entre les volumes source et cible dans l'une des configurations suivantes :
 
 * 1 à 1
-* 1 à plusieurs dans une architecture en éventail
+* 1 à plusieurs dans une architecture « fan-out »
 * Plusieurs à 1 dans un groupe de cohérence
 * De plusieurs à plusieurs
 
@@ -63,32 +63,33 @@ image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan
 
 === Sélectionnez les applications à répliquer et attribuez des groupes de ressources
 
-L'étape suivante consiste à regrouper les machines virtuelles requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
+L'étape suivante consiste à regrouper les VM requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
+
+Lorsque vous sélectionnez des applications dans le plan de réplication, vous pouvez voir le système d'exploitation pour chaque machine virtuelle du plan. Ceci est utile pour décider comment regrouper des machines virtuelles dans un groupe de ressources.
 
 
 TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
 
 .Étapes
-. Dans la partie gauche de la page applications, vous pouvez éventuellement rechercher des datastores.
-. Sur le côté gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez répliquer et affecter au groupe sélectionné.
+. Si vous le souhaitez, dans la partie gauche de la page applications, filtrez les VM par leur datastore.
+. Dans la partie gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez protéger et attribuez au groupe sélectionné.
 +
 La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.
 
 +
-image:dr-plan-create-apps-vms4.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
+image:dr-plan-create-apps-vms5.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
 
 . Si vous le souhaitez, effectuez l'une des opérations suivantes :
 +
-** Pour changer de groupe, cliquez sur l'icône Groupe *Modifier* image:icon-pencil.png["Icône crayon"] .
-** Pour supprimer une machine virtuelle d'un groupe, sélectionnez *X*.
-** Pour déplacer une machine virtuelle vers un autre groupe, faites-la glisser dans le nouveau groupe.
+** Pour modifier le nom du groupe, cliquez sur l'icône Groupe *Modifier*image:icon-pencil.png["Icône crayon"].
+** Pour supprimer une VM d'un groupe, sélectionnez *X* en regard de la VM.
+** Pour déplacer une machine virtuelle vers un autre groupe, faites-la glisser et déposez-la dans le nouveau groupe.
 
 
 . Lorsque vous avez plusieurs groupes de ressources, assurez-vous que la séquence des groupes correspond à la séquence opérationnelle qui doit se produire.
 +
-Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici. Deux groupes sont démarrés en parallèle.
+Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici.
 
-. Vous pouvez également renommer le groupe en cliquant sur l'icône *Modifier*.
 . Sélectionnez *Suivant*.
 
 
@@ -96,7 +97,7 @@ Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici. D
 
 === Mappez les ressources source à la cible
 
-Dans l'étape mappage des ressources, spécifiez la façon dont les ressources de l'environnement source doivent être mappées sur la cible.
+Dans l'étape mappage des ressources, spécifiez la façon dont les ressources de l'environnement source doivent être mappées sur la cible. Lorsque vous créez un plan de réplication, vous pouvez définir un délai de démarrage et un ordre pour chaque machine virtuelle du plan. Vous pouvez ainsi définir une séquence de démarrage des machines virtuelles.
 
 .Avant de commencer
 Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
@@ -108,22 +109,33 @@ image:dr-plan-resource-mapping2.png["Plan de réplication, onglet mappage de res
 
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chacune.
 . *Calculer les ressources* : sélectionnez la flèche vers le bas en regard de *calculer les ressources*.
-. *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Entrez ou sélectionnez le LAN virtuel source et le segment cible.
++
+** *Centres de données sources et cibles*
+** *Cluster cible*
+** *Hôte cible* (facultatif) : après avoir sélectionné le cluster, vous pouvez définir ces informations.
++
+
+TIP: Si un vCenter dispose d'un DRS (Distributed Resource Scheduler) configuré pour gérer plusieurs hôtes d'un cluster, vous n'avez pas besoin de sélectionner un hôte. Si vous sélectionnez un hôte, BlueXP  Disaster Recovery place toutes les machines virtuelles sur l'hôte sélectionné.
+
+** *Dossier VM cible* (facultatif) : créez un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.
+
+
+. *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Sélectionnez le LAN virtuel source et le segment cible.
 . *Machines virtuelles* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.
++
+Si vous effectuez des modifications à partir des paramètres par défaut, vous devez fournir des informations d'identification.
+
 +
 Sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.
 
 +
-Cette section peut être activée ou désactivée en fonction de votre sélection.
-
-+
-SnapMirror est au niveau du volume. Ainsi, toutes les machines virtuelles sont répliquées vers la cible de réplication. Assurez-vous de sélectionner toutes les machines virtuelles qui font partie du datastore. Si elles ne sont pas sélectionnées, seules les machines virtuelles faisant partie du plan de réplication sont traitées.
+Cette section peut afficher différents champs en fonction de votre sélection.
 
 +
 ** *Type d'adresse IP* : lorsque vous mappez la mise en réseau entre les emplacements source et cible dans la section machines virtuelles du plan de réplication, la reprise après incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le sous-réseau, la passerelle et les serveurs DNS. En outre, entrez les informations d'identification des machines virtuelles.
 +
-*** *DHCP* : si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
-*** *Static IP* : vous pouvez sélectionner les mêmes informations ou des informations différentes à partir de la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
+*** *DHCP* : sélectionnez ce paramètre si vous souhaitez que vos machines virtuelles obtiennent des informations de configuration réseau à partir d'un serveur DHCP. Si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
+*** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner des informations identiques ou différentes dans la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
 +
 Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
 
@@ -132,9 +144,26 @@ image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication
 
 
 
+** *Préfixe et suffixe de la machine virtuelle cible* : sous les détails des machines virtuelles, vous pouvez éventuellement ajouter un préfixe et un suffixe au nom de la machine virtuelle.
 ** *CPU et RAM de la machine virtuelle source* : sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
-** *Délai d'amorçage* : vous pouvez modifier l'ordre d'amorçage de toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade. Ce champ vous permet de régler le délai en minutes de l'action de démarrage.
-** *Créer des répliques cohérentes avec les applications* : indiquer si vous devez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis prend un Snapshot pour obtenir un état cohérent de l'application.
++
+image:dr-plan-resource-mapping-vm-boot-order.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
+
+** *Ordre de démarrage* : vous pouvez modifier l'ordre de démarrage après un basculement pour toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade. Ceci est utile pour vous assurer que toutes vos machines virtuelles prioritaires sont exécutées avant le démarrage des machines virtuelles prioritaires suivantes.
++
+Les numéros d'ordre de démarrage ne s'appliquent qu'à un groupe de ressources. Si vous avez un « 2 » dans un groupe et un « 2 » dans un autre groupe, les machines virtuelles du premier groupe commencent dans leur ordre et les machines virtuelles du deuxième groupe commencent dans leur ordre.
+
++
+*** Démarrage séquentiel : attribuez à chaque machine virtuelle un numéro unique pour démarrer dans l'ordre attribué, par exemple, 1,2,3,4,5
+*** Démarrage simultané : attribuez le même numéro à toutes les machines virtuelles pour les démarrer en même temps, par exemple, 1,1,1,1,2,2,3,4,4.
+
+
+** *Délai de démarrage* : réglez le délai en minutes de l'action de démarrage.
++
+
+TIP: Pour rétablir l'ordre de démarrage par défaut, sélectionnez *Réinitialiser les paramètres VM par défaut*, puis choisissez les paramètres que vous souhaitez rétablir par défaut.
+
+** *Créer des répliques cohérentes avec les applications* : indiquer si vous devez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis effectue un instantané pour obtenir un état cohérent de l'application. Cette fonctionnalité est prise en charge par Oracle fonctionnant sous Windows et Linux et SQL Server sous Windows.
 
 
 . *Datastores* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *datastores*. En fonction de la sélection de machines virtuelles, les mappages de datastores sont sélectionnés automatiquement.
@@ -193,15 +222,15 @@ image:dr-plan-create-recurrence.png["Capture d'écran montrant Ajouter un plan d
 
 
 
-=== Confirmez le plan de réplication
+=== Vérifiez le plan de réplication
 
-Enfin, prenez quelques instants pour confirmer le plan de réplication.
+Enfin, prenez quelques instants pour revoir le plan de réplication.
 
 
 TIP: Vous pouvez par la suite désactiver ou supprimer le plan de réplication.
 
 .Étapes
-. Consultez les informations de chaque onglet : Détails du plan, mappage du basculement, machines virtuelles.
+. Consultez les informations de chaque onglet : Détails du plan, mappage du basculement sur incident et machines virtuelles.
 . Sélectionnez *Ajouter un plan*.
 +
 Le plan est ajouté à la liste des plans.

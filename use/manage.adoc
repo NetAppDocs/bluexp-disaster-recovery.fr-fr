@@ -71,7 +71,7 @@ image:../use/dr-plan-list2.png["Liste des plans de réplication"]
 
 
 . Revenez à la liste des plans en sélectionnant "plans de réplication" dans le fil d'Ariane en haut à gauche.
-. Pour effectuer des actions avec le plan, sélectionnez l'option *actions* dans la liste des plans de réplication image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  À droite du plan et sélectionnez l'une des options, telles que *Modifier les horaires*, *basculement test*, *basculement sur échec*, *Retour arrière*, *Désactiver*, *Activer* ou *Supprimer*.
+. Pour effectuer des actions avec le plan, dans la liste des plans de réplication, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]à droite du plan et sélectionnez l'une des options, telles que *Modifier les plannings*, *Tester le basculement*, *basculement*, *Retour*, *migrer*, *prendre instantané*, *nettoyer les anciens snapshots*, *Désactiver*, *Activer*, *Supprimer* ou *Supprimer*.
 . Pour définir ou modifier un planning de basculement de test ou définir la vérification de la fréquence de conformité, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] à droite du plan et sélectionnez *Modifier les planifications*.
 +
 .. Dans la page Modifier les planifications, entrez la fréquence en minutes à laquelle vous souhaitez que la vérification de conformité du basculement se produise.
@@ -80,6 +80,39 @@ image:../use/dr-plan-list2.png["Liste des plans de réplication"]
 .. Sélectionnez *Enregistrer*.
 
 
+
+
+
+
+=== Réconcilier les snapshots à la demande
+
+Vous pouvez réconcilier les instantanés qui sont désynchronisés entre la source et la cible. Cela peut se produire si des snapshots sont supprimés sur une cible en dehors de la reprise sur incident BlueXP . Le service supprime automatiquement le snapshot sur la source toutes les 24 heures. Cependant, vous pouvez effectuer cette opération à la demande. Cette fonction vous permet de vous assurer que les snapshots sont cohérents sur tous les sites.
+
+.Étapes
+. Dans le menu supérieur, sélectionnez *plans de réplication*.
++
+image:../use/dr-plan-list2.png["Liste des plans de réplication"]
+
+. Dans la liste des plans de réplication, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]à droite du plan et sélectionnez *réconcilier instantanés*.
+. Passez en revue les informations de rapprochement.
+. Sélectionnez *Synchroniser*.
+
+
+
+
+=== Supprimer un plan de réplication
+
+Vous pouvez supprimer un plan de réplication si vous n'en avez plus besoin. Si vous supprimez un plan de réplication, vous pouvez également supprimer les instantanés principal et secondaire créés par le plan.
+
+.Étapes
+. Dans le menu supérieur, sélectionnez *plans de réplication*.
++
+image:../use/dr-plan-list2.png["Liste des plans de réplication"]
+
+. Sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]à droite du plan et sélectionnez *Supprimer*.
+. Indiquez si vous souhaitez supprimer les snapshots primaires, secondaires ou uniquement les métadonnées créées par le plan.
+. Tapez « DELETE » pour confirmer la suppression.
+. Sélectionnez *Supprimer*.
 
 
 
@@ -95,6 +128,7 @@ Vous pouvez modifier le nombre de datastores conservés.
 image:../use/dr-plan-failover-edit.png["Modifier les mappages de basculement"]
 
 . Modifiez la valeur du nombre de rétention dans le plan de réplication.
+. Une fois le plan de réplication sélectionné, sélectionnez le menu actions, sélectionnez *nettoyer les anciens snapshots » pour supprimer les anciens snapshots sur la cible afin qu'ils correspondent au nouveau nombre de rétention.
 
 
 

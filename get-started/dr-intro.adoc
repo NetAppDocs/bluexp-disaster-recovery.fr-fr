@@ -72,7 +72,7 @@ IMPORTANT: Certaines versions incluent un aperçu de la technologie. NetApp ne v
 
 Vous pouvez utiliser les types de licence suivants :
 
-* Inscrivez-vous pour bénéficier d'un essai gratuit de 90 jours.
+* Inscrivez-vous pour bénéficier d'un essai gratuit de 30 jours.
 * Achetez un abonnement de paiement basé sur l'utilisation (PAYGO) pour Amazon Web Services (AWS) Marketplace.
 * BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
 
@@ -86,13 +86,13 @@ Pour plus d'informations sur la configuration des licences pour la reprise d'act
 
 
 
-== essai gratuit de 90 jours
+== essai gratuit de 30 jours
 
-Essayez la reprise d'activité BlueXP avec un essai gratuit de 90 jours.
+Essayez la reprise d'activité BlueXP avec un essai gratuit de 30 jours.
 
-Pour continuer après l'essai de 90 jours, vous devez souscrire un abonnement PAYGO (paiement basé sur l'utilisation) auprès de votre fournisseur de cloud ou acheter une licence BYOL auprès de NetApp.
+Pour continuer après l'essai de 30 jours, vous devez souscrire un abonnement PAYGO (paiement basé sur l'utilisation) auprès de votre fournisseur de cloud ou acheter une licence BYOL auprès de NetApp.
 
-Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à la fin de la période d'essai de 90 jours.
+Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à la fin de la période d'essai de 30 jours.
 
 
 

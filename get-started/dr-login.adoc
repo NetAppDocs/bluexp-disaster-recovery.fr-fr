@@ -27,7 +27,7 @@ La page de connexion NetApp BlueXP s'affiche.
 Si vous vous connectez pour la première fois à ce service, la page d'accueil s'affiche et vous pouvez vous inscrire pour un essai gratuit.
 
 +
-image:draas-landing3-free-trial.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
+image:draas-landing4-free-trial.png["Copie d'écran de la page d'accueil pour la reprise d'activité de BlueXP"]
 
 +
 Sinon, le tableau de bord de reprise d'activité BlueXP s'affiche.
