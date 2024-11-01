@@ -12,21 +12,23 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 
 
 [role="lead"]
-En cas d'incident, basculez votre site VMware primaire sur site vers un autre site VMware sur site ou VMware Cloud sur AWS.
+En cas d'incident, basculez votre site VMware primaire sur site vers un autre site VMware sur site ou VMware Cloud sur AWS. Vous pouvez tester le processus de basculement pour vous assurer qu'il est efficace au moment où vous en avez besoin.
 
-Lors du basculement, la copie Snapshot SnapMirror la plus récente est utilisée. Vous pouvez également sélectionner une copie Snapshot spécifique à partir d'une copie Snapshot instantanée (conformément à la règle de conservation de SnapMirror). L'option instantanée peut être utile si vous êtes confronté à une corruption, telle qu'une attaque par ransomware, où les répliques les plus récentes sont déjà compromises ou chiffrées. La reprise d'activité BlueXP affiche tous les points disponibles dans le temps.
+Lors d'un basculement, la copie Snapshot SnapMirror la plus récente est utilisée. Vous pouvez également sélectionner un snapshot spécifique à partir d'un snapshot instantané (conformément à la règle de conservation de SnapMirror). L'option instantanée peut être utile si vous êtes confronté à une corruption, telle qu'une attaque par ransomware, où les répliques les plus récentes sont déjà compromises ou chiffrées. La reprise d'activité BlueXP affiche tous les points disponibles dans le temps.
 
-Cette procédure rompt la relation de réplication, met les VM sources de vCenter hors ligne et active la lecture/écriture sur le site cible.
+Ce processus diffère selon que le site de production fonctionne correctement et que vous effectuez un basculement vers le site de reprise d'activité pour des raisons autres qu'une défaillance critique de l'infrastructure :
 
-Vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
+* Défaillance critique du site de production lorsque le cluster vCenter ou ONTAP source n'est pas accessible : la reprise d'activité BlueXP  vous permet de sélectionner les snapshots disponibles à partir desquels effectuer la restauration.
+* L'environnement de production est sain : vous pouvez « prendre un snapshot maintenant » ou sélectionner un snapshot créé précédemment.
 
-Avant de commencer le basculement, vous pouvez tester le processus, afin de garantir son succès au moment où vous en avez besoin. Le test ne place pas les machines virtuelles hors ligne.
+
+Cette procédure rompt la relation de réplication, met hors ligne les machines virtuelles source vCenter, enregistre les volumes en tant que datastores dans le vCenter de reprise après incident, redémarre les machines virtuelles protégées à l'aide des règles de basculement du plan et active la lecture/l'écriture sur le site cible.
 
 
 
 == Tester le processus de basculement
 
-Avant de démarrer un basculement réel, testez le processus de basculement.
+Avant de démarrer le basculement, vous pouvez tester le processus. Le test ne place pas les machines virtuelles hors ligne.
 
 Lors d'un test de basculement, les machines virtuelles sont créées temporairement. La reprise d'activité BlueXP ne mappe pas le volume cible. Elle crée un nouveau volume FlexClone à partir de l'instantané sélectionné et un datastore temporaire sur lequel le volume FlexClone est pris en compte est mappé sur les hôtes ESXi.
 

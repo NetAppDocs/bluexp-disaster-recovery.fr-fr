@@ -12,7 +12,7 @@ summary: 'NetApp BlueXP est un service de reprise après incident basé dans le 
 
 
 [role="lead"]
-Une fois que vous avez ajouté des sites vCenter, vous pouvez créer un plan de reprise après incident ou de réplication. Sélectionnez les vCenters source et de destination, choisissez les groupes de ressources et définissez le mode de restauration et de mise sous tension des applications. Par exemple, vous pouvez regrouper des machines virtuelles associées à une application ou des applications possédant des niveaux similaires.
+Une fois que vous avez ajouté des sites vCenter, vous pouvez créer un plan de reprise après incident ou de réplication. Sélectionnez les vCenters source et de destination, choisissez les groupes de ressources et définissez le mode de restauration et de mise sous tension des applications. Par exemple, vous pouvez regrouper des machines virtuelles (VM) associées à une application ou vous pouvez regrouper des applications disposant de niveaux similaires.
 
 Ces plans sont parfois appelés _plans_.
 
@@ -25,7 +25,7 @@ Vous pouvez créer un plan de réplication et modifier des plannings pour la con
 Un assistant vous guide tout au long de la procédure suivante :
 
 * Sélectionnez serveurs vCenter.
-* Sélectionnez les machines virtuelles (VM) à répliquer et attribuez des groupes.
+* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes.
 * Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
 * Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.
 * Revoir le plan.
@@ -37,6 +37,13 @@ Lors de la création du plan de réplication, vous pouvez définir la relation S
 * 1 à plusieurs dans une architecture « fan-out »
 * Plusieurs à 1 dans un groupe de cohérence
 * De plusieurs à plusieurs
+
+
+Lorsque vous créez le plan, vous devez suivre les directives suivantes :
+
+* Utilisez les mêmes informations d'identification pour toutes les machines virtuelles de la planification.
+* Utilisez le même script pour toutes les machines virtuelles du plan.
+* Utilisez le même sous-réseau, DNS et la même passerelle pour toutes les machines virtuelles de la planification.
 
 
 .Avant de commencer
@@ -71,7 +78,7 @@ Lorsque vous sélectionnez des applications dans le plan de réplication, vous p
 TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
 
 .Étapes
-. Si vous le souhaitez, dans la partie gauche de la page applications, filtrez les VM par leur datastore.
+. Si vous le souhaitez, dans la partie gauche de la page applications, filtrez les VM par leur datastore. Vous pouvez également rechercher des VM spécifiques par leur nom.
 . Dans la partie gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez protéger et attribuez au groupe sélectionné.
 +
 La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.
@@ -126,13 +133,16 @@ TIP: Si un vCenter dispose d'un DRS (Distributed Resource Scheduler) configuré 
 Si vous effectuez des modifications à partir des paramètres par défaut, vous devez fournir des informations d'identification.
 
 +
-Sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être provisionnés, sélectionnez donc le segment approprié pour mapper la machine virtuelle.
+La valeur par défaut des VM est mappée. Le mappage utilise les mêmes paramètres que ceux utilisés par les VM dans l'environnement de production (même adresse IP, même masque de sous-réseau et même passerelle).
+
++
+Sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être approvisionnés. Sélectionnez donc le segment approprié pour mapper la machine virtuelle.
 
 +
 Cette section peut afficher différents champs en fonction de votre sélection.
 
 +
-** *Type d'adresse IP* : lorsque vous mappez la mise en réseau entre les emplacements source et cible dans la section machines virtuelles du plan de réplication, la reprise après incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le sous-réseau, la passerelle et les serveurs DNS. En outre, entrez les informations d'identification des machines virtuelles.
+** *Type d'adresse IP* : reconfigurez la configuration des machines virtuelles pour qu'elle corresponde aux exigences du réseau virtuel cible. La reprise sur incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le masque de sous-réseau, la passerelle et les serveurs DNS. De plus, entrez les informations d'identification des machines virtuelles.
 +
 *** *DHCP* : sélectionnez ce paramètre si vous souhaitez que vos machines virtuelles obtiennent des informations de configuration réseau à partir d'un serveur DHCP. Si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
 *** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner des informations identiques ou différentes dans la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
@@ -144,6 +154,7 @@ image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication
 
 
 
+** *Scripts* : vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
 ** *Préfixe et suffixe de la machine virtuelle cible* : sous les détails des machines virtuelles, vous pouvez éventuellement ajouter un préfixe et un suffixe au nom de la machine virtuelle.
 ** *CPU et RAM de la machine virtuelle source* : sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
 +
@@ -163,33 +174,37 @@ Les numéros d'ordre de démarrage ne s'appliquent qu'à un groupe de ressources
 
 TIP: Pour rétablir l'ordre de démarrage par défaut, sélectionnez *Réinitialiser les paramètres VM par défaut*, puis choisissez les paramètres que vous souhaitez rétablir par défaut.
 
-** *Créer des répliques cohérentes avec les applications* : indiquer si vous devez créer des copies Snapshot cohérentes avec les applications. Le service arrête l'application, puis effectue un instantané pour obtenir un état cohérent de l'application. Cette fonctionnalité est prise en charge par Oracle fonctionnant sous Windows et Linux et SQL Server sous Windows.
+** *Créer des répliques cohérentes avec l'application* : indiquer si vous devez créer des copies snapshot cohérentes avec l'application. Le service arrête l'application, puis effectue un instantané pour obtenir un état cohérent de l'application. Cette fonctionnalité est prise en charge par Oracle fonctionnant sous Windows et Linux et SQL Server sous Windows.
 
 
-. *Datastores* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *datastores*. En fonction de la sélection de machines virtuelles, les mappages de datastores sont sélectionnés automatiquement.
+. *Datastores* : sélectionnez la flèche vers le bas à côté de *datastores*. En fonction de la sélection des machines virtuelles, les mappages des datastores sont sélectionnés automatiquement.
 +
 Cette section peut être activée ou désactivée en fonction de votre sélection.
 
 +
 ** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 60 minutes, la restauration doit avoir des données qui n'ont pas plus de 60 minutes à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 60 minutes de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
 ** *Retention count* : entrez le nombre d'instantanés que vous souhaitez conserver.
-** *Datastores source et cible* : si une relation SnapMirror est déjà établie sur un volume, vous pouvez sélectionner les datastores source et cible correspondants. Si vous sélectionnez un volume qui ne dispose pas de relation SnapMirror, vous pouvez en créer un dès maintenant en sélectionnant l'environnement de travail et son homologue SVM.
+** *Datastores source et cible* : si plusieurs relations SnapMirror (fan-out) existent, vous pouvez sélectionner la destination à utiliser. Si une relation SnapMirror est déjà établie sur un volume, les datastores source et cible correspondants s'affichent. Si un volume n'a pas de relation SnapMirror, vous pouvez en créer une en sélectionnant un cluster cible, un SVM cible et en fournissant un nom de volume. Le service créera la relation volume et SnapMirror.
 +
 
 NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
 
-+
-*** *Groupes de cohérence* : lorsque vous créez un plan de réplication, vous pouvez inclure des machines virtuelles provenant de différents volumes et de différents SVM. La reprise d'activité BlueXP crée un Snapshot de groupe de cohérence.
-
-
-** Si vous spécifiez l'objectif de point de restauration (RPO), le service planifie une sauvegarde principale en fonction du RPO et met à jour les destinations secondaires.
-** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute une Snapshot ONTAP standard et met à jour les destinations secondaires.
-** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée une Snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
-** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et une phase de validation Snapshot en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
+** Lorsque vous spécifiez l'objectif de point de restauration (RPO), le service planifie une sauvegarde principale en fonction du RPO et met à jour les destinations secondaires.
+** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute un snapshot ONTAP standard et met à jour les destinations secondaires.
+** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée un snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
+** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et un Snapshot de phase de validation en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
 ** Pendant le basculement, vous pouvez sélectionner n'importe quel snapshot. Si vous sélectionnez le dernier snapshot, le service crée une sauvegarde à la demande, met à jour la destination et l'utilise pour le basculement.
 
 
-. Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*. Passez en revue chaque onglet comme précédemment, mais cette fois pour l'environnement de test.
+
+
+
+
+=== Testez les mappages
+
+.Étapes
+. Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*.
+. Passez en revue chaque onglet comme précédemment, mais cette fois pour l'environnement de test.
 +
 Dans l'onglet Tester les mappages, les mappages des ordinateurs virtuels et des datastores sont désactivés.
 
