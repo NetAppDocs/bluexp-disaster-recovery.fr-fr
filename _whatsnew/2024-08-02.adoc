@@ -1,0 +1,20 @@
+= Prise en charge des datastores VMware VMFS pour FC sur site vers sur site
+:allow-uri-read: 
+
+
+
+
+=== Prise en charge des datastores VMware VMFS pour FC sur site vers sur site
+
+Cette version inclut un _aperçu de la technologie_ de la prise en charge des machines virtuelles montées sur des datastores VMFS (Virtual machine File System) VMware vSphere pour la protection FC sur un stockage sur site. Auparavant, le service offrait un aperçu de la technologie prenant en charge les datastores VMFS pour iSCSI.
+
+
+NOTE: NetApp ne vous facture pas pour la capacité de workloads prévisualisée.
+
+
+
+=== Annulation du travail
+
+Avec cette version, vous pouvez maintenant annuler un travail dans l'interface utilisateur de Job Monitor.
+
+Reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Surveiller les tâches"].
