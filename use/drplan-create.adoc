@@ -18,6 +18,8 @@ Ces plans sont parfois appelés _plans_.
 
 Vous pouvez créer un plan de réplication et modifier des plannings pour la conformité et les tests.
 
+Vous pouvez protéger plusieurs machines virtuelles sur plusieurs datastores. La reprise d'activité BlueXP  crée des groupes de cohérence ONTAP pour tous les volumes ONTAP hébergeant des datastores de machines virtuelles protégés.
+
 
 
 == Créez le plan
@@ -29,14 +31,6 @@ Un assistant vous guide tout au long de la procédure suivante :
 * Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
 * Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.
 * Revoir le plan.
-
-
-Lors de la création du plan de réplication, vous pouvez définir la relation SnapMirror entre les volumes source et cible dans l'une des configurations suivantes :
-
-* 1 à 1
-* 1 à plusieurs dans une architecture « fan-out »
-* Plusieurs à 1 dans un groupe de cohérence
-* De plusieurs à plusieurs
 
 
 Lorsque vous créez le plan, vous devez suivre les directives suivantes :
@@ -127,16 +121,20 @@ TIP: Si un vCenter dispose d'un DRS (Distributed Resource Scheduler) configuré 
 ** *Dossier VM cible* (facultatif) : créez un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.
 
 
-. *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Sélectionnez le LAN virtuel source et le segment cible.
+. *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Sélectionnez le LAN virtuel source et le LAN virtuel cible.
++
+Sélectionnez le mappage réseau vers le LAN virtuel approprié. Les réseaux locaux virtuels doivent déjà être configurés. Sélectionnez donc le réseau local virtuel approprié pour mapper la machine virtuelle.
+
 . *Machines virtuelles* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.
 +
-Si vous effectuez des modifications à partir des paramètres par défaut, vous devez fournir des informations d'identification.
+La valeur par défaut des VM est mappée. Le mappage par défaut utilise les mêmes paramètres que ceux utilisés par les VM dans l'environnement de production (même adresse IP, même masque de sous-réseau et même passerelle).
 
 +
-La valeur par défaut des VM est mappée. Le mappage utilise les mêmes paramètres que ceux utilisés par les VM dans l'environnement de production (même adresse IP, même masque de sous-réseau et même passerelle).
+Si vous modifiez les paramètres par défaut, vous devez modifier le champ IP cible pour qu'il soit différent de la source.
 
 +
-Sélectionnez le mappage réseau vers le segment approprié. Les segments doivent déjà être approvisionnés. Sélectionnez donc le segment approprié pour mapper la machine virtuelle.
+
+NOTE: Si vous modifiez les paramètres sur « différent de la source », vous devez fournir les informations d'identification du système d'exploitation invité de la machine virtuelle.
 
 +
 Cette section peut afficher différents champs en fonction de votre sélection.
