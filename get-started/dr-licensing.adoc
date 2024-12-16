@@ -22,7 +22,7 @@ Vous pouvez utiliser les types de licence suivants :
 
 
 
-NOTE: Les frais de reprise d'activité BlueXP sont basés sur la capacité provisionnée des datastores sur le site source lorsque au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.
+NOTE: Les frais de reprise sur incident BlueXP  sont basés sur la capacité utilisée des datastores sur le site source lorsqu'au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.
 
 Une fois que vous avez configuré votre BYOL, vous pouvez voir la licence dans l'onglet portefeuille digital BlueXP *licences du service de données*.
 
