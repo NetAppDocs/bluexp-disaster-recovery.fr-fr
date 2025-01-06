@@ -335,7 +335,6 @@ Pour l'URL, dans un navigateur, entrez :<block ref="6db7b50bf17b27cbede9f07c4fbc
   <block id="26ff2655fb5643a3e76370d9248a31df" category="admonition">Vous pouvez par la suite désactiver ou supprimer le plan de réplication.</block>
   <block id="47324a4e5509aeccc192aa7b07cbcac7" category="list-text">Sélectionnez *Ajouter un plan*.</block>
   <block id="a9980df200522b9bbaa257521bc396fe" category="paragraph">Le plan est ajouté à la liste des plans.</block>
-  <block id="a9233ff25d3c8ffa3e005e6e453381fc" category="paragraph">Avant de créer un plan de reprise d'activité, vous devez ajouter un site vCenter principal et un site de reprise d'activité vCenter cible dans BlueXP.</block>
   <block id="9809a26603cc2fbdd8049c848bf77835" category="paragraph">Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, de l'espace de stockage, en savoir plus sur les machines virtuelles, les répliques SnapMirror et les réseaux de machines virtuelles.</block>
   <block id="6df4f43f22118c6a361990f481e6ed83" category="list-text">Connectez-vous à BlueXP et sélectionnez *protection* &gt; *Disaster Recovery* dans la navigation de gauche.</block>
   <block id="2f11fab4722695438910176065d838b4" category="paragraph">Accédez à la page du tableau de bord de reprise d'activité BlueXP. Lorsque vous commencez par utiliser le service, vous devez ajouter des informations vCenter. Plus tard, le tableau de bord affiche les données relatives à vos sites et à vos plans de réplication.</block>
@@ -343,7 +342,6 @@ Pour l'URL, dans un navigateur, entrez :<block ref="6db7b50bf17b27cbede9f07c4fbc
   <block id="5a05572673bc07b0b94f07c482a67d13" category="inline-image-macro">Capture d'écran Ajouter un serveur vCenter </block>
   <block id="c65c0c2ea94db5e745008fb8af0f7f2e" category="paragraph"><block ref="c65c0c2ea94db5e745008fb8af0f7f2e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0eb5074333c815ccb54d1f6917e8d217" category="list-text">Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.</block>
-  <block id="50a0d7853565af772351213d1b833aa4" category="list-text">Pour accepter les certificats auto-signés pour le vCenter source, cochez la case.</block>
   <block id="1909b7ffbea69e2cc7b387ed9d255c18" category="admonition">Les certificats auto-signés ne sont pas aussi sécurisés que les autres certificats. Si votre serveur vCenter est configuré avec des certificats d'autorité de certification (CA) *NON*, cochez cette case ; sinon, la connexion au serveur vCenter ne fonctionnera pas.</block>
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">Sélectionnez *Ajouter*.</block>
   <block id="a0fa7543e8627767b57d6c2797fbbda9" category="paragraph">Vous allez ensuite ajouter un vCenter cible.</block>
@@ -1040,4 +1038,12 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="a82971318b0c070daea6677a10d3473c" category="paragraph">Si vous modifiez les paramètres par défaut, vous devez modifier le champ IP cible pour qu'il soit différent de la source.</block>
   <block id="04b2f4a0441b492909bf4cd55502f663" category="admonition">Si vous modifiez les paramètres sur « différent de la source », vous devez fournir les informations d'identification du système d'exploitation invité de la machine virtuelle.</block>
   <block id="935b6ea2b85c115a6475786fc3f54c7b" category="admonition">Les frais de reprise sur incident BlueXP  sont basés sur la capacité utilisée des datastores sur le site source lorsqu'au moins une machine virtuelle possède un plan de réplication. La capacité d'un datastore ayant subi un basculement n'est pas incluse dans l'allocation de capacité. Pour les modèles BYOL, si les données dépassent la capacité autorisée, les opérations du service sont limitées jusqu'à ce que vous obteniez une licence de capacité supplémentaire ou mettiez à niveau la licence dans le portefeuille digital BlueXP.</block>
+  <block id="6264bc70be3baed8dcf906aafe1dfe41" category="list-text">VMware vSphere version 7.0 mise à jour 3 (7.0v3) ou ultérieure</block>
+  <block id="cbbec7a47b1589919d37bd2c9f68a2dd" category="summary">Avant de créer un plan de reprise sur incident, vous devez ajouter un site vCenter principal et un site de reprise sur incident vCenter cible dans BlueXP  Disaster Recovery.</block>
+  <block id="7f7acb13c0fa74ab37cf6b6545c8b18a" category="doc">Ajouter des vCenters à un site</block>
+  <block id="d7004fe84ddef44ffb8f6fd482ea7b17" category="paragraph">Avant de créer un plan de reprise sur incident, vous devez ajouter un serveur vCenter principal à un site et un site de reprise sur incident vCenter cible dans BlueXP .</block>
+  <block id="1a575de6e97bed53905ae3b55c22dd29" category="admonition">Différents champs s'affichent en fonction du type de site que vous ajoutez.</block>
+  <block id="7dbf01d6d33098287eb82c71ea10ea1e" category="list-text">(S'applique uniquement aux sites sur site) pour accepter les certificats auto-signés pour le vCenter source, cochez la case.</block>
+  <block id="c2a573f83674b01d424b4f0c10fdc5f1" category="list-text">(S'applique uniquement aux sites clouds) *jeton API* : saisissez le jeton API pour autoriser l'accès au service pour votre organisation. Créez le jeton API en fournissant des rôles d'organisation et de service spécifiques.</block>
+  <block id="92d0331e97c92cd07178f7a7c2ab56da" category="list-text">(S'applique uniquement aux sites Cloud) *ID d'organisation long* : saisissez l'ID unique de l'organisation. Vous pouvez identifier cet ID en cliquant sur le nom d'utilisateur dans la section compte de la console BlueXP .</block>
 </blocks>

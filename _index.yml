@@ -29,7 +29,7 @@ indexpage:
       url: "/get-started/dr-faq.html"
   - title: Utilisez la reprise d'activité BlueXP
     links:
-    - title: Ajoutez des sites vCenter
+    - title: Ajouter des vCenters à un site
       url: "/use/sites-add.html"
     - title: Création d'un plan de reprise d'activité
       url: "/use/drplan-create.html"

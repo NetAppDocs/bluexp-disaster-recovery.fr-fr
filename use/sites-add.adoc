@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/sites-add.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. 
+summary: Avant de créer un plan de reprise sur incident, vous devez ajouter un site vCenter principal et un site de reprise sur incident vCenter cible dans BlueXP  Disaster Recovery. 
 ---
-= Ajoutez des sites vCenter
+= Ajouter des vCenters à un site
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 
 
 [role="lead"]
-Avant de créer un plan de reprise d'activité, vous devez ajouter un site vCenter principal et un site de reprise d'activité vCenter cible dans BlueXP.
+Avant de créer un plan de reprise sur incident, vous devez ajouter un serveur vCenter principal à un site et un site de reprise sur incident vCenter cible dans BlueXP .
 
 Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, de l'espace de stockage, en savoir plus sur les machines virtuelles, les répliques SnapMirror et les réseaux de machines virtuelles.
 
@@ -20,6 +20,10 @@ Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte appro
 . Connectez-vous à BlueXP et sélectionnez *protection* > *Disaster Recovery* dans la navigation de gauche.
 +
 Accédez à la page du tableau de bord de reprise d'activité BlueXP. Lorsque vous commencez par utiliser le service, vous devez ajouter des informations vCenter. Plus tard, le tableau de bord affiche les données relatives à vos sites et à vos plans de réplication.
+
++
+
+NOTE: Différents champs s'affichent en fonction du type de site que vous ajoutez.
 
 . *Source* : sélectionnez *découvrir les serveurs vCenter* pour entrer des informations sur le site vCenter source.
 +
@@ -30,17 +34,19 @@ TIP: Si certains sites vCenter existent déjà et que vous souhaitez en ajouter 
 image:vcenter-add.png["Capture d'écran Ajouter un serveur vCenter "]
 
 +
-.. Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.
-.. Pour accepter les certificats auto-signés pour le vCenter source, cochez la case.
+** Ajoutez un site, sélectionnez le connecteur BlueXP et fournissez les informations d'identification vCenter.
+** (S'applique uniquement aux sites sur site) pour accepter les certificats auto-signés pour le vCenter source, cochez la case.
 +
 
 NOTE: Les certificats auto-signés ne sont pas aussi sécurisés que les autres certificats. Si votre serveur vCenter est configuré avec des certificats d'autorité de certification (CA) *NON*, cochez cette case ; sinon, la connexion au serveur vCenter ne fonctionnera pas.
 
-.. Sélectionnez *Ajouter*.
+** (S'applique uniquement aux sites clouds) *jeton API* : saisissez le jeton API pour autoriser l'accès au service pour votre organisation. Créez le jeton API en fournissant des rôles d'organisation et de service spécifiques.
+** (S'applique uniquement aux sites Cloud) *ID d'organisation long* : saisissez l'ID unique de l'organisation. Vous pouvez identifier cet ID en cliquant sur le nom d'utilisateur dans la section compte de la console BlueXP .
+
+
+. Sélectionnez *Ajouter*.
 +
 Vous allez ensuite ajouter un vCenter cible.
-
-
 
 . *Cible* :
 +

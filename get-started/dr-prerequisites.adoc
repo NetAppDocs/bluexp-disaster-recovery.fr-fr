@@ -47,6 +47,7 @@ Ces conditions préalables s'appliquent à la fois aux clusters vCenter sur site
 ** VMFS avec protocole iSCSI ou FC
 
 
+* VMware vSphere version 7.0 mise à jour 3 (7.0v3) ou ultérieure
 * Si vous utilisez un SDDC de VMware Cloud, les conditions préalables suivantes s'appliquent.
 +
 ** Dans VMware Cloud Console, utilisez les rôles de service Administrateur et Administrateur Cloud NSX. Utilisez également le propriétaire de l'organisation pour le rôle Organisation. Reportez-vous à la https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Utilisation de la documentation VMware Cloud Foundations avec AWS FSX for NetApp ONTAP"^].

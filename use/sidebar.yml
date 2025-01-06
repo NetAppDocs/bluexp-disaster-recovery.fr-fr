@@ -7,7 +7,7 @@ entries:
 - title: Consultez l'état de vos plans de reprise sur incident dans le tableau de
     bord
   url: "/use/dashboard-view.html"
-- title: Ajoutez des sites vCenter
+- title: Ajouter des vCenters à un site
   url: "/use/sites-add.html"
 - title: Créer un plan de réplication
   url: "/use/drplan-create.html"
