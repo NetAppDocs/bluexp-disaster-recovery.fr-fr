@@ -40,8 +40,6 @@ image:vcenter-add.png["Capture d'écran Ajouter un serveur vCenter "]
 
 NOTE: Les certificats auto-signés ne sont pas aussi sécurisés que les autres certificats. Si votre serveur vCenter est configuré avec des certificats d'autorité de certification (CA) *NON*, cochez cette case ; sinon, la connexion au serveur vCenter ne fonctionnera pas.
 
-** (S'applique uniquement aux sites clouds) *jeton API* : saisissez le jeton API pour autoriser l'accès au service pour votre organisation. Créez le jeton API en fournissant des rôles d'organisation et de service spécifiques.
-** (S'applique uniquement aux sites Cloud) *ID d'organisation long* : saisissez l'ID unique de l'organisation. Vous pouvez identifier cet ID en cliquant sur le nom d'utilisateur dans la section compte de la console BlueXP .
 
 
 . Sélectionnez *Ajouter*.
@@ -51,14 +49,19 @@ Vous allez ensuite ajouter un vCenter cible.
 . *Cible* :
 +
 .. Choisissez le site cible et l'emplacement. Si la cible est Cloud, sélectionnez *AWS*.
++
+*** (S'applique uniquement aux sites clouds) *jeton API* : saisissez le jeton API pour autoriser l'accès au service pour votre organisation. Créez le jeton API en fournissant des rôles d'organisation et de service spécifiques.
+*** (S'applique uniquement aux sites Cloud) *ID d'organisation long* : saisissez l'ID unique de l'organisation. Vous pouvez identifier cet ID en cliquant sur le nom d'utilisateur dans la section compte de la console BlueXP .
+
+
 .. Sélectionnez *Ajouter*.
 +
 Les vCenters source et cible apparaissent dans la liste des sites.
 
-
-
 +
-image:sites-list.png["Capture d'écran de la page sites"]
+image:sites-list2.png["Capture d'écran de la page sites"]
+
+
 
 . Pour voir la progression de l'opération, dans le menu supérieur, sélectionnez *surveillance des tâches*.
 
