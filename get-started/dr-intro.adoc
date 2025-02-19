@@ -100,7 +100,7 @@ Vous pouvez acheter une licence à tout moment et vous ne serez facturé qu'à l
 
 La reprise d'activité BlueXP permet de restaurer des workloads répliqués depuis un site sur site vers Amazon FSX pour ONTAP ou un autre site sur site. Ce service automatise la restauration à partir du niveau SnapMirror, via l'enregistrement des machines virtuelles vers Virtual machine Cloud (VMC) et les mappages du réseau directement sur la plateforme de sécurité et de virtualisation du réseau VMware, NSX-T. Cette fonctionnalité est incluse dans tous les environnements Virtual machine Cloud.
 
-La reprise d'activité BlueXP s'appuie sur la technologie ONTAP SnapMirror qui offre une réplication ultra-efficace et préserve l'efficacité des copies Snapshot incrémentielles à l'infini de ONTAP. La réplication SnapMirror veille à ce que les copies Snapshot cohérentes au niveau des applications soient toujours synchronisées et que les données soient utilisables immédiatement après un basculement.
+La reprise d'activité BlueXP  s'appuie sur la technologie ONTAP SnapMirror, qui offre une réplication ultra-efficace et préserve l'efficacité des copies Snapshot incrémentielles à l'infini de ONTAP. La réplication SnapMirror garantit que les copies Snapshot cohérentes au niveau des applications sont toujours synchronisées et que les données sont utilisables immédiatement après un basculement.
 
 image:dr-architecture-diagram-70-2.png["Schéma illustrant l'architecture de l'infrastructure de service BlueXP Disaster Recovery pour VMware"]
 
@@ -112,7 +112,7 @@ En cas d'incident, ce service vous aide à restaurer des machines virtuelles dan
 
 * Le service vous permet également de rétablir les machines virtuelles à l'emplacement source d'origine.
 * Vous pouvez tester le processus de basculement de reprise après incident sans interrompre les machines virtuelles d'origine. Le test restaure les machines virtuelles sur un réseau isolé en créant un FlexClone du volume.
-* Pour le processus de basculement ou de test de basculement, vous pouvez choisir le dernier (par défaut) ou l'instantané sélectionné à partir duquel restaurer votre machine virtuelle.
+* Pour le processus de basculement ou de test de basculement, vous pouvez choisir le dernier instantané (par défaut) ou le dernier instantané sélectionné à partir duquel restaurer votre machine virtuelle.
 
 
 

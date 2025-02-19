@@ -191,7 +191,7 @@ NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le clust
 ** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute un snapshot ONTAP standard et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée un snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et un Snapshot de phase de validation en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
-** Pendant le basculement, vous pouvez sélectionner n'importe quel snapshot. Si vous sélectionnez le dernier snapshot, le service crée une sauvegarde à la demande, met à jour la destination et l'utilise pour le basculement.
+** Pendant le basculement, vous pouvez sélectionner n'importe quel snapshot. Si vous sélectionnez le dernier snapshot, le service crée une sauvegarde à la demande, met à jour la destination et utilise ce snapshot pour le basculement.
 
 
 

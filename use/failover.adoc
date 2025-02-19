@@ -71,7 +71,7 @@ Le processus de basculement implique les opérations suivantes :
 * Si vous avez sélectionné le dernier snapshot, la mise à jour SnapMirror est effectuée pour répliquer les dernières modifications.
 * Les machines virtuelles source sont hors tension.
 * La relation SnapMirror est rompue et le volume cible est réalisé en lecture/écriture.
-* En fonction de la sélection de l'instantané, le système de fichiers actif est restauré vers l'instantané spécifié (dernier ou sélectionné)
+* En fonction de la sélection du snapshot, le système de fichiers actif est restauré sur le snapshot spécifié (dernier ou sélectionné)
 * Les datastores sont créés et montés sur le cluster ou l'hôte VMware ou VMC en fonction des informations capturées dans le plan de réplication.
 * Les machines virtuelles cibles sont enregistrées et sous tension en fonction de l'ordre saisi dans la page groupes de ressources.
 * La relation SnapMirror est inversée entre la machine virtuelle cible et la machine virtuelle source.
@@ -88,7 +88,7 @@ TIP: Une fois le basculement lancé, les VM restaurées sont visibles dans le vC
 +
 image:dr-plan-failover2.png["Basculement de la page"]
 
-. Sur la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.
+. Dans la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.
 +
 Un instantané de la source actuelle est pris et répliqué vers la destination actuelle avant le basculement.
 

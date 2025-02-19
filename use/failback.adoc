@@ -12,7 +12,7 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 
 
 [role="lead"]
-Une fois l'incident résolu, rebasculez le système du site de reprise sur incident vers le site source pour rétablir les opérations normales. Vous pouvez sélectionner la copie Snapshot à partir de laquelle effectuer la restauration.
+Une fois l'incident résolu, rebasculez le système du site de reprise sur incident vers le site source pour rétablir les opérations normales. Vous pouvez sélectionner l'instantané à partir duquel effectuer la restauration.
 
 Dans ce workflow, BlueXP Disaster Recovery réplique (resyncs) toutes les modifications apportées à la machine virtuelle source d'origine avant d'inverser le sens de la réplication. Ce processus commence à partir d'une relation qui a terminé le basculement vers une cible et implique les étapes suivantes :
 
@@ -28,6 +28,6 @@ Dans ce workflow, BlueXP Disaster Recovery réplique (resyncs) toutes les modifi
 . Sélectionnez le plan de réplication.
 . Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"]  Et sélectionnez *Retour arrière*.
 . Entrez le nom du plan de réplication pour confirmer et démarrer le retour arrière.
-. Choisissez le snapshot du datastore à partir duquel effectuer la restauration.  La valeur par défaut est la dernière.
+. Choisissez le snapshot du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.
 . Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.
 
