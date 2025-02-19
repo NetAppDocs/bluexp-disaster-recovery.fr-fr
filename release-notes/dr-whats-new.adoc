@@ -16,6 +16,28 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 
 
+== 19 février 2025
+
+Version 4.2
+
+
+
+=== Prise en charge de ASA r2 pour les machines virtuelles et les datastores sur stockage VMFS
+
+Cette version de BlueXP  Disaster Recovery prend en charge ASA r2 pour les machines virtuelles et les datastores sur le stockage VMFS. Sur un système ASA r2, le logiciel ONTAP prend en charge les fonctionnalités SAN essentielles, tout en supprimant les fonctionnalités non prises en charge dans les environnements SAN.
+
+Cette version prend en charge les fonctionnalités suivantes pour ASA r2 :
+
+* Provisionnement de groupes de cohérence pour le stockage primaire (groupe de cohérence plat uniquement, c'est-à-dire un seul niveau sans structure hiérarchique)
+* Opérations de sauvegarde (groupe de cohérence) incluant l'automatisation SnapMirror
+
+
+La prise en charge de ASA r2 dans la reprise sur incident BlueXP  utilise ONTAP 9.16.1.
+
+Les datastores peuvent être montés sur un volume ONTAP ou une unité de stockage ASA r2, mais un groupe de ressources dans BlueXP  Disaster Recovery ne peut pas inclure à la fois un datastore depuis ONTAP et un datastore depuis ASA r2. Vous pouvez sélectionner un datastore à partir de ONTAP ou un datastore à partir de ASA r2 dans un groupe de ressources.
+
+
+
 == 30 octobre 2024
 
 

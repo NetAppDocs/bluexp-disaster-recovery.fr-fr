@@ -1046,4 +1046,13 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="c2a573f83674b01d424b4f0c10fdc5f1" category="list-text">(S'applique uniquement aux sites clouds) *jeton API* : saisissez le jeton API pour autoriser l'accès au service pour votre organisation. Créez le jeton API en fournissant des rôles d'organisation et de service spécifiques.</block>
   <block id="92d0331e97c92cd07178f7a7c2ab56da" category="list-text">(S'applique uniquement aux sites Cloud) *ID d'organisation long* : saisissez l'ID unique de l'organisation. Vous pouvez identifier cet ID en cliquant sur le nom d'utilisateur dans la section compte de la console BlueXP .</block>
   <block id="15a58a3d11cafa89812a0ab9b55e93b0" category="paragraph"><block ref="15a58a3d11cafa89812a0ab9b55e93b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca716ff875c64c5d237c8e862b62065c" category="doc">Prise en charge de ASA r2 pour les machines virtuelles et les datastores sur stockage VMFS</block>
+  <block id="1979efa5817be86acee4a8fbdf309a1a" category="paragraph">Cette version de BlueXP  Disaster Recovery prend en charge ASA r2 pour les machines virtuelles et les datastores sur le stockage VMFS. Sur un système ASA r2, le logiciel ONTAP prend en charge les fonctionnalités SAN essentielles, tout en supprimant les fonctionnalités non prises en charge dans les environnements SAN.</block>
+  <block id="d154d7f159ffe4fedd65f7894a405e59" category="paragraph">Cette version prend en charge les fonctionnalités suivantes pour ASA r2 :</block>
+  <block id="38e9022b7f95524a99b3126af89eb640" category="list-text">Provisionnement de groupes de cohérence pour le stockage primaire (groupe de cohérence plat uniquement, c'est-à-dire un seul niveau sans structure hiérarchique)</block>
+  <block id="bbc4e3ff648912e4a892f88fcb03c65b" category="list-text">Opérations de sauvegarde (groupe de cohérence) incluant l'automatisation SnapMirror</block>
+  <block id="7e13cc5491f076161e0aefc0728bf351" category="paragraph">La prise en charge de ASA r2 dans la reprise sur incident BlueXP  utilise ONTAP 9.16.1.</block>
+  <block id="60a0836359d058db16981cf45c24594f" category="paragraph">Les datastores peuvent être montés sur un volume ONTAP ou une unité de stockage ASA r2, mais un groupe de ressources dans BlueXP  Disaster Recovery ne peut pas inclure à la fois un datastore depuis ONTAP et un datastore depuis ASA r2. Vous pouvez sélectionner un datastore à partir de ONTAP ou un datastore à partir de ASA r2 dans un groupe de ressources.</block>
+  <block id="79043fd5ff3b61216207b60882cd72cd" category="section-title">19 février 2025</block>
+  <block id="c3687f641cfdd19b41b8fe6f7cb68897" category="paragraph">Version 4.2</block>
 </blocks>
