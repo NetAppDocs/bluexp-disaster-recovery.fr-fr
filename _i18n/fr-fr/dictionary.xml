@@ -481,8 +481,6 @@ Pour l'URL, dans un navigateur, entrez :<block ref="6db7b50bf17b27cbede9f07c4fbc
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">En savoir plus sur les connecteurs</block>
   <block id="7530875db6f7eceea689fdfeb6a12778" category="paragraph">Pour ajouter un connecteur, voir<block ref="d6df7dcc2fc3105e10967a9194806ce5" category="inline-link-rx"></block>.</block>
   <block id="ee6d03e51dd7b0fc10c6b3c8fcab3718" category="section-title">Une fois la version d'évaluation terminée, achetez une licence BYOL par l'intermédiaire de NetApp</block>
-  <block id="b11106bafac141be455d28549bfe177d" category="list-text">Sélectionnez *Ajouter une licence à BlueXP*. Vous serez dirigé vers le portefeuille digital BlueXP.</block>
-  <block id="d2ec998008b95e1189b9d8f3dbc6ed64" category="inline-image-macro">Page Ajouter une licence du portefeuille digital BlueXP</block>
   <block id="8d4d6551ee286317b2a4f297766952f5" category="section-title">Terminez l'essai gratuit</block>
   <block id="859b0ef2563ddd8c6712d419656bde38" category="paragraph">Vous pouvez interrompre l'essai gratuit à tout moment ou attendre son expiration.</block>
   <block id="d940bc2868fa1d10a5c804aa0df8fd1b" category="list-text">Dans la reprise d'activité BlueXP, en haut à droite, sélectionnez *essai gratuit - Afficher les détails*.</block>
@@ -494,19 +492,10 @@ Pour l'URL, dans un navigateur, entrez :<block ref="6db7b50bf17b27cbede9f07c4fbc
   <block id="c3964fe08c9dd95815cc67d8aaee9323" category="list-text">Saisissez « fin de l'essai » dans la zone de texte.</block>
   <block id="44a320573c319d1f30b840c2d11a4e26" category="list-text">Sélectionnez *fin*.</block>
   <block id="3906249fde1cef9339402436007bb4f7" category="paragraph">Si vous apportez votre propre licence (BYOL), la configuration inclut l'achat de la licence, l'obtention du fichier de licence NetApp (NLF) et l'ajout de la licence au portefeuille digital BlueXP.</block>
-  <block id="c8508c0ce4da6dc634b7c66b1df15681" category="list-text">Sélectionnez *Ajouter licence*.</block>
-  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
-  <block id="7c8c5dfa7e1cbe0ce55b88149d634d69" category="paragraph">Le portefeuille digital BlueXP affiche désormais la reprise d'activité avec une licence.</block>
-  <block id="72e3dbb78819e204c1d67c9aaba1d190" category="inline-image-macro">Portefeuille digital NetApp BlueXP</block>
-  <block id="0cc39117ac352982de03de8143c8e3f5" category="paragraph"><block ref="0cc39117ac352982de03de8143c8e3f5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="53ea2f641b462d658be2f78d3070c4e8" category="section-title">Mettez à jour votre licence BlueXP lorsqu'elle expire</block>
   <block id="847676092f852cc523c768a478d757f1" category="paragraph">Si votre période de licence approche la date d'expiration ou si votre capacité sous licence atteint la limite, vous serez informé dans l'interface utilisateur de reprise d'activité BlueXP. Vous pouvez mettre à jour votre licence de reprise d'activité BlueXP avant son expiration afin que vous puissiez accéder à vos données numérisées sans interruption.</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">Notifications</block>
   <block id="9cb535dcfcda2b04cab5b48ce4b5044b" category="admonition">Ce message apparaît également dans le portefeuille digital BlueXP et dans<block ref="b553b83f4f3ab8ad7adf12f36cefd6a6" category="inline-link-rx"></block>.</block>
-  <block id="2f3cc4968532c87cc8b40e840f800717" category="list-text">Sélectionnez l'icône de chat dans le coin inférieur droit de BlueXP pour demander une extension de votre période ou de la capacité supplémentaire de votre licence pour le numéro de série spécifique. Vous pouvez également envoyer un e-mail pour demander une mise à jour de votre licence.</block>
-  <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">Une fois que vous avez payé la licence et qu'elle est enregistrée sur le site de support NetApp, BlueXP met automatiquement à jour la licence dans le portefeuille digital BlueXP. La page des licences des services de données reflète le changement en 5 à 10 minutes.</block>
-  <block id="5810a6765696da7b12979cf90b9b287c" category="list-text">Si BlueXP ne peut pas mettre à jour automatiquement la licence (par exemple, lorsqu'elle est installée sur un site sombre), vous devrez charger manuellement le fichier de licence.</block>
-  <block id="147b35ab5352426bba38d99d810db4ed" category="list-text">Vous pouvez obtenir le fichier de licence sur le site de support NetApp.</block>
   <block id="3a46f989d3db91bd2030de32947cd608" category="section-title">Avantages de l'utilisation de la reprise d'activité BlueXP pour VMware</block>
   <block id="cce8630c08ede8fc88504929ae963b37" category="paragraph">La reprise d'activité BlueXP offre les avantages suivants :</block>
   <block id="208ae1835c38717d827d78f2184f1eb8" category="paragraph">NetApp ne vous facture pas pour l'utilisation de la version d'évaluation de la reprise d'activité de BlueXP.</block>
@@ -577,12 +566,7 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="1594f78ebbb281f7b5359eb6d2b89912" category="list-text">Exécutez toutes les opérations planifiées qui ont été créées pendant la période d'essai ou sous la licence.</block>
   <block id="01c014f2e37e5bf6d3ce893bea0197cb" category="list-text">Une fois que vous avez configuré un connecteur, sur la page d'accueil de la reprise d'activité BlueXP, le bouton pour ajouter des modifications de connecteur à un bouton et lancer un essai gratuit. Sélectionnez *Démarrer essai gratuit*.</block>
   <block id="b9ef842238fa8d82db6b7559f33adc6c" category="paragraph">Une fois la version d'évaluation terminée, vous pouvez acheter une licence auprès de votre représentant commercial NetApp</block>
-  <block id="9bdfa376bcb2fa79aff92c39d0b24fcd" category="list-text">Une fois la licence obtenue, revenez à la reprise d'activité BlueXP. Sélectionnez l'option *Afficher les modes de paiement* dans le coin supérieur droit. Ou, dans le message indiquant que l'essai gratuit expire, sélectionnez *s'abonner ou acheter une licence*.</block>
-  <block id="d2a39678e393e2b473354681a2c1e5f4" category="inline-image-macro">Portefeuille digital BlueXP onglet licences des services de données</block>
-  <block id="7578ebad24c71aee2f2992e5efe1118d" category="list-text">Sur la page Ajouter une licence, entrez le numéro de série et les informations de compte sur le site de support NetApp.</block>
-  <block id="c6711fc66daa9915490ca9f9bdc7f08f" category="paragraph"><block ref="c6711fc66daa9915490ca9f9bdc7f08f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="be94b7e6fbf892064754b145ecdeb994" category="paragraph"><block ref="be94b7e6fbf892064754b145ecdeb994" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9fc7e8cb24850b1f0912cebc8da32620" category="list-text">Accédez au portefeuille digital BlueXP.</block>
   <block id="be976ba4e18c887ae57e14f6ebfbbab3" category="sidebar">La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données (par exemple, les ransomwares). Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public ou vers un autre site sur site en tant que site de reprise d'activité.</block>
   <block id="93716955add4f66b2af685a33bac4789" category="section-title">15 mai 2024</block>
   <block id="9df62cb4d6f151b560e84723841bd523" category="paragraph">Cette version de reprise d'activité de BlueXP inclut les mises à jour suivantes :</block>
@@ -591,7 +575,6 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="dd1ef091f49695b9c14e0e34da748ab7" category="list-text">Si vous n'avez pas encore ajouté de connecteur BlueXP, vous devez ajouter un connecteur. Pour ajouter un connecteur, voir<block ref="d6df7dcc2fc3105e10967a9194806ce5" category="inline-link-rx"></block>.</block>
   <block id="e2066cd1f4f96874fad4da9c48f8715b" category="list-text">Si vous utilisez déjà le service, le tableau de bord s'affiche lorsque vous sélectionnez « récupération après sinistre ».</block>
   <block id="7cc1b1d71d565ea421a16ed9422fe6c2" category="list-text">Achetez un abonnement de paiement basé sur l'utilisation (PAYGO) pour Amazon Web Services (AWS) Marketplace.</block>
-  <block id="23c019f17394a366e5bf51ef8a23b0a8" category="paragraph">Une fois que vous avez configuré votre BYOL, vous pouvez voir la licence dans l'onglet portefeuille digital BlueXP *licences du service de données*.</block>
   <block id="4701248bbe25ed364a5f0c79467e9f29" category="list-text">Commencez par ajouter des vCenters.</block>
   <block id="d780b26d8f0dcbe5b2593febbaacdb60" category="paragraph">Pour plus de détails, voir <block ref="84d66f7662bc8a91a68e93706653efe2" category="inline-link-macro-rx"></block>.</block>
   <block id="ad7911fdd21ff5752d10300d0446de95" category="section-title">Une fois la version d'évaluation terminée, Abonnez-vous à AWS Marketplace</block>
@@ -599,16 +582,6 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="acce4a6c25bc51b4930085d68e3cb0cd" category="list-text">Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.</block>
   <block id="584a50ae29d097d233ebd86ad952d305" category="list-text">Sélectionnez *s'abonner à AWS Marketplace*.</block>
   <block id="717132172ed170ccb94cc8674c35dfbd" category="list-text">Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.</block>
-  <block id="6678054c83157276d9287735dd3e1d92" category="paragraph">Pour afficher les détails de l'abonnement dans le portefeuille digital BlueXP, sélectionnez *Afficher les détails de l'abonnement* et affichez l'abonnement actif sur la page *abonnements*.</block>
-  <block id="0a504e78221db1ccaf51b7ad21bc16ce" category="inline-image-macro">Onglet abonnements au portefeuille digital BlueXP</block>
-  <block id="f3688cd67baeb83949d8b3d8688cda8b" category="paragraph"><block ref="f3688cd67baeb83949d8b3d8688cda8b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4052ab6997dacca028b4d726754818d5" category="paragraph">*Activer la licence*
-Après avoir acheté votre licence BlueXP de reprise après incident auprès de votre ingénieur commercial NetApp, vous activez la licence en saisissant le numéro de série de BlueXP Disaster Recovery et les informations de compte du site de support NetApp (NSS).</block>
-  <block id="e4822c1e77f0d7746ffdde4c031a2109" category="inline-image-macro">Page des nœuds de paiement de reprise d'activité BlueXP</block>
-  <block id="5646d601e859bd392516de29f6a97047" category="paragraph"><block ref="5646d601e859bd392516de29f6a97047" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="595da0c0edf936a84fa3d6a69bbbb4e5" category="paragraph"><block ref="595da0c0edf936a84fa3d6a69bbbb4e5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5d50de45dd75ac0ea74e9c427687d113" category="list-text">Dans le portefeuille digital BlueXP, dans l'onglet *licences des services de données*, sélectionnez *Ajouter une licence*.</block>
-  <block id="7744384d0e7b78819bc53ca36ef36369" category="list-text">Sélectionnez l'onglet *Data dervices licenses*, sélectionnez l'icône *actions ...* pour le numéro de série de service que vous mettez à jour, puis sélectionnez *mettre à jour la licence*.</block>
   <block id="d66d706cd022ab39ed6479a713135515" category="paragraph"><block ref="d66d706cd022ab39ed6479a713135515" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991e816286764c3a5ea9b023c35e1d77" category="paragraph"><block ref="991e816286764c3a5ea9b023c35e1d77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b45dfe874eaba6a97e58e0436eba2402" category="sidebar">Mise en route de la reprise d'activité BlueXP en tant que laboratoire de services à la demande</block>
@@ -801,8 +774,6 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="8e635b1aadad234871ba0e012309361f" category="list-text">Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.</block>
   <block id="1c10305a999dce53cb52dd4f6b8d89ff" category="list-text">Revoir le plan.</block>
   <block id="054b753af44fc4eeee43c9ba6037caaa" category="doc">Créez des rapports de reprise d'activité</block>
-  <block id="fca90381d84b0e9a022fdeac2012d4ab" category="paragraph">Vous aurez besoin du numéro de série BlueXP  pour la reprise sur incident. Recherchez ce numéro dans votre numéro de commande ou contactez l'équipe chargée du compte pour obtenir ces informations.</block>
-  <block id="20efb062527877ed8fd82ba191b8951b" category="paragraph">*Ajouter la licence au portefeuille numérique BlueXP * après avoir acheté une licence de récupération après sinistre BlueXP , vous devez ajouter la licence au portefeuille numérique BlueXP .</block>
   <block id="61b173efd5c260fd3e3f446d9d4b37e7" category="section-title">Lancez-vous avec BlueXP</block>
   <block id="eb596a544acd0e757253fec1e32880e2" category="inline-link">Inscrivez-vous à BlueXP  et créez une entreprise</block>
   <block id="5c162fb1edd17998f73f4b49374c4871" category="paragraph">Si vous ne l'avez pas déjà fait,<block ref="6286584d7da60f5fb185c973c7a25fca" category="inline-link-rx"></block></block>
@@ -1055,4 +1026,13 @@ Après avoir acheté votre licence BlueXP de reprise après incident auprès de 
   <block id="2b56dea239dc4c074a14290431d91d6a" category="list-text">Si vous avez sélectionné le dernier snapshot, la mise à jour SnapMirror est effectuée pour répliquer les dernières modifications.</block>
   <block id="380342b2d65f473fe650200caef78e53" category="list-text">En fonction de la sélection du snapshot, le système de fichiers actif est restauré sur le snapshot spécifié (dernier ou sélectionné)</block>
   <block id="c05fbe62f8e4ec67f1b21ca8610fda50" category="list-text">Dans la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.</block>
+  <block id="2847599cd91bec7d486721243d329494" category="inline-link-macro">En savoir plus sur le portefeuille digital</block>
+  <block id="2b04b3177ca047bdf9530f96b48dc58a" category="paragraph"><block ref="177b16e5e66adf0c0c4922a109055a31" category="inline-link-macro-rx"></block>.</block>
+  <block id="9e8edb5d154a8f2c2ab3efde5a90b95d" category="inline-link-macro">En savoir plus sur la gestion des abonnements avec le portefeuille digital</block>
+  <block id="61ebc53e0bf68b97af4405116db69639" category="paragraph">Vous pouvez afficher les détails de l'abonnement dans le portefeuille digital BlueXP . <block ref="c076e949682edba51af0e34c4227dbba" category="inline-link-macro-rx"></block>.</block>
+  <block id="745499562c1b6475b616a3cdf246c3d8" category="paragraph">*Ajouter la licence au portefeuille numérique BlueXP ** après avoir acheté votre licence de reprise après sinistre BlueXP  auprès de votre représentant commercial NetApp, vous pouvez gérer la licence dans le portefeuille numérique.</block>
+  <block id="2fb18b7eb7edfd6ac0fa8586ecbd9a12" category="inline-link">Découvrez comment ajouter des licences avec le portefeuille digital</block>
+  <block id="e2a36029181f04d6208811edf66b0c62" category="paragraph"><block ref="039fd09b60dad6f86188402eac2ef738" category="inline-link-rx"></block>.</block>
+  <block id="5d3579189b9441a8b42010228d169cbc" category="inline-link">En savoir plus sur la mise à jour des licences avec le portefeuille digital</block>
+  <block id="597c7a7ee6e647859f8aa98b20be3cb0" category="paragraph"><block ref="1180f9bbf40cd0c05f379b347ef1d8f9" category="inline-link-rx"></block>.</block>
 </blocks>
