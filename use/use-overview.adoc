@@ -14,8 +14,9 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 [role="lead"]
 La reprise d'activité BlueXP vous permet d'atteindre les objectifs suivants :
 
-* link:../use/dashboard-view.html["Consultez l'état de vos plans de reprise d'activité"]
+* link:../use/dashboard-view.html["Consultez l'état de vos plans de reprise d'activité"].
 * link:../use/sites-add.html["Ajoutez des sites vCenter"].
+* link:../use/resource-group.html["Créer des groupes de ressources pour organiser les VM ensemble"]
 * link:../use/drplan-create.html["Création d'un plan de reprise d'activité"].
 * link:../use/replicate.html["Répliquez des applications VMware"] Sur votre site principal vers un site distant de reprise d'activité dans le cloud, grâce à la réplication SnapMirror
 * link:../use/migrate.html["Migrez vos applications VMware"] sur votre site principal vers un autre site.

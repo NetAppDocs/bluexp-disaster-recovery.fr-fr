@@ -9,6 +9,8 @@ entries:
   url: "/use/dashboard-view.html"
 - title: Ajouter des vCenters à un site
   url: "/use/sites-add.html"
+- title: Créez un groupe de ressources
+  url: "/use/resource-group.html"
 - title: Créer un plan de réplication
   url: "/use/drplan-create.html"
 - title: Répliquer sur un autre site
