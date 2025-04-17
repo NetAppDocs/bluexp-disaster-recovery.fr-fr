@@ -20,6 +20,13 @@ Vous pouvez créer un plan de réplication et modifier des plannings pour la con
 
 Vous pouvez protéger plusieurs machines virtuelles sur plusieurs datastores. La reprise d'activité BlueXP  crée des groupes de cohérence ONTAP pour tous les volumes ONTAP hébergeant des datastores de machines virtuelles protégés.
 
+Les machines virtuelles ne peuvent être protégées que si le plan de réplication est dans l'un des États suivants :
+
+* À vos marques
+* Rétablissement validé
+* Le basculement de test a été validé
+
+
 
 
 == Créez le plan
@@ -27,7 +34,7 @@ Vous pouvez protéger plusieurs machines virtuelles sur plusieurs datastores. La
 Un assistant vous guide tout au long de la procédure suivante :
 
 * Sélectionnez serveurs vCenter.
-* Sélectionnez les machines virtuelles que vous souhaitez répliquer et attribuez des groupes.
+* Sélectionnez les machines virtuelles ou datastores à répliquer et attribuez des groupes de ressources.
 * Mappez la façon dont les ressources de l'environnement source sont mappées à la destination.
 * Identifiez la récurrence, exécutez un script hébergé par l'invité, définissez l'ordre de démarrage et sélectionnez l'objectif du point de récupération.
 * Revoir le plan.
@@ -64,27 +71,54 @@ image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan
 
 === Sélectionnez les applications à répliquer et attribuez des groupes de ressources
 
-L'étape suivante consiste à regrouper les VM requises en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
+L'étape suivante consiste à regrouper les VM ou datastores requis en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de VM ou datastores dépendants en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
 
-Lorsque vous sélectionnez des applications dans le plan de réplication, vous pouvez voir le système d'exploitation pour chaque machine virtuelle du plan. Ceci est utile pour décider comment regrouper des machines virtuelles dans un groupe de ressources.
+Lorsque vous sélectionnez des applications dans le plan de réplication, vous pouvez voir le système d'exploitation pour chaque VM ou datastore du plan. Ceci est utile pour décider comment regrouper des VM ou des datastores dans un groupe de ressources.
 
 
-TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
+TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles ou datastores. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
+
+Lorsque vous créez des groupes de ressources, tenez compte des problèmes suivants :
+
+* Avant d'ajouter des datastores à des groupes de ressources, commencez par lancer une découverte manuelle ou une découverte planifiée des machines virtuelles. Cela permet de s'assurer que les VM sont découvertes et répertoriées dans le groupe de ressources. Si vous ne lancez pas de découverte manuelle, il se peut que les machines virtuelles ne soient pas répertoriées dans le groupe de ressources.
+* Assurez-vous qu'il y a au moins une machine virtuelle dans le datastore. S'il n'y a pas de VM dans le datastore, celui-ci ne sera pas découvert.
+* Un datastore unique ne doit pas héberger de machines virtuelles protégées par plusieurs plans de réplication.
+* N'hébergez pas de machines virtuelles protégées et non protégées sur le même datastore. Si des machines virtuelles protégées et non protégées sont hébergées sur le même datastore, les problèmes suivants peuvent se produire :
++
+** Étant donné que la reprise d'activité BlueXP  utilise SnapMirror et que le système réplique des volumes ONTAP entiers, la capacité utilisée de ce volume est utilisée pour gérer les licences. Dans ce cas, l'espace de volume consommé par les machines virtuelles protégées et non protégées serait inclus dans ce calcul.
+** Si le groupe de ressources et les datastores associés doivent être basculés vers le site de reprise d'activité, toutes les machines virtuelles non protégées (qui ne font pas partie du groupe de ressources mais sont hébergées sur le volume ONTAP) n'existeront plus sur le site source depuis le processus de basculement, entraînant ainsi la défaillance de machines virtuelles non protégées sur le site source. Par ailleurs, la reprise sur incident BlueXP  ne démarre pas ces machines virtuelles non protégées sur le site vCenter de basculement.
+
+
+* Pour que la machine virtuelle soit protégée, elle doit être incluse dans un groupe de ressources.
+
+
+*MEILLEURE PRATIQUE* : organisez vos machines virtuelles avant de déployer la reprise sur incident BlueXP  pour limiter la « prolifération des datastores ». Placez les machines virtuelles qui ont besoin d'une protection sur un sous-ensemble de datastores et placez-les sur des machines virtuelles qui ne seront pas protégées dans un sous-ensemble différent de datastores. Assurez-vous que les machines virtuelles d'un datastore donné ne sont pas protégées par des plans de réplication différents.
 
 .Étapes
-. Si vous le souhaitez, dans la partie gauche de la page applications, filtrez les VM par leur datastore. Vous pouvez également rechercher des VM spécifiques par leur nom.
-. Dans la partie gauche de la page applications, sélectionnez les machines virtuelles que vous souhaitez protéger et attribuez au groupe sélectionné.
+. Sélectionnez *machines virtuelles* ou *datastores*.
+. Vous pouvez également rechercher par nom une machine virtuelle ou un datastore spécifique.
+. Dans la partie gauche de la page applications, sélectionnez les machines virtuelles ou datastores à protéger et à affecter au groupe sélectionné.
 +
-La machine virtuelle sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une machine virtuelle au dernier groupe, un autre groupe est ajouté.
+La ressource sélectionnée est automatiquement ajoutée au groupe 1 et un nouveau groupe 2 démarre. Chaque fois que vous ajoutez une ressource au dernier groupe, un autre groupe est ajouté.
 
 +
-image:dr-plan-create-apps-vms5.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
+image:dr-plan-create-apps-vms6.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
+
++
+Ou, pour les datastores :
+
++
+image:dr-plan-create-apps-datastores.png["Capture d'écran montrant la page Ajouter un plan de réplication > applications à répliquer"]
 
 . Si vous le souhaitez, effectuez l'une des opérations suivantes :
 +
 ** Pour modifier le nom du groupe, cliquez sur l'icône Groupe *Modifier*image:icon-pencil.png["Icône crayon"].
-** Pour supprimer une VM d'un groupe, sélectionnez *X* en regard de la VM.
-** Pour déplacer une machine virtuelle vers un autre groupe, faites-la glisser et déposez-la dans le nouveau groupe.
+** Pour supprimer une ressource d'un groupe, sélectionnez *X* en regard de la ressource.
+** Pour déplacer une ressource vers un autre groupe, faites-la glisser et déposez-la dans le nouveau groupe.
++
+
+TIP: Pour déplacer un datastore vers un autre groupe de ressources, désélectionnez le datastore indésirable et soumettez le plan de réplication. Ensuite, créez ou modifiez l'autre plan de réplication et resélectionnez le datastore.
+
 
 
 . Lorsque vous avez plusieurs groupes de ressources, assurez-vous que la séquence des groupes correspond à la séquence opérationnelle qui doit se produire.

@@ -12,7 +12,7 @@ summary: 'La reprise d"activité dans le cloud est un moyen résilient et écono
 
 
 [role="lead"]
-La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP pour VMware, vous pouvez répliquer vos workloads VMware sur site exécutant un stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide d'un stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
+La reprise d'activité dans le cloud est un moyen résilient et économique de protéger les workloads contre les pannes sur site et les corruptions de données. Avec la reprise d'activité BlueXP  pour VMware, vous pouvez répliquer vos workloads de VM ou de datastores VMware sur site exécutant le stockage ONTAP vers un data Center Software-defined VMware dans un cloud public à l'aide du stockage cloud NetApp ou vers un autre environnement VMware sur site avec un stockage ONTAP comme site de reprise d'activité.
 
 BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Le service de reprise après incident BlueXP  protège vos workloads sur site basés sur NFS et vos datastores VMFS (Virtual machine File System) VMware vSphere pour iSCSI et FC exécutant un stockage NetApp vers l'un des éléments suivants :
 
@@ -48,8 +48,8 @@ Grâce à la reprise d'activité BlueXP, vous exploitez pleinement plusieurs tec
 * Répliquez les applications VMware de votre site de production sur un site distant de reprise d'activité dans le cloud ou sur site à l'aide de la réplication SnapMirror.
 * Migrez les workloads VMware de votre site d'origine vers un autre site.
 * Effectuez un test de basculement ; les machines virtuelles sont créées temporairement. La reprise d'activité BlueXP  crée un nouveau volume FlexClone à partir de l'instantané sélectionné, et un datastore temporaire sur lequel le volume FlexClone est installé est mappé aux hôtes ESXi. Ce processus ne consomme pas de capacité physique supplémentaire dans le stockage ONTAP sur site ou FSX pour le stockage NetApp ONTAP dans AWS. Le volume source d'origine n'est pas modifié et les tâches de réplica peuvent se poursuivre même en cas de reprise après sinistre.
-* En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.
-* Une fois le sinistre résolu, basculez à la demande du site de reprise sur incident vers le site principal.
+* En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.
+* Une fois le sinistre résolu, basculez à la demande du site de reprise sur incident vers le site principal. *Regrouper les machines virtuelles ou les datastores en groupes de ressources logiques pour une gestion efficace.
 
 
 

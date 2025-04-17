@@ -14,10 +14,7 @@ summary: 'La révision de rapports de reprise sur incident peut vous aider à an
 [role="lead"]
 La révision de rapports de reprise sur incident peut vous aider à analyser votre niveau de préparation à la reprise sur incident. Les rapports préconçus incluent un récapitulatif des basculements de test, des détails du plan de réplication et des détails des tâches sur tous les sites d'un compte au cours des sept derniers jours.
 
-Vous pouvez télécharger des rapports au format HTML ou JSON.
-
-
-TIP: Vous pouvez convertir la page HTML en PDF à l'aide des options de votre navigateur.
+Vous pouvez télécharger des rapports au format PDF, HTML ou JSON.
 
 Le lien Télécharger est valide pendant six heures.
 

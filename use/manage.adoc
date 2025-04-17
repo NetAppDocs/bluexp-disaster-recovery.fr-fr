@@ -37,7 +37,13 @@ Vous pouvez modifier le nom du site vCenter et le type de site (sur site ou AWS)
 
 == Gérer les groupes de ressources
 
-Bien que vous puissiez ajouter un groupe de ressources dans le cadre de la création d'un plan de réplication, il peut être plus pratique d'ajouter les groupes séparément et d'utiliser ces groupes ultérieurement dans le plan.
+Bien que vous puissiez ajouter un groupe de ressources dans le cadre de la création d'un plan de réplication, il peut être plus pratique d'ajouter les groupes séparément et d'utiliser ces groupes ultérieurement dans le plan. Vous créez des groupes de ressources par machines virtuelles ou par datastores.
+
+Vous pouvez créer un groupe de ressources par datastores de l'une des manières suivantes :
+
+* Lorsque vous ajoutez un groupe de ressources à l'aide de datastores, vous pouvez voir la liste des datastores. Vous pouvez sélectionner un ou plusieurs datastores pour créer un groupe de ressources.
+* Lorsque vous créez un plan de réplication et un groupe de ressources dans le plan, vous pouvez voir les machines virtuelles dans les datastores.
+
 
 Vous pouvez également modifier et supprimer des groupes de ressources.
 

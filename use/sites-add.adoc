@@ -14,7 +14,23 @@ summary: Avant de créer un plan de reprise sur incident, vous devez ajouter un 
 [role="lead"]
 Avant de créer un plan de reprise sur incident, vous devez ajouter un serveur vCenter principal à un site et un site de reprise sur incident vCenter cible dans BlueXP .
 
-Une fois ajoutées, la reprise d'activité BlueXP effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, de l'espace de stockage, en savoir plus sur les machines virtuelles, les répliques SnapMirror et les réseaux de machines virtuelles.
+Une fois les vCenter ajoutés, la reprise après incident BlueXP  effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, l'empreinte du stockage, les détails des machines virtuelles, des répliques SnapMirror et des réseaux de machines virtuelles.
+
+Si vous avez ajouté des vCenters dans les versions précédentes et que vous souhaitez personnaliser le planning de découverte, vous devez modifier le site du serveur vCenter et définir le planning.
+
+
+TIP: La reprise sur incident BlueXP  effectue une détection toutes les 24 heures. Après avoir configuré un site, vous pouvez modifier vCenter ultérieurement pour personnaliser le planning de découverte qui répond à vos besoins. Par exemple, si vous disposez d'un grand nombre de machines virtuelles, vous pouvez définir la planification de la découverte de sorte qu'elle s'exécute toutes les 23 heures et 59 minutes. Si vous disposez d'un petit nombre de machines virtuelles, vous pouvez définir la planification de découverte pour qu'elle s'exécute toutes les 12 heures. L'intervalle minimum est de 30 minutes et le maximum est de 24 heures.
+
+Vous devez d'abord effectuer quelques découvertes manuelles pour obtenir les informations les plus à jour sur votre environnement. Ensuite, vous pouvez définir la planification pour qu'elle s'exécute automatiquement.
+
+Les machines virtuelles récemment ajoutées ou supprimées sont reconnues lors de la prochaine découverte planifiée ou lors d'une découverte manuelle immédiate.
+
+Les machines virtuelles ne peuvent être protégées que si le plan de réplication est dans l'un des États suivants :
+
+* À vos marques
+* Rétablissement validé
+* Le basculement de test a été validé
+
 
 .Étapes
 . Connectez-vous à BlueXP et sélectionnez *protection* > *Disaster Recovery* dans la navigation de gauche.
@@ -64,4 +80,38 @@ image:sites-list2.png["Capture d'écran de la page sites"]
 
 
 . Pour voir la progression de l'opération, dans le menu supérieur, sélectionnez *surveillance des tâches*.
+
+
+
+
+== Modifiez le site du serveur vCenter et personnalisez la planification de la découverte
+
+Vous pouvez modifier le site du serveur vCenter pour personnaliser le planning de découverte. Par exemple, si vous disposez d'un grand nombre de machines virtuelles, vous pouvez définir la planification de la découverte de sorte qu'elle s'exécute toutes les 23 heures et 59 minutes. Si vous disposez d'un petit nombre de machines virtuelles, vous pouvez définir la planification de découverte pour qu'elle s'exécute toutes les 12 heures.
+
+Si vous avez ajouté des vCenters dans les versions précédentes et que vous souhaitez personnaliser le planning de découverte, vous devez modifier le site du serveur vCenter et définir le planning.
+
+Si vous ne souhaitez pas planifier la découverte, vous pouvez désactiver l'option de découverte planifiée et actualiser la découverte manuellement à tout moment.
+
+.Étapes
+. Dans le menu de récupération après sinistre de BlueXP , sélectionnez *sites*.
+. Sélectionnez le site à modifier.
+. Sélectionnez l'icône actions image:icon-vertical-dots.png["Icône actions"]sur la droite et sélectionnez *Modifier*.
+. Dans la page Modifier le serveur vCenter, modifiez les champs selon vos besoins.
+. Pour personnaliser le planning de découverte, cochez la case *Activer la découverte planifiée* et sélectionnez la date et l'intervalle de temps souhaités.
++
+image:sites-edit-schedule.png["Modifier la capture d'écran du planning de découverte"]
+
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Actualisez la découverte manuellement
+
+Vous pouvez actualiser la détection manuellement à tout moment. Cette fonction est utile si vous avez ajouté ou supprimé des machines virtuelles et si vous souhaitez mettre à jour les informations dans la reprise sur incident BlueXP .
+
+.Étapes
+. Dans le menu de récupération après sinistre de BlueXP , sélectionnez *sites*.
+. Sélectionnez le site à actualiser.
+. Sélectionnez l'icône actions image:icon-vertical-dots.png["Icône actions"]sur la droite et sélectionnez *Actualiser*.
 
