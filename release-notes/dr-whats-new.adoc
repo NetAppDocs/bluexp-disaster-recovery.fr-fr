@@ -18,7 +18,7 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 == 16 avril 2025
 
-Version 4.3
+Version 4.2.2
 
 
 
@@ -55,6 +55,34 @@ Cette version fournit des notifications indiquant que l'essai gratuit expirera d
 === Notification des mises à jour de service
 
 Avec cette version, une bannière s'affiche en haut pour indiquer que les services sont en cours de mise à niveau et que le service est placé en mode de maintenance. La bannière s'affiche lorsque le service est mis à niveau et disparaît lorsque la mise à niveau est terminée. Bien que vous puissiez continuer à travailler dans l'interface utilisateur pendant la mise à niveau, vous ne pouvez pas soumettre de nouveaux travaux. Les tâches planifiées s'exécuteront une fois la mise à jour terminée et le service retournera en mode de production.
+
+
+
+== 10 mars 2025
+
+Version 4.2.1
+
+
+
+=== Prise en charge de proxy intelligent
+
+Le connecteur BlueXP  prend en charge le proxy intelligent. Le proxy intelligent est un moyen léger, sécurisé et efficace de connecter votre environnement sur site au service BlueXP . Il fournit une connexion sécurisée entre votre environnement et le service BlueXP  sans VPN ni accès direct à Internet. Cette mise en œuvre de proxy optimisée décharge le trafic API au sein du réseau local.
+
+Lorsqu'un proxy est configuré, la reprise après incident BlueXP  tente de communiquer directement avec VMware ou ONTAP et utilise le proxy configuré en cas d'échec de la communication directe.
+
+La mise en œuvre du proxy de reprise après incident BlueXP  nécessite une communication sur le port 443 entre le connecteur et tous les serveurs vCenter et baies ONTAP utilisant un protocole HTTPS. L'agent de reprise après incident BlueXP  intégré au connecteur communique directement avec VMware vSphere, VC ou ONTAP lors de l'exécution de toute action.
+
+Pour plus d'informations sur le proxy intelligent pour la reprise après incident BlueXP , reportez-vous à la section https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configurez votre infrastructure pour la reprise d'activité BlueXP"].
+
+Pour plus d'informations sur la configuration générale du proxy dans BlueXP , reportez-vous à la section https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurez un connecteur pour utiliser un serveur proxy"^].
+
+
+
+=== Terminez l'essai gratuit à tout moment
+
+Vous pouvez arrêter l'essai gratuit à n'importe quelle dent ou vous pouvez attendre jusqu'à ce qu'il expire.
+
+Voir https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Terminez l'essai gratuit"].
 
 
 

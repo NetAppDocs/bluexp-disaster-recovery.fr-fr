@@ -99,6 +99,7 @@ TIP: Du site aux environnements sur site, utilisez le connecteur sur site BlueXP
 +
 Voir https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP sur site"^].
 
+* Pour plus d'informations sur la configuration d'un proxy intelligent pour la reprise après incident BlueXP , reportez-vous à la section link:../get-started/dr-setup.html["Configurez votre infrastructure pour la reprise d'activité BlueXP"].
 
 
 

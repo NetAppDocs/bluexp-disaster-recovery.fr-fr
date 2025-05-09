@@ -42,6 +42,18 @@ Assurez-vous que les exigences suivantes sont respectées avant de configurer la
 
 
 
+=== Prise en charge de proxy intelligent
+
+Le connecteur BlueXP  prend en charge le proxy intelligent. Le proxy intelligent est un moyen léger, sécurisé et efficace de connecter votre environnement sur site au service BlueXP . Il fournit une connexion sécurisée entre votre environnement et le service BlueXP  sans VPN ni accès direct à Internet. Cette mise en œuvre de proxy optimisée décharge le trafic API au sein du réseau local.
+
+Lorsqu'un proxy est configuré, la reprise après incident BlueXP  tente de communiquer directement avec VMware ou ONTAP et utilise le proxy configuré en cas d'échec de la communication directe.
+
+La mise en œuvre du proxy de reprise après incident BlueXP  nécessite une communication sur le port 443 entre le connecteur et tous les serveurs vCenter et baies ONTAP utilisant un protocole HTTPS. L'agent de reprise après incident BlueXP  intégré au connecteur communique directement avec VMware vSphere, VC ou ONTAP lors de l'exécution de toute action.
+
+Pour plus d'informations sur la configuration générale du proxy dans BlueXP , reportez-vous à la section https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurez un connecteur pour utiliser un serveur proxy"^].
+
+
+
 == Préparez-vous à la reprise d'activité BlueXP  pour une protection sur site dans le cloud avec AWS
 
 Pour configurer la reprise d'activité BlueXP  pour la protection des données sur site vers le cloud avec AWS, vous devez configurer les éléments suivants :
