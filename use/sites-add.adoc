@@ -33,7 +33,7 @@ Les machines virtuelles ne peuvent être protégées que si le plan de réplicat
 
 
 .Étapes
-. Connectez-vous à BlueXP et sélectionnez *protection* > *Disaster Recovery* dans la navigation de gauche.
+. Connectez-vous à BlueXP  et dans le menu de navigation de gauche, sélectionnez *protection* > *récupération après sinistre*.
 +
 Accédez à la page du tableau de bord de reprise d'activité BlueXP. Lorsque vous commencez par utiliser le service, vous devez ajouter des informations vCenter. Plus tard, le tableau de bord affiche les données relatives à vos sites et à vos plans de réplication.
 
@@ -80,6 +80,70 @@ image:sites-list2.png["Capture d'écran de la page sites"]
 
 
 . Pour voir la progression de l'opération, dans le menu supérieur, sélectionnez *surveillance des tâches*.
+
+
+
+
+== Ajoutez le mappage de sous-réseau pour un site vCenter
+
+Gérer les adresses IP lors du basculement de manière nouvelle à l'aide du mappage de sous-réseau, qui vous permet d'ajouter des sous-réseaux pour chaque vCenter. Dans ce cas, vous définissez le CIDR IPv4, la passerelle par défaut et le DNS pour chaque réseau virtuel.
+
+Lors du basculement, la reprise après incident BlueXP  détermine l'adresse IP appropriée de chaque vNIC en examinant le CIDR fourni pour le réseau virtuel mappé et l'utilise pour dériver la nouvelle adresse IP.
+
+Par exemple :
+
+* Réseau a = 10.1.1.0/24
+* Réseau B = 192.168.1.0/24
+
+
+VM1 dispose d'une vNIC (10.1.1.50) connectée au réseau A. NetworkA est mappé sur le réseau B dans les paramètres du plan de réplication.
+
+En cas de basculement, la reprise après incident BlueXP  remplace la partie réseau de l'adresse IP d'origine (10.1.1) et conserve l'adresse hôte (.50) de l'adresse IP d'origine (10.1.1.50). Pour VM1, BlueXP  Disaster Recovery examine les paramètres CIDR du réseau B et utilise cette partie du réseau 192.168.1 tout en conservant la partie hôte (.50) pour créer la nouvelle adresse IP du VM1. La nouvelle adresse IP devient 192.168.1.50.
+
+En résumé, l'adresse de l'hôte reste la même, tandis que l'adresse réseau est remplacée par celle configurée dans le mappage de sous-réseau du site. Cela vous permet de gérer plus facilement la réaffectation d'adresses IP en cas de basculement, notamment si vous avez des centaines de réseaux et des milliers de machines virtuelles à gérer.
+
+L'utilisation du mappage de sous-réseau est un processus en deux étapes facultatif :
+
+* Commencez par ajouter le mappage de sous-réseau pour chaque site vCenter.
+* Deuxièmement, dans le plan de réplication, indiquez que vous souhaitez utiliser le mappage de sous-réseau.
+
+
+.Étapes
+. Dans le menu supérieur de récupération après sinistre de BlueXP , sélectionnez *sites*.
+. Dans l'icône actions image:icon-vertical-dots.png["Icône actions"]située à droite, sélectionnez *Ajouter un sous-réseau*.
++
+image:sites-subnet-add.png["Capture d'écran Ajouter un mappage de sous-réseau"]
+
+. Sur la page configurer le sous-réseau, entrez les informations suivantes :
++
+.. Subnet : saisissez le CIDR IPv4 du sous-réseau jusqu'à /32.
++
+
+TIP: La notation CIDR est une méthode de spécification des adresses IP et de leurs masques de réseau. /24 indique le masque de réseau. Le numéro se compose d'une adresse IP dont le numéro se trouve après le signe « / » indiquant le nombre de bits de l'adresse IP qui indiquent le réseau. Par exemple, 192.168.0.50/24, l'adresse IP est 192.168.0.50 et le nombre total de bits de l'adresse réseau est 24. 192.168.0.50 255.255.255.0 devient 192.168.0.0/24.
+
+.. Passerelle : entrez la passerelle par défaut pour le sous-réseau.
+.. DNS : entrez le DNS du sous-réseau.
+
+
+. Sélectionnez *Ajouter un mappage de sous-réseau*.
+
+
+
+
+=== Sélectionnez le mappage de sous-réseau pour un plan de réplication
+
+Lorsque vous créez un plan de réplication, vous pouvez sélectionner le mappage de sous-réseau pour le plan de réplication.
+
+.Étapes
+. Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *plans de réplication*.
+. Sélectionnez *Ajouter* pour ajouter un plan de réplication.
+. Complétez les champs de la manière habituelle en ajoutant les serveurs vCenter, en sélectionnant les groupes de ressources ou les applications et en effectuant les mappages.
+. Dans la page Replication plan > Resource mapping, sélectionnez la section *Virtual machines*.
++
+image:dr-plan-create-subnet-mapping.png["Capture d'écran de sélection de mappage de sous-réseau"]
+
+. Dans le champ *Target IP*, sélectionnez *utiliser le mappage de sous-réseau* dans la liste déroulante.
+. Poursuivez la création du plan de réplication.
 
 
 

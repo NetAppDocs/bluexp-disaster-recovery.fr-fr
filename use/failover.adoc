@@ -86,13 +86,18 @@ TIP: Une fois le basculement lancé, les VM restaurées sont visibles dans le vC
 . Sélectionnez le plan de réplication.
 . Sur la droite, sélectionnez l'option *actions* image:../use/icon-horizontal-dots.png["Icône du menu actions du service de reprise d'activité BlueXP"] Et sélectionnez *basculement*.
 +
-image:dr-plan-failover2.png["Basculement de la page"]
+image:dr-plan-failover3.png["Basculement de la page"]
 
 . Dans la page basculement, vous pouvez soit lancer un instantané maintenant, soit choisir l'instantané du datastore à partir duquel effectuer la restauration. La valeur par défaut est la dernière.
 +
 Un instantané de la source actuelle est pris et répliqué vers la destination actuelle avant le basculement.
 
 . Vous pouvez également sélectionner *forcer le basculement* si vous souhaitez que le basculement se produise même si une erreur est détectée, ce qui empêcherait normalement le basculement.
+. Si vous le souhaitez, sélectionnez *Ignorer la protection* si vous souhaitez que le service ne crée pas automatiquement une relation de protection SnapMirror inverse après un basculement de plan de réplication. Cette fonction est utile si vous souhaitez effectuer des opérations supplémentaires sur le site restauré avant de le remettre en ligne dans le cadre de la reprise sur incident BlueXP .
++
+
+TIP: Vous pouvez établir une protection inverse en sélectionnant *protéger les ressources* dans le menu actions du plan de réplication. Cette opération tente de créer une relation de réplication inverse pour chaque volume du plan. Vous pouvez exécuter cette tâche plusieurs fois jusqu'à ce que la protection soit restaurée. Une fois la protection restaurée, vous pouvez lancer un rétablissement de la manière habituelle.
+
 . Saisissez « basculement » dans la zone.
 . Sélectionnez *basculement*.
 . Pour vérifier la progression, dans le menu supérieur, sélectionnez *surveillance des travaux*.

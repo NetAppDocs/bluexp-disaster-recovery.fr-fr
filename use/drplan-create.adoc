@@ -71,12 +71,12 @@ image:dr-plan-create-name.png["Capture d'écran montrant la page Ajouter un plan
 
 === Sélectionnez les applications à répliquer et attribuez des groupes de ressources
 
-L'étape suivante consiste à regrouper les VM ou datastores requis en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de regrouper un ensemble de VM ou datastores dépendants en groupes logiques qui répondent à vos besoins. Par exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
+L'étape suivante consiste à regrouper les VM ou datastores requis en groupes de ressources fonctionnelles. Les groupes de ressources vous permettent de protéger un ensemble de machines virtuelles ou de datastores avec un snapshot commun.
 
 Lorsque vous sélectionnez des applications dans le plan de réplication, vous pouvez voir le système d'exploitation pour chaque VM ou datastore du plan. Ceci est utile pour décider comment regrouper des VM ou des datastores dans un groupe de ressources.
 
 
-TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles ou datastores. Les machines virtuelles se mettra sous tension en fonction de l'ordre dans lequel vous les incluez ici.
+TIP: Chaque groupe de ressources peut inclure une ou plusieurs machines virtuelles ou datastores.
 
 Lorsque vous créez des groupes de ressources, tenez compte des problèmes suivants :
 
@@ -92,7 +92,7 @@ Lorsque vous créez des groupes de ressources, tenez compte des problèmes suiva
 * Pour que la machine virtuelle soit protégée, elle doit être incluse dans un groupe de ressources.
 
 
-*MEILLEURE PRATIQUE* : organisez vos machines virtuelles avant de déployer la reprise sur incident BlueXP  pour limiter la « prolifération des datastores ». Placez les machines virtuelles qui ont besoin d'une protection sur un sous-ensemble de datastores et placez-les sur des machines virtuelles qui ne seront pas protégées dans un sous-ensemble différent de datastores. Assurez-vous que les machines virtuelles d'un datastore donné ne sont pas protégées par des plans de réplication différents.
+*MEILLEURE PRATIQUE* : organisez vos machines virtuelles avant de déployer la reprise sur incident BlueXP  pour limiter la « prolifération des datastores ». Placez les machines virtuelles qui ont besoin d'une protection sur un sous-ensemble de datastores et placez-les sur des machines virtuelles qui ne seront pas protégées dans un sous-ensemble différent de datastores. Utilisez la protection basée sur les datastores pour vous assurer que les machines virtuelles de n'importe quel datastore donné sont protégées.
 
 .Étapes
 . Sélectionnez *machines virtuelles* ou *datastores*.
@@ -120,10 +120,6 @@ image:dr-plan-create-apps-datastores.png["Capture d'écran montrant la page Ajou
 TIP: Pour déplacer un datastore vers un autre groupe de ressources, désélectionnez le datastore indésirable et soumettez le plan de réplication. Ensuite, créez ou modifiez l'autre plan de réplication et resélectionnez le datastore.
 
 
-
-. Lorsque vous avez plusieurs groupes de ressources, assurez-vous que la séquence des groupes correspond à la séquence opérationnelle qui doit se produire.
-+
-Chaque machine virtuelle d'un groupe est démarrée dans l'ordre indiqué ici.
 
 . Sélectionnez *Suivant*.
 
@@ -177,7 +173,7 @@ Cette section peut afficher différents champs en fonction de votre sélection.
 ** *Type d'adresse IP* : reconfigurez la configuration des machines virtuelles pour qu'elle corresponde aux exigences du réseau virtuel cible. La reprise sur incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le masque de sous-réseau, la passerelle et les serveurs DNS. De plus, entrez les informations d'identification des machines virtuelles.
 +
 *** *DHCP* : sélectionnez ce paramètre si vous souhaitez que vos machines virtuelles obtiennent des informations de configuration réseau à partir d'un serveur DHCP. Si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
-*** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner des informations identiques ou différentes dans la VM source. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
+*** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner l'une des options suivantes : identique à la source, différent de la source ou mappage de sous-réseau. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
 +
 Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
 
@@ -192,13 +188,13 @@ image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication
 +
 image:dr-plan-resource-mapping-vm-boot-order.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
 
-** *Ordre de démarrage* : vous pouvez modifier l'ordre de démarrage après un basculement pour toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, l'ordre de démarrage sélectionné lors de la sélection du groupe de ressources est utilisé ; cependant, vous pouvez apporter des modifications à ce stade. Ceci est utile pour vous assurer que toutes vos machines virtuelles prioritaires sont exécutées avant le démarrage des machines virtuelles prioritaires suivantes.
+** *Ordre de démarrage* : vous pouvez modifier l'ordre de démarrage après un basculement pour toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, toutes les machines virtuelles démarrent en parallèle ; toutefois, vous pouvez effectuer des modifications à ce stade. Ceci est utile pour vous assurer que toutes vos machines virtuelles prioritaires sont exécutées avant le démarrage des machines virtuelles prioritaires suivantes.
 +
-Les numéros d'ordre de démarrage ne s'appliquent qu'à un groupe de ressources. Si vous avez un « 2 » dans un groupe et un « 2 » dans un autre groupe, les machines virtuelles du premier groupe commencent dans leur ordre et les machines virtuelles du deuxième groupe commencent dans leur ordre.
+Toutes les machines virtuelles ayant le même numéro d'ordre de démarrage seront démarrées en parallèle.
 
 +
-*** Démarrage séquentiel : attribuez à chaque machine virtuelle un numéro unique pour démarrer dans l'ordre attribué, par exemple, 1,2,3,4,5
-*** Démarrage simultané : attribuez le même numéro à toutes les machines virtuelles pour les démarrer en même temps, par exemple, 1,1,1,1,2,2,3,4,4.
+*** Démarrage séquentiel : attribuez à chaque machine virtuelle un numéro unique pour démarrer dans l'ordre attribué, par exemple, 1,2,3,4,5.
+*** Démarrage simultané : attribuez le même nombre à toutes les machines virtuelles pour les démarrer en même temps, par exemple, 1,1,1,1,2,2,3,4,4.
 
 
 ** *Délai de démarrage* : réglez le délai en minutes de l'action de démarrage.
@@ -214,14 +210,21 @@ TIP: Pour rétablir l'ordre de démarrage par défaut, sélectionnez *Réinitial
 Cette section peut être activée ou désactivée en fonction de votre sélection.
 
 +
-** *RPO* : saisissez l'objectif de point de récupération (RPO) pour indiquer la quantité de données à récupérer (mesurée en temps). Par exemple, si vous entrez un RPO de 60 minutes, la restauration doit avoir des données qui n'ont pas plus de 60 minutes à tout moment. En cas d'incident, vous pouvez perdre jusqu'à 60 minutes de données. Indiquez également le nombre de copies Snapshot à conserver pour tous les datastores.
+** *Utiliser des sauvegardes gérées par la plate-forme et des calendriers de conservation* : si vous utilisez une solution de gestion des snapshots externes, cochez cette case. BlueXP  Disaster Recovery prend en charge l'utilisation de solutions externes de gestion des snapshots, telles que le planificateur de règles ONTAP SnapMirror natif ou les intégrations tierces. Si chaque datastore (volume) du plan de réplication dispose déjà d'une relation SnapMirror gérée par un autre emplacement, vous pouvez utiliser ces snapshots comme points de restauration dans la reprise d'activité BlueXP .
++
+Lorsque cette option est sélectionnée, la reprise sur incident BlueXP  ne configure pas de programme de sauvegarde. Toutefois, vous devez toujours configurer un planning de conservation, car les snapshots peuvent toujours être créés pour les opérations de test, de basculement et de restauration.
+
++
+Une fois configuré, le service ne prend pas de snapshots planifiés régulièrement, mais s'appuie plutôt sur l'entité externe pour prendre et mettre à jour ces snapshots.
+
+** *Heure de début* : saisissez la date et l'heure auxquelles vous souhaitez que les sauvegardes et la rétention commencent à s'exécuter.
+** *Intervalle d'exécution* : saisissez l'intervalle de temps en heures et en minutes. Par exemple, si vous saisissez 1 heure, le service prend un instantané toutes les heures.
 ** *Retention count* : entrez le nombre d'instantanés que vous souhaitez conserver.
 ** *Datastores source et cible* : si plusieurs relations SnapMirror (fan-out) existent, vous pouvez sélectionner la destination à utiliser. Si une relation SnapMirror est déjà établie sur un volume, les datastores source et cible correspondants s'affichent. Si un volume n'a pas de relation SnapMirror, vous pouvez en créer une en sélectionnant un cluster cible, un SVM cible et en fournissant un nom de volume. Le service créera la relation volume et SnapMirror.
 +
 
 NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
 
-** Lorsque vous spécifiez l'objectif de point de restauration (RPO), le service planifie une sauvegarde principale en fonction du RPO et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute un snapshot ONTAP standard et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée un snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et un Snapshot de phase de validation en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
@@ -232,7 +235,7 @@ NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le clust
 
 
 
-=== Testez les mappages
+=== Ajoutez des mappages de basculement de test
 
 .Étapes
 . Pour définir différents mappages pour l'environnement de test, décochez la case et sélectionnez l'onglet *Tester les mappages*.
@@ -244,27 +247,6 @@ Dans l'onglet Tester les mappages, les mappages des ordinateurs virtuels et des 
 
 TIP: Vous pouvez tester ultérieurement l'intégralité du plan. Vous configurez actuellement les mappages pour l'environnement de test.
 
-
-
-
-
-=== Identifier la récurrence
-
-Indiquez si vous souhaitez migrer des données (un déplacement unique) vers une autre cible ou les répliquer à la fréquence SnapMirror.
-
-Si vous souhaitez la répliquer, identifiez la fréquence à laquelle les données doivent être mises en miroir.
-
-.Étapes
-. Dans la page récurrence, sélectionnez *migrer* ou *répliquer*.
-+
-** *Migrer* : sélectionnez cette option pour déplacer l'application vers l'emplacement cible.
-** *Replicate* : maintenez la copie cible à jour avec les modifications de la copie source dans une réplication récurrente.
-
-
-+
-image:dr-plan-create-recurrence.png["Capture d'écran montrant Ajouter un plan de réplication > récurrence"]
-
-. Sélectionnez *Suivant*.
 
 
 
@@ -311,11 +293,12 @@ image:dr-plan-list.png["Capture d'écran affichant la liste des plans de réplic
 .. Sélectionnez le jour du mois et l'heure d'exécution de ces tests.
 .. Saisissez la date au format aaaa-mm-jj lorsque vous souhaitez que le test commence.
 +
-image:dr-plan-schedule-edit.png["Capture d'écran montrant où vous pouvez modifier les horaires"]
+image:dr-plan-schedule-edit2.png["Capture d'écran montrant où vous pouvez modifier les horaires"]
 
 
 
-. Pour nettoyer l'environnement de test une fois le test de basculement terminé, cochez *nettoyage automatique après basculement du test*.
+. *Utiliser l'instantané ondemand pour le basculement de test planifié* : cochez cette case pour prendre un nouvel instantané avant de lancer le basculement de test automatisé.
+. Pour nettoyer l'environnement de test une fois le test de basculement terminé, cochez *nettoyer automatiquement après le basculement du test* et entrez le nombre de minutes que vous souhaitez attendre avant le démarrage du nettoyage.
 +
 
 NOTE: Ce processus annule l'enregistrement des machines virtuelles temporaires à partir de l'emplacement de test, supprime le volume FlexClone créé et démonte les datastores temporaires.
