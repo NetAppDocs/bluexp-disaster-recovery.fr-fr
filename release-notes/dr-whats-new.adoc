@@ -54,7 +54,7 @@ Lorsque vous lancez un basculement, vous pouvez maintenant choisir une option *I
 
 Une fois le site source d'origine remis en ligne, vous pouvez établir une protection inverse en sélectionnant *protéger les ressources* dans le menu actions du plan de réplication. Cette opération tente de créer une relation de réplication inverse pour chaque volume du plan. Vous pouvez exécuter cette tâche plusieurs fois jusqu'à ce que la protection soit restaurée. Une fois la protection restaurée, vous pouvez lancer un rétablissement de la manière habituelle.
 
-Pour plus de détails sur le fait d'ignorer la protection, reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Échec des applications ovre vers un site distant"].
+Pour plus de détails sur le fait d'ignorer la protection, reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Basculement des applications vers un site distant"].
 
 
 
@@ -68,7 +68,7 @@ Lorsque cette option est sélectionnée, la reprise sur incident BlueXP  ne con
 
 Une fois configuré, le service ne prend pas de snapshots planifiés régulièrement, mais s'appuie plutôt sur l'entité externe pour prendre et mettre à jour ces snapshots.
 
-Pour plus de détails sur le fait d'ignorer la protection, reportez-vous à la https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"].
+Pour plus d'informations sur l'utilisation de solutions d'instantanés externes dans le plan de réplication, reportez-vous à la section https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Créer un plan de réplication"] .
 
 
 
