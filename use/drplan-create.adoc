@@ -139,41 +139,49 @@ Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et 
 image:dr-plan-resource-mapping2.png["Plan de réplication, onglet mappage de ressources"]
 
 . Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas à droite de chaque ressource et mappez les ressources de chacune.
-. *Calculer les ressources* : sélectionnez la flèche vers le bas en regard de *calculer les ressources*.
-+
-** *Centres de données sources et cibles*
-** *Cluster cible*
-** *Hôte cible* (facultatif) : après avoir sélectionné le cluster, vous pouvez définir ces informations.
-+
-
-TIP: Si un vCenter dispose d'un DRS (Distributed Resource Scheduler) configuré pour gérer plusieurs hôtes d'un cluster, vous n'avez pas besoin de sélectionner un hôte. Si vous sélectionnez un hôte, BlueXP  Disaster Recovery place toutes les machines virtuelles sur l'hôte sélectionné.
-
-** *Dossier VM cible* (facultatif) : créez un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.
 
 
-. *Réseaux virtuels* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Sélectionnez le LAN virtuel source et le LAN virtuel cible.
-+
+
+
+=== Mapper les ressources > calculer les ressources
+
+Sélectionnez la flèche vers le bas en regard de *calculer les ressources*.
+
+* *Centres de données sources et cibles*
+* *Cluster cible*
+* *Hôte cible* (facultatif) : après avoir sélectionné le cluster, vous pouvez définir ces informations.
+
+
+
+TIP: Si un vCenter dispose d'un DRS (Distributed Resource Scheduler) configuré pour gérer plusieurs hôtes d'un cluster, vous n'avez pas besoin de sélectionner un hôte. Si vous sélectionnez un hôte, BlueXP  Disaster Recovery place toutes les machines virtuelles sur l'hôte sélectionné. * *Dossier VM cible* (facultatif) : créez un nouveau dossier racine pour stocker les machines virtuelles sélectionnées.
+
+
+
+=== Mapper la section ressources > réseaux virtuels
+
+Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *réseaux virtuels*. Sélectionnez le LAN virtuel source et le LAN virtuel cible.
+
 Sélectionnez le mappage réseau vers le LAN virtuel approprié. Les réseaux locaux virtuels doivent déjà être configurés. Sélectionnez donc le réseau local virtuel approprié pour mapper la machine virtuelle.
 
-. *Machines virtuelles* : dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.
-+
+
+
+=== Mapper les ressources > machines virtuelles
+
+Dans l'onglet mappages de basculement, sélectionnez la flèche vers le bas en regard de *machines virtuelles*.
+
 La valeur par défaut des VM est mappée. Le mappage par défaut utilise les mêmes paramètres que ceux utilisés par les VM dans l'environnement de production (même adresse IP, même masque de sous-réseau et même passerelle).
 
-+
 Si vous modifiez les paramètres par défaut, vous devez modifier le champ IP cible pour qu'il soit différent de la source.
 
-+
 
 NOTE: Si vous modifiez les paramètres sur « différent de la source », vous devez fournir les informations d'identification du système d'exploitation invité de la machine virtuelle.
 
-+
 Cette section peut afficher différents champs en fonction de votre sélection.
 
+* *Type d'adresse IP* : reconfigurez la configuration des machines virtuelles pour qu'elle corresponde aux exigences du réseau virtuel cible. La reprise sur incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le masque de sous-réseau, la passerelle et les serveurs DNS. De plus, entrez les informations d'identification des machines virtuelles.
 +
-** *Type d'adresse IP* : reconfigurez la configuration des machines virtuelles pour qu'elle corresponde aux exigences du réseau virtuel cible. La reprise sur incident BlueXP  propose deux options : DHCP ou IP statique. Pour les adresses IP statiques, configurez le masque de sous-réseau, la passerelle et les serveurs DNS. De plus, entrez les informations d'identification des machines virtuelles.
-+
-*** *DHCP* : sélectionnez ce paramètre si vous souhaitez que vos machines virtuelles obtiennent des informations de configuration réseau à partir d'un serveur DHCP. Si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
-*** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner l'une des options suivantes : identique à la source, différent de la source ou mappage de sous-réseau. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
+** *DHCP* : sélectionnez ce paramètre si vous souhaitez que vos machines virtuelles obtiennent des informations de configuration réseau à partir d'un serveur DHCP. Si vous choisissez cette option, vous ne fournissez que les informations d'identification de la machine virtuelle.
+** *Static IP* : sélectionnez ce paramètre si vous souhaitez spécifier manuellement les informations de configuration IP. Vous pouvez sélectionner l'une des options suivantes : identique à la source, différent de la source ou mappage de sous-réseau. Si vous choisissez la même chose que la source, vous n'avez pas besoin d'entrer les informations d'identification. En revanche, si vous choisissez d'utiliser des informations différentes de la source, vous pouvez fournir les informations d'identification, l'adresse IP de la machine virtuelle, le masque de sous-réseau, le DNS et la passerelle. Les informations d'identification du système d'exploitation invité de la machine virtuelle doivent être fournies au niveau global ou au niveau de chaque machine virtuelle.
 +
 Cela peut s'avérer très utile lors de la restauration d'environnements volumineux sur des clusters cibles plus petits ou lors de tests de reprise après incident sans devoir provisionner une infrastructure VMware physique individuelle.
 
@@ -182,49 +190,55 @@ image:dr-plan-create-mapping-vms2.png["Capture d'écran montrant Add Replication
 
 
 
-** *Scripts* : vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
-** *Préfixe et suffixe de la machine virtuelle cible* : sous les détails des machines virtuelles, vous pouvez éventuellement ajouter un préfixe et un suffixe au nom de la machine virtuelle.
-** *CPU et RAM de la machine virtuelle source* : sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
+* *Scripts* : vous pouvez inclure des scripts personnalisés au format .sh, .bat ou .ps1 comme processus de post-basculement. Avec les scripts personnalisés, la reprise d'activité BlueXP peut exécuter votre script après un processus de basculement. Par exemple, vous pouvez utiliser un script personnalisé pour reprendre toutes les transactions de base de données une fois le basculement terminé.
+* *Préfixe et suffixe de la machine virtuelle cible* : sous les détails des machines virtuelles, vous pouvez éventuellement ajouter un préfixe et un suffixe au nom de la machine virtuelle.
+* *CPU et RAM de la machine virtuelle source* : sous les détails des machines virtuelles, vous pouvez éventuellement redimensionner les paramètres CPU et RAM de la machine virtuelle.
 +
 image:dr-plan-resource-mapping-vm-boot-order.png["Capture d'écran montrant Add Replication plan > Resource mapping > Virtual machines"]
 
-** *Ordre de démarrage* : vous pouvez modifier l'ordre de démarrage après un basculement pour toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, toutes les machines virtuelles démarrent en parallèle ; toutefois, vous pouvez effectuer des modifications à ce stade. Ceci est utile pour vous assurer que toutes vos machines virtuelles prioritaires sont exécutées avant le démarrage des machines virtuelles prioritaires suivantes.
+* *Ordre de démarrage* : vous pouvez modifier l'ordre de démarrage après un basculement pour toutes les machines virtuelles sélectionnées dans les groupes de ressources. Par défaut, toutes les machines virtuelles démarrent en parallèle ; toutefois, vous pouvez effectuer des modifications à ce stade. Ceci est utile pour vous assurer que toutes vos machines virtuelles prioritaires sont exécutées avant le démarrage des machines virtuelles prioritaires suivantes.
 +
 Toutes les machines virtuelles ayant le même numéro d'ordre de démarrage seront démarrées en parallèle.
 
 +
-*** Démarrage séquentiel : attribuez à chaque machine virtuelle un numéro unique pour démarrer dans l'ordre attribué, par exemple, 1,2,3,4,5.
-*** Démarrage simultané : attribuez le même nombre à toutes les machines virtuelles pour les démarrer en même temps, par exemple, 1,1,1,1,2,2,3,4,4.
+** Démarrage séquentiel : attribuez à chaque machine virtuelle un numéro unique pour démarrer dans l'ordre attribué, par exemple, 1,2,3,4,5.
+** Démarrage simultané : attribuez le même nombre à toutes les machines virtuelles pour les démarrer en même temps, par exemple, 1,1,1,1,2,2,3,4,4.
 
 
-** *Délai de démarrage* : réglez le délai en minutes de l'action de démarrage.
+* *Délai de démarrage* : réglez le délai en minutes de l'action de démarrage.
 +
 
 TIP: Pour rétablir l'ordre de démarrage par défaut, sélectionnez *Réinitialiser les paramètres VM par défaut*, puis choisissez les paramètres que vous souhaitez rétablir par défaut.
 
-** *Créer des répliques cohérentes avec l'application* : indiquer si vous devez créer des copies snapshot cohérentes avec l'application. Le service arrête l'application, puis effectue un instantané pour obtenir un état cohérent de l'application. Cette fonctionnalité est prise en charge par Oracle fonctionnant sous Windows et Linux et SQL Server sous Windows.
+* *Créer des répliques cohérentes avec l'application* : indiquer si vous devez créer des copies snapshot cohérentes avec l'application. Le service arrête l'application, puis effectue un instantané pour obtenir un état cohérent de l'application. Cette fonctionnalité est prise en charge par Oracle fonctionnant sous Windows et Linux et SQL Server sous Windows.
 
 
-. *Datastores* : sélectionnez la flèche vers le bas à côté de *datastores*. En fonction de la sélection des machines virtuelles, les mappages des datastores sont sélectionnés automatiquement.
-+
+
+
+=== Mapper la section ressources > datastores
+
+Sélectionnez la flèche vers le bas en regard de *datastores*. En fonction de la sélection des machines virtuelles, les mappages des datastores sont sélectionnés automatiquement.
+
 Cette section peut être activée ou désactivée en fonction de votre sélection.
 
-+
-** *Utiliser des sauvegardes gérées par la plate-forme et des calendriers de conservation* : si vous utilisez une solution de gestion des snapshots externes, cochez cette case. BlueXP  Disaster Recovery prend en charge l'utilisation de solutions externes de gestion des snapshots, telles que le planificateur de règles ONTAP SnapMirror natif ou les intégrations tierces. Si chaque datastore (volume) du plan de réplication dispose déjà d'une relation SnapMirror gérée par un autre emplacement, vous pouvez utiliser ces snapshots comme points de restauration dans la reprise d'activité BlueXP .
+image:dr-plan-datastore-platform.png["Capture d'écran montrant Add Replication plan > Resource mapping > datastores"]
+
+* *Utiliser des sauvegardes gérées par la plate-forme et des calendriers de conservation* : si vous utilisez une solution de gestion des snapshots externes, cochez cette case. BlueXP  Disaster Recovery prend en charge l'utilisation de solutions externes de gestion des snapshots, telles que le planificateur de règles ONTAP SnapMirror natif ou les intégrations tierces. Si chaque datastore (volume) du plan de réplication dispose déjà d'une relation SnapMirror gérée par un autre emplacement, vous pouvez utiliser ces snapshots comme points de restauration dans la reprise d'activité BlueXP .
 +
 Lorsque cette option est sélectionnée, la reprise sur incident BlueXP  ne configure pas de programme de sauvegarde. Toutefois, vous devez toujours configurer un planning de conservation, car les snapshots peuvent toujours être créés pour les opérations de test, de basculement et de restauration.
 
 +
 Une fois configuré, le service ne prend pas de snapshots planifiés régulièrement, mais s'appuie plutôt sur l'entité externe pour prendre et mettre à jour ces snapshots.
 
-** *Heure de début* : saisissez la date et l'heure auxquelles vous souhaitez que les sauvegardes et la rétention commencent à s'exécuter.
-** *Intervalle d'exécution* : saisissez l'intervalle de temps en heures et en minutes. Par exemple, si vous saisissez 1 heure, le service prend un instantané toutes les heures.
-** *Retention count* : entrez le nombre d'instantanés que vous souhaitez conserver.
-** *Datastores source et cible* : si plusieurs relations SnapMirror (fan-out) existent, vous pouvez sélectionner la destination à utiliser. Si une relation SnapMirror est déjà établie sur un volume, les datastores source et cible correspondants s'affichent. Si un volume n'a pas de relation SnapMirror, vous pouvez en créer une en sélectionnant un cluster cible, un SVM cible et en fournissant un nom de volume. Le service créera la relation volume et SnapMirror.
+* *Heure de début* : saisissez la date et l'heure auxquelles vous souhaitez que les sauvegardes et la rétention commencent à s'exécuter.
+* *Intervalle d'exécution* : saisissez l'intervalle de temps en heures et en minutes. Par exemple, si vous saisissez 1 heure, le service prend un instantané toutes les heures.
+* *Retention count* : entrez le nombre d'instantanés que vous souhaitez conserver.
+* *Datastores source et cible* : si plusieurs relations SnapMirror (fan-out) existent, vous pouvez sélectionner la destination à utiliser. Si une relation SnapMirror est déjà établie sur un volume, les datastores source et cible correspondants s'affichent. Si un volume ne possède pas de relation SnapMirror, vous pouvez en créer une en sélectionnant un cluster cible, en sélectionnant un SVM cible et en fournissant un nom de volume. Le service créera la relation volume et SnapMirror.
 +
 
 NOTE: Si vous souhaitez créer une relation SnapMirror dans ce service, le cluster et son peering de SVM doivent avoir déjà été configurés en dehors de la reprise d'activité BlueXP.
 
++
 ** Si les machines virtuelles proviennent du même volume et du même SVM, le service exécute un snapshot ONTAP standard et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un même SVM, le service crée un snapshot de groupe de cohérence en incluant tous les volumes et met à jour les destinations secondaires.
 ** Si les machines virtuelles proviennent d'un autre volume et d'un autre SVM, le service exécute une phase de démarrage du groupe de cohérence et un Snapshot de phase de validation en incluant tous les volumes du même cluster ou d'un autre cluster, et met à jour les destinations secondaires.
