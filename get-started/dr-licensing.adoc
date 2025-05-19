@@ -17,7 +17,7 @@ Avec la reprise d'activité BlueXP, vous pouvez utiliser différents plans de li
 Vous pouvez utiliser les types de licence suivants :
 
 * Inscrivez-vous pour bénéficier d'un essai gratuit de 30 jours.
-* Achetez un abonnement de paiement basé sur l'utilisation (PAYGO) pour Amazon Web Services (AWS) Marketplace.
+* Achetez un abonnement PAYGO (paiement basé sur l'utilisation) pour *NetApp Intelligent Services* avec Amazon Web Services (AWS) Marketplace.
 * BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
 
 
@@ -71,12 +71,12 @@ Pour plus de détails, voir link:../use/sites-add.html["Ajoutez des sites vCente
 
 == Une fois la version d'évaluation terminée, Abonnez-vous à AWS Marketplace
 
-Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence auprès de NetApp ou vous abonner via AWS Marketplace. Dans cette procédure, vous découvrirez comment vous abonner directement à AWS Marketplace.
+Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence auprès de NetApp ou vous abonner à *NetApp Intelligent Services* via AWS Marketplace. Dans cette procédure, vous découvrirez comment vous abonner directement à AWS Marketplace.
 
 .Étapes
 . Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.
 . Sélectionnez *s'abonner à AWS Marketplace*.
-. Dans AWS Marketplace, sélectionnez *Afficher les options d'achat*. Utilisez AWS Marketplace pour vous abonner à la reprise d'activité BlueXP.
+. Utilisez AWS Marketplace pour vous abonner à *NetApp Intelligent Services* et *BlueXP  Disaster Recovery*.
 . Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.
 +
 Vous pouvez afficher les détails de l'abonnement dans le portefeuille digital BlueXP . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["En savoir plus sur la gestion des abonnements avec le portefeuille digital"^].
