@@ -20,9 +20,12 @@ BlueXP est un service de reprise après incident basé dans le cloud qui automat
 * Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP
 
 
+
+NOTE: CETTE DOCUMENTATION CONCERNANT AWS EVS EST FOURNIE À TITRE D'APERÇU TECHNOLOGIQUE. Avec cette offre de présentation, NetApp se réserve le droit de modifier les détails, le contenu et le calendrier de l'offre avant la disponibilité générale. Pour plus de détails, voir link:../reference/evs-deploy-guide-introduction.html["Introduction à la reprise après sinistre BlueXP à l'aide d'Amazon Elastic VMware Service et d'Amazon FSx pour NetApp ONTAP"].
+
 La reprise d'activité BlueXP utilise la technologie ONTAP SnapMirror pour le transport de réplication vers le site de reprise d'activité. Cela permet d'optimiser l'efficacité du stockage (compression et déduplication) sur les sites primaires et secondaires.
 
-image:draas-onprem-to-cloud-onprem.png["Diagramme illustrant les composants de la reprise d'activité BlueXP pour VMware"]
+image:../use/evs-bluexp-architecture.png["Diagramme illustrant les composants de la reprise d'activité BlueXP pour VMware"]
 
 
 
@@ -48,6 +51,8 @@ Grâce à la reprise d'activité BlueXP, vous exploitez pleinement plusieurs tec
 * En cas d'incident, basculez votre site principal à la demande vers le site de reprise d'activité, qui peut être VMware Cloud on AWS avec Amazon FSX for NetApp ONTAP ou un environnement VMware sur site avec ONTAP.
 * Une fois le sinistre résolu, basculez à la demande du site de reprise sur incident vers le site principal. *Regrouper les machines virtuelles ou les datastores en groupes de ressources logiques pour une gestion efficace.
 
+
+image:../use/evs-use-cases.png["Diagramme illustrant les cas d'utilisation de la reprise après sinistre BlueXP pour VMware"]
 
 
 NOTE: La configuration du serveur vSphere s'effectue en dehors de la reprise d'activité BlueXP dans vSphere Server.

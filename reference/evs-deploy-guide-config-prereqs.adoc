@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-prereqs.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Vous devez vous assurer que plusieurs conditions préalables sont remplies avant de continuer à configurer Amazon EVS avec la reprise après sinistre BlueXP. 
+---
+= Conditions préalables pour la reprise après sinistre Amazon EVS avec BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Vous devez vous assurer que plusieurs conditions préalables sont remplies avant de continuer à configurer Amazon EVS avec la reprise après sinistre BlueXP.
+
+Plus précisément, procédez comme suit :
+
+* Créez un compte utilisateur vCenter avec les privilèges VMware spécifiques requis pour la récupération après sinistre BlueXP pour effectuer les opérations nécessaires.
++
+
+NOTE: Nous déconseillons l'utilisation du compte administrateur par défaut « administrator@vsphere.com ». Il est préférable de créer un compte utilisateur BlueXP dédié à la reprise après sinistre sur tous les clusters vCenter participant au processus de reprise après sinistre. Pour obtenir la liste des privilèges spécifiques requis, consultez la section link:vcenter-privileges.html["Privilèges vCenter requis pour la reprise d'activité BlueXP"] .
+
+* Assurez-vous que tous les magasins de données vCenter qui hébergeront les machines virtuelles protégées par la reprise après sinistre BlueXP sont situés sur des ressources de stockage NetApp ONTAP.
++
+Le service prend en charge NFS et VMFS sur iSCSI (et non FC) lors de l'utilisation d'Amazon FSx sur NetApp ONTAP. Bien que le service prenne en charge FC, Amazon FSx pour NetApp ONTAP ne le prend pas en charge.
+
+* Assurez-vous que votre Amazon EVS vCenter est connecté à un cluster de stockage Amazon FSx for NetApp ONTAP.
+* Assurez-vous que les outils VMware sont installés sur toutes les machines virtuelles protégées.
+* Assurez-vous que votre réseau local est connecté à votre réseau AWS VPC via une méthode de connexion approuvée par Amazon. Nous vous recommandons d'utiliser AWS Direct Connect, AWS Private Link ou un VPN site à site AWS.
+

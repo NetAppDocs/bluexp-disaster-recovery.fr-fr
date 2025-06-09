@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-02.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Présentation de la reprise après sinistre BlueXP avec Amazon EVS et Amazon FSx pour NetApp ONTAP. Sélectionnez les machines virtuelles à protéger avec la reprise après sinistre BlueXP. 
+---
+= Créer un plan de réplication : Étape 2 - Sélectionner les ressources de la machine virtuelle dans la récupération après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Sélectionnez les machines virtuelles à protéger à l’aide de la récupération après sinistre BlueXP.
+
+Il existe plusieurs façons de sélectionner les machines virtuelles à protéger :
+
+* *Sélectionner des machines virtuelles individuelles* : Cliquer sur le bouton *Machines virtuelles* vous permet de sélectionner les machines virtuelles à protéger. À chaque sélection, le service ajoute une machine virtuelle à un groupe de ressources par défaut situé à droite de l'écran.
+* *Sélectionner des groupes de ressources précédemment créés* : Vous pouvez créer des groupes de ressources personnalisés au préalable via l'onglet Groupe de ressources en haut de l'interface de reprise après sinistre de BlueXP. Ce n'est pas obligatoire, car vous pouvez utiliser les deux autres méthodes pour créer un groupe de ressources dans le cadre du plan de réplication. Pour plus de détails, voir link:../use/drplan-create.html["Créer un plan de réplication"].
+* *Sélectionner l'intégralité des datastores vCenter* : Si vous avez beaucoup de machines virtuelles à protéger avec ce plan de réplication, sélectionner des machines virtuelles individuelles peut s'avérer moins efficace. Étant donné que la reprise après sinistre BlueXP utilise la réplication SnapMirror basée sur les volumes pour protéger les machines virtuelles, toutes les machines virtuelles résidant sur un datastore seront répliquées au sein du volume. Dans la plupart des cas, la reprise après sinistre BlueXP doit protéger et redémarrer toutes les machines virtuelles situées sur le datastore. Utilisez cette option pour indiquer au service d'ajouter toutes les machines virtuelles hébergées sur un datastore sélectionné à la liste des machines virtuelles protégées.
+
+
+Pour cette instruction guidée, nous sélectionnons l’intégralité de la banque de données vCenter.
+
+.Étapes pour accéder à cette page
+. À partir de la page *Plan de réplication*, passez à la section *Applications*.
+. Consultez les informations dans la page *Applications* qui s'ouvre.
++
+image:evs-create-rp-wiz-b-1-4.png["Plan de réplication, page Applications"]
+
+
+
+.Étapes pour sélectionner le ou les magasins de données :
+. Sélectionnez *datastores*.
+. Cochez les cases à côté de chaque banque de données que vous souhaitez protéger.
+. (Facultatif) Renommez le groupe de ressources avec un nom approprié en sélectionnant l'icône en forme de crayon à côté du nom du groupe de ressources.
+. Sélectionnez *Suivant*.
+
+
+Continuer avec link:evs-deploy-guide-create-rp-wiz-03.html["Assistant de création de plan de réplication Étape 3"] .

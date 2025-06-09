@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-03.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: 'Présentation de la reprise après sinistre BlueXP avec Amazon EVS et Amazon FSx pour NetApp ONTAP. Une fois la liste des machines virtuelles à protéger établie, la reprise après sinistre BlueXP nécessite la fourniture d"un mappage de basculement et des informations de configuration des machines virtuelles à utiliser lors d"un basculement.' 
+---
+= Créer un plan de réplication : Étape 3 : Mapper les ressources dans la reprise après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Une fois que vous disposez d’une liste de machines virtuelles que vous souhaitez protéger à l’aide de la récupération après sinistre BlueXP, fournissez le mappage de basculement et les informations de configuration de machine virtuelle à utiliser lors d’un basculement.
+
+Vous devez cartographier quatre principaux types d’informations :
+
+* Ressources de calcul
+* Réseaux virtuels
+* Reconfiguration de la machine virtuelle
+* Cartographie du magasin de données
+
+
+Chaque machine virtuelle nécessite les trois premiers types d'informations. Le mappage des banques de données est requis pour chaque banque de données hébergeant les machines virtuelles à protéger.
+
+* Les sections avec l'icône d'avertissement ( image:evs-caution-icon.png["25,25"] ) exigent que vous fournissiez des informations de cartographie.
+* La section marquée avec l'icône de coche ( image:evs-check-icon.png["25,25"] ) ont été mappés ou possèdent des mappages par défaut. Vérifiez-les pour vous assurer que la configuration actuelle répond à vos besoins.
+
+
+.Étapes pour accéder à cette page
+. À partir de la page *Plan de réplication*, passez à la section *Mappage des ressources*.
+. Consultez les informations sur la page *Mappage des ressources* qui s’ouvre.
++
+image:evs-create-rp-wiz-c0.png["Créer un plan de réplication, une page de mappage des ressources"]
+
+. Pour ouvrir chaque catégorie de mappages requis, sélectionnez la flèche vers le bas (*v*) à côté de la section.
+
+
+
+
+== Cartographie des ressources de calcul
+
+Étant donné qu’un site peut héberger plusieurs centres de données virtuels et plusieurs clusters vCenter, vous devez identifier le cluster vCenter sur lequel récupérer les machines virtuelles en cas de basculement.
+
+.Étapes pour cartographier les ressources de calcul
+. Sélectionnez le centre de données virtuel dans la liste des centres de données situés sur le site DR.
+. Sélectionnez le cluster pour héberger les banques de données et les machines virtuelles dans la liste des clusters au sein du centre de données virtuel sélectionné.
+. (Facultatif) Sélectionnez un hôte cible dans le cluster cible.
++
+Cette étape n'est pas nécessaire, car la reprise après sinistre BlueXP sélectionne le premier hôte ajouté au cluster dans vCenter. À ce stade, les machines virtuelles continuent de s'exécuter sur cet hôte ESXi ou VMware DRS déplace la machine virtuelle vers un autre hôte ESXi, selon les besoins, en fonction des règles DRS configurées.
+
+. (Facultatif) Indiquez le nom d’un dossier vCenter de niveau supérieur dans lequel placer les enregistrements de machines virtuelles.
++
+Ceci est pour vos besoins organisationnels et n'est pas obligatoire.
+
++
+image:evs-create-rp-wiz-c-compute-resources-1-4.png["Créer un plan de réplication, calculer les ressources"]
+
+
+
+
+
+== Cartographier les ressources du réseau virtuel
+
+Chaque machine virtuelle peut disposer d'une ou plusieurs cartes réseau virtuelles connectées à des réseaux virtuels au sein de l'infrastructure réseau vCenter. Pour garantir que chaque machine virtuelle est correctement connectée aux réseaux souhaités lors du redémarrage sur le site de reprise après sinistre, identifiez les réseaux virtuels du site de reprise après sinistre auxquels ces machines virtuelles doivent être connectées. Pour ce faire, mappez chaque réseau virtuel du site sur site à un réseau associé sur le site de reprise après sinistre.
+
+.Sélectionnez le réseau virtuel de destination sur lequel mapper chaque réseau virtuel source
+. Sélectionnez le segment cible dans la liste déroulante.
+. Répétez l’étape précédente pour chaque réseau virtuel source répertorié.
++
+image:evs-create-rp-wiz-c-network-resources-1-2.png["Créer un plan de réplication, des ressources réseau"]
+
+
+
+
+
+== Définir les options de reconfiguration de la machine virtuelle lors du basculement
+
+Chaque machine virtuelle peut nécessiter des modifications pour fonctionner correctement sur le site vCenter de reprise après sinistre. La section « Machines virtuelles » vous permet d'effectuer les modifications nécessaires.
+
+Par défaut, la reprise après sinistre BlueXP utilise les mêmes paramètres pour chaque machine virtuelle que ceux utilisés sur le site source sur site. Cela suppose que les machines virtuelles utilisent la même adresse IP, le même processeur virtuel et la même configuration de DRAM virtuelle.
+
+
+
+=== Reconfiguration du réseau
+
+Les types d'adresses IP pris en charge sont les adresses IP statiques et DHCP. Pour les adresses IP statiques, les paramètres IP cibles sont les suivants :
+
+* *Identique à la source* : comme son nom l'indique, le service utilise la même adresse IP sur la machine virtuelle de destination que celle utilisée sur la machine virtuelle du site source. Cela nécessite de configurer les réseaux virtuels mappés à l'étape précédente avec les mêmes paramètres de sous-réseau.
+* *Différent de la source* : Le service fournit un ensemble de champs d'adresse IP pour chaque machine virtuelle (VM) qui doivent être configurés pour le sous-réseau approprié utilisé sur le réseau virtuel de destination, mappé dans la section précédente. Pour chaque VM, vous devez fournir une adresse IP, un masque de sous-réseau, un DNS et une passerelle par défaut. Vous pouvez également utiliser les mêmes paramètres de masque de sous-réseau, DNS et passerelle pour toutes les VM afin de simplifier le processus lorsque toutes les VM sont connectées au même sous-réseau.
+* *Mappage de sous-réseau* : cette option reconfigure l'adresse IP de chaque machine virtuelle en fonction de la configuration CIDR du réseau virtuel de destination. Pour utiliser cette fonctionnalité, assurez-vous que chaque réseau virtuel vCenter dispose d'un paramètre CIDR défini au sein du service, tel que modifié dans les informations vCenter de l'onglet Sites.
+
+
+Après avoir configuré les sous-réseaux, le mappage de sous-réseaux utilise le même composant d'unité de l'adresse IP pour la configuration des machines virtuelles source et de destination, mais remplace le composant de sous-réseau de l'adresse IP en fonction des informations CIDR fournies. Cette fonctionnalité nécessite également que les réseaux virtuels source et de destination aient la même classe d'adresse IP (la  `/xx` (composant du CIDR). Cela garantit qu'il y a suffisamment d'adresses IP disponibles sur le site de destination pour héberger toutes les machines virtuelles protégées.
+
+Pour cette configuration EVS, nous supposons que les configurations IP source et de destination sont les mêmes et ne nécessitent aucune reconfiguration supplémentaire.
+
+.Apporter des modifications à la reconfiguration des paramètres réseau
+. Sélectionnez le type d’adressage IP à utiliser pour les machines virtuelles basculées.
+. (Facultatif) Fournissez un schéma de renommage de machine virtuelle pour les machines virtuelles redémarrées en fournissant une valeur de préfixe et de suffixe facultative.
++
+image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Créer un plan de réplication, des ressources réseau"]
+
+
+
+
+
+=== Reconfiguration des ressources de calcul de la machine virtuelle
+
+Il existe plusieurs options pour reconfigurer les ressources de calcul des machines virtuelles. La reprise après sinistre BlueXP prend en charge la modification du nombre de processeurs virtuels, de la quantité de DRAM virtuelle et du nom de la machine virtuelle.
+
+.Spécifiez les modifications de configuration de la machine virtuelle
+. (Facultatif) Modifiez le nombre de processeurs virtuels que chaque machine virtuelle doit utiliser. Cela peut être nécessaire si vos hôtes de cluster vCenter de reprise après sinistre ne disposent pas d'autant de cœurs de processeur que le cluster vCenter source.
+. (Facultatif) Modifiez la quantité de DRAM virtuelle que chaque machine virtuelle doit utiliser. Cela peut être nécessaire si vos hôtes de cluster vCenter de reprise après sinistre ne disposent pas d'autant de DRAM physique que les hôtes de cluster vCenter source.
++
+image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Créer un plan de réplication, des ressources de machine virtuelle"]
+
+
+
+
+
+=== Ordre de démarrage
+
+La reprise après sinistre BlueXP prend en charge le redémarrage ordonné des machines virtuelles selon un champ d'ordre de démarrage. Ce champ indique le mode de démarrage des machines virtuelles de chaque groupe de ressources. Les machines virtuelles dont le champ d'ordre de démarrage contient la même valeur démarrent en parallèle.
+
+.Modifier les paramètres de l'ordre de démarrage
+. (Facultatif) Modifiez l'ordre de redémarrage de vos machines virtuelles. Ce champ prend n'importe quelle valeur numérique. La reprise après sinistre BlueXP tente de redémarrer en parallèle les machines virtuelles ayant la même valeur numérique.
+. (Facultatif) Indiquez un délai à utiliser entre chaque redémarrage de machine virtuelle. Ce délai est injecté après le redémarrage de cette machine virtuelle et avant celui des machines virtuelles dont le numéro d'ordre de démarrage est supérieur. Ce délai est exprimé en minutes.
++
+image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Créer un plan de réplication, un ordre de démarrage"]
+
+
+
+
+
+=== Opérations personnalisées du système d'exploitation invité
+
+La récupération après sinistre BlueXP prend en charge l'exécution de certaines opérations du système d'exploitation invité pour chaque machine virtuelle :
+
+* La récupération après sinistre BlueXP peut effectuer des sauvegardes cohérentes avec les applications des machines virtuelles pour les machines virtuelles exécutant des bases de données Oracle et des bases de données Microsoft SQL Server.
+* La solution de reprise après sinistre BlueXP peut exécuter des scripts personnalisés adaptés au système d'exploitation invité de chaque machine virtuelle. L'exécution de ces scripts nécessite des identifiants utilisateur compatibles avec le système d'exploitation invité, avec des privilèges suffisants pour exécuter les opérations listées dans le script.
+
+
+.Modifier les opérations personnalisées du système d'exploitation invité de chaque machine virtuelle
+. (Facultatif) Cochez la case *Créer des répliques cohérentes avec l'application* si la machine virtuelle héberge une base de données Oracle ou SQL Server.
+. (Facultatif) Pour exécuter des actions personnalisées sur le système d'exploitation invité lors du démarrage, téléchargez un script pour chaque machine virtuelle. Pour exécuter un script unique sur toutes les machines virtuelles, cochez la case en surbrillance et renseignez les champs.
+. Certaines modifications de configuration nécessitent des identifiants utilisateur disposant des autorisations adéquates pour effectuer les opérations. Fournissez vos identifiants dans les cas suivants :
++
+** Un script sera exécuté dans la VM par le système d'exploitation invité.
+** Un instantané cohérent avec l’application doit être effectué.
+
+
+
+
+image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Créer un plan de réplication et des opérations personnalisées du système d'exploitation invité"]
+
+
+
+== Cartographier les magasins de données
+
+La dernière étape de la création d'un plan de réplication consiste à identifier comment ONTAP doit protéger les banques de données. Ces paramètres définissent l'objectif de point de récupération (RPO) des plans de réplication, le nombre de sauvegardes à conserver et l'emplacement de réplication des volumes ONTAP hébergés par chaque banque de données vCenter.
+
+Par défaut, la récupération après sinistre BlueXP gère sa propre planification de réplication de snapshots ; toutefois, vous pouvez éventuellement spécifier que vous souhaitez utiliser la planification de stratégie de réplication SnapMirror existante pour la protection de la banque de données.
+
+De plus, vous pouvez personnaliser les interfaces logiques (LIF) de données et la stratégie d'exportation à utiliser. Si vous ne spécifiez pas ces paramètres, la reprise après sinistre BlueXP utilise toutes les interfaces logiques de données associées au protocole approprié (NFS, iSCSI ou FC) et la stratégie d'exportation par défaut pour les volumes NFS.
+
+.Pour configurer le mappage du magasin de données (volume)
+. (Facultatif) Décidez si vous souhaitez utiliser une planification de réplication ONTAP SnapMirror existante ou si vous souhaitez que la récupération après sinistre BlueXP gère la protection de vos machines virtuelles (par défaut).
+. Fournissez un point de départ pour le moment où le service doit commencer à effectuer des sauvegardes.
+. Spécifiez la fréquence à laquelle le service doit effectuer une sauvegarde et la répliquer vers le cluster Amazon FSx for NetApp ONTAP de destination DR.
+. Spécifiez le nombre de sauvegardes historiques à conserver. Le service conserve le même nombre de sauvegardes sur les clusters de stockage source et de destination.
+. (Facultatif) Sélectionnez une interface logique par défaut (LIF de données) pour chaque volume. Si aucune n'est sélectionnée, toutes les LIF de données de la SVM de destination prenant en charge le protocole d'accès au volume sont configurées.
+. (Facultatif) Sélectionnez une politique d'exportation pour tous les volumes NFS. Si cette option n'est pas sélectionnée, la politique d'exportation par défaut est utilisée.
++
+image:evs-create-rp-wiz-c-datastore-mapping.png["Créer un plan de réplication et un mappage de banque de données"]
+
+
+
+Continuer avec link:evs-deploy-guide-create-rp-wiz-04.html["Assistant de création de plan de réplication Étape 4"] .

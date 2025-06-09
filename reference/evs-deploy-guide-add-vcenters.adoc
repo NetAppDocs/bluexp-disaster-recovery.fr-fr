@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-add-vcenters.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: 'Présentation de la reprise après sinistre BlueXP avec Amazon EVS et Amazon FSxN. Une fois les sites créés, ajoutez vos clusters vCenter à chaque site dans la reprise après sinistre BlueXP. Lors de la création de chaque site, nous avons indiqué son type. Cela indique à la reprise après sinistre BlueXP le type d"accès requis pour les vCenters hébergés sur chaque type de site. L"un des avantages d"Amazon EVS est qu"il n"y a aucune distinction réelle entre un vCenter Amazon EVS et un vCenter sur site. Les deux nécessitent les mêmes informations de connexion et d"authentification.' 
+---
+= Ajoutez des clusters vCenter sur site et Amazon EVS dans la reprise après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Une fois les sites créés, vous pouvez désormais ajouter vos clusters vCenter à chaque site dans la reprise après sinistre BlueXP. Lors de la création de chaque site, nous avons indiqué chaque type de site. Cela indique à la reprise après sinistre BlueXP le type d'accès requis pour les vCenters hébergés sur chaque type de site. L'un des avantages d'Amazon EVS est qu'il n'y a aucune distinction réelle entre un vCenter Amazon EVS et un vCenter sur site. Les deux nécessitent les mêmes informations de connexion et d'authentification.
+
+.Étapes pour ajouter un vCenter à chaque site
+. Dans l’onglet *Sites*, sélectionnez *Ajouter vCenter* pour le site souhaité.
++
+image:evs-add-vcenter-1.png["Ajouter l'option vCenter"]
+
+. Dans la boîte de dialogue Ajouter un serveur vCenter, sélectionnez ou fournissez les informations suivantes :
++
+.. Le connecteur BlueXP hébergé dans votre AWS VPC.
+.. L'adresse IP ou le nom de domaine complet du vCenter à ajouter.
+.. Si elle est différente, remplacez la valeur du port par le port TCP utilisé par votre gestionnaire de cluster vCenter.
+.. Le nom d'utilisateur vCenter pour le compte créé précédemment qui sera utilisé par la récupération après sinistre BlueXP pour gérer le vCenter.
+.. Le mot de passe vCenter pour le nom d'utilisateur fourni.
+.. Si votre entreprise utilise une autorité de certification externe ou le magasin de certificats vCenter Endpoint pour accéder à vos vCenters, décochez la case « Utiliser des certificats auto-signés ». Sinon, laissez la case cochée.
+
+
+. Sélectionnez *Ajouter*.
++
+image:evs-add-vcenter-2-3.png["Boîte de dialogue Ajouter vCenter"]
+
+

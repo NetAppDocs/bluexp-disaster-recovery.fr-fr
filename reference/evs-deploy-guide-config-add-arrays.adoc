@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-add-arrays.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Avant d’utiliser la récupération après sinistre BlueXP, vous devez ajouter des instances de stockage sur site et hébergées dans le cloud à l’environnement de travail BlueXP. 
+---
+= Ajoutez des baies sur site à l'environnement de travail BlueXP pour Amazon EVS avec la reprise après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Avant d’utiliser la récupération après sinistre BlueXP, vous devez ajouter des instances de stockage sur site et hébergées dans le cloud à l’environnement de travail BlueXP.
+
+Vous devez effectuer les opérations suivantes :
+
+* Ajoutez des baies sur site à votre environnement de travail BlueXP.
+* Ajoutez des instances Amazon FSx for NetApp ONTAP (FSx for ONTAP) à votre environnement de travail BlueXP.
+
+
+
+
+== Ajouter des baies de stockage sur site à l'environnement de travail BlueXP
+
+Ajoutez des ressources de stockage ONTAP sur site à votre environnement de travail BlueXP.
+
+. Depuis le canevas BlueXP, sélectionnez *Ajouter un environnement de travail*.
++
+image:evs-canvas-add-working-env-1.png["Ajouter un environnement de travail"]
+
+. Depuis la page Ajouter un environnement de travail, sélectionnez la carte *Sur site*.
++
+image:evs-canvas-add-working-env-2.png["Ajouter une image de l'environnement de travail"]
+
+. Sélectionnez *Découvrir* sur la carte ONTAP sur site.
++
+image:evs-canvas-add-working-env-3.png["Ajouter une image de l'environnement de travail"]
+
+. Sur la page Découvrir le cluster, saisissez les informations suivantes :
++
+.. L'adresse IP du port de gestion du cluster de baies ONTAP
+.. Le nom d'utilisateur de l'administrateur
+.. Le mot de passe administrateur
+
+
+. Sélectionnez *Découvrir* au bas de la page.
++
+image:evs-canvas-add-working-env-4-5.png["Ajouter une image de l'environnement de travail"]
+
+. Répétez les étapes 1 à 5 pour chaque baie ONTAP qui hébergera les banques de données vCenter.
+
+
+
+
+== Ajoutez des instances de stockage Amazon FSx pour NetApp ONTAP à l'environnement de travail BlueXP
+
+Ensuite, ajoutez des ressources de stockage Amazon FSx pour NetApp ONTAP à votre environnement de travail BlueXP.
+
+. Depuis le canevas BlueXP, sélectionnez *Ajouter un environnement de travail*.
++
+image:evs-canvas-add-working-env-1.png["Ajouter une image de l'environnement de travail"]
+
+. Depuis la page Ajouter un environnement de travail, sélectionnez la carte *Amazon Web Services*.
++
+image:evs-canvas-add-working-evs-2.png["Ajouter une image de l'environnement de travail"]
+
+. Sélectionnez le lien *Découvrir l'existant* sur la carte Amazon FSx for ONTAP.
++
+image:evs-canvas-add-working-evs-3.png["Ajouter une image de l'environnement de travail"]
+
+. Sélectionnez les informations d’identification et la région AWS hébergeant l’instance FSx for ONTAP.
+. Sélectionnez un ou plusieurs systèmes de fichiers FSx for ONTAP à ajouter.
+. Sélectionnez *Découvrir* au bas de la page.
++
+image:evs-needs-updates-canvas-add-working-evs-4-5.png["Ajouter une image de l'environnement de travail"]
+
+. Répétez les étapes 1 à 6 pour chaque instance FSx for ONTAP qui hébergera les banques de données vCenter.
+

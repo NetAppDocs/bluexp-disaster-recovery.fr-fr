@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-01.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Tout d’abord, à l’aide de la récupération après sinistre BlueXP, fournissez un nom de plan de réplication et sélectionnez les vCenters source et de destination pour la réplication. 
+---
+= Créer un plan de réplication : Étape 1 : Sélectionner les vCenters dans la récupération après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Tout d’abord, à l’aide de la récupération après sinistre BlueXP, indiquez un nom de plan de réplication et sélectionnez les vCenters source et de destination pour la réplication.
+
+. Saisissez un nom unique pour le plan de réplication.
++
+Seuls les caractères alphanumériques et les traits de soulignement (_) sont autorisés pour les noms de plans de réplication.
+
+. Sélectionnez un cluster vCenter source.
+. Sélectionnez un cluster vCenter de destination.
+. Sélectionnez *Suivant*.
++
+image:evs-create-rp-wiz-a-1-4.png["Créer un plan de réplication, sélectionner vCenters"]
+
+
+
+Continuer avec link:evs-deploy-guide-create-rp-wiz-02.html["Assistant de création de plan de réplication Étape 2"] .

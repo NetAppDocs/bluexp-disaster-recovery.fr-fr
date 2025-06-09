@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-04.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Présentation de la reprise après sinistre BlueXP avec Amazon EVS et Amazon FSx pour NetApp ONTAP. Après avoir ajouté toutes les informations du plan de réplication dans la reprise après sinistre BlueXP, vérifiez que les informations saisies sont correctes. 
+---
+= Créer un plan de réplication : Étape 4 : Vérifier les paramètres de récupération après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Après avoir ajouté les informations du plan de réplication dans la récupération après sinistre BlueXP, vérifiez que les informations que vous avez saisies sont correctes.
+
+.Étapes
+. Sélectionnez *Enregistrer* pour vérifier vos paramètres avant d’activer le plan de réplication.
++
+Vous pouvez sélectionner chaque onglet pour consulter les paramètres et apporter des modifications sur n'importe quel onglet en sélectionnant l'icône en forme de crayon.
+
++
+Examen des paramètres du plan de réplication image:evs-create-rp-wiz-c-verify.png["Examen des paramètres du plan de réplication"]
+
+. Lorsque vous êtes satisfait que tous les paramètres sont corrects, sélectionnez *Ajouter un plan* en bas de l'écran.
+
+
+Continuer avec link:evs-deploy-guide-verify-rp.html["Vérifier le plan de réplication"] .

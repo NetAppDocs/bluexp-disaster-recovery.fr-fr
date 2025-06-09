@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-install-connector.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: 'Présentation de la reprise après sinistre BlueXP avec Amazon EVS et Amazon FSx pour NetApp ONTAP. Bien que le connecteur puisse être installé sur n"importe quel emplacement de votre réseau, pour la reprise après sinistre BlueXP, nous recommandons de l"installer sur le site de reprise après sinistre. Ainsi, en cas de panne du site principal, l"interface utilisateur de la console cloud BlueXP reste en contact avec le connecteur et peut orchestrer le processus de reprise sur ce site.' 
+---
+= Installer le connecteur BlueXP pour la reprise après sinistre BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Un connecteur BlueXP est un logiciel NetApp exécuté sur votre réseau cloud ou sur site. Il exécute les actions nécessaires à BlueXP pour gérer votre infrastructure de données. Le connecteur interroge en permanence le logiciel de reprise d'activité BlueXP en tant que couche de service pour connaître les actions nécessaires.
+
+Pour le service de reprise après sinistre BlueXP, les actions exécutées orchestrent les clusters VMware vCenter et les instances de stockage ONTAP à l'aide d'API natives pour chaque service afin de protéger les machines virtuelles de production exécutées sur site. Bien que le connecteur puisse être installé sur n'importe quel emplacement réseau, pour la reprise après sinistre BlueXP, nous recommandons de l'installer sur le site de reprise après sinistre. Ainsi, en cas de panne du site principal, l'interface utilisateur de la console cloud BlueXP reste en contact avec le connecteur et peut orchestrer le processus de reprise sur ce site.
+
+Pour utiliser le service, installez le connecteur en mode standard. Pour en savoir plus sur les différents types d'installation du connecteur, consultez la page  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["En savoir plus sur les modes de déploiement BlueXP | Documentation NetApp"^] .
+
+Bien que le connecteur soit essentiel à l'utilisation du service, ses étapes d'installation dépendent de vos besoins et de la configuration de votre réseau. Ces informations ne fournissent pas d'instructions spécifiques pour l'installation.
+
+La méthode la plus simple pour installer un connecteur avec Amazon AWS est d'utiliser AWS Marketplace. Pour plus d'informations sur l'installation d'un connecteur via AWS Marketplace, consultez la page  https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["Créer un connecteur depuis AWS Marketplace | Documentation NetApp"^] .
