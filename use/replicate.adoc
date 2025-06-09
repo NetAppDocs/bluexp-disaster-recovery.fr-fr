@@ -4,7 +4,7 @@ permalink: use/replicate.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: 'Avec la reprise d"activité BlueXP, vous pouvez répliquer les applications VMware sur votre site source vers un site distant de reprise d"activité dans le cloud à l"aide de la réplication SnapMirror.' 
 ---
-= Réplication d'applications vers un autre site
+= Répliquer des applications vers un autre site avec la récupération après sinistre BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -84,6 +84,7 @@ Pour obtenir la liste des privilèges vCenter nécessaires, reportez-vous link:.
 Un connecteur BlueXP doit être configuré dans BlueXP. Lorsque vous utilisez le connecteur BlueXP, il inclut les fonctionnalités appropriées pour le service de reprise d'activité.
 
 * La reprise d'activité BlueXP fonctionne uniquement avec le déploiement de connecteur de mode standard. Voir https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Mise en route de BlueXP en mode standard"^].
+* Assurez-vous que les vCenters source et de destination utilisent le même connecteur BlueXP.
 * Type de connecteur BlueXP requis :
 +
 ** *Reprise d'activité sur site et sur site* : installez le connecteur sur site BlueXP sur le site de reprise d'activité. Reportez-vous à la https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installez et configurez un connecteur sur site"^].

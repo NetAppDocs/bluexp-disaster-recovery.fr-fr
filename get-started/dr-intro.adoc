@@ -20,9 +20,6 @@ BlueXP est un service de reprise après incident basé dans le cloud qui automat
 * Un autre environnement VMware sur site basé sur NFS avec stockage ONTAP
 
 
-
-IMPORTANT: Avec cette version, la reprise après incident est prise en charge dans un aperçu technologique pour les workloads VMware sur site vers des environnements VMware sur site avec des datastores VMware vSphere Virtual machine File System (VMFS). NetApp ne vous facture pas pour la capacité de workloads prévisualisée.
-
 La reprise d'activité BlueXP utilise la technologie ONTAP SnapMirror pour le transport de réplication vers le site de reprise d'activité. Cela permet d'optimiser l'efficacité du stockage (compression et déduplication) sur les sites primaires et secondaires.
 
 image:draas-onprem-to-cloud-onprem.png["Diagramme illustrant les composants de la reprise d'activité BlueXP pour VMware"]

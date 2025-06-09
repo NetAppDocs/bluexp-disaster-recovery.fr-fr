@@ -4,7 +4,7 @@ permalink: use/migrate.html
 keywords: disaster recovery, bluexp disaster recovery, migrate, vmware, vcenter 
 summary: 'En utilisant la reprise d"activité BlueXP, vous pouvez migrer les applications VMware de votre site source vers un autre site.' 
 ---
-= Migration des applications vers un autre site
+= Migrer des applications vers un autre site avec la récupération après sinistre BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -4,7 +4,7 @@ permalink: use/monitor-jobs.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
 summary: NetApp BlueXP est un service de reprise après incident basé dans le cloud qui automatise les workflows de reprise après incident. Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer leur progression. 
 ---
-= Surveiller les tâches de reprise après incident
+= Surveiller les tâches de récupération après sinistre BlueX
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 
 
 [role="lead"]
-Vous pouvez surveiller toutes les tâches de reprise sur incident et déterminer leur progression.
+Vous pouvez surveiller toutes les tâches de récupération après sinistre BlueXP et déterminer leur progression.
 
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.

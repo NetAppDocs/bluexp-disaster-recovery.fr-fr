@@ -4,7 +4,7 @@ permalink: use/reports.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
 summary: 'La révision de rapports de reprise sur incident peut vous aider à analyser votre niveau de préparation à la reprise sur incident. Les rapports préconçus incluent un récapitulatif des basculements et des basculements, des détails de réplication sur tous les sites et des détails des tâches pour l"année écoulée.' 
 ---
-= Créez des rapports de reprise d'activité
+= Créer des rapports de reprise après sinistre BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: 'La révision de rapports de reprise sur incident peut vous aider à an
 
 
 [role="lead"]
-La révision de rapports de reprise sur incident peut vous aider à analyser votre niveau de préparation à la reprise sur incident. Les rapports préconçus incluent un récapitulatif des basculements de test, des détails du plan de réplication et des détails des tâches sur tous les sites d'un compte au cours des sept derniers jours.
+L’examen des rapports de reprise après sinistre BlueXP peut vous aider à analyser votre état de préparation à la reprise après sinistre. Les rapports préconçus incluent un récapitulatif des basculements de test, des détails du plan de réplication et des détails des tâches sur tous les sites d'un compte au cours des sept derniers jours.
 
 Vous pouvez télécharger des rapports au format PDF, HTML ou JSON.
 
