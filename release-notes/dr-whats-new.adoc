@@ -16,6 +16,30 @@ Découvrez les nouveautés de la reprise d'activité BlueXP.
 
 
 
+== 30 juin 2025
+
+Version 4.2.4P2
+
+
+
+=== Améliorations de la découverte
+
+Cette mise à jour améliore le processus de découverte, ce qui réduit le temps nécessaire à la découverte.
+
+
+
+== 23 juin 2025
+
+Version 4.2.4P1
+
+
+
+=== Améliorations du mappage des sous-réseaux
+
+Cette mise à jour améliore la boîte de dialogue « Ajouter et modifier le mappage de sous-réseaux » avec une nouvelle fonctionnalité de recherche. Vous pouvez désormais trouver rapidement des sous-réseaux spécifiques en saisissant des termes de recherche, ce qui simplifie la gestion des mappages de sous-réseaux.
+
+
+
 == 9 juin 2025
 
 Version 4.2.4

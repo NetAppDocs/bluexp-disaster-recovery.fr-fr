@@ -1640,4 +1640,12 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="3a83143b77a0b90d82bf03cbf43e4443" category="sidebar">Créer un plan de réplication Étape 4 pour Amazon EVS</block>
   <block id="5a72de72f8b0ba4525e25ce937621889" category="sidebar">Vérifier le plan de réplication pour Amazon EVS</block>
   <block id="f260d0f12b515f0ab789c0349e49a0fc" category="sidebar">Effectuer des opérations de plan de réplication</block>
+  <block id="a1e044c84ca270d3adc998b256510801" category="doc">Améliorations du mappage des sous-réseaux</block>
+  <block id="494053c615ca0aa0debeb6eac90b3e5a" category="paragraph">Cette mise à jour améliore la boîte de dialogue « Ajouter et modifier le mappage de sous-réseaux » avec une nouvelle fonctionnalité de recherche. Vous pouvez désormais trouver rapidement des sous-réseaux spécifiques en saisissant des termes de recherche, ce qui simplifie la gestion des mappages de sous-réseaux.</block>
+  <block id="dc729c135725ed28b09cd35258e2a28d" category="doc">Améliorations de la découverte</block>
+  <block id="778d15d21e8eaffc6a6c8069d8fa5872" category="paragraph">Cette mise à jour améliore le processus de découverte, ce qui réduit le temps nécessaire à la découverte.</block>
+  <block id="b77e8ec0a3425747f32b3dbc303adecb" category="section-title">30 juin 2025</block>
+  <block id="f5939a7e3fd75d2d5422c1d6029f44c8" category="paragraph">Version 4.2.4P2</block>
+  <block id="1d498761d9b5afe7d166fb15809b8000" category="section-title">23 juin 2025</block>
+  <block id="c114a433f08237cc585990ed9e9e88d5" category="paragraph">Version 4.2.4P1</block>
 </blocks>
