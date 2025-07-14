@@ -14,6 +14,10 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 [role="lead"]
 Le tableau de bord de reprise d'activité BlueXP vous permet de déterminer l'état de vos sites de reprise d'activité et de vos plans de réplication. Vous pouvez rapidement déterminer quels sites et plans sont sains, déconnectés ou dégradés.
 
+*Rôle BlueXP requis* Administrateur d'organisation, administrateur de dossier ou de projet, administrateur de récupération après sinistre, administrateur d'application de récupération après sinistre ou rôle de visualiseur de récupération après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 .Étapes
 . Dans le menu de navigation gauche de BlueXP, sélectionnez *protection* > *reprise après sinistre*.
 . Dans le menu supérieur de reprise d'activité BlueXP, sélectionnez *Tableau de bord*.

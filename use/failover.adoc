@@ -14,6 +14,10 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 [role="lead"]
 En cas d'incident, basculez votre site VMware primaire sur site vers un autre site VMware sur site ou VMware Cloud sur AWS. Vous pouvez tester le processus de basculement pour vous assurer qu'il est efficace au moment où vous en avez besoin.
 
+*Rôle BlueXP requis* Rôle d'administrateur d'organisation, d'administrateur de dossier ou de projet, d'administrateur de reprise après sinistre ou d'administrateur de basculement de reprise après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Lors d'un basculement, la copie Snapshot SnapMirror la plus récente est utilisée. Vous pouvez également sélectionner un snapshot spécifique à partir d'un snapshot instantané (conformément à la règle de conservation de SnapMirror). L'option instantanée peut être utile si vous êtes confronté à une corruption, telle qu'une attaque par ransomware, où les répliques les plus récentes sont déjà compromises ou chiffrées. La reprise d'activité BlueXP affiche tous les points disponibles dans le temps.
 
 Ce processus diffère selon que le site de production fonctionne correctement et que vous effectuez un basculement vers le site de reprise d'activité pour des raisons autres qu'une défaillance critique de l'infrastructure :

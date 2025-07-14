@@ -16,6 +16,10 @@ Une fois que vous avez ajouté des sites vCenter, vous pouvez créer un plan de 
 
 Ces plans sont parfois appelés _plans_.
 
+*Rôle BlueXP requis* Administrateur d'organisation, administrateur de dossier ou de projet, administrateur de récupération après sinistre, administrateur de basculement de récupération après sinistre ou administrateur d'application de récupération après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Vous pouvez créer un plan de réplication et modifier des plannings pour la conformité et les tests.
 
 Vous pouvez protéger plusieurs machines virtuelles sur plusieurs datastores. La reprise d'activité BlueXP  crée des groupes de cohérence ONTAP pour tous les volumes ONTAP hébergeant des datastores de machines virtuelles protégés.

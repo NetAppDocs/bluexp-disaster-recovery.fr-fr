@@ -14,6 +14,10 @@ summary: 'Avec la reprise d"activité BlueXP, vous pouvez utiliser différents p
 [role="lead"]
 Avec la reprise d'activité BlueXP, vous pouvez utiliser différents plans de licence, notamment un essai gratuit, un abonnement avec paiement à l'utilisation ou l'utilisation de votre propre licence.
 
+*Rôle BlueXP requis* Rôle d'administrateur d'organisation, d'administrateur de dossier ou de projet, d'administrateur de récupération après sinistre ou d'administrateur d'application de récupération après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Vous pouvez utiliser les types de licence suivants :
 
 * Inscrivez-vous pour bénéficier d'un essai gratuit de 30 jours.

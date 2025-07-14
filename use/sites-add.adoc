@@ -19,6 +19,10 @@ TIP: Assurez-vous que les vCenters source et de destination utilisent le même c
 
 Une fois les vCenter ajoutés, la reprise après incident BlueXP  effectue une découverte approfondie des environnements vCenter, notamment des clusters vCenter, des hôtes ESXi, des datastores, l'empreinte du stockage, les détails des machines virtuelles, des répliques SnapMirror et des réseaux de machines virtuelles.
 
+*Rôle BlueXP requis* Administrateur d'organisation, administrateur de dossier ou de projet ou administrateur de reprise après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Si vous avez ajouté des vCenters dans les versions précédentes et que vous souhaitez personnaliser le planning de découverte, vous devez modifier le site du serveur vCenter et définir le planning.
 
 

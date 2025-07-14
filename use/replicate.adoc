@@ -14,6 +14,10 @@ summary: 'Avec la reprise d"activité BlueXP, vous pouvez répliquer les applica
 [role="lead"]
 Avec la reprise d'activité BlueXP, vous pouvez répliquer les applications VMware sur votre site source vers un site distant de reprise d'activité dans le cloud à l'aide de la réplication SnapMirror.
 
+*Rôle BlueXP requis* Rôle d'administrateur d'organisation, d'administrateur de dossier ou de projet, d'administrateur de reprise après sinistre ou d'administrateur de basculement de reprise après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 
 TIP: Une fois le plan de reprise d'activité créé, identifiez la récurrence dans l'assistant et lancez une réplication vers un site de reprise d'activité, la reprise d'activité BlueXP vérifie toutes les 30 minutes que la réplication se produit réellement conformément au plan. Vous pouvez surveiller la progression dans la page moniteur des tâches.
 

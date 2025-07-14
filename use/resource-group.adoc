@@ -14,6 +14,10 @@ summary: 'NetApp BlueXP est un service de reprise après incident basé dans le 
 [role="lead"]
 Après avoir ajouté des sites vCenter, vous pouvez créer des groupes de ressources qui regroupent des machines virtuelles par machines virtuelles ou par datastores. Les groupes de ressources vous permettent d'organiser un ensemble de machines virtuelles dépendantes en groupes logiques qui répondent à vos besoins. Par exemple, vous pouvez regrouper les machines virtuelles associées à une application ou regrouper des applications disposant de niveaux similaires. Comme autre exemple, les groupes peuvent contenir des ordres de démarrage retardés qui peuvent être exécutés lors de la récupération.
 
+*Rôle BlueXP requis* Rôle d'administrateur d'organisation, d'administrateur de dossier ou de projet, d'administrateur de récupération après sinistre ou d'administrateur d'application de récupération après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Vous pouvez regrouper les machines virtuelles elles-mêmes ou les machines virtuelles dans des datastores.
 
 Vous pouvez créer des groupes de ressources à l'aide des méthodes suivantes :

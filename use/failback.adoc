@@ -14,6 +14,10 @@ summary: NetApp BlueXP est un service de reprise après incident basé dans le c
 [role="lead"]
 Une fois l'incident résolu, rebasculez le système du site de reprise sur incident vers le site source pour rétablir les opérations normales. Vous pouvez sélectionner l'instantané à partir duquel effectuer la restauration.
 
+*Rôle BlueXP requis* Rôle d'administrateur d'organisation, d'administrateur de dossier ou de projet, d'administrateur de reprise après sinistre ou d'administrateur de basculement de reprise après sinistre.
+
+link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
+
 Dans ce workflow, BlueXP Disaster Recovery réplique (resyncs) toutes les modifications apportées à la machine virtuelle source d'origine avant d'inverser le sens de la réplication. Ce processus commence à partir d'une relation qui a terminé le basculement vers une cible et implique les étapes suivantes :
 
 * Sur le site cible, les machines virtuelles sont hors tension et non enregistrées, et les volumes sont démontés.
