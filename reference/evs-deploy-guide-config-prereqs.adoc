@@ -16,7 +16,7 @@ Plus précisément, procédez comme suit :
 * Créez un compte utilisateur vCenter avec les privilèges VMware spécifiques requis pour la récupération après sinistre BlueXP pour effectuer les opérations nécessaires.
 +
 
-NOTE: Nous déconseillons l'utilisation du compte administrateur par défaut « administrator@vsphere.com ». Il est préférable de créer un compte utilisateur BlueXP dédié à la reprise après sinistre sur tous les clusters vCenter participant au processus de reprise après sinistre. Pour obtenir la liste des privilèges spécifiques requis, consultez la section link:vcenter-privileges.html["Privilèges vCenter requis pour la reprise d'activité BlueXP"] .
+NOTE: Nous ne recommandons pas d'utiliser le compte administrateur par défaut « \administrator@vsphere.com ». Il est préférable de créer un compte utilisateur BlueXP dédié à la reprise après sinistre sur tous les clusters vCenter participant au processus de reprise après sinistre. Pour obtenir la liste des privilèges spécifiques requis, consultez la section link:vcenter-privileges.html["Privilèges vCenter requis pour la reprise d'activité BlueXP"] .
 
 * Assurez-vous que tous les magasins de données vCenter qui hébergeront les machines virtuelles protégées par la reprise après sinistre BlueXP sont situés sur des ressources de stockage NetApp ONTAP.
 +
