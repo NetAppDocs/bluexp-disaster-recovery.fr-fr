@@ -21,7 +21,7 @@ entries:
       url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Conditions préalables pour Amazon EVS
       url: "/reference/evs-deploy-guide-config-prereqs.html"
-    - title: Ajouter des tableaux pour Amazon EVS
+    - title: Ajouter des baies de stockage ONTAP pour Amazon EVS
       url: "/reference/evs-deploy-guide-config-add-arrays.html"
     - title: Ajouter la récupération après sinistre BlueXP pour Amazon EVS
       url: "/reference/evs-deploy-guide-enable-draas.html"
