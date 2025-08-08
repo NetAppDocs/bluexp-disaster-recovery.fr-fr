@@ -18,10 +18,10 @@ Avec la reprise d'activité BlueXP, vous pouvez utiliser différents plans de li
 
 link:../reference/dr-reference-roles.html["En savoir plus sur les rôles et les autorisations des utilisateurs dans la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès BlueXP pour tous les services"^].
 
-Vous pouvez utiliser les types de licence suivants :
+*Options de licence* Vous pouvez utiliser les options de licence suivantes :
 
 * Inscrivez-vous pour bénéficier d'un essai gratuit de 30 jours.
-* Achetez un abonnement PAYGO (paiement basé sur l'utilisation) pour *NetApp Intelligent Services* avec Amazon Web Services (AWS) Marketplace.
+* Achetez un abonnement à la carte (PAYGO) à * NetApp Intelligent Services* avec Amazon Web Services (AWS) Marketplace ou à Microsoft Azure Marketplace.
 * BYOL (Bring Your Own License), un fichier de licence NetApp (NLF) que vous obtenez auprès de votre ingénieur commercial NetApp Vous pouvez utiliser le numéro de série de licence pour activer la fonction BYOL dans le portefeuille digital BlueXP.
 
 
@@ -73,14 +73,20 @@ Pour plus de détails, voir link:../use/sites-add.html["Ajoutez des sites vCente
 
 
 
-== Une fois la version d'évaluation terminée, Abonnez-vous à AWS Marketplace
+== Une fois l'essai terminé, abonnez-vous via l'une des places de marché
 
-Une fois la période d'essai gratuite terminée, vous pouvez acheter une licence auprès de NetApp ou vous abonner à *NetApp Intelligent Services* via AWS Marketplace. Dans cette procédure, vous découvrirez comment vous abonner directement à AWS Marketplace.
+Une fois l'essai gratuit terminé, vous pouvez acheter une licence auprès de NetApp ou vous abonner à * NetApp Intelligent Services* via AWS Marketplace ou Microsoft Azure Marketplace.  Cette procédure fournit un aperçu de haut niveau sur la manière de s'abonner directement sur l'une des places de marché.
 
 .Étapes
 . Lors de la reprise d'activité de BlueXP, un message vous indique que la version d'essai gratuite arrive à expiration. Dans le message, sélectionnez *s'abonner ou acheter une licence*.
-. Sélectionnez *s'abonner à AWS Marketplace*.
-. Utilisez AWS Marketplace pour vous abonner à *NetApp Intelligent Services* et *BlueXP  Disaster Recovery*.
++
+Ou, en haut à droite, sélectionnez *Afficher les modes de paiement*.
+
++
+image:dr-licensing-payment-methods.png["La page des méthodes de paiement de la BlueXP disaster recovery"]
+
+. Sélectionnez *S'abonner sur AWS Marketplace* ou *S'abonner sur Azure Marketplace*.
+. Utilisez AWS Marketplace ou Microsoft Azure Marketplace pour vous abonner à * NetApp Intelligent Services* et à * BlueXP disaster recovery*.
 . Lorsque vous revenez à la reprise d'activité BlueXP, un message indique que vous êtes abonné.
 +
 Vous pouvez afficher les détails de l'abonnement dans le portefeuille digital BlueXP . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["En savoir plus sur la gestion des abonnements avec le portefeuille digital"^].
