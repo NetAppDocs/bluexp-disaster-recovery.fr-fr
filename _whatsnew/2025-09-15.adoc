@@ -1,0 +1,19 @@
+= Configuration du script pour le test de basculement
+:allow-uri-read: 
+
+
+
+
+=== Configuration du script pour le test de basculement
+
+Avec cette version, vous pouvez désormais exécuter des scripts sur les machines virtuelles après leur mise sous tension pendant le processus de basculement de test.  Cela vous permet de tester et de valider des scripts.  Par exemple, vous pouvez mettre à jour les montages NFS pour pointer vers un nouveau serveur cible, garantissant ainsi que les applications invitées sont entièrement en ligne et que votre processus de récupération peut être testé de bout en bout.
+
+Pour plus d'informations sur le processus de basculement, voirlink:https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Basculement des applications vers un site distant"] .
+
+
+
+=== Processus de restauration automatique amélioré
+
+Lors du basculement, le processus de restauration automatique est désormais désactivé jusqu'à ce que la découverte soit terminée.  Cela garantit que toutes les configurations sont correctement identifiées et prises en compte avant de lancer une restauration, et réduit le risque d'erreurs.
+
+Pour plus d'informations sur le processus de restauration automatique, voirlink:https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failback.html["Rétablir la source d'origine des applications"] .

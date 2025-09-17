@@ -1742,4 +1742,13 @@ Une licence de reprise d'activité BlueXP est requise pour un accès complet. Ce
   <block id="ea9723858fffb6cdd001caff1cc4ed38" category="list-text">Utilisez AWS Marketplace ou Microsoft Azure Marketplace pour vous abonner à * NetApp Intelligent Services* et à * BlueXP disaster recovery*.</block>
   <block id="3488d38349240c72f75d081c2a79fa3b" category="section-title">04 août 2025</block>
   <block id="4a32789f771ba902fef02cd0f2a544e6" category="paragraph">Version 4.2.5P2</block>
+  <block id="b9c1cdf7f87b0afdb4912dd1210368b2" category="doc">Configuration du script pour le test de basculement</block>
+  <block id="23b8df4f947d4876b62a4f35651dc9da" category="paragraph">Avec cette version, vous pouvez désormais exécuter des scripts sur les machines virtuelles après leur mise sous tension pendant le processus de basculement de test.  Cela vous permet de tester et de valider des scripts.  Par exemple, vous pouvez mettre à jour les montages NFS pour pointer vers un nouveau serveur cible, garantissant ainsi que les applications invitées sont entièrement en ligne et que votre processus de récupération peut être testé de bout en bout.</block>
+  <block id="c50483baf55d5fc84eb7cde2deb8dbbe" category="paragraph">Pour plus d'informations sur le processus de basculement, voir<block ref="971d0cd2e9d374816901b4e00433e2bb" category="inline-link-macro-rx"></block> .</block>
+  <block id="bf6db1e2a0fdc4928d739c9a62b174a9" category="section-title">Processus de restauration automatique amélioré</block>
+  <block id="3409a7280b540ad3a82c8fa7bda31a54" category="paragraph">Lors du basculement, le processus de restauration automatique est désormais désactivé jusqu'à ce que la découverte soit terminée.  Cela garantit que toutes les configurations sont correctement identifiées et prises en compte avant de lancer une restauration, et réduit le risque d'erreurs.</block>
+  <block id="4e76033871d8eb52e7a46330cc531bd8" category="inline-link-macro">Rétablir la source d'origine des applications</block>
+  <block id="61a1bcd67556c0aafb06a8820e6e7dce" category="paragraph">Pour plus d'informations sur le processus de restauration automatique, voir<block ref="5386470d7b73cea41e5e361ec83bbd7a" category="inline-link-macro-rx"></block> .</block>
+  <block id="2f5c8ea43e93d972b7a25e5290de1a89" category="section-title">15 septembre 2025</block>
+  <block id="7b79550b0f239051cee47679029d92d0" category="paragraph">Version 4.3.5P3</block>
 </blocks>
